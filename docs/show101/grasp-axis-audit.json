@@ -1,0 +1,1270 @@
+{
+  "definition": "Angle between gripper closing axis and nearest cube face normal; 0 degrees is aligned. Median over samples with actual finger contact and cube bottom >5mm above table; at least 3 sampled contacts (not necessarily consecutive).",
+  "limitation": "Recorded 100ms native-contact/pose audit; not a robustness or hardware test, and not proof of why the optimizer chose a pose.",
+  "results": {
+    "show100_source50m": {
+      "evaluated_empty_hand_episodes": 128,
+      "episodes_with_at_least_300ms_lifted_finger_contacts": 125,
+      "face_aligned_under10deg": 74,
+      "oblique_over25deg": 29,
+      "median_episode_angle_degrees": 6.279333983648112,
+      "records": [
+        {
+          "episode": 0,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 43.486948458568094
+        },
+        {
+          "episode": 1,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 0.45263356158876744
+        },
+        {
+          "episode": 2,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 20.837363595591633
+        },
+        {
+          "episode": 3,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 19.50958911218287
+        },
+        {
+          "episode": 4,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 2.135620274228154
+        },
+        {
+          "episode": 5,
+          "contact_samples": 12,
+          "median_face_normal_error_degrees": 5.272321148671573
+        },
+        {
+          "episode": 6,
+          "contact_samples": 35,
+          "median_face_normal_error_degrees": 4.520148244144382
+        },
+        {
+          "episode": 7,
+          "contact_samples": 30,
+          "median_face_normal_error_degrees": 0.44551845006507124
+        },
+        {
+          "episode": 8,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 0.6751592789995751
+        },
+        {
+          "episode": 9,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 0.45395826280044427
+        },
+        {
+          "episode": 10,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 10.73296680524324
+        },
+        {
+          "episode": 11,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 18.414504305634043
+        },
+        {
+          "episode": 12,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 4.806209155938861
+        },
+        {
+          "episode": 13,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 9.071915669071805
+        },
+        {
+          "episode": 14,
+          "contact_samples": 34,
+          "median_face_normal_error_degrees": 44.3112734537623
+        },
+        {
+          "episode": 15,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 0.30969056364162845
+        },
+        {
+          "episode": 16,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 11.508608720405858
+        },
+        {
+          "episode": 17,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 1.408498154291153
+        },
+        {
+          "episode": 18,
+          "contact_samples": 15,
+          "median_face_normal_error_degrees": 15.06918078803793
+        },
+        {
+          "episode": 19,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 2.748418956077563
+        },
+        {
+          "episode": 20,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 5.975371369640181
+        },
+        {
+          "episode": 21,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 5.659032651241795
+        },
+        {
+          "episode": 22,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 43.88254104092485
+        },
+        {
+          "episode": 23,
+          "contact_samples": 15,
+          "median_face_normal_error_degrees": 11.084550747158477
+        },
+        {
+          "episode": 24,
+          "contact_samples": 44,
+          "median_face_normal_error_degrees": 0.27868991514643365
+        },
+        {
+          "episode": 25,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 43.844396637625195
+        },
+        {
+          "episode": 26,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 2.6211856174903225
+        },
+        {
+          "episode": 27,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 3.760556245475655
+        },
+        {
+          "episode": 28,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 9.617801834414417
+        },
+        {
+          "episode": 29,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 4.548285825179586
+        },
+        {
+          "episode": 30,
+          "contact_samples": 29,
+          "median_face_normal_error_degrees": 29.43853733709349
+        },
+        {
+          "episode": 31,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 11.275571072692795
+        },
+        {
+          "episode": 32,
+          "contact_samples": 7,
+          "median_face_normal_error_degrees": 15.50226078037517
+        },
+        {
+          "episode": 33,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 27.91797369502479
+        },
+        {
+          "episode": 34,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 2.7032492667548134
+        },
+        {
+          "episode": 35,
+          "contact_samples": 28,
+          "median_face_normal_error_degrees": 1.587727229091592
+        },
+        {
+          "episode": 36,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 40.83904039656819
+        },
+        {
+          "episode": 37,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 0.9522650592629326
+        },
+        {
+          "episode": 38,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 18.452800658754917
+        },
+        {
+          "episode": 39,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 27.589727028099677
+        },
+        {
+          "episode": 40,
+          "contact_samples": 28,
+          "median_face_normal_error_degrees": 26.621229873868273
+        },
+        {
+          "episode": 41,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 16.753918063577615
+        },
+        {
+          "episode": 42,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 0.6744383356020369
+        },
+        {
+          "episode": 43,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 0.4180849652772464
+        },
+        {
+          "episode": 44,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 2.7206784918846916
+        },
+        {
+          "episode": 45,
+          "contact_samples": 34,
+          "median_face_normal_error_degrees": 41.08018490767026
+        },
+        {
+          "episode": 46,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 1.8331956227084274
+        },
+        {
+          "episode": 47,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 9.106863230388186
+        },
+        {
+          "episode": 48,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 17.588275468969595
+        },
+        {
+          "episode": 49,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 0.9613973409701078
+        },
+        {
+          "episode": 51,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 0.8676345905738838
+        },
+        {
+          "episode": 52,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 33.831242645879136
+        },
+        {
+          "episode": 53,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 3.862105370584927
+        },
+        {
+          "episode": 54,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 1.6335681776505826
+        },
+        {
+          "episode": 55,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 4.737978380937081
+        },
+        {
+          "episode": 56,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 0.9136039831500764
+        },
+        {
+          "episode": 57,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 25.476013584533348
+        },
+        {
+          "episode": 58,
+          "contact_samples": 29,
+          "median_face_normal_error_degrees": 9.408596831420283
+        },
+        {
+          "episode": 59,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 6.279333983648112
+        },
+        {
+          "episode": 60,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 20.856360608764568
+        },
+        {
+          "episode": 61,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 3.8820260123765093
+        },
+        {
+          "episode": 62,
+          "contact_samples": 10,
+          "median_face_normal_error_degrees": 5.860838843179397
+        },
+        {
+          "episode": 63,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 0.2348242605921163
+        },
+        {
+          "episode": 64,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 0.6812329958322031
+        },
+        {
+          "episode": 65,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 3.130917671524589
+        },
+        {
+          "episode": 66,
+          "contact_samples": 12,
+          "median_face_normal_error_degrees": 42.906798534126295
+        },
+        {
+          "episode": 67,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 25.424722743253394
+        },
+        {
+          "episode": 68,
+          "contact_samples": 15,
+          "median_face_normal_error_degrees": 9.83472429888992
+        },
+        {
+          "episode": 69,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 37.673489493331395
+        },
+        {
+          "episode": 70,
+          "contact_samples": 32,
+          "median_face_normal_error_degrees": 0.8036252149393854
+        },
+        {
+          "episode": 71,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 0.9657655206386113
+        },
+        {
+          "episode": 72,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 1.5050222408804679
+        },
+        {
+          "episode": 73,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 3.996458591829322
+        },
+        {
+          "episode": 74,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 0.32675706988522935
+        },
+        {
+          "episode": 75,
+          "contact_samples": 40,
+          "median_face_normal_error_degrees": 1.3517153428353765
+        },
+        {
+          "episode": 76,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 1.1734460558792197
+        },
+        {
+          "episode": 77,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 1.7179630575048959
+        },
+        {
+          "episode": 78,
+          "contact_samples": 29,
+          "median_face_normal_error_degrees": 45.04820882641401
+        },
+        {
+          "episode": 79,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 14.947265221194094
+        },
+        {
+          "episode": 80,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 16.558487937339365
+        },
+        {
+          "episode": 81,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 3.969433396416682
+        },
+        {
+          "episode": 82,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 46.17568994221054
+        },
+        {
+          "episode": 83,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 36.41255742563685
+        },
+        {
+          "episode": 84,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 27.01468622099784
+        },
+        {
+          "episode": 85,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 7.677075951133927
+        },
+        {
+          "episode": 86,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 6.196116960541912
+        },
+        {
+          "episode": 87,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 23.137846640811887
+        },
+        {
+          "episode": 88,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 19.106516887814898
+        },
+        {
+          "episode": 89,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 3.791165144697428
+        },
+        {
+          "episode": 91,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 0.4577829586378006
+        },
+        {
+          "episode": 92,
+          "contact_samples": 28,
+          "median_face_normal_error_degrees": 5.146840760033618
+        },
+        {
+          "episode": 93,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 13.767843154042273
+        },
+        {
+          "episode": 94,
+          "contact_samples": 34,
+          "median_face_normal_error_degrees": 0.7074102048972439
+        },
+        {
+          "episode": 95,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 7.794765949519176
+        },
+        {
+          "episode": 96,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 1.942432687185902
+        },
+        {
+          "episode": 97,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 27.19113020355763
+        },
+        {
+          "episode": 98,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 4.54338896506893
+        },
+        {
+          "episode": 99,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 10.980655554858217
+        },
+        {
+          "episode": 100,
+          "contact_samples": 32,
+          "median_face_normal_error_degrees": 44.49757268500164
+        },
+        {
+          "episode": 101,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 4.9187965254461705
+        },
+        {
+          "episode": 102,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 0.4268145054278012
+        },
+        {
+          "episode": 103,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 7.594776713257668
+        },
+        {
+          "episode": 104,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 18.58778241713564
+        },
+        {
+          "episode": 105,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 5.916004751337537
+        },
+        {
+          "episode": 106,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 43.21664281359917
+        },
+        {
+          "episode": 107,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 4.013926747284751
+        },
+        {
+          "episode": 108,
+          "contact_samples": 8,
+          "median_face_normal_error_degrees": 38.689563477506354
+        },
+        {
+          "episode": 109,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 43.49375380916072
+        },
+        {
+          "episode": 110,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 41.36157818333393
+        },
+        {
+          "episode": 111,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 19.531760752524427
+        },
+        {
+          "episode": 112,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 2.399914950094459
+        },
+        {
+          "episode": 113,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 0.9280429947676193
+        },
+        {
+          "episode": 114,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 0.4814549151325386
+        },
+        {
+          "episode": 115,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 9.778701092184491
+        },
+        {
+          "episode": 116,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 8.079397125832703
+        },
+        {
+          "episode": 117,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 2.623170499104536
+        },
+        {
+          "episode": 118,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 4.620847220647239
+        },
+        {
+          "episode": 119,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 0.2842112769844467
+        },
+        {
+          "episode": 120,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 30.88273351842177
+        },
+        {
+          "episode": 121,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 27.246638960739325
+        },
+        {
+          "episode": 122,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 13.616885521447015
+        },
+        {
+          "episode": 124,
+          "contact_samples": 29,
+          "median_face_normal_error_degrees": 33.15681992507765
+        },
+        {
+          "episode": 125,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 8.857403189195775
+        },
+        {
+          "episode": 126,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 1.3067612043927788
+        },
+        {
+          "episode": 127,
+          "contact_samples": 28,
+          "median_face_normal_error_degrees": 40.862180858421105
+        }
+      ]
+    },
+    "old_refinement_intermediate": {
+      "evaluated_empty_hand_episodes": 128,
+      "episodes_with_at_least_300ms_lifted_finger_contacts": 124,
+      "face_aligned_under10deg": 69,
+      "oblique_over25deg": 27,
+      "median_episode_angle_degrees": 8.17742722141489,
+      "records": [
+        {
+          "episode": 0,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 1.9433610439519051
+        },
+        {
+          "episode": 1,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 0.7973018823865297
+        },
+        {
+          "episode": 2,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 3.0771814053334845
+        },
+        {
+          "episode": 3,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 5.510693746442684
+        },
+        {
+          "episode": 4,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 0.10060139963542136
+        },
+        {
+          "episode": 5,
+          "contact_samples": 15,
+          "median_face_normal_error_degrees": 40.63765344850013
+        },
+        {
+          "episode": 6,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 3.834716289509201
+        },
+        {
+          "episode": 7,
+          "contact_samples": 30,
+          "median_face_normal_error_degrees": 28.503872924270908
+        },
+        {
+          "episode": 8,
+          "contact_samples": 28,
+          "median_face_normal_error_degrees": 0.7246265890970545
+        },
+        {
+          "episode": 9,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 2.101029729673383
+        },
+        {
+          "episode": 10,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 18.185157282230332
+        },
+        {
+          "episode": 11,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 6.477057365238066
+        },
+        {
+          "episode": 12,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 1.4863533524501662
+        },
+        {
+          "episode": 13,
+          "contact_samples": 12,
+          "median_face_normal_error_degrees": 3.3983097297444633
+        },
+        {
+          "episode": 14,
+          "contact_samples": 30,
+          "median_face_normal_error_degrees": 17.32039231610954
+        },
+        {
+          "episode": 15,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 34.09050251612423
+        },
+        {
+          "episode": 16,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 24.04484700260046
+        },
+        {
+          "episode": 17,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 1.0272500415534092
+        },
+        {
+          "episode": 18,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 16.264130891388813
+        },
+        {
+          "episode": 20,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 6.224836556330898
+        },
+        {
+          "episode": 21,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 4.315566013419699
+        },
+        {
+          "episode": 22,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 1.2980257577795802
+        },
+        {
+          "episode": 23,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 11.29605632705786
+        },
+        {
+          "episode": 25,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 28.79518651539457
+        },
+        {
+          "episode": 26,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 0.5083151217468665
+        },
+        {
+          "episode": 27,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 1.1890567574257291
+        },
+        {
+          "episode": 28,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 36.30870754949805
+        },
+        {
+          "episode": 29,
+          "contact_samples": 14,
+          "median_face_normal_error_degrees": 5.419467972454065
+        },
+        {
+          "episode": 30,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 0.9878089382745782
+        },
+        {
+          "episode": 31,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 46.336251459732864
+        },
+        {
+          "episode": 32,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 3.9593575425045646
+        },
+        {
+          "episode": 33,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 4.295132633695362
+        },
+        {
+          "episode": 34,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 36.41713348220441
+        },
+        {
+          "episode": 35,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 7.38758152432592
+        },
+        {
+          "episode": 36,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 8.159161117894417
+        },
+        {
+          "episode": 37,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 20.141878834812402
+        },
+        {
+          "episode": 38,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 4.566993602266173
+        },
+        {
+          "episode": 39,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 11.573376771178678
+        },
+        {
+          "episode": 40,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 15.943767328068533
+        },
+        {
+          "episode": 41,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 20.711299411723022
+        },
+        {
+          "episode": 42,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 5.752794240588371
+        },
+        {
+          "episode": 43,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 2.8113974639804598
+        },
+        {
+          "episode": 44,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 2.344982520067777
+        },
+        {
+          "episode": 45,
+          "contact_samples": 34,
+          "median_face_normal_error_degrees": 8.828685246380743
+        },
+        {
+          "episode": 46,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 34.94653097295894
+        },
+        {
+          "episode": 47,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 23.885090526248156
+        },
+        {
+          "episode": 48,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 1.4190839417655416
+        },
+        {
+          "episode": 49,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 25.315265485643145
+        },
+        {
+          "episode": 50,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 0.8828216556368383
+        },
+        {
+          "episode": 51,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 9.315978844882197
+        },
+        {
+          "episode": 52,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 3.560322579658721
+        },
+        {
+          "episode": 53,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 1.1846954758673716
+        },
+        {
+          "episode": 54,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 27.657775144172355
+        },
+        {
+          "episode": 55,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 46.484632110997886
+        },
+        {
+          "episode": 56,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 1.8168652845319482
+        },
+        {
+          "episode": 57,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 3.3123597157205875
+        },
+        {
+          "episode": 58,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 13.294937202513381
+        },
+        {
+          "episode": 59,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 13.488621599717316
+        },
+        {
+          "episode": 60,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 3.3961166924317636
+        },
+        {
+          "episode": 61,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 0.807149515434881
+        },
+        {
+          "episode": 63,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 6.652192297293869
+        },
+        {
+          "episode": 64,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 1.651339785835879
+        },
+        {
+          "episode": 66,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 7.425374810022864
+        },
+        {
+          "episode": 67,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 30.7277981132232
+        },
+        {
+          "episode": 68,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 4.944812430872154
+        },
+        {
+          "episode": 69,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 10.949178710571475
+        },
+        {
+          "episode": 70,
+          "contact_samples": 31,
+          "median_face_normal_error_degrees": 31.044524646707746
+        },
+        {
+          "episode": 71,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 1.2837529018475249
+        },
+        {
+          "episode": 72,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 7.0824223137476565
+        },
+        {
+          "episode": 73,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 4.658564196295955
+        },
+        {
+          "episode": 74,
+          "contact_samples": 30,
+          "median_face_normal_error_degrees": 34.637501252818915
+        },
+        {
+          "episode": 75,
+          "contact_samples": 33,
+          "median_face_normal_error_degrees": 6.397984663376749
+        },
+        {
+          "episode": 76,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 17.143535704357966
+        },
+        {
+          "episode": 77,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 34.395990120325244
+        },
+        {
+          "episode": 78,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 3.723428556396544
+        },
+        {
+          "episode": 79,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 3.5122455771624765
+        },
+        {
+          "episode": 80,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 3.1546349846642894
+        },
+        {
+          "episode": 81,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 2.506612054461687
+        },
+        {
+          "episode": 82,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 45.77132336802779
+        },
+        {
+          "episode": 83,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 23.581604454082026
+        },
+        {
+          "episode": 84,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 1.4400256013296404
+        },
+        {
+          "episode": 85,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 7.762187864277028
+        },
+        {
+          "episode": 86,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 13.063919003445292
+        },
+        {
+          "episode": 87,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 21.821882416046478
+        },
+        {
+          "episode": 88,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 8.974649963452562
+        },
+        {
+          "episode": 89,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 26.581607813645086
+        },
+        {
+          "episode": 90,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 10.128683116586277
+        },
+        {
+          "episode": 91,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 27.903013132817282
+        },
+        {
+          "episode": 92,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 34.35321288094511
+        },
+        {
+          "episode": 93,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 26.149608797078688
+        },
+        {
+          "episode": 94,
+          "contact_samples": 11,
+          "median_face_normal_error_degrees": 11.602785348384977
+        },
+        {
+          "episode": 95,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 12.525174172452374
+        },
+        {
+          "episode": 96,
+          "contact_samples": 30,
+          "median_face_normal_error_degrees": 40.668693132764346
+        },
+        {
+          "episode": 97,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 25.327034792995104
+        },
+        {
+          "episode": 98,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 36.4488305156603
+        },
+        {
+          "episode": 99,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 39.67923040594465
+        },
+        {
+          "episode": 100,
+          "contact_samples": 26,
+          "median_face_normal_error_degrees": 37.89836335601265
+        },
+        {
+          "episode": 101,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 8.817706286317918
+        },
+        {
+          "episode": 102,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 6.088735563056676
+        },
+        {
+          "episode": 103,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 14.998113235454783
+        },
+        {
+          "episode": 104,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 21.042816137416217
+        },
+        {
+          "episode": 105,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 8.195693324935363
+        },
+        {
+          "episode": 106,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 2.1070713225005804
+        },
+        {
+          "episode": 107,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 8.155671127239353
+        },
+        {
+          "episode": 108,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 5.590567562392296
+        },
+        {
+          "episode": 109,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 43.220290260398485
+        },
+        {
+          "episode": 110,
+          "contact_samples": 18,
+          "median_face_normal_error_degrees": 3.224098269980046
+        },
+        {
+          "episode": 111,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 23.437369327766337
+        },
+        {
+          "episode": 112,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 1.1109333561268158
+        },
+        {
+          "episode": 113,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 2.297687066218143
+        },
+        {
+          "episode": 114,
+          "contact_samples": 24,
+          "median_face_normal_error_degrees": 2.985329478086964
+        },
+        {
+          "episode": 115,
+          "contact_samples": 19,
+          "median_face_normal_error_degrees": 3.22412448655361
+        },
+        {
+          "episode": 116,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 23.410402616764582
+        },
+        {
+          "episode": 117,
+          "contact_samples": 25,
+          "median_face_normal_error_degrees": 6.391397082838576
+        },
+        {
+          "episode": 118,
+          "contact_samples": 17,
+          "median_face_normal_error_degrees": 18.953567085181277
+        },
+        {
+          "episode": 119,
+          "contact_samples": 16,
+          "median_face_normal_error_degrees": 8.292809851770073
+        },
+        {
+          "episode": 120,
+          "contact_samples": 20,
+          "median_face_normal_error_degrees": 1.314125582355286
+        },
+        {
+          "episode": 121,
+          "contact_samples": 29,
+          "median_face_normal_error_degrees": 5.087708144999782
+        },
+        {
+          "episode": 122,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 1.526082708507419
+        },
+        {
+          "episode": 123,
+          "contact_samples": 22,
+          "median_face_normal_error_degrees": 37.386777676433354
+        },
+        {
+          "episode": 124,
+          "contact_samples": 27,
+          "median_face_normal_error_degrees": 15.47497754640744
+        },
+        {
+          "episode": 125,
+          "contact_samples": 21,
+          "median_face_normal_error_degrees": 9.727097011739337
+        },
+        {
+          "episode": 126,
+          "contact_samples": 15,
+          "median_face_normal_error_degrees": 18.661160047877182
+        },
+        {
+          "episode": 127,
+          "contact_samples": 23,
+          "median_face_normal_error_degrees": 19.99397265450679
+        }
+      ]
+    }
+  },
+  "real_robot": false
+}

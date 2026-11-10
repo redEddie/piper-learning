@@ -1,0 +1,45 @@
+{
+  "project_id": "ad33ce38-5b24-44a1-9f71-68352c17187f",
+  "show103": {
+    "id": "a4c9a580-431b-4666-b03d-02857127c488",
+    "issue_reference": "SHOW-103",
+    "updated_at": "2026-10-31T18:05:19.164618Z"
+  },
+  "lessons": {
+    "id": "740ca3e3-3fbe-48f2-adea-93a4ec11f8e4",
+    "sequence_id": 107,
+    "module_id": "2aaabbf2-0b4e-4aa8-b8f8-53774cd81e09"
+  },
+  "mlp_last_lstm": {
+    "id": "a4da68fd-c614-4b00-acb8-b2441139386c",
+    "sequence_id": 108,
+    "module_id": "54b142ae-c340-4a36-bf39-9c1199200365"
+  },
+  "branch": "codex/show103-mjx-3090",
+  "release_tag": "show103-v5-16u-20261101",
+  "observation_dr_20u": {
+    "id": "1815ae08-3a18-4159-8b68-199176f24f93",
+    "sequence_id": 114,
+    "state": "Done",
+    "issue_reference": "SHOW-114",
+    "branch": "codex/show108-obsdr-joint-a-20u",
+    "release_tag": "show108-mlp-lstm-obsdr-wide-20u-20261109",
+    "model_publication_commit": "2e3a751",
+    "results": "docs/show108/observation-dr/continuation-20u-results.md"
+  },
+  "home_objective_history": {
+    "id": "5d6e30cd-454f-4be8-9860-1be20bf8fc7e",
+    "sequence_id": 111,
+    "state": "Done",
+    "document": "docs/show111/home-objective-history.md"
+  },
+  "observation_dr_24u": {
+    "id": "1815ae08-3a18-4159-8b68-199176f24f93",
+    "sequence_id": 114,
+    "state": "Done",
+    "branch": "codex/show108-obsdr-joint-a-24u",
+    "release_tag": "show108-mlp-lstm-obsdr-wide-24u-20261109",
+    "model_publication_commit": "7d68aea",
+    "results": "docs/show108/observation-dr/continuation-24u-results.md"
+  }
+}

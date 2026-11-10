@@ -1,0 +1,8 @@
+{
+  "component": "learning",
+  "source_path_local_only": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/github-show103-handoff",
+  "source_git_commit": "370b29e1f521f612fdf9d8ba6206b7511191af77",
+  "live_sources_modified": false,
+  "extraction": "tracked snapshot for learning; selected modules for Studio/runtime",
+  "runtime_version": "0.4.0"
+}

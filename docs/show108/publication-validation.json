@@ -1,0 +1,72 @@
+{
+  "archive_sha256": "76377403300022c0f38c7055e766e0978c2e1be9f48d3595db3c0e2e865cd3d5",
+  "archive_members_verified": 11,
+  "checkpoint_load": "passed with original JAX loader on CPU",
+  "learner_keys": [
+    "params",
+    "normalizer",
+    "optimizer",
+    "rng",
+    "step"
+  ],
+  "inference_comparison": [
+    {
+      "start": "initial_a",
+      "steps": 64,
+      "bitwise_logits_and_carry_equal": true
+    },
+    {
+      "start": "pre_grasp",
+      "steps": 64,
+      "bitwise_logits_and_carry_equal": true
+    },
+    {
+      "start": "held",
+      "steps": 64,
+      "bitwise_logits_and_carry_equal": true
+    },
+    {
+      "start": "over_bowl",
+      "steps": 64,
+      "bitwise_logits_and_carry_equal": true
+    },
+    {
+      "start": "post_release",
+      "steps": 64,
+      "bitwise_logits_and_carry_equal": true
+    }
+  ],
+  "videos": [
+    {
+      "asset": "show108-16u-comparison-01-initial_a.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "92f418b533ce257883d19d44f2f569551ad0a602e6c3294cee123b58c32b55ce"
+    },
+    {
+      "asset": "show108-16u-comparison-02-pre_grasp.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "b9dbf8d02170eefdbd95d60713090517e115f270b67305e86fdcd623ce129c85"
+    },
+    {
+      "asset": "show108-16u-comparison-03-held.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "924016bc3cf2805de169b322758a83942621fcc8f85f4dcd968e5f8fbfe62a20"
+    },
+    {
+      "asset": "show108-16u-comparison-04-over_bowl.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "d99f02a45653095a353de0420cabd090d8f1c29a6e5eb61b93026949a01a852a"
+    },
+    {
+      "asset": "show108-16u-comparison-05-post_release.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "38feea5936d5135183fed5f2b09f80eed53be5551993aff53949e57a9072d87c"
+    }
+  ],
+  "implementation_changed": false
+}

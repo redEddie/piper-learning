@@ -1,0 +1,132 @@
+{
+  "version": "show103-position-random-v1",
+  "split": "train",
+  "seed": 41030,
+  "poses_per_stage": 64,
+  "native_stabilization_seconds": 0.3,
+  "records": [
+    {
+      "stage": 0,
+      "count": 64,
+      "attempts": 64,
+      "cube_xy_min": [
+        0.2517074537916951,
+        -0.19678030817959202
+      ],
+      "cube_xy_max": [
+        0.34826984287538687,
+        0.18196203550109324
+      ],
+      "bowl_xy_min": [
+        0.25307297819144103,
+        -0.19825729124700614
+      ],
+      "bowl_xy_max": [
+        0.3495126363015274,
+        0.1971377625601468
+      ],
+      "bilateral_held_contacts_verified": false
+    },
+    {
+      "stage": 1,
+      "count": 64,
+      "attempts": 71,
+      "cube_xy_min": [
+        0.2504572217106985,
+        -0.19089777872308233
+      ],
+      "cube_xy_max": [
+        0.34706999979347963,
+        0.17800043144677347
+      ],
+      "bowl_xy_min": [
+        0.25220720456994383,
+        -0.1955617363946205
+      ],
+      "bowl_xy_max": [
+        0.34659347503118637,
+        0.19781076826148186
+      ],
+      "bilateral_held_contacts_verified": false
+    },
+    {
+      "stage": 2,
+      "count": 64,
+      "attempts": 75,
+      "cube_xy_min": [
+        0.2523741305827868,
+        -0.19116295167402428
+      ],
+      "cube_xy_max": [
+        0.34881939605898454,
+        0.15448734063285877
+      ],
+      "bowl_xy_min": [
+        0.250498567237582,
+        -0.19298951666599473
+      ],
+      "bowl_xy_max": [
+        0.3482585388448771,
+        0.1980161487479951
+      ],
+      "bilateral_held_contacts_verified": true
+    },
+    {
+      "stage": 3,
+      "count": 64,
+      "attempts": 335,
+      "cube_xy_min": [
+        0.25121206256829365,
+        -0.12412088154702285
+      ],
+      "cube_xy_max": [
+        0.2838359817946682,
+        0.13355573087665423
+      ],
+      "bowl_xy_min": [
+        0.25046615921728427,
+        -0.12423999877228334
+      ],
+      "bowl_xy_max": [
+        0.28311837109361054,
+        0.13368170901393955
+      ],
+      "bilateral_held_contacts_verified": true
+    }
+  ],
+  "sha256": "8c4e444c3b833bff916ad42fd4c9e9810b5e509394a4550183c4ac37e596db36",
+  "geometry_sha256": "c9bfb04f742a5dd33664fb2745f4730ba4d9becdfd9291c61ab50467b1b67e05",
+  "physical_config": {
+    "robot_model": "piper_v100",
+    "base_height": 0.015,
+    "tcp_local_z": 0.1385,
+    "block_half": 0.025,
+    "block_mass": 0.07,
+    "bowl_r_bottom": 0.042,
+    "bowl_r_rim": 0.075,
+    "bowl_height": 0.067,
+    "bowl_floor": 0.003,
+    "bowl_wall": 0.003,
+    "bowl_mass": 0.11,
+    "gripper_max": 0.05,
+    "gripper_force": 3.0,
+    "gripper_kp": 400.0,
+    "finger_bridge": true
+  },
+  "joint1_pivot_world_xy": [
+    0.0,
+    0.0
+  ],
+  "sampling": "Coupled native-validated arm/cube pose bank plus continuous yaw; independent continuous empty cube/bowl draws; over-bowl is coupled",
+  "requested_xy_x": [
+    0.25,
+    0.35
+  ],
+  "requested_xy_y": [
+    -0.2,
+    0.2
+  ],
+  "max_radius": 0.4,
+  "minimum_free_cube_bowl_distance": 0.14,
+  "reward_history_prefilled": false
+}

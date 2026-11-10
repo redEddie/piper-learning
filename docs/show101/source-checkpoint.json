@@ -1,0 +1,23 @@
+{
+  "source": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648",
+  "source_code_commit": "f0c1161",
+  "cumulative_source_steps": 50331648,
+  "baseline_A_success": "351/384",
+  "files": {
+    "_METADATA": "b76c9842b1ae07f9035e6cc3459ae0899bc525be15af11c50b37af11236dee4d",
+    "_CHECKPOINT_METADATA": "344345650774396644fa730bc30a8e1c17cf87bde6bb7ef0311bd3d8a13dc2c6",
+    "ppo_network_config.json": "1b6fbb2a1d6af682968526f4fdde7377e6e3cf6ed33f8a67b910c4103b9c5ad1",
+    "commit_success.txt": "ad7f87c7f7e56e146eaf5d9c983d4fc7dd47a69058cf454f81150d39b04551cf",
+    "_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+    "manifest.ocdbt": "b95b3a7f69def4a433155bfe26504e91cf47d7715dbb4e6efa909fef8a1ce436",
+    "ocdbt.process_0/manifest.ocdbt": "bdf4d97696cb28219d0958d0fd0e38f4dc2d22d2f354c1740b2a174b7a5e30d0",
+    "array_metadatas/process_0": "811eb50242ca86394caf8c2b9002119288651cc913975f829b300a6359734085",
+    "d/9c9e8925b44ccaa8e34d5f60c76cb33e": "08007c169144235b3b684dfc6f534b0570db0b778d75628363224ad7d9cefe11",
+    "ocdbt.process_0/d/589d97effb5f7e63c5a8ac9433cfd091": "00555d49f3a088801d0b62a8c59571a393f2ca9de2a240eba06ad9e602e2fdee",
+    "ocdbt.process_0/d/bd3a5460a8a057b15529031ec770866a": "69041e1800da244f1107e564a74113e31c52331f626c721aee961370b64b5a90",
+    "ocdbt.process_0/d/1c07ff104227e570088064982e4ee278": "391f377c7995edddae27e0c0d357eed7e3290fed88b6cf644f9ce5b6a0d3af4a",
+    "ocdbt.process_0/d/d0ef4f5408cf721ec9963a3182d89d95": "cdf3ead9cf7f3a71b6d97006d07c4004d5d3d2835b8f120b7f2c6e2fc432a49b",
+    "ocdbt.process_0/d/9b525c030cb76c171a215abbbbe10e9f": "55d2f52ebe97ed0a83696b8202961a7411b8410ac87c775a45b016bf61df3df9",
+    "ocdbt.process_0/d/dba947d7167c2703132e9e7c83466076": "3ce9e8c66934b5ad56ab7ac389290eda60ef259ffb864f5e4954d167e420bc76"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "final_evaluation_confirmed": true,
+  "retained_final": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/balanced-continue-32m/checkpoints/000033554432",
+  "retained_source": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/balanced-fresh-16m/checkpoints/000016777216",
+  "removed": [
+    {
+      "path": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/balanced-continue-32m/checkpoints/000016777216",
+      "cumulative_transitions": 33554432,
+      "bytes": 641769,
+      "sha256": {
+        "_METADATA": "4b9ae67d13351e348ca88bc00f1365d32e9fa9936563e556d22b418348ebb9d0",
+        "_CHECKPOINT_METADATA": "8a073d579fe39439461b6c44e2deec4ca7b226e0cf06d814e8f272cc37ce1313",
+        "ppo_network_config.json": "10dd67820dd7319ffd7510b123086dd2f86debec01af9b3cb9d7931cc0ed40df",
+        "commit_success.txt": "fa68b6e31250efcd50b8e132e831e03f4de8c5b46fb46b4fc1b8b0beb412033e",
+        "_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+        "manifest.ocdbt": "a44dd47719ed3143b6ca4a41880aed0d08672edbbda8db24943b52ba3c9adf2f",
+        "ocdbt.process_0/manifest.ocdbt": "96cb864b9932e87dd7e5e706b85973941b368d12167d4b6b3b0d237228e29f3a",
+        "array_metadatas/process_0": "5e257d20367dd4e80bae8d98f784a3aec67be9fa25af16a7f7534731ac363462",
+        "d/eb3d74417ff4ffe1160cb91c3591aec8": "7f0682b8abac773aad5735b69d9e4f420f3563197c66187b175a43c7da7c6106",
+        "ocdbt.process_0/d/5050607008c220b0f1de3e3bdc10dd23": "fe464a7c7b444f60d7aa336ec0eba51165b2f247f72365dc9d091e1407010024",
+        "ocdbt.process_0/d/276f32dc5584a68e0ebda6c9688f4ff7": "beed66cfcebb0f3c25cd06979f83cb01b418eaf9de2c5ab49ccd38a6a4617629",
+        "ocdbt.process_0/d/6711e0358b4c60c9fe49173f892d009e": "1243acfc34488875abc4b5f1559c822ae5ab11e9ba827ee27a8cda45298b44ea",
+        "ocdbt.process_0/d/b9efefc48b0850049e82f103f4f3e18c": "2b98567c0cf46f7117af51ee865e7a57406fae91cdb069bd0c669edc89b8dbf6",
+        "ocdbt.process_0/d/a82d7cf0bd9e2438a346cfe1d76fc69d": "38a6f1f6c48c09e6399eac629249d53546bf8efb9a2695594099c402a726ab4f"
+      }
+    }
+  ],
+  "scope": "Only the new continuation midpoint removed; all pre-existing sources/releases/checkpoints preserved."
+}

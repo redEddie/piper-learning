@@ -1,0 +1,477 @@
+{
+  "scope": "MLP,1024 training envs; same20s horizon. Basic inside and strict supported release+contact-free withdrawal are distinct. Intermediate128 and final384 per mode; learning curves use paired seed2026/128.",
+  "results": {
+    "frozen-0": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 117,
+        "final_success_rate": 0.9140625,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 48,
+        "post_landing_recontact_episodes": 36,
+        "release_height_mm_median": 103.25579833984375,
+        "release_height_mm_mean": 100.87142181396484,
+        "precontact_downward_speed_m_s_median": 0.8389641046524048,
+        "failures": {
+          "approach": 5,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 2,
+          "completion_lost": 3,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "preinside": {
+        "episodes": 128,
+        "final_successes": 124,
+        "final_success_rate": 0.96875,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 56,
+        "post_landing_recontact_episodes": 56,
+        "release_height_mm_median": 94.96597290039062,
+        "release_height_mm_mean": 96.24273681640625,
+        "precontact_downward_speed_m_s_median": 0.7908279895782471,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 3,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.0003356933594,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 117,
+        "final_success_rate": 0.9140625,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 97,
+        "post_landing_recontact_episodes": 95,
+        "release_height_mm_median": 55.870330810546875,
+        "release_height_mm_mean": 56.027408599853516,
+        "precontact_downward_speed_m_s_median": 0.69168621301651,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 6,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 4,
+          "controller": 1,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 1,
+        "max_reference_speed_during_grip": 0.0
+      }
+    },
+    "interim-2097152": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 99,
+        "final_success_rate": 0.7734375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 14,
+        "post_landing_recontact_episodes": 4,
+        "release_height_mm_median": 122.99281311035156,
+        "release_height_mm_mean": 122.73725128173828,
+        "precontact_downward_speed_m_s_median": 1.0937035083770752,
+        "failures": {
+          "approach": 15,
+          "grasp_lift": 5,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 4,
+          "completion_lost": 4,
+          "controller": 1,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 1,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 118,
+        "final_success_rate": 0.921875,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 10,
+        "post_landing_recontact_episodes": 6,
+        "release_height_mm_median": 78.01625061035156,
+        "release_height_mm_mean": 82.56422424316406,
+        "precontact_downward_speed_m_s_median": 0.8136438131332397,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 3,
+          "completion_lost": 7,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      }
+    },
+    "interim-4194304": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 99,
+        "final_success_rate": 0.7734375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 17,
+        "post_landing_recontact_episodes": 1,
+        "release_height_mm_median": 112.74131774902344,
+        "release_height_mm_mean": 114.69953155517578,
+        "precontact_downward_speed_m_s_median": 1.307629108428955,
+        "failures": {
+          "approach": 6,
+          "grasp_lift": 8,
+          "held_start_lost": 0,
+          "transport": 2,
+          "place_release": 7,
+          "completion_lost": 5,
+          "controller": 1,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 1,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 121,
+        "final_success_rate": 0.9453125,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 6,
+        "post_landing_recontact_episodes": 2,
+        "release_height_mm_median": 80.49545288085938,
+        "release_height_mm_mean": 83.00743103027344,
+        "precontact_downward_speed_m_s_median": 0.8144183158874512,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 7,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      }
+    },
+    "interim-6291456": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 107,
+        "final_success_rate": 0.8359375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 8,
+        "post_landing_recontact_episodes": 1,
+        "release_height_mm_median": 115.68275451660156,
+        "release_height_mm_mean": 115.98126983642578,
+        "precontact_downward_speed_m_s_median": 1.0222294330596924,
+        "failures": {
+          "approach": 3,
+          "grasp_lift": 10,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 6,
+          "controller": 1,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 1,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 124,
+        "final_success_rate": 0.96875,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 2,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 103.2358169555664,
+        "release_height_mm_mean": 103.19569396972656,
+        "precontact_downward_speed_m_s_median": 0.827690839767456,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 4,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      }
+    },
+    "final-8m": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 353,
+        "final_success_rate": 0.9192708333333334,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 30,
+        "post_landing_recontact_episodes": 1,
+        "release_height_mm_median": 139.23643493652344,
+        "release_height_mm_mean": 140.25930786132812,
+        "precontact_downward_speed_m_s_median": 1.054027795791626,
+        "failures": {
+          "approach": 4,
+          "grasp_lift": 6,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 7,
+          "completion_lost": 10,
+          "controller": 3,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 3,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "mixed": {
+        "episodes": 384,
+        "final_successes": 360,
+        "final_success_rate": 0.9375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 34,
+        "post_landing_recontact_episodes": 4,
+        "release_height_mm_median": 137.8614501953125,
+        "release_height_mm_mean": 138.31753540039062,
+        "precontact_downward_speed_m_s_median": 0.9737315773963928,
+        "failures": {
+          "approach": 1,
+          "grasp_lift": 5,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 6,
+          "completion_lost": 11,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "preinside": {
+        "episodes": 384,
+        "final_successes": 367,
+        "final_success_rate": 0.9557291666666666,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 22,
+        "post_landing_recontact_episodes": 20,
+        "release_height_mm_median": 99.71369934082031,
+        "release_height_mm_mean": 103.6289291381836,
+        "precontact_downward_speed_m_s_median": 0.848089337348938,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 3,
+          "completion_lost": 14,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.0003356933594,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      },
+      "near": {
+        "episodes": 384,
+        "final_successes": 357,
+        "final_success_rate": 0.9296875,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 10,
+        "post_landing_recontact_episodes": 2,
+        "release_height_mm_median": 119.02518463134766,
+        "release_height_mm_mean": 115.90377044677734,
+        "precontact_downward_speed_m_s_median": 0.8304603099822998,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 8,
+          "completion_lost": 19,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.0
+      }
+    }
+  },
+  "points": [
+    {
+      "additional_steps": 0,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.9140625,
+          "gentle": 0.0,
+          "height": 100.87142944335938,
+          "recontact": 0.375
+        },
+        "preinside": {
+          "basic": 0.96875,
+          "gentle": 0.0,
+          "height": 96.24274444580078,
+          "recontact": 0.4375
+        },
+        "near": {
+          "basic": 0.9140625,
+          "gentle": 0.0,
+          "height": 56.02740478515625,
+          "recontact": 0.7578125
+        }
+      }
+    },
+    {
+      "additional_steps": 2097152,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.7734375,
+          "gentle": 0.0,
+          "height": 122.73725128173828,
+          "recontact": 0.109375
+        },
+        "near": {
+          "basic": 0.921875,
+          "gentle": 0.0,
+          "height": 82.5642318725586,
+          "recontact": 0.078125
+        }
+      }
+    },
+    {
+      "additional_steps": 4194304,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.7734375,
+          "gentle": 0.0,
+          "height": 114.69953918457031,
+          "recontact": 0.1328125
+        },
+        "near": {
+          "basic": 0.9453125,
+          "gentle": 0.0,
+          "height": 83.00743103027344,
+          "recontact": 0.046875
+        }
+      }
+    },
+    {
+      "additional_steps": 6291456,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.8359375,
+          "gentle": 0.0,
+          "height": 115.98126983642578,
+          "recontact": 0.0625
+        },
+        "near": {
+          "basic": 0.96875,
+          "gentle": 0.0,
+          "height": 103.19569396972656,
+          "recontact": 0.015625
+        }
+      }
+    },
+    {
+      "additional_steps": 8388608,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.921875,
+          "gentle": 0.0,
+          "height": 140.2940216064453,
+          "recontact": 0.125
+        },
+        "mixed": {
+          "basic": 0.953125,
+          "gentle": 0.0,
+          "height": 144.30252075195312,
+          "recontact": 0.09375
+        },
+        "preinside": {
+          "basic": 0.9609375,
+          "gentle": 0.0,
+          "height": 103.7021484375,
+          "recontact": 0.0625
+        },
+        "near": {
+          "basic": 0.9375,
+          "gentle": 0.0,
+          "height": 117.38582611083984,
+          "recontact": 0.0234375
+        }
+      }
+    }
+  ],
+  "preservation": {
+    "source_checkpoint_changed_files": [],
+    "original_source_changed_files": [],
+    "original_source_files_checked": 349
+  },
+  "real_robot": false
+}

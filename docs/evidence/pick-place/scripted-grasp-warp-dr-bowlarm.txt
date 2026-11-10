@@ -1,0 +1,11 @@
+# configs/pick_place_dr.yaml with reset_stage_probs [1,0,0,0] (the script assumes empty-hand starts): bowl-arm collision, obs/action randomization on; physics randomization is not applied by this script (plain vmap)
+block_half 0.025 block_mass 0.08
+env 0: at d=0.006 | w=0.0666 | lifted h=0.099 grasped=0 | above xy=0.001 | inside=1 block=[0.3490000069141388, 0.14900000393390656, 0.03099999949336052]
+env 1: at d=0.007 | w=0.0568 | lifted h=0.099 grasped=1 | above xy=0.007 | inside=1 block=[0.34599998593330383, 0.17599999904632568, 0.03099999949336052]
+env 2: at d=0.007 | w=0.0590 | lifted h=0.099 grasped=0 | above xy=0.003 | inside=1 block=[0.2879999876022339, 0.18799999356269836, 0.03099999949336052]
+env 3: at d=0.006 | w=0.0502 | lifted h=0.100 grasped=1 | above xy=0.002 | inside=1 block=[0.3449999988079071, 0.15700000524520874, 0.03099999949336052]
+env 4: at d=0.006 | w=0.0597 | lifted h=0.099 grasped=0 | above xy=0.001 | inside=1 block=[0.3190000057220459, 0.12099999934434891, 0.03099999949336052]
+env 5: at d=0.005 | w=0.0691 | lifted h=0.100 grasped=0 | above xy=0.002 | inside=1 block=[0.29100000858306885, 0.19300000369548798, 0.03099999949336052]
+env 6: at d=0.006 | w=0.0551 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.3149999976158142, 0.13199999928474426, 0.03099999949336052]
+env 7: at d=0.006 | w=0.0651 | lifted h=0.099 grasped=0 | above xy=0.002 | inside=1 block=[0.3449999988079071, 0.16899999976158142, 0.03099999949336052]
+warp scripted success 8 / 8 overflow 0.0

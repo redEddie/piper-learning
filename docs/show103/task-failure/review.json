@@ -1,0 +1,50 @@
+{
+  "status": "Task-failure termination implemented and validated; no learning.",
+  "task": "quadratic_release",
+  "config": "configs/show103/quadratic-fast-reset.yaml",
+  "failure_scope": [
+    "initial grasp not confirmed by12s for empty_hand/pregrasp starts",
+    "previously lifted cube lands on table without bowl-floor support: no finger contact, speed<=.02m/s continuously.1s"
+  ],
+  "grasp_confirmation": "Bilateral finger contact continuously.1s; lift is not required for grasp confirmation.",
+  "controller_interruptions": "Separate logged termination, no task-failure settlement. Protective checks retained.",
+  "actor_observations": 50,
+  "critic_observations": 67,
+  "cpu_tests_passed": 42,
+  "gpu_validation": {
+    "environments": 64,
+    "policy_transitions": 15360,
+    "table_drop_first_failure_s": 0.4,
+    "table_drop_reason": 2,
+    "no_failure_during_initial_100ms_flight": true,
+    "bowl_landing_first_reset_s": 20.0,
+    "bowl_landing_task_failure_before_reset": false,
+    "first_grasp_timeout_s": 12.0,
+    "grasp_timeouts": 124,
+    "outside_drops": 1,
+    "controller_interruptions": 1,
+    "injected_controller_tail": 0.0,
+    "injected_controller_task_failure": false,
+    "max_settlement_error": 0.0,
+    "all_failures_reset_immediately": true,
+    "all_failed_slots_start_fresh": true,
+    "absorbing_slots": 0,
+    "positive_failure_reward_base": 0.0,
+    "physical_nonfinite": 0.0,
+    "capacity_overflow": 0.0,
+    "all_rewards_finite": true,
+    "training_run": false,
+    "real_robot": false,
+    "scope": "Fixed actions and constructed physical scenes; no learned-policy success-rate evaluation."
+  },
+  "max_fast_absorbing_return_error": 3.2765846697202505e-05,
+  "original_source_verification": {
+    "files_checked": 349,
+    "changed": []
+  },
+  "threshold_status": "Initial values; no training-based validation.",
+  "caveat": "The fixed-cost discounted tail reference and fast settlement have matching returns, not necessarily identical GAE/loss distributions. The GPU fixtures do not measure learned-policy task success.",
+  "training_run": false,
+  "real_robot": false,
+  "plane_modified": false
+}

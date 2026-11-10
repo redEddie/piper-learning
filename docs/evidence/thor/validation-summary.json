@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-21T09:21:11.461794+00:00",
+  "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+  "machine": "aarch64",
+  "python": "3.12.3",
+  "python_executable": "/home/pi_lab/robot/envs/policy-r1/bin/python",
+  "numpy": "1.26.4",
+  "cpu_count": 14,
+  "thread_settings": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "script_sha256": "f3b5e0d749c176a9ab4338ce56867a38660d3c4fca7d7890989181ae07fc215e",
+  "release_path": "/home/pi_lab/robot/releases/thor-20261021-r1",
+  "release_manifest_sha256": "ff1d0d5b2d5656bd4caf11226693eaa91f66ed9e37cfa9dbc66f421e07c156bb",
+  "batch_size": 1,
+  "warmup_per_round": 256,
+  "samples_per_round": 2000,
+  "rounds": 5,
+  "timing_scope": "warm NumPy Policy.step only; includes normalization and recurrent state update; excludes input construction, model loading, vision, IK, SDK, scheduling and I/O",
+  "input_source": "synthetic golden export vectors; not live camera or robot data",
+  "hardware_commands_sent": false,
+  "forbidden_imports_found": [],
+  "policies": {
+    "lstm128": {
+      "parity": {
+        "status": "passed",
+        "actor": "lstm",
+        "steps": 80,
+        "batch": 4,
+        "max_action_abs_error": 8.642673492431641e-07,
+        "policy_only_cpu_latency_ms": {
+          "p50": 0.12814399997296277,
+          "p95": 0.13572650059359145
+        },
+        "robot_connection": "none",
+        "scope": "synthetic export parity vectors; not a task success evaluation"
+      },
+      "weights_sha256": "290dbd24ba629c68f851fe31dd5ea3306e8bb7ec638b916f993547991a0174ed",
+      "policy_json_sha256": "b3a8652322b2648967ecd12c8db741709ce61688ce5bd9e202b4a2c766411e97",
+      "golden_sha256": "385e637f6a398a180e0cd2e1c7e66a78e254935631305341e12ed95acce31711",
+      "training_steps": 16777216,
+      "aggregate_latency_ms": {
+        "count": 10000,
+        "p50": 0.135139,
+        "p95": 0.1419649,
+        "p99": 0.14860237,
+        "max": 0.173723,
+        "mean": 0.13575036509999996
+      },
+      "round_statistics": [
+        {
+          "round": 0,
+          "order": 0,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.135287,
+            "p95": 0.14139545,
+            "p99": 0.1479731,
+            "max": 0.156916,
+            "mean": 0.135821507
+          }
+        },
+        {
+          "round": 1,
+          "order": 2,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.135167,
+            "p95": 0.1429549,
+            "p99": 0.15006501,
+            "max": 0.154759,
+            "mean": 0.1358101185
+          }
+        },
+        {
+          "round": 2,
+          "order": 1,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.134833,
+            "p95": 0.14171395,
+            "p99": 0.148519,
+            "max": 0.173723,
+            "mean": 0.1354886425
+          }
+        },
+        {
+          "round": 3,
+          "order": 0,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.13526,
+            "p95": 0.1424947,
+            "p99": 0.14888796,
+            "max": 0.157168,
+            "mean": 0.135938973
+          }
+        },
+        {
+          "round": 4,
+          "order": 2,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.135103,
+            "p95": 0.14175235,
+            "p99": 0.14755031000000002,
+            "max": 0.156166,
+            "mean": 0.13569258450000002
+          }
+        }
+      ]
+    },
+    "matched-mlp": {
+      "parity": {
+        "status": "passed",
+        "actor": "mlp",
+        "steps": 80,
+        "batch": 4,
+        "max_action_abs_error": 4.172325134277344e-07,
+        "policy_only_cpu_latency_ms": {
+          "p50": 0.05360200157156214,
+          "p95": 0.05470534961204976
+        },
+        "robot_connection": "none",
+        "scope": "synthetic export parity vectors; not a task success evaluation"
+      },
+      "weights_sha256": "4e8bb5e0ab7d33f5d32975abd78575993e6e8b542c94f6c7e884d155073e9b63",
+      "policy_json_sha256": "ee1e9b19a3d47836c3285270ff48faa2f67fa9e58e02ffdfc886766ea558499f",
+      "golden_sha256": "d0ffcd0df9d65c729cbfe442114dc65ec776c15cfeb85d834a131e6ce55a0d69",
+      "training_steps": 16777216,
+      "aggregate_latency_ms": {
+        "count": 10000,
+        "p50": 0.054593,
+        "p95": 0.05575,
+        "p99": 0.06108408,
+        "max": 0.096796,
+        "mean": 0.0547594739
+      },
+      "round_statistics": [
+        {
+          "round": 0,
+          "order": 1,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.054805,
+            "p95": 0.05583305,
+            "p99": 0.06060487,
+            "max": 0.096796,
+            "mean": 0.0549703565
+          }
+        },
+        {
+          "round": 1,
+          "order": 0,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.054797,
+            "p95": 0.055899399999999995,
+            "p99": 0.06117646,
+            "max": 0.068806,
+            "mean": 0.054971729500000004
+          }
+        },
+        {
+          "round": 2,
+          "order": 2,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.054518,
+            "p95": 0.05567645,
+            "p99": 0.06092674,
+            "max": 0.066593,
+            "mean": 0.05467820150000001
+          }
+        },
+        {
+          "round": 3,
+          "order": 1,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.054435,
+            "p95": 0.055611,
+            "p99": 0.061400720000000006,
+            "max": 0.068574,
+            "mean": 0.054609361999999995
+          }
+        },
+        {
+          "round": 4,
+          "order": 0,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.054416,
+            "p95": 0.05551945,
+            "p99": 0.0606503,
+            "max": 0.064398,
+            "mean": 0.05456772
+          }
+        }
+      ]
+    },
+    "p10-mlp-67m": {
+      "parity": {
+        "status": "passed",
+        "actor": "mlp",
+        "steps": 80,
+        "batch": 4,
+        "max_action_abs_error": 5.960464477539062e-07,
+        "policy_only_cpu_latency_ms": {
+          "p50": 0.05272750058793463,
+          "p95": 0.05382540184655227
+        },
+        "robot_connection": "none",
+        "scope": "synthetic export parity vectors; not a task success evaluation"
+      },
+      "weights_sha256": "c15abb9e867aaabc03ce81cbc376a5672ad64b217ee03a631b72be2ae61261cc",
+      "policy_json_sha256": "638a43e530bd2419e3ad604ed11f2c1ffe8795d2f5c449c43f4500b39528c7af",
+      "golden_sha256": "ad0f6ee704e5d67508a9ec515a03a5c86009b30c24d09223dcd4812fe34a7795",
+      "training_steps": 67108864,
+      "aggregate_latency_ms": {
+        "count": 10000,
+        "p50": 0.055769,
+        "p95": 0.057177,
+        "p99": 0.062657,
+        "max": 0.079315,
+        "mean": 0.0559199347
+      },
+      "round_statistics": [
+        {
+          "round": 0,
+          "order": 2,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.055894,
+            "p95": 0.057343899999999996,
+            "p99": 0.0626313,
+            "max": 0.069176,
+            "mean": 0.05605937250000001
+          }
+        },
+        {
+          "round": 1,
+          "order": 1,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.055778,
+            "p95": 0.0571304,
+            "p99": 0.06280556,
+            "max": 0.066018,
+            "mean": 0.055917575
+          }
+        },
+        {
+          "round": 2,
+          "order": 0,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.0558525,
+            "p95": 0.05724145,
+            "p99": 0.0627221,
+            "max": 0.065371,
+            "mean": 0.05600265
+          }
+        },
+        {
+          "round": 3,
+          "order": 2,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.055648,
+            "p95": 0.05700905,
+            "p99": 0.062648,
+            "max": 0.068027,
+            "mean": 0.0558026945
+          }
+        },
+        {
+          "round": 4,
+          "order": 1,
+          "latency_ms": {
+            "count": 2000,
+            "p50": 0.055676,
+            "p95": 0.05706405,
+            "p99": 0.06229985,
+            "max": 0.079315,
+            "mean": 0.055817381500000006
+          }
+        }
+      ]
+    }
+  }
+}

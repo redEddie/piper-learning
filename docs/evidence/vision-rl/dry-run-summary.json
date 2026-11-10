@@ -1,0 +1,564 @@
+{
+  "pipeline": {
+    "schema_version": 1,
+    "mode": "single_camera_snapshot_diagnostic_dry_run",
+    "hardware_commands_sent": false,
+    "control_ready": false,
+    "stages": [
+      {
+        "name": "capture",
+        "command": [
+          "/home/pi_lab/songjisu/envs/perception/bin/python",
+          "/home/pi_lab/robot/adapters/shadow-20261021-r1/capture_shadow_inputs.py",
+          "--output",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline",
+          "--can",
+          "can_piper"
+        ],
+        "started_wall_time_ns": 1792575385312020826,
+        "ended_wall_time_ns": 1792575392264981734,
+        "duration_s": 6.95296163,
+        "returncode": 0
+      },
+      {
+        "name": "segment",
+        "command": [
+          "/home/pi_lab/songjisu/envs/perception/bin/python",
+          "/home/pi_lab/songjisu/show33/scripts/segment.py",
+          "--run",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/camera",
+          "--objects",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/task.json"
+        ],
+        "started_wall_time_ns": 1792575392265911162,
+        "ended_wall_time_ns": 1792575426041378428,
+        "duration_s": 33.775468146,
+        "returncode": 0
+      },
+      {
+        "name": "pose_geom",
+        "command": [
+          "/home/pi_lab/songjisu/envs/perception/bin/python",
+          "/home/pi_lab/songjisu/show33/scripts/pose_geom.py",
+          "--run",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/camera",
+          "--objects",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/task.json",
+          "--calib",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/calibration_snapshot.json"
+        ],
+        "started_wall_time_ns": 1792575426041853411,
+        "ended_wall_time_ns": 1792575426870166099,
+        "duration_s": 0.828313243,
+        "returncode": 0
+      },
+      {
+        "name": "export_poses",
+        "command": [
+          "/home/pi_lab/songjisu/envs/perception/bin/python",
+          "/home/pi_lab/songjisu/show33/scripts/export_poses.py",
+          "--run",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/camera",
+          "--objects",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/task.json",
+          "--calib",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/calibration_snapshot.json",
+          "--estimator",
+          "geometric"
+        ],
+        "started_wall_time_ns": 1792575426870555322,
+        "ended_wall_time_ns": 1792575427162321307,
+        "duration_s": 0.291766605,
+        "returncode": 0
+      },
+      {
+        "name": "strict_gate",
+        "command": [
+          "/home/pi_lab/robot/envs/policy-r1/bin/python",
+          "-m",
+          "piper_policy_runtime.shadow",
+          "--vision",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/camera/object_poses.json",
+          "--robot-state",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/robot_feedback.json",
+          "--calibration",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/calibration_snapshot.json",
+          "--model-xml",
+          "/home/pi_lab/robot/adapters/shadow-20261021-r1/assets/piper.xml",
+          "--policies",
+          "/home/pi_lab/robot/releases/thor-20261021-r1/policies",
+          "--block-id",
+          "green_block",
+          "--bowl-id",
+          "bowl",
+          "--virtual-target-at-measured",
+          "--output",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/strict"
+        ],
+        "started_wall_time_ns": 1792575427162684095,
+        "ended_wall_time_ns": 1792575427297942515,
+        "duration_s": 0.135258874,
+        "returncode": 2
+      },
+      {
+        "name": "diagnostic",
+        "command": [
+          "/home/pi_lab/robot/envs/policy-r1/bin/python",
+          "-m",
+          "piper_policy_runtime.shadow",
+          "--vision",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/camera/object_poses.json",
+          "--robot-state",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/robot_feedback.json",
+          "--calibration",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/calibration_snapshot.json",
+          "--model-xml",
+          "/home/pi_lab/robot/adapters/shadow-20261021-r1/assets/piper.xml",
+          "--policies",
+          "/home/pi_lab/robot/releases/thor-20261021-r1/policies",
+          "--block-id",
+          "green_block",
+          "--bowl-id",
+          "bowl",
+          "--virtual-target-at-measured",
+          "--output",
+          "/home/pi_lab/robot/results/vision-rl-20261021T092756Z-pipeline/diagnostic",
+          "--diagnostic-only"
+        ],
+        "started_wall_time_ns": 1792575427298241126,
+        "ended_wall_time_ns": 1792575427442316361,
+        "duration_s": 0.144075781,
+        "returncode": 0
+      }
+    ],
+    "status": "diagnostic_completed",
+    "policy_evaluated": true,
+    "strict_status": "blocked",
+    "warnings": [
+      "camera_to_base_calibration_untrusted",
+      "joint_velocity_feedback_scale_requires_hardware_validation",
+      "measured_gripper_width_exceeds_training_range",
+      "virtual_joint_target_initialized_at_measured_q_not_actual_servo_target",
+      "physical_object_dimensions_not_verified",
+      "block_x_outside_training_reset_region",
+      "block_y_outside_training_reset_region",
+      "block_below_training_table_z",
+      "bowl_x_outside_training_reset_region",
+      "bowl_y_outside_training_reset_region",
+      "training_kinematics_used_real_robot_fk_tcp_not_yet_validated",
+      "offline_snapshot_replay_not_live_control"
+    ],
+    "snapshot_age_at_policy_s": 39.737145805,
+    "capture_can_tx_packets_delta": 0,
+    "duration_s": 42.130964611
+  },
+  "telemetry": {
+    "schema_version": 1,
+    "source": "passive_socketcan_receive_only",
+    "reference_frame_host_monotonic_ns": 31042343730103,
+    "q_rad": [
+      1.6235227234976453,
+      0.0,
+      0.0,
+      0.0,
+      0.4138873788179353,
+      -0.2419899007890138
+    ],
+    "qvel_rad_s": [
+      0.0,
+      0.0,
+      0.0,
+      0.036000000000000004,
+      0.0,
+      0.0
+    ],
+    "gripper_full_width_m": 0.0963,
+    "gripper_status_code": 0,
+    "freshness_limit_s": 0.1,
+    "telemetry_fresh_at_frame": true,
+    "feedback_components": {
+      "0x2A5": {
+        "received_count": 719,
+        "missing": false,
+        "host_wall_time_ns": 1792575387662797113,
+        "host_monotonic_ns": 31042339298713,
+        "age_at_frame_s": 0.00443139,
+        "stale": false,
+        "fresh": true
+      },
+      "0x2A6": {
+        "received_count": 718,
+        "missing": false,
+        "host_wall_time_ns": 1792575387662933595,
+        "host_monotonic_ns": 31042339435213,
+        "age_at_frame_s": 0.00429489,
+        "stale": false,
+        "fresh": true
+      },
+      "0x2A7": {
+        "received_count": 718,
+        "missing": false,
+        "host_wall_time_ns": 1792575387663045957,
+        "host_monotonic_ns": 31042339547566,
+        "age_at_frame_s": 0.004182537,
+        "stale": false,
+        "fresh": true
+      },
+      "0x251": {
+        "received_count": 359,
+        "missing": false,
+        "host_wall_time_ns": 1792575387658310530,
+        "host_monotonic_ns": 31042334812149,
+        "age_at_frame_s": 0.008917954,
+        "stale": false,
+        "fresh": true
+      },
+      "0x252": {
+        "received_count": 359,
+        "missing": false,
+        "host_wall_time_ns": 1792575387658419253,
+        "host_monotonic_ns": 31042334920852,
+        "age_at_frame_s": 0.008809251,
+        "stale": false,
+        "fresh": true
+      },
+      "0x253": {
+        "received_count": 359,
+        "missing": false,
+        "host_wall_time_ns": 1792575387658595485,
+        "host_monotonic_ns": 31042335097094,
+        "age_at_frame_s": 0.008633009,
+        "stale": false,
+        "fresh": true
+      },
+      "0x254": {
+        "received_count": 359,
+        "missing": false,
+        "host_wall_time_ns": 1792575387658675189,
+        "host_monotonic_ns": 31042335176789,
+        "age_at_frame_s": 0.008553314,
+        "stale": false,
+        "fresh": true
+      },
+      "0x255": {
+        "received_count": 359,
+        "missing": false,
+        "host_wall_time_ns": 1792575387658783522,
+        "host_monotonic_ns": 31042335285140,
+        "age_at_frame_s": 0.008444963,
+        "stale": false,
+        "fresh": true
+      },
+      "0x256": {
+        "received_count": 358,
+        "missing": false,
+        "host_wall_time_ns": 1792575387659022412,
+        "host_monotonic_ns": 31042335524021,
+        "age_at_frame_s": 0.008206082,
+        "stale": false,
+        "fresh": true
+      },
+      "0x2A8": {
+        "received_count": 718,
+        "missing": false,
+        "host_wall_time_ns": 1792575387663182105,
+        "host_monotonic_ns": 31042339683733,
+        "age_at_frame_s": 0.00404637,
+        "stale": false,
+        "fresh": true
+      }
+    },
+    "errors": [],
+    "time_alignment": "Host receipt before final color frame host receipt; not hardware timestamp synchronization.",
+    "joint_speed_note": "0x251..0x256 motor-speed feedback, SDK unit 0.001 rad/s; hardware scaling validation remains pending.",
+    "hardware_commands_sent": false,
+    "can_interface": "can_piper",
+    "camera_frame_host_wall_time_ns": 1792575387667230355
+  },
+  "vision": {
+    "frame": "piper_base_link",
+    "units": "m",
+    "stamp": "2026-10-21T18:37:07+09:00",
+    "camera_to_base": {
+      "source": "robot_markerless",
+      "T": [
+        [
+          -0.347943,
+          -0.060099,
+          0.935587,
+          -0.465788
+        ],
+        [
+          -0.936892,
+          -0.014117,
+          -0.349334,
+          0.379684
+        ],
+        [
+          0.034202,
+          -0.998093,
+          -0.051395,
+          0.100874
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "objects": [
+      {
+        "id": "green_block",
+        "pos": [
+          0.0853,
+          0.0712,
+          -0.0052
+        ],
+        "quat_wxyz": [
+          0.99024,
+          -0.0,
+          0.0,
+          -0.1394
+        ],
+        "mesh": null,
+        "size": {
+          "type": "box",
+          "half_extents": [
+            0.025,
+            0.025,
+            0.025
+          ],
+          "source": "policy configuration, unverified physical size"
+        },
+        "estimator": "geometric",
+        "checks": {
+          "height_measured_m": 0.0335,
+          "height_expected_m": 0.05,
+          "top_rect_mm": [
+            29.1,
+            44.1
+          ]
+        }
+      },
+      {
+        "id": "bowl",
+        "pos": [
+          0.1862,
+          0.0681,
+          0.073
+        ],
+        "quat_wxyz": [
+          1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mesh": null,
+        "size": {
+          "type": "bowl",
+          "rim_radius": 0.075,
+          "height": 0.05,
+          "source": "policy configuration, unverified physical size"
+        },
+        "estimator": "geometric",
+        "checks": {
+          "height_measured_m": 0.0529,
+          "height_expected_m": 0.05,
+          "rim_radius_measured_m": 0.0428,
+          "rim_radius_expected_m": 0.075
+        }
+      }
+    ]
+  },
+  "segmentation": {
+    "green_block": {
+      "found": true,
+      "phrase": "green cube",
+      "score": 0.965,
+      "n_candidates": 1,
+      "area_px": 8026,
+      "depth_valid_ratio": 0.982
+    },
+    "bowl": {
+      "found": true,
+      "phrase": "bowl",
+      "score": 0.492,
+      "n_candidates": 1,
+      "area_px": 14028,
+      "depth_valid_ratio": 0.944
+    }
+  },
+  "commands": [
+    {
+      "policy": "lstm128",
+      "weights_sha256": "290dbd24ba629c68f851fe31dd5ea3306e8bb7ec638b916f993547991a0174ed",
+      "normalized_action": [
+        -0.4366716146469116,
+        -0.9258344173431396,
+        -0.4505580961704254,
+        0.08474934846162796,
+        0.6772283315658569,
+        -0.47327694296836853,
+        0.7112950682640076
+      ],
+      "single_call_latency_ms": 0.320621,
+      "proposed_simulation_command": {
+        "normalized_action": [
+          -0.4366716146469116,
+          -0.9258344173431396,
+          -0.4505580961704254,
+          0.08474934846162796,
+          0.6772283315658569,
+          -0.47327694296836853,
+          0.7112950682640076
+        ],
+        "tcp_twist_mps_radps": [
+          -0.043667161464691163,
+          -0.09258344173431397,
+          -0.045055809617042544,
+          0.08474934846162796,
+          0.6772283315658569,
+          -0.47327694296836853
+        ],
+        "joint_velocity_radps": [
+          -0.43815349300651985,
+          -0.8205254626733082,
+          0.14566151560282828,
+          0.48987966806920313,
+          0.5570206152182707,
+          0.1985574242298099
+        ],
+        "joint_target_rad": [
+          1.5797073741969934,
+          0.0,
+          0.0,
+          0.048987966806920316,
+          0.46958944033976235,
+          -0.2221341583660328
+        ],
+        "gripper_finger_target_m": 0.035,
+        "gripper_width_target_m": 0.07,
+        "hardware_commands_sent": false,
+        "physical_effort_mapping": "not_calibrated"
+      },
+      "real_gripper_effort_command": null,
+      "hardware_commands_sent": false,
+      "control_ready": false
+    },
+    {
+      "policy": "matched-mlp",
+      "weights_sha256": "4e8bb5e0ab7d33f5d32975abd78575993e6e8b542c94f6c7e884d155073e9b63",
+      "normalized_action": [
+        0.8350614309310913,
+        -0.9596043229103088,
+        -0.9184331893920898,
+        -0.3076605200767517,
+        0.8358542919158936,
+        -0.9753550887107849,
+        0.998420238494873
+      ],
+      "single_call_latency_ms": 0.105511,
+      "proposed_simulation_command": {
+        "normalized_action": [
+          0.8350614309310913,
+          -0.9596043229103088,
+          -0.9184331893920898,
+          -0.3076605200767517,
+          0.8358542919158936,
+          -0.9753550887107849,
+          0.998420238494873
+        ],
+        "tcp_twist_mps_radps": [
+          0.08350614309310914,
+          -0.09596043229103089,
+          -0.091843318939209,
+          -0.3076605200767517,
+          0.8358542919158936,
+          -0.9753550887107849
+        ],
+        "joint_velocity_radps": [
+          -0.8317710317052613,
+          -0.5694536528087462,
+          0.07293403258555983,
+          0.3572725926221561,
+          0.7610892033688976,
+          0.5235702386762815
+        ],
+        "joint_target_rad": [
+          1.540345620327119,
+          0.0,
+          0.0,
+          0.035727259262215615,
+          0.48999629915482507,
+          -0.18963287692138564
+        ],
+        "gripper_finger_target_m": 0.035,
+        "gripper_width_target_m": 0.07,
+        "hardware_commands_sent": false,
+        "physical_effort_mapping": "not_calibrated"
+      },
+      "real_gripper_effort_command": null,
+      "hardware_commands_sent": false,
+      "control_ready": false
+    },
+    {
+      "policy": "p10-mlp-67m",
+      "weights_sha256": "c15abb9e867aaabc03ce81cbc376a5672ad64b217ee03a631b72be2ae61261cc",
+      "normalized_action": [
+        0.9577575922012329,
+        -0.9742830991744995,
+        -0.4330555498600006,
+        -0.7491457462310791,
+        -0.9007875919342041,
+        -0.9989345073699951,
+        0.6596405506134033
+      ],
+      "single_call_latency_ms": 0.09088,
+      "proposed_simulation_command": {
+        "normalized_action": [
+          0.9577575922012329,
+          -0.9742830991744995,
+          -0.4330555498600006,
+          -0.7491457462310791,
+          -0.9007875919342041,
+          -0.9989345073699951,
+          0.6596405506134033
+        ],
+        "tcp_twist_mps_radps": [
+          0.0957757592201233,
+          -0.09742830991744995,
+          -0.04330555498600006,
+          -0.7491457462310791,
+          -0.9007875919342041,
+          -0.9989345073699951
+        ],
+        "joint_velocity_radps": [
+          -1.1259508277799384,
+          0.09948439853883974,
+          -0.4183302891982646,
+          -0.32578530749970586,
+          1.112582362129791,
+          -0.555673322855184
+        ],
+        "joint_target_rad": [
+          1.5109276407196515,
+          0.009948439853883974,
+          -0.04183302891982646,
+          -0.03257853074997059,
+          0.5251456150309144,
+          -0.2975572330745322
+        ],
+        "gripper_finger_target_m": 0.035,
+        "gripper_width_target_m": 0.07,
+        "hardware_commands_sent": false,
+        "physical_effort_mapping": "not_calibrated"
+      },
+      "real_gripper_effort_command": null,
+      "hardware_commands_sent": false,
+      "control_ready": false
+    }
+  ],
+  "verified_evidence_files": 25
+}

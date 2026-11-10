@@ -1,0 +1,161 @@
+{
+  "project": "SHOW-103",
+  "release_tag": "show103-v5-16u-20261101",
+  "branch": "codex/show103-mjx-3090",
+  "training_code_commit": "2177b9ec1107585c23df830fe671cd2cedb487e2",
+  "config_sha256": "38fd34b614bd7e0b3916d3579ee21e3e936aaf82b543014b5d77501c9539e0ca",
+  "cumulative_units": 16,
+  "cumulative_transitions": 134217728,
+  "checkpoint_layout": "show103-v5-16u/training/checkpoints/000016777216 with training/config.json required by the loader",
+  "checkpoint_members": [
+    {
+      "path": "training/checkpoints/000016777216/learner.msgpack",
+      "bytes": 3263906,
+      "sha256": "b713bae01374a72e6121a5a8a4ab2de7c1e11e6e77de5f8ce2bbf2d867d1c3a1"
+    },
+    {
+      "path": "training/checkpoints/000016777216/metadata.json",
+      "bytes": 545,
+      "sha256": "ce3af6728a296aedf3549ed489768eac25a04442321fe35d880859b0006f4538"
+    },
+    {
+      "path": "training/config.json",
+      "bytes": 7509,
+      "sha256": "10a4419cd86a19ec03dcb97e3f49b6274f2861ace800a5df9e3c2f183c645393"
+    },
+    {
+      "path": "training/provenance.json",
+      "bytes": 5062,
+      "sha256": "5dcbcc32607d1ae40260523720e670faab9d4b6afcec2342ed01d82fe8a03446"
+    },
+    {
+      "path": "training/reward-settings.json",
+      "bytes": 1253,
+      "sha256": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2"
+    },
+    {
+      "path": "training/reset-bank.json",
+      "bytes": 279305,
+      "sha256": "704d2587cf1d7e4a25c23bbc81f2ea361f53decc3321c5643774975be305f6c1"
+    },
+    {
+      "path": "training/continuation.json",
+      "bytes": 420,
+      "sha256": "754a5b219fcf968f0c18bd170634d7126762e708c369633b4005f2ef2757d2da"
+    },
+    {
+      "path": "training/summary.json",
+      "bytes": 489,
+      "sha256": "df4ca967083a335193c457733ad6d61fedc66a8aef744009130f6ac831cf5bf1"
+    },
+    {
+      "path": "training.yaml",
+      "bytes": 3197,
+      "sha256": "38fd34b614bd7e0b3916d3579ee21e3e936aaf82b543014b5d77501c9539e0ca"
+    }
+  ],
+  "video_selection": "Five first cases seed2026/scene0 plus one explicitly selected stage5 success seed2026/scene7; selected case first met completion at3.8s; videos include later motion",
+  "metrics": {
+    "initial_a": {
+      "episodes": 384,
+      "local_success": 384,
+      "final_complete": 200,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "open_command_episodes": 384,
+      "high_drop_success": 0,
+      "home_complete": 200,
+      "local_success_rate": 1.0,
+      "first_max_A_error_deg_median": 0.1098283901810646,
+      "final_max_A_error_deg_median": 12.358470916748047,
+      "best_max_A_error_deg_median": 0.1098283901810646,
+      "A_error_improved_episodes": 0,
+      "drop_height_mm_median": 53.249759674072266,
+      "drop_at_most70mm": 362
+    },
+    "pre_grasp": {
+      "episodes": 384,
+      "local_success": 384,
+      "final_complete": 298,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "open_command_episodes": 384,
+      "high_drop_success": 0,
+      "home_complete": 298,
+      "local_success_rate": 1.0,
+      "first_max_A_error_deg_median": 82.94325256347656,
+      "final_max_A_error_deg_median": 11.730642318725586,
+      "best_max_A_error_deg_median": 7.809505939483643,
+      "A_error_improved_episodes": 384,
+      "drop_height_mm_median": 52.074363708496094,
+      "drop_at_most70mm": 361
+    },
+    "held": {
+      "episodes": 384,
+      "local_success": 384,
+      "final_complete": 286,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "open_command_episodes": 384,
+      "high_drop_success": 0,
+      "home_complete": 286,
+      "local_success_rate": 1.0,
+      "first_max_A_error_deg_median": 86.92679595947266,
+      "final_max_A_error_deg_median": 11.571969985961914,
+      "best_max_A_error_deg_median": 8.266426086425781,
+      "A_error_improved_episodes": 384,
+      "drop_height_mm_median": 52.368873596191406,
+      "drop_at_most70mm": 366
+    },
+    "over_bowl": {
+      "episodes": 384,
+      "local_success": 384,
+      "final_complete": 169,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "open_command_episodes": 384,
+      "high_drop_success": 0,
+      "home_complete": 169,
+      "local_success_rate": 1.0,
+      "first_max_A_error_deg_median": 96.04751586914062,
+      "final_max_A_error_deg_median": 16.099510192871094,
+      "best_max_A_error_deg_median": 11.779541015625,
+      "A_error_improved_episodes": 384,
+      "drop_height_mm_median": 82.04048156738281,
+      "drop_at_most70mm": 102
+    },
+    "post_release": {
+      "episodes": 384,
+      "local_success": 79,
+      "final_complete": 79,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "open_command_episodes": 384,
+      "high_drop_success": 0,
+      "home_complete": 79,
+      "local_success_rate": 0.20572916666666666,
+      "first_max_A_error_deg_median": 96.0319595336914,
+      "final_max_A_error_deg_median": 16.072965621948242,
+      "best_max_A_error_deg_median": 14.926469802856445,
+      "A_error_improved_episodes": 384,
+      "drop_height_mm_median": 31.424358367919922,
+      "drop_at_most70mm": 384
+    }
+  },
+  "limitations": [
+    "Single training seed7",
+    "Stage5 local success20.6%; full task frominitial_a52.1%",
+    "Goal achievements are latched; sustained end-of-episode A accuracy is a separate metric",
+    "No real robot run and no validated portable Transformer export"
+  ]
+}

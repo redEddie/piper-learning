@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "cpu_tests_passed": 28,
+  "cpu_test_duration_seconds": 5.5,
+  "synthetic_scenarios": 12,
+  "incentive_assertions_passed": 18,
+  "batch_math_and_memory_checked": 4096,
+  "gpu_physics_checked": false,
+  "legacy_source_files_unchanged": [
+    "src/piper_sim_lab/pick_place.py",
+    "src/piper_sim_lab/ternary_control.py",
+    "src/piper_sim_lab/direct_gripper.py",
+    "src/piper_sim_lab/tasks.py",
+    "configs/show100/fresh-50m.yaml",
+    "configs/show103/qp-v1-a5-j100-direct-gripper.yaml"
+  ],
+  "file_sha256": {
+    "src/piper_sim_lab/stage_reward.py": "288a2384333e395b0e2193515ff1772f478e44fb88dc284b71fc430b017484fd",
+    "tests/test_stage_reward.py": "e51341e2d8b1902f4727e75edb2cf879e56aae2e79fae472683e0ca722aef7ae",
+    "scripts/show103/audit_stage_reward.py": "1d55b838fa5d4fe938ad3bc68bfa2b0047be06a09697af38562ba14d7e8c0c0a",
+    "docs/show103/stage-reward-v1.md": "76b41aa58abb2d8557b758bbcfe0a63c3fa138f86b47e1e4534cb0accbe52b0c",
+    "docs/show103/stage-reward-v1/plan.json": "e7d5a54fd1dd9fe1957ff6527469484b0a8b828599ca4d0cb5150d30e113418f",
+    "docs/show103/stage-reward-v1/audit.json": "78008d1528aa996f033bfaa848a117d11d869d1db75c4c47f07b2074ac1caf44"
+  },
+  "source_parent_commit": "6808a1c470c1b8c0e575b7e353e38edfdca02125",
+  "training": false,
+  "real_robot": false,
+  "plane_modified": false
+}

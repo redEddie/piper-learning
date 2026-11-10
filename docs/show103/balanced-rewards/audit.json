@@ -1,0 +1,233 @@
+{
+  "scope": "Synthetic features through production 5ms event updates and 100ms reward composition; not physics or learned success.",
+  "timestep_s": 0.1,
+  "horizon_s": 20.0,
+  "discount": 0.99,
+  "training_run": false,
+  "real_robot": false,
+  "costs": "Original action .001, action-rate .01, impact and recontact weights2 retained.",
+  "assumptions": "Held TCP descends153->55mm in2s; releases at3s; floor contact3.2s; clearance80mm at4.4s then held200ms. Delayed version waits10s first.",
+  "results": {
+    "wait_high": {
+      "discounted_return": 254.51959970863518,
+      "total_return": 587.804443359375,
+      "max_step_reward": 2.9390718936920166,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.0,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "target_count": 0,
+      "qualified": false,
+      "recontact": false,
+      "events": {
+        "release": false,
+        "landing": false,
+        "withdrawal": false
+      }
+    },
+    "wait_target": {
+      "discounted_return": 257.904691957475,
+      "total_return": 591.73681640625,
+      "max_step_reward": 3.4390718936920166,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 0.0,
+        "progress": 2.9424800872802734,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "target_count": 2,
+      "qualified": false,
+      "recontact": false,
+      "events": {
+        "release": false,
+        "landing": false,
+        "withdrawal": false
+      }
+    },
+    "oscillate": {
+      "discounted_return": 257.904691957475,
+      "total_return": 591.73681640625,
+      "max_step_reward": 3.4390718936920166,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 0.0,
+        "progress": 2.9424800872802734,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "target_count": 2,
+      "qualified": false,
+      "recontact": false,
+      "events": {
+        "release": false,
+        "landing": false,
+        "withdrawal": false
+      }
+    },
+    "high_drop": {
+      "discounted_return": 212.52415511764525,
+      "total_return": 495.6482238769531,
+      "max_step_reward": 2.9390718936920166,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.0,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "target_count": 0,
+      "qualified": false,
+      "recontact": false,
+      "events": {
+        "release": false,
+        "landing": false,
+        "withdrawal": false
+      }
+    },
+    "complete": {
+      "discounted_return": 380.0996084588094,
+      "total_return": 938.537109375,
+      "max_step_reward": 7.999000072479248,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9424800872802734,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "target_count": 2,
+      "qualified": true,
+      "recontact": false,
+      "events": {
+        "release": true,
+        "landing": true,
+        "withdrawal": true
+      }
+    },
+    "late_complete": {
+      "discounted_return": 282.989419318099,
+      "total_return": 732.5450439453125,
+      "max_step_reward": 7.999000072479248,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.943173408508301,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "target_count": 2,
+      "qualified": true,
+      "recontact": false,
+      "events": {
+        "release": true,
+        "landing": true,
+        "withdrawal": true
+      }
+    },
+    "recontact": {
+      "discounted_return": 264.9547848070596,
+      "total_return": 566.037109375,
+      "max_step_reward": 7.999000072479248,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9424800872802734,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "target_count": 2,
+      "qualified": true,
+      "recontact": true,
+      "events": {
+        "release": true,
+        "landing": true,
+        "withdrawal": true
+      }
+    },
+    "return_clearance": {
+      "discounted_return": 359.7562885912248,
+      "total_return": 868.537109375,
+      "max_step_reward": 7.999000072479248,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9424800872802734,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "target_count": 2,
+      "qualified": true,
+      "recontact": false,
+      "events": {
+        "release": true,
+        "landing": true,
+        "withdrawal": true
+      }
+    },
+    "regrasp": {
+      "discounted_return": 259.62845959640305,
+      "total_return": 555.9571533203125,
+      "max_step_reward": 7.999000072479248,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9424800872802734,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "target_count": 2,
+      "qualified": true,
+      "recontact": true,
+      "events": {
+        "release": true,
+        "landing": true,
+        "withdrawal": true
+      }
+    },
+    "high_drop_regrasp": {
+      "discounted_return": 196.72895683134468,
+      "total_return": 465.5682373046875,
+      "max_step_reward": 2.9390718936920166,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.0,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "target_count": 0,
+      "qualified": false,
+      "recontact": true,
+      "events": {
+        "release": false,
+        "landing": false,
+        "withdrawal": false
+      }
+    },
+    "bounce": {
+      "discounted_return": 377.0169384661426,
+      "total_return": 934.237060546875,
+      "max_step_reward": 7.999000072479248,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9424800872802734,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "target_count": 2,
+      "qualified": true,
+      "recontact": false,
+      "events": {
+        "release": true,
+        "landing": true,
+        "withdrawal": true
+      }
+    }
+  },
+  "status": "passed"
+}

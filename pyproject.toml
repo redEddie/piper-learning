@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piper-sim-lab"
+version = "0.2.0"
+description = "Piper reinforcement learning environments, rewards, training and policy export"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "piper-runtime[training]==0.5.0",
+  "playground @ git+https://github.com/google-deepmind/mujoco_playground.git@d59156e099a8785dd58fbce2e25a6ee1f7b5800c",
+  "brax @ git+https://github.com/google/brax.git@6d039374b34a266107bd1e952180eea33ac4eab8",
+  "jax==0.10.2",
+  "mujoco-warp==3.16.0",
+  "PyYAML>=6.0",
+  "imageio-ffmpeg>=0.6",
+]
+
+[project.optional-dependencies]
+gpu = ["jax[cuda12]==0.10.2"]
+test = ["pytest>=8"]
+control = ["osqp==1.1.3", "ruckig==0.19.4"]
+
+[project.scripts]
+piper-train = "piper_sim_lab.train:main"
+piper-eval = "piper_sim_lab.evaluate:main"
+piper-benchmark = "piper_sim_lab.benchmark:main"
+piper-assets = "piper_sim_lab.assets:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+piper_sim_lab = ["assets/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+
+[tool.uv.sources]
+piper-runtime = {path = "../piper-runtime"}

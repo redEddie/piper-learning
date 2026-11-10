@@ -1,0 +1,723 @@
+{
+  "status": "completed",
+  "branch": "codex/show108-observation-dr-wide-spawn",
+  "selected_model_preserved": "MLP+LSTM16u",
+  "parent_candidate": {
+    "actor": "mlp_lstm",
+    "units": 14,
+    "criterion": "Earliest saved checkpoint with actual A completion from initial_a >50%; all initialization full-A rates also >50%. Old-condition result.",
+    "path": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/training/checkpoints/000117440512",
+    "metadata": {
+      "actor": "mlp_lstm",
+      "width": 128,
+      "step": 117440512,
+      "actor_architecture": {
+        "hidden_sizes": [
+          256,
+          64
+        ]
+      },
+      "action_size": 7,
+      "exploration": {
+        "gripper_min_std": 0.5,
+        "arm_min_std": 0.25
+      },
+      "observation_size": {
+        "privileged": [
+          66
+        ],
+        "state": [
+          49
+        ]
+      },
+      "parent_transitions": 0,
+      "cumulative_transitions": 117440512,
+      "state": "learner checkpoint; continuation restores learner with fresh simulator episodes"
+    },
+    "learner_sha256": "4078c3b81a9fea7c1dd31d58390da67796530c2f3c7b2d9a9696e0e26ad0b9db",
+    "metadata_sha256": "98c323b5028cd59db9426adab55c726e5169e602c6f6f3215a3bad190817f460"
+  },
+  "training_budget": "Completed user-approved additional2u from14u; no further training started",
+  "candidate_budget_transitions": 16777216,
+  "worlds": 4096,
+  "reset_probabilities": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "user_supplied_measurements": {
+    "runs": 7,
+    "stationary_initial_seconds": 2,
+    "cube_xy_std_mm_range": [
+      0.04,
+      0.5
+    ],
+    "cube_last_visual_age_ms": {
+      "median": 71,
+      "p95": 115
+    },
+    "bowl_last_visual_age_ms": {
+      "median": 141,
+      "p95": 272
+    },
+    "absolute_bias_measured": false,
+    "raw_logs_independently_reanalysed_here": false
+  },
+  "config": "configs/show108/stage-reward-v5-mlp-lstm-observation-dr-wide-4096-plus2.yaml",
+  "config_sha256": "3a3537a7ef405b34db65a7ea1c51a4a5157cdb94ea3bfa2efd0b4bb6bfaee87a",
+  "resolved_proposed_environment": {
+    "ctrl_dt": 0.1,
+    "sim_dt": 0.005,
+    "impl": "warp",
+    "solver_iterations": 8,
+    "solver_ls_iterations": 20,
+    "jacobian": "mjx",
+    "robot_model": "piper_v100",
+    "base_height": 0.015,
+    "nominal_qpos": [
+      0.0,
+      0.523,
+      -0.45,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gripper_max": 0.05,
+    "table_priority": 2,
+    "bowl_arm_collision": true,
+    "size_obs": true,
+    "block_half": 0.025,
+    "block_mass": 0.07,
+    "block_mass_range": [
+      0.056,
+      0.084
+    ],
+    "block_rgba": [
+      0.1,
+      0.8,
+      0.2,
+      1.0
+    ],
+    "bowl_r_bottom": 0.042,
+    "bowl_r_rim": 0.075,
+    "bowl_height": 0.067,
+    "bowl_wall": 0.003,
+    "bowl_floor": 0.003,
+    "bowl_free": true,
+    "bowl_mass": 0.11,
+    "gripper_threshold": 0.5,
+    "gripper_goal_obs": true,
+    "finger_bridge": true,
+    "tcp_local_z": 0.1385,
+    "control_mode": "qp",
+    "control_acceleration": 5.0,
+    "control_floor": 0.0,
+    "max_joint_vel": 1.0,
+    "control_jerk": 100.0,
+    "max_lin_vel": 0.1,
+    "max_ang_vel": 0.5,
+    "task": "stage_reward_pick_place_five_starts_v2",
+    "five_start_drop_weight": 2.0,
+    "five_start_physical_release": true,
+    "five_start_progress_reward": true,
+    "five_start_dense_home": true,
+    "obs_randomization": true,
+    "physics_randomization": true,
+    "stage_obs": false,
+    "reset_joint_noise": 0.0,
+    "reset_stage_probs": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "smooth_stop_steps": 64,
+    "fixed_reset_settle_steps": 80,
+    "block_friction_scale": 0.1,
+    "table_friction_range": [
+      0.3,
+      0.6
+    ],
+    "gripper_gain_scale": [
+      0.8,
+      1.25
+    ],
+    "gripper_force": 3.0,
+    "gripper_kp": 400.0,
+    "gripper_rate": 0.01,
+    "tracking_extra": 0.02,
+    "tracking_margin": 0.02,
+    "tracking_horizon": 0.05,
+    "tracking_weight": 100.0,
+    "tracking_timeout": 0.5,
+    "ik_damping": 0.05,
+    "max_target_lag": 0.15,
+    "contacts_per_env": 384,
+    "max_constraints_per_env": 1024,
+    "ccd_pairs_per_env": 16,
+    "position_reset_bank": "show108-wide-five-start-train-v2.npz",
+    "evaluation_position_reset_bank": "show108-wide-five-start-eval-v2.npz",
+    "position_yaw_range": 0.2617993877991494,
+    "block_x": [
+      0.1,
+      0.5
+    ],
+    "block_y": [
+      -0.3,
+      0.3
+    ],
+    "bowl_x": [
+      0.1,
+      0.5
+    ],
+    "bowl_y": [
+      -0.3,
+      0.3
+    ],
+    "spawn_max_radius": 0.6,
+    "spawn_min_distance": 0.14,
+    "spawn_candidates": 64,
+    "obj_pos_noise": 0.003,
+    "obj_pos_noise_cap": 0.009,
+    "static_pos_noise": 0.005,
+    "static_pos_noise_cap": 0.015,
+    "obj_rot_noise": 5.0,
+    "size_noise": 0.05,
+    "obj_pose_delay_max": 0.2,
+    "robot_state_delay_max": 0.05,
+    "action_delay_max": 0.05,
+    "position_bound_yaw": true,
+    "bowl_pose_delay_max": 0.3
+  },
+  "observation_model": "Per-episode uniform fixed delays with interpolation of true histories; per-step clipped zero-mean cube pose noise; existing per-episode bowl offset. Not empirical frame-hold/dropout replay.",
+  "new_cube_static_bias": false,
+  "camera_common_bias": false,
+  "real_robot": false,
+  "reward_or_completion_or_controller_changed": false,
+  "workspace": "Both objects base-frame x[0.1,0.5]m y[-0.3,0.3]m; radius0.6m, min separation0.14m. Held/released coupled bank states cover a feasible subset under the generator orientation/IK seed/contact checks, not a proof of full reachability.",
+  "baseline_old_condition_success": {
+    "12": {
+      "initial_a": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.2890625
+      },
+      "pre_grasp": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.3802083333333333
+      },
+      "held": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.3515625
+      },
+      "over_bowl": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.0
+      },
+      "post_release": {
+        "local_success_rate": 0.22395833333333334,
+        "full_home_success_rate": 0.22395833333333334
+      }
+    },
+    "14": {
+      "initial_a": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.625
+      },
+      "pre_grasp": {
+        "local_success_rate": 0.9973958333333334,
+        "full_home_success_rate": 0.8411458333333334
+      },
+      "held": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.8046875
+      },
+      "over_bowl": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.8411458333333334
+      },
+      "post_release": {
+        "local_success_rate": 0.7734375,
+        "full_home_success_rate": 0.7734375
+      }
+    },
+    "16": {
+      "initial_a": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.7526041666666666
+      },
+      "pre_grasp": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.6119791666666666
+      },
+      "held": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.6223958333333334
+      },
+      "over_bowl": {
+        "local_success_rate": 1.0,
+        "full_home_success_rate": 0.9401041666666666
+      },
+      "post_release": {
+        "local_success_rate": 0.9609375,
+        "full_home_success_rate": 0.9609375
+      }
+    }
+  },
+  "banks": {
+    "show108-wide-five-start-eval-v2.npz": {
+      "sha256": "81c514412414edf9b741c8918de464693dc98c1e2dd8795dbe8dd412b78bf7df",
+      "metadata_sha256": "32b2a0b7afe41c3e873bf4be8a9b79c5c09cf1e991d0e6ec53c3ae5d578055c3",
+      "split": "eval",
+      "seed": 71108,
+      "records": [
+        {
+          "stage": 0,
+          "count": 64,
+          "cube_xy_min": [
+            0.1026076107005848,
+            -0.27347311053387163
+          ],
+          "cube_xy_max": [
+            0.49988747755026897,
+            0.2779268740056661
+          ],
+          "bowl_xy_min": [
+            0.10455113916335623,
+            -0.2862745432004165
+          ],
+          "bowl_xy_max": [
+            0.49503296621165355,
+            0.2984045937836115
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 1,
+          "count": 64,
+          "cube_xy_min": [
+            0.10536006818679244,
+            -0.28849893697825757
+          ],
+          "cube_xy_max": [
+            0.41069685125956,
+            0.18824534671060938
+          ],
+          "bowl_xy_min": [
+            0.10825084285315381,
+            -0.2917553986409122
+          ],
+          "bowl_xy_max": [
+            0.49673121511694823,
+            0.29685605763117245
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 2,
+          "count": 64,
+          "cube_xy_min": [
+            0.10109264294165396,
+            -0.26573326863034885
+          ],
+          "cube_xy_max": [
+            0.3544873018334362,
+            0.1709133080783808
+          ],
+          "bowl_xy_min": [
+            0.1005784381469113,
+            -0.2923623391880915
+          ],
+          "bowl_xy_max": [
+            0.49550605047829793,
+            0.29647810576357164
+          ],
+          "bilateral_held_contacts_verified": true
+        },
+        {
+          "stage": 3,
+          "count": 64,
+          "cube_xy_min": [
+            0.1080801886016992,
+            -0.26275309733106555
+          ],
+          "cube_xy_max": [
+            0.27613387857295574,
+            0.11827498662109412
+          ],
+          "bowl_xy_min": [
+            0.10724046075293092,
+            -0.26299725435710614
+          ],
+          "bowl_xy_max": [
+            0.2754204278504798,
+            0.11839590376673538
+          ],
+          "bilateral_held_contacts_verified": true
+        },
+        {
+          "stage": 4,
+          "count": 64,
+          "cube_xy_min": [
+            0.10518230145355312,
+            -0.25905875950751023
+          ],
+          "cube_xy_max": [
+            0.2712689384608567,
+            0.11650692946953278
+          ],
+          "bowl_xy_min": [
+            0.10724046069578842,
+            -0.26299725440051497
+          ],
+          "bowl_xy_max": [
+            0.2754204279077488,
+            0.11839590373906066
+          ],
+          "bilateral_held_contacts_verified": false
+        }
+      ]
+    },
+    "show108-wide-five-start-train-v2.npz": {
+      "sha256": "1f7843abb9c6fe6bed564fc2498b7c23074b1efe6fb09f9c2f07556e9a7f416c",
+      "metadata_sha256": "25582c80c9bf97c0e0e9083854f7bf42445d45738d39bf6f9b627f2e31d02ce7",
+      "split": "train",
+      "seed": 61108,
+      "records": [
+        {
+          "stage": 0,
+          "count": 64,
+          "cube_xy_min": [
+            0.10108055929419035,
+            -0.28025268131325665
+          ],
+          "cube_xy_max": [
+            0.4973124612002907,
+            0.29367456129429864
+          ],
+          "bowl_xy_min": [
+            0.10434385732771811,
+            -0.29177144943797684
+          ],
+          "bowl_xy_max": [
+            0.49972810833553843,
+            0.2994260014822219
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 1,
+          "count": 64,
+          "cube_xy_min": [
+            0.10541403111074246,
+            -0.2856407603453122
+          ],
+          "cube_xy_max": [
+            0.409515637533174,
+            0.1762086981709391
+          ],
+          "bowl_xy_min": [
+            0.10502897890334108,
+            -0.2743963677795906
+          ],
+          "bowl_xy_max": [
+            0.49306571693495677,
+            0.29120340118458693
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 2,
+          "count": 64,
+          "cube_xy_min": [
+            0.10428955157069597,
+            -0.2989624040922833
+          ],
+          "cube_xy_max": [
+            0.34126432871318607,
+            0.16869931874470592
+          ],
+          "bowl_xy_min": [
+            0.10056213754298846,
+            -0.29391298098322416
+          ],
+          "bowl_xy_max": [
+            0.4952764818514526,
+            0.287193608398504
+          ],
+          "bilateral_held_contacts_verified": true
+        },
+        {
+          "stage": 3,
+          "count": 64,
+          "cube_xy_min": [
+            0.10509243517040288,
+            -0.23800420787332033
+          ],
+          "cube_xy_max": [
+            0.2838579321355448,
+            0.12996461207548124
+          ],
+          "bowl_xy_min": [
+            0.1042208497446816,
+            -0.2382493545007369
+          ],
+          "bowl_xy_max": [
+            0.28314081664960883,
+            0.13009020709303187
+          ],
+          "bilateral_held_contacts_verified": true
+        },
+        {
+          "stage": 4,
+          "count": 64,
+          "cube_xy_min": [
+            0.10273955614548425,
+            -0.23432693264647003
+          ],
+          "cube_xy_max": [
+            0.2790061471514258,
+            0.1281249884081824
+          ],
+          "bowl_xy_min": [
+            0.10422084979834251,
+            -0.2382493544838058
+          ],
+          "bowl_xy_max": [
+            0.2831408166510245,
+            0.13009020710790953
+          ],
+          "bilateral_held_contacts_verified": false
+        }
+      ]
+    },
+    "show108-wide-position-random-eval-v1.npz": {
+      "sha256": "63ff471eff3b3f418d89b8cd6004c6320d948ca14ec30493c90dd47ff8e1d19d",
+      "metadata_sha256": "c29b6cb9d52933f5e00e135ae558a05ad1abf50685aed2b5cc1dd2f3f0637563",
+      "split": "eval",
+      "seed": 71108,
+      "records": [
+        {
+          "stage": 0,
+          "count": 128,
+          "attempts": 128,
+          "cube_xy_min": [
+            0.1026076107005848,
+            -0.29802470691407984
+          ],
+          "cube_xy_max": [
+            0.49988747755026897,
+            0.2962536656045703
+          ],
+          "bowl_xy_min": [
+            0.10179663698660897,
+            -0.2969218012973094
+          ],
+          "bowl_xy_max": [
+            0.4992454166993336,
+            0.2984045937836115
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 1,
+          "count": 128,
+          "attempts": 237,
+          "cube_xy_min": [
+            0.10388941009399266,
+            -0.29600240958094337
+          ],
+          "cube_xy_max": [
+            0.41069685125956,
+            0.1970980929553842
+          ],
+          "bowl_xy_min": [
+            0.10672599303683017,
+            -0.2917553986409122
+          ],
+          "bowl_xy_max": [
+            0.49673121511694823,
+            0.2983477097589093
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 2,
+          "count": 128,
+          "attempts": 300,
+          "cube_xy_min": [
+            0.10109264294165396,
+            -0.28626959582760947
+          ],
+          "cube_xy_max": [
+            0.3544873018334362,
+            0.1709133080783808
+          ],
+          "bowl_xy_min": [
+            0.10034145218129162,
+            -0.2931186542128263
+          ],
+          "bowl_xy_max": [
+            0.49550605047829793,
+            0.29647810576357164
+          ],
+          "bilateral_held_contacts_verified": true
+        },
+        {
+          "stage": 3,
+          "count": 128,
+          "attempts": 772,
+          "cube_xy_min": [
+            0.1080801886016992,
+            -0.26275309733106555
+          ],
+          "cube_xy_max": [
+            0.2776824479371173,
+            0.13036628001815873
+          ],
+          "bowl_xy_min": [
+            0.10724046075293092,
+            -0.26299725435710614
+          ],
+          "bowl_xy_max": [
+            0.2769684879557487,
+            0.13049939555762957
+          ],
+          "bilateral_held_contacts_verified": true
+        }
+      ]
+    },
+    "show108-wide-position-random-train-v1.npz": {
+      "sha256": "dbc9c331c660e75418d69b18e09f024850e5de543c86ee587cc1273f37cb6896",
+      "metadata_sha256": "ae05648c4aaf9693440e6f5780bc622ee35fdc885e45868afdc16b1db85fb7ec",
+      "split": "train",
+      "seed": 61108,
+      "records": [
+        {
+          "stage": 0,
+          "count": 128,
+          "attempts": 128,
+          "cube_xy_min": [
+            0.10108055929419035,
+            -0.29765108751547964
+          ],
+          "cube_xy_max": [
+            0.4973124612002907,
+            0.29367456129429864
+          ],
+          "bowl_xy_min": [
+            0.10423171303567269,
+            -0.2921400133550198
+          ],
+          "bowl_xy_max": [
+            0.49972810833553843,
+            0.2994260014822219
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 1,
+          "count": 128,
+          "attempts": 238,
+          "cube_xy_min": [
+            0.10541403111074246,
+            -0.2963357849332463
+          ],
+          "cube_xy_max": [
+            0.409515637533174,
+            0.1762086981709391
+          ],
+          "bowl_xy_min": [
+            0.10320181522152243,
+            -0.2945678418251964
+          ],
+          "bowl_xy_max": [
+            0.4986333942252647,
+            0.29989171874208226
+          ],
+          "bilateral_held_contacts_verified": false
+        },
+        {
+          "stage": 2,
+          "count": 128,
+          "attempts": 314,
+          "cube_xy_min": [
+            0.10428955157069597,
+            -0.2989624040922833
+          ],
+          "cube_xy_max": [
+            0.35365784328133304,
+            0.16869931874470592
+          ],
+          "bowl_xy_min": [
+            0.10039605000477052,
+            -0.29553186880373716
+          ],
+          "bowl_xy_max": [
+            0.4952764818514526,
+            0.29992218312889435
+          ],
+          "bilateral_held_contacts_verified": true
+        },
+        {
+          "stage": 3,
+          "count": 128,
+          "attempts": 866,
+          "cube_xy_min": [
+            0.10127500466028602,
+            -0.2538476176047415
+          ],
+          "cube_xy_max": [
+            0.2838579321355448,
+            0.1365925627967842
+          ],
+          "bowl_xy_min": [
+            0.10041048294415254,
+            -0.2540901327819974
+          ],
+          "bowl_xy_max": [
+            0.28314081664960883,
+            0.13672709849433223
+          ],
+          "bilateral_held_contacts_verified": true
+        }
+      ]
+    }
+  },
+  "source_parent_commit": "85fcf98b56b830cc4c16bcf6522b152d3ab6d3db",
+  "run": "runs/show108-pipeline-dr-wide-from14u-plus2u-20261101",
+  "parent_checkpoint_confirmed": true,
+  "implementation_training_commit": "0f5aa042416f49c7a8839396179e230a0e853242",
+  "results": "docs/show108/observation-dr/results.json",
+  "checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/training/checkpoints/000016777216",
+  "checkpoint_metadata": {
+    "actor": "mlp_lstm",
+    "width": 128,
+    "step": 16777216,
+    "actor_architecture": {
+      "hidden_sizes": [
+        256,
+        64
+      ]
+    },
+    "action_size": 7,
+    "exploration": {
+      "gripper_min_std": 0.5,
+      "arm_min_std": 0.25
+    },
+    "observation_size": {
+      "privileged": [
+        66
+      ],
+      "state": [
+        49
+      ]
+    },
+    "parent_transitions": 117440512,
+    "cumulative_transitions": 134217728,
+    "state": "learner checkpoint; continuation restores learner with fresh simulator episodes"
+  },
+  "checkpoint_sha256": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c"
+}

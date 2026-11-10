@@ -1,0 +1,197 @@
+{
+  "evaluation": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/final-16m",
+  "scope": "Same recorded scenes and20s horizon. Completion time is first inside among final successes, not independently verified gentle placement.",
+  "reports": {
+    "empty_hand-s2026": {
+      "final_successes": 105,
+      "completion_time_seconds_median": 11.3,
+      "completion_time_seconds_p90": 13.0,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 38.292240142822266,
+        "absolute_p99": 97.75161743164062
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.007454665377736092,
+        "p95": 0.019837014377117157,
+        "p99": 0.04168719798326492,
+        "maximum": 0.15516747534275055
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "empty_hand-s2027": {
+      "final_successes": 112,
+      "completion_time_seconds_median": 11.3,
+      "completion_time_seconds_p90": 13.190000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 51.506839752197266,
+        "absolute_p99": 105.85784912109375
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.007339752744883299,
+        "p95": 0.019628994166851044,
+        "p99": 0.037410423159599304,
+        "maximum": 0.19362416863441467
+      },
+      "failure_reasons": {
+        "0": 127,
+        "128": 1
+      }
+    },
+    "empty_hand-s2028": {
+      "final_successes": 119,
+      "completion_time_seconds_median": 11.3,
+      "completion_time_seconds_p90": 13.120000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 33.682762145996094,
+        "absolute_p99": 82.0159912109375
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.006963903084397316,
+        "p95": 0.020719941705465317,
+        "p99": 0.044576067477464676,
+        "maximum": 0.2734343707561493
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "mixed-s2026": {
+      "final_successes": 112,
+      "completion_time_seconds_median": 8.3,
+      "completion_time_seconds_p90": 12.38,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 29.57826805114746,
+        "absolute_p99": 81.06231689453125
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.006991339847445488,
+        "p95": 0.0193697027862072,
+        "p99": 0.040485791862010956,
+        "maximum": 0.13740818202495575
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "mixed-s2027": {
+      "final_successes": 119,
+      "completion_time_seconds_median": 10.3,
+      "completion_time_seconds_p90": 12.22,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 42.812198638916016,
+        "absolute_p99": 77.24761962890625
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.006872215308248997,
+        "p95": 0.018674876540899277,
+        "p99": 0.03636020049452782,
+        "maximum": 0.1630706638097763
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "mixed-s2028": {
+      "final_successes": 117,
+      "completion_time_seconds_median": 8.8,
+      "completion_time_seconds_p90": 12.100000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 27.33104133605957,
+        "absolute_p99": 68.24732208251953
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.005433393642306328,
+        "p95": 0.018415210768580437,
+        "p99": 0.03700314089655876,
+        "maximum": 0.27349257469177246
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "preinside-s2026": {
+      "final_successes": 124,
+      "completion_time_seconds_median": 0.6000000000000001,
+      "completion_time_seconds_p90": 0.7000000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 26.93806266784668,
+        "absolute_p99": 68.66455078125
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.00481841154396534,
+        "p95": 0.023396490141749382,
+        "p99": 0.049542367458343506,
+        "maximum": 0.1837182492017746
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "preinside-s2027": {
+      "final_successes": 123,
+      "completion_time_seconds_median": 0.6000000000000001,
+      "completion_time_seconds_p90": 0.7000000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 31.704160690307617,
+        "absolute_p99": 75.04225158691406
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.005128451623022556,
+        "p95": 0.025896869599819183,
+        "p99": 0.0467296838760376,
+        "maximum": 0.22213797271251678
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "preinside-s2028": {
+      "final_successes": 123,
+      "completion_time_seconds_median": 0.6000000000000001,
+      "completion_time_seconds_p90": 0.7000000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 26.672006607055664,
+        "absolute_p99": 70.5718994140625
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.00461855623871088,
+        "p95": 0.022652190178632736,
+        "p99": 0.04459312558174133,
+        "maximum": 0.2524411380290985
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    }
+  },
+  "real_robot": false
+}

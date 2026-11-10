@@ -1,0 +1,499 @@
+{
+  "version": "show103-five-start-v2",
+  "date": "2026-10-30",
+  "status": "completed; all local-stage50% criterion unmet",
+  "configuration": "configs/show103/stage-reward-v2-five-starts-4096-plus2-4-6-8.yaml",
+  "parent": "runs/show103-random-positions-4096-s7-2-4-6-8u-20261030/training/checkpoints/000033554432",
+  "run": "runs/show103-five-start-v2-from4u-plus2-4-6-8u-20261030",
+  "reset_names": [
+    "initial_a",
+    "pre_grasp",
+    "held",
+    "over_bowl",
+    "post_release"
+  ],
+  "reset_probabilities": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "reward": {
+    "current_xy_in_prepare": true,
+    "actual_cube_bottom_above_rim": true,
+    "new_collision_cost": false,
+    "away_cost": "while holding after confirmed grasp: 0 if distance-best<0.10m, otherwise0.5*(distance-best)/0.10m per100ms",
+    "best_distance_update": "minimum measured cube-bowl XY every5ms; reset each episode; inactive after release",
+    "permanent_xy_supplement_removed": true,
+    "prepare_extra_credit": "decays to0 over1s total real target occupancy; leaving/re-entering does not refill",
+    "failed_release": "one-time cost0.5, terminal immediately at control boundary; full fresh autoreset; no absorbing zero-reward period or retry",
+    "normal_release": "unchanged50-60mm height, XY<=17mm, OPEN intention and20ms loss of both fingers; main4 then up to5",
+    "prefix_history": "native grasp-lower-open-release traces replayed through reward math; no fabricated timer credit"
+  },
+  "budget": [
+    {
+      "additional_units": 2,
+      "cumulative_units": 6,
+      "additional_transitions": 16777216,
+      "cumulative_transitions": 50331648
+    },
+    {
+      "additional_units": 4,
+      "cumulative_units": 8,
+      "additional_transitions": 33554432,
+      "cumulative_transitions": 67108864
+    },
+    {
+      "additional_units": 6,
+      "cumulative_units": 10,
+      "additional_transitions": 50331648,
+      "cumulative_transitions": 83886080
+    },
+    {
+      "additional_units": 8,
+      "cumulative_units": 12,
+      "additional_transitions": 67108864,
+      "cumulative_transitions": 100663296
+    }
+  ],
+  "evaluation": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "worlds_per_seed": 128,
+    "episodes_per_start": 384,
+    "duration_s": 20,
+    "criterion": "five stage-local success rates; all>=50%; whole-task completion separate",
+    "failure_handling": "first episode only, exclude failing interval and later; retain earlier local achievements",
+    "execution_order": "train all8 additional units once, then evaluate2/4/6/8 additional checkpoints; no automatic promotion"
+  },
+  "dataset_mapping": {
+    "semantic": [
+      "approach",
+      "grasp_lift",
+      "transport",
+      "open_place",
+      "retreat"
+    ],
+    "fourth_includes": "align and lower before finger detachment",
+    "fifth_rl_includes": "settling, retreat and stationary A return",
+    "a_return": "separate measured/unknown field; semantic retreat alone is not full RL success",
+    "time_boundaries": "per-video annotations, not universal numeric conditions"
+  },
+  "tests": "64 passed",
+  "acceptance": {
+    "final-physics-4096": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 24,
+      "policy_transitions": 98304,
+      "reset_group_counts": [
+        858,
+        806,
+        816,
+        803,
+        813
+      ],
+      "invalid_held_resets": 0,
+      "actor": 49,
+      "critic": 66,
+      "action": 7,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.009412894025444984,
+        "max_acceleration": 0.9322073459625244,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "elapsed_seconds": 28.990413020015694,
+      "reward_settings": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.1,
+        "approach_distance": 0.02,
+        "reach_scale": 5.0,
+        "grasp_seconds": 0.1,
+        "lift_height": 0.02,
+        "bowl_entry_radius": 0.05,
+        "alignment_radius": 0.017,
+        "release_height_min": 0.05,
+        "release_height_max": 0.06,
+        "lower_scale": 0.04,
+        "release_seconds": 0.02,
+        "target_speed": 0.01,
+        "target_seconds": 0.1,
+        "support_speed": 0.02,
+        "support_seconds": 0.1,
+        "clearance": 0.08,
+        "home_error": 0.05235987755982989,
+        "home_speed": 0.05,
+        "home_seconds": 0.2,
+        "home_progress_scale": 1.0,
+        "push_speed_scale": 0.05,
+        "face_distance_scale": 0.03,
+        "face_weight": 0.5,
+        "xy_weight": 0.5,
+        "dwell_weight": 0.5,
+        "push_weight": 0.5,
+        "recontact_weight": 0.5,
+        "action_weight": 0.001,
+        "action_rate_weight": 0.01,
+        "carry_margin": 0.005,
+        "carry_height_scale": 0.04,
+        "release_xy_scale": 0.04,
+        "away_distance": 0.1,
+        "away_weight": 0.5,
+        "prepare_credit_seconds": 1.0,
+        "drop_weight": 0.5
+      },
+      "initial_position_diversity": {
+        "0": {
+          "cube_xy_std": [
+            0.030156610533595085,
+            0.11617432534694672
+          ],
+          "bowl_xy_std": [
+            0.029715776443481445,
+            0.13133679330348969
+          ],
+          "samples": 858
+        },
+        "1": {
+          "cube_xy_std": [
+            0.032575979828834534,
+            0.11212502419948578
+          ],
+          "bowl_xy_std": [
+            0.029628708958625793,
+            0.13548363745212555
+          ],
+          "samples": 806
+        },
+        "2": {
+          "cube_xy_std": [
+            0.02992972359061241,
+            0.10116181522607803
+          ],
+          "bowl_xy_std": [
+            0.029937347397208214,
+            0.1378256380558014
+          ],
+          "samples": 816
+        },
+        "3": {
+          "cube_xy_std": [
+            0.013696431182324886,
+            0.07101409137248993
+          ],
+          "bowl_xy_std": [
+            0.013705357909202576,
+            0.07101863622665405
+          ],
+          "samples": 803
+        },
+        "4": {
+          "cube_xy_std": [
+            0.013323072344064713,
+            0.07051917910575867
+          ],
+          "bowl_xy_std": [
+            0.013487130403518677,
+            0.07176262885332108
+          ],
+          "samples": 813
+        }
+      },
+      "bank_split": "train",
+      "config_sha256": "cb081b27ddd8dc22529862506443d465d834d2b215088742ce318a60d6b301c4",
+      "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+      "training": false,
+      "real_robot": false,
+      "peak_gpu_mib": 5017
+    },
+    "final-eval-physics-128": {
+      "status": "passed",
+      "environments": 128,
+      "steps": 24,
+      "policy_transitions": 3072,
+      "reset_group_counts": [
+        24,
+        21,
+        23,
+        38,
+        22
+      ],
+      "invalid_held_resets": 0,
+      "actor": 49,
+      "critic": 66,
+      "action": 7,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.00910709984600544,
+        "max_acceleration": 0.9098109006881714,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "elapsed_seconds": 24.67353449994698,
+      "reward_settings": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.1,
+        "approach_distance": 0.02,
+        "reach_scale": 5.0,
+        "grasp_seconds": 0.1,
+        "lift_height": 0.02,
+        "bowl_entry_radius": 0.05,
+        "alignment_radius": 0.017,
+        "release_height_min": 0.05,
+        "release_height_max": 0.06,
+        "lower_scale": 0.04,
+        "release_seconds": 0.02,
+        "target_speed": 0.01,
+        "target_seconds": 0.1,
+        "support_speed": 0.02,
+        "support_seconds": 0.1,
+        "clearance": 0.08,
+        "home_error": 0.05235987755982989,
+        "home_speed": 0.05,
+        "home_seconds": 0.2,
+        "home_progress_scale": 1.0,
+        "push_speed_scale": 0.05,
+        "face_distance_scale": 0.03,
+        "face_weight": 0.5,
+        "xy_weight": 0.5,
+        "dwell_weight": 0.5,
+        "push_weight": 0.5,
+        "recontact_weight": 0.5,
+        "action_weight": 0.001,
+        "action_rate_weight": 0.01,
+        "carry_margin": 0.005,
+        "carry_height_scale": 0.04,
+        "release_xy_scale": 0.04,
+        "away_distance": 0.1,
+        "away_weight": 0.5,
+        "prepare_credit_seconds": 1.0,
+        "drop_weight": 0.5
+      },
+      "initial_position_diversity": {
+        "0": {
+          "cube_xy_std": [
+            0.03175131604075432,
+            0.1296893209218979
+          ],
+          "bowl_xy_std": [
+            0.026547282934188843,
+            0.12779366970062256
+          ],
+          "samples": 24
+        },
+        "1": {
+          "cube_xy_std": [
+            0.02580639161169529,
+            0.08629058301448822
+          ],
+          "bowl_xy_std": [
+            0.028541745617985725,
+            0.1153600811958313
+          ],
+          "samples": 21
+        },
+        "2": {
+          "cube_xy_std": [
+            0.031129471957683563,
+            0.10433325171470642
+          ],
+          "bowl_xy_std": [
+            0.023093342781066895,
+            0.13163460791110992
+          ],
+          "samples": 23
+        },
+        "3": {
+          "cube_xy_std": [
+            0.013120412826538086,
+            0.07721412181854248
+          ],
+          "bowl_xy_std": [
+            0.013132061809301376,
+            0.0772407129406929
+          ],
+          "samples": 38
+        },
+        "4": {
+          "cube_xy_std": [
+            0.014969508163630962,
+            0.06564334034919739
+          ],
+          "bowl_xy_std": [
+            0.0151190971955657,
+            0.06678780168294907
+          ],
+          "samples": 22
+        }
+      },
+      "bank_split": "eval",
+      "config_sha256": "cb081b27ddd8dc22529862506443d465d834d2b215088742ce318a60d6b301c4",
+      "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+      "training": false,
+      "real_robot": false,
+      "peak_gpu_mib": 815
+    },
+    "failure-reset": {
+      "status": "passed",
+      "worlds": 128,
+      "steps": 10,
+      "terminal_resets": 384,
+      "action": "stationary arm, rate-limited OPEN at125mm",
+      "records": [
+        {
+          "step": 1,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 2,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 3,
+          "newly_reset": 128,
+          "terminal_task_failure": 1.0
+        },
+        {
+          "step": 4,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 5,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 6,
+          "newly_reset": 128,
+          "terminal_task_failure": 1.0
+        },
+        {
+          "step": 7,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 8,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 9,
+          "newly_reset": 128,
+          "terminal_task_failure": 1.0
+        },
+        {
+          "step": 10,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        }
+      ],
+      "verified": "terminal done/episode metrics retained; physical state and reward memory already fresh on the same transition",
+      "training": false,
+      "real_robot": false
+    }
+  },
+  "preserved_v1_reward_sha256": "288a2384333e395b0e2193515ff1772f478e44fb88dc284b71fc430b017484fd",
+  "banks": {
+    "train": "409abbb9eec986e5e695f4e66f60d9bfa4fefd78c353e4c719e3d55b3a388d58",
+    "eval": "720520390b97e9e461c37c96fe7ed4246db4c18b8b391a593f002add6497f650"
+  },
+  "real_robot": false,
+  "warm_start_smoke": {
+    "status": "passed",
+    "elapsed_seconds": 109.45916375902016,
+    "policy_changed": true,
+    "policy_changes": [
+      {
+        "steps": 0,
+        "policy_l2_change": 0.0
+      },
+      {
+        "steps": 131072,
+        "policy_l2_change": 0.5080052499886193
+      }
+    ],
+    "transitions": 131072,
+    "main_starts_from_original_parent_not_smoke": true
+  },
+  "ended_utc": "2026-10-30T05:43:40.305483+00:00",
+  "result": {
+    "local_success_counts_by_stage": {
+      "1": [
+        384,
+        381,
+        384,
+        384
+      ],
+      "2": [
+        384,
+        383,
+        384,
+        384
+      ],
+      "3": [
+        384,
+        384,
+        384,
+        384
+      ],
+      "4": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "5": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "episodes_per_cell": 384,
+    "stage5_settled_and_80mm_clearance_counts": [
+      98,
+      277,
+      382,
+      384
+    ],
+    "stage5_a_reached_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "stage4_open_request_episode_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "threshold_met": false,
+    "automatic_candidate": "additional2u selected by smaller-budget tiebreak with6u/8u; no successful policy selected",
+    "comparison": "comparison.json/csv",
+    "videos": "videos/{2u,8u}-{initial_a,pre_grasp,held,over_bowl,post_release}-first.mp4",
+    "render_commit": "ca4eb95"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "status": "64env smoke passed;1024env and failure-boundary preflight pending",
+  "old_run": "runs/show103/qp-v1-a5-j100-bounded-fresh-50m",
+  "planned_run": "runs/show103/qp-v1-a5-j100-direct-gripper-fresh-50m",
+  "config": "configs/show103/qp-v1-a5-j100-direct-gripper.yaml",
+  "config_diff": {
+    "task": [
+      "quadratic_release",
+      "direct_gripper_release"
+    ]
+  },
+  "removed": [
+    "MOVE/BRAKE/GRIP state machine",
+    "phase observation",
+    "grip-dependent arm stop/interlock",
+    "busy-request rejection",
+    "gripper reference ramp",
+    "stroke completion wait",
+    "grip/brake timeout"
+  ],
+  "retained": [
+    "ternary open/hold/close threshold0.5 and latched final goal",
+    "50ms-max communication delay domain randomization",
+    "native MuJoCo position actuator kp400/force cap3N",
+    "6axis DLS+QP reference speed1rad/s acceleration5rad/s² jerk100rad/s³",
+    "reward,initialization,physical/perception randomization,geometry"
+  ],
+  "obs": {
+    "actor": 49,
+    "critic": 66,
+    "removed": "coordinator phase only"
+  },
+  "training": {
+    "fresh": true,
+    "num_envs": 1024,
+    "steps": 50331648,
+    "seed": 7,
+    "checkpoint_every": 8388608,
+    "warm_start": null
+  },
+  "limitations": [
+    "Removing coordination does not guarantee the policy learns opening/closing.",
+    "Motion constraints apply to arm references; full-body collisions are not certified."
+  ],
+  "validation": {
+    "cpu_tests": 57,
+    "smoke_transitions": 4160
+  },
+  "real_robot": false,
+  "plane_modified": false
+}

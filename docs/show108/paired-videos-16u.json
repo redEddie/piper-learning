@@ -1,0 +1,192 @@
+{
+  "scope": "Matched final16u recordings,seed2026 scene0. Only concatenated original videos and added model-name banner; no policy/physics changes.",
+  "videos": [
+    {
+      "initialization": 1,
+      "start": "initial_a",
+      "left": "mlp_lstm",
+      "right": "transformer_lstm",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "fps": 10,
+      "playback": "1x, same evaluation timestamp, no time warping",
+      "case_selection": "first recorded case, not success-selected",
+      "models": {
+        "mlp_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/videos/16u-initial_a-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": 9.7,
+          "home_complete": true,
+          "final_max_A_error_deg": 10.082345008850098,
+          "best_A_error_after_stage5_deg": 6.746638298034668,
+          "reset_pose_index": 55
+        },
+        "transformer_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/transformer_lstm/videos/16u-initial_a-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": null,
+          "home_complete": false,
+          "final_max_A_error_deg": 25.7830810546875,
+          "best_A_error_after_stage5_deg": 23.981231689453125,
+          "reset_pose_index": 55
+        }
+      },
+      "asset": "show108-16u-comparison-01-initial_a.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-16u-20261101/show108-16u-comparison-01-initial_a.mp4",
+      "sha256": "92f418b533ce257883d19d44f2f569551ad0a602e6c3294cee123b58c32b55ce",
+      "bytes": 922245
+    },
+    {
+      "initialization": 2,
+      "start": "pre_grasp",
+      "left": "mlp_lstm",
+      "right": "transformer_lstm",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "fps": 10,
+      "playback": "1x, same evaluation timestamp, no time warping",
+      "case_selection": "first recorded case, not success-selected",
+      "models": {
+        "mlp_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/videos/16u-pre_grasp-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": 6.6,
+          "home_complete": true,
+          "final_max_A_error_deg": 10.408090591430664,
+          "best_A_error_after_stage5_deg": 7.629751682281494,
+          "reset_pose_index": 55
+        },
+        "transformer_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/transformer_lstm/videos/16u-pre_grasp-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": null,
+          "home_complete": false,
+          "final_max_A_error_deg": 25.783079147338867,
+          "best_A_error_after_stage5_deg": 24.05691909790039,
+          "reset_pose_index": 55
+        }
+      },
+      "asset": "show108-16u-comparison-02-pre_grasp.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-16u-20261101/show108-16u-comparison-02-pre_grasp.mp4",
+      "sha256": "b9dbf8d02170eefdbd95d60713090517e115f270b67305e86fdcd623ce129c85",
+      "bytes": 790411
+    },
+    {
+      "initialization": 3,
+      "start": "held",
+      "left": "mlp_lstm",
+      "right": "transformer_lstm",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "fps": 10,
+      "playback": "1x, same evaluation timestamp, no time warping",
+      "case_selection": "first recorded case, not success-selected",
+      "models": {
+        "mlp_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/videos/16u-held-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": null,
+          "home_complete": false,
+          "final_max_A_error_deg": 17.135629653930664,
+          "best_A_error_after_stage5_deg": 13.772385597229004,
+          "reset_pose_index": 55
+        },
+        "transformer_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/transformer_lstm/videos/16u-held-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": null,
+          "home_complete": false,
+          "final_max_A_error_deg": 25.78309440612793,
+          "best_A_error_after_stage5_deg": 19.472970962524414,
+          "reset_pose_index": 55
+        }
+      },
+      "asset": "show108-16u-comparison-03-held.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-16u-20261101/show108-16u-comparison-03-held.mp4",
+      "sha256": "924016bc3cf2805de169b322758a83942621fcc8f85f4dcd968e5f8fbfe62a20",
+      "bytes": 747929
+    },
+    {
+      "initialization": 4,
+      "start": "over_bowl",
+      "left": "mlp_lstm",
+      "right": "transformer_lstm",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "fps": 10,
+      "playback": "1x, same evaluation timestamp, no time warping",
+      "case_selection": "first recorded case, not success-selected",
+      "models": {
+        "mlp_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/videos/16u-over_bowl-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": 5.1,
+          "home_complete": true,
+          "final_max_A_error_deg": 11.546719551086426,
+          "best_A_error_after_stage5_deg": 8.83213996887207,
+          "reset_pose_index": 55
+        },
+        "transformer_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/transformer_lstm/videos/16u-over_bowl-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": null,
+          "home_complete": false,
+          "final_max_A_error_deg": 25.783100128173828,
+          "best_A_error_after_stage5_deg": 24.058095932006836,
+          "reset_pose_index": 55
+        }
+      },
+      "asset": "show108-16u-comparison-04-over_bowl.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-16u-20261101/show108-16u-comparison-04-over_bowl.mp4",
+      "sha256": "d99f02a45653095a353de0420cabd090d8f1c29a6e5eb61b93026949a01a852a",
+      "bytes": 655207
+    },
+    {
+      "initialization": 5,
+      "start": "post_release",
+      "left": "mlp_lstm",
+      "right": "transformer_lstm",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "fps": 10,
+      "playback": "1x, same evaluation timestamp, no time warping",
+      "case_selection": "first recorded case, not success-selected",
+      "models": {
+        "mlp_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/videos/16u-post_release-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": 4.4,
+          "home_complete": true,
+          "final_max_A_error_deg": 11.040283203125,
+          "best_A_error_after_stage5_deg": 9.650860786437988,
+          "reset_pose_index": 55
+        },
+        "transformer_lstm": {
+          "source": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/transformer_lstm/videos/16u-post_release-first.mp4",
+          "scene": 0,
+          "seed": 2026,
+          "first_home_completion_seconds": null,
+          "home_complete": false,
+          "final_max_A_error_deg": 25.783100128173828,
+          "best_A_error_after_stage5_deg": 21.491666793823242,
+          "reset_pose_index": 55
+        }
+      },
+      "asset": "show108-16u-comparison-05-post_release.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-16u-20261101/show108-16u-comparison-05-post_release.mp4",
+      "sha256": "38feea5936d5135183fed5f2b09f80eed53be5551993aff53949e57a9072d87c",
+      "bytes": 643520
+    }
+  ],
+  "training_source_commit": "49267d34714545266fbdf85c77540307ca5c2f51",
+  "release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-16u-20261101"
+}

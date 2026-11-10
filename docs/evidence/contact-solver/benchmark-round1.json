@@ -1,0 +1,49 @@
+{
+  "backend": "MJX-Warp",
+  "num_envs": 256,
+  "control_steps_per_call": 16,
+  "physics_steps_per_control": 20,
+  "policy_dt": 0.1,
+  "physics_dt": 0.005,
+  "repeats": 9,
+  "warmup_calls_per_variant": 3,
+  "warmup_seconds_excluded": {
+    "4": 3.608457210008055,
+    "20": 2.594859303004341
+  },
+  "seconds_per_call": {
+    "4": [
+      0.27840392700454686,
+      0.28878320098738186,
+      0.294034342005034,
+      0.286536771003739,
+      0.293134445004398,
+      0.2514912830083631,
+      0.2500369670015061,
+      0.2510422340128571,
+      0.2503352580097271
+    ],
+    "20": [
+      0.2865218679944519,
+      0.29299909601104446,
+      0.2920441580063198,
+      0.29370519099757075,
+      0.2654840030008927,
+      0.2575277740106685,
+      0.2499862280092202,
+      0.2504871720011579,
+      0.24957983900094405
+    ]
+  },
+  "median_seconds": {
+    "4": 0.27840392700454686,
+    "20": 0.2654840030008927
+  },
+  "increase_percent": -4.640711840046407,
+  "env_control_steps_per_second": {
+    "4": 14712.436150130543,
+    "20": 15428.424890769133
+  },
+  "source_sha256": "e21f370683af14beb3f59bcdb99292162a8e834dce152fe38f6a3435e02042b3",
+  "scope": "task.step including IK, physics and reward; held-block state; no PPO optimization, perception or rendering; actual full training slowdown is not measured"
+}

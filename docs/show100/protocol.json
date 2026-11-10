@@ -1,0 +1,91 @@
+{
+  "issue": "SHOW-100",
+  "issue_id": "6dfe2e4f-ba6e-428d-923d-8ca057fbfc81",
+  "baseline_commit": "b40fa4df0c8ef301421edab65250f9e3ed70037a",
+  "baseline_release": "/home/pi_lab/robot/releases/thor-show76-v1-8x-20261023-r2",
+  "verified_release_files": {
+    "policies/show76-v1-mlp/weights.npz": "087abda903449401c553f6e57bbb48d7e555a05e33292bb5e86b6d1dbb11670a",
+    "policies/show76-v1-mlp/policy.json": "9289fe62f6b62ee82a63169921172be089d46616e7008922e99d6e3d023eeaf9",
+    "artifacts/training/config.json": "1622b8ac099c9dc59d2c77820c646ad5d0274ee1c655608f241b415ba738af46",
+    "artifacts/training/checkpoints/000083886080/manifest.ocdbt": "3314ab38f62fb931a65956584ca935429cf5f2023c844b48092889f1acda61bd"
+  },
+  "baseline_final_success": {
+    "successes": 371,
+    "episodes": 384,
+    "scope": "saved original 8x evaluation; not the new policy"
+  },
+  "fresh_training": {
+    "steps": 50331648,
+    "environments": 1024,
+    "seed": 7,
+    "policy": "MLP 256x256",
+    "warm_start": null,
+    "checkpoint_interval": 8388608
+  },
+  "observation": {
+    "actor": 49,
+    "critic": 66,
+    "goal_index": 41,
+    "goal_encoding": "full goal width / 100mm: closed=0, open=1",
+    "previous_raw_action_slice": [
+      42,
+      49
+    ]
+  },
+  "gripper": {
+    "close_threshold": -0.5,
+    "open_threshold": 0.5,
+    "hold": "retain final goal; continue rate-limited reference toward it",
+    "rate": "unchanged 10mm per finger target per 100ms",
+    "force_per_finger_N": 3,
+    "goal_reset": "open/pregrasp=100mm; held/preinside=0mm"
+  },
+  "geometry": {
+    "tcp_local_m": [
+      0,
+      0,
+      0.1385
+    ],
+    "baseline_tcp_local_m": [
+      0,
+      0,
+      0.1358
+    ],
+    "finger_bridge": true,
+    "base_height_m": 0.015,
+    "block_width_m": 0.05,
+    "block_mass_kg": 0.07,
+    "bowl_mass_kg": 0.11,
+    "gripper_full_width_m": 0.1
+  },
+  "controller": {
+    "mode": "DLS 10Hz + recovering QP 200Hz",
+    "velocity_rad_s": 1.5,
+    "acceleration_rad_s2": 8,
+    "floor_clearance_m": 0,
+    "tracking_nominal_rad": 0.15,
+    "tracking_outer_cap_rad": 0.17,
+    "tracking_timeout_s": 0.5
+  },
+  "preserved": [
+    "reward formula and coefficients",
+    "four-reset 50/20/20/10 distribution",
+    "pose A",
+    "success/termination",
+    "observation/physics DR"
+  ],
+  "excluded": [
+    "Song task action overrides",
+    "new reward/switch penalties",
+    "five-reset task",
+    "real robot"
+  ],
+  "dependencies": {
+    "jax": "0.10.2",
+    "brax": "0.14.2",
+    "mujoco": "3.16.0",
+    "mujoco-warp": "3.16.0",
+    "osqp": "1.1.3",
+    "ruckig": "0.19.4"
+  }
+}

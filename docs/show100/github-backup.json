@@ -1,0 +1,96 @@
+{
+  "version": "SHOW-100",
+  "release_tag": "show100-50m-20261029",
+  "release_id": "thor-show100-50m-20261029",
+  "source_commit": "f0c11617a050b7e6f42dc3b3bbdca03038ea7c64",
+  "preserved_show76_main_commit": "965b21c4c27368333d75ae6f4853ce99e07ce675",
+  "training_transitions": 50331648,
+  "training_seed": 7,
+  "num_envs": 1024,
+  "checkpoint": "artifacts/training/checkpoints/000050331648",
+  "policy": "policies/show100-mlp",
+  "results": {
+    "empty_hand": {
+      "successes": 351,
+      "episodes": 384
+    },
+    "mixed": {
+      "successes": 360,
+      "episodes": 384
+    }
+  },
+  "success_definition": "Final inside at step80; not gentle placement or real robot success",
+  "stage_file_sha256": {
+    "training/checkpoint-parity.json": "a2ac684aa362da6b1e974e9fb241b48d6dcf8ae87be4218d8965a82e094ba39b",
+    "training/checkpoints/000050331648/_CHECKPOINT_METADATA": "344345650774396644fa730bc30a8e1c17cf87bde6bb7ef0311bd3d8a13dc2c6",
+    "training/checkpoints/000050331648/_METADATA": "b76c9842b1ae07f9035e6cc3459ae0899bc525be15af11c50b37af11236dee4d",
+    "training/checkpoints/000050331648/_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+    "training/checkpoints/000050331648/array_metadatas/process_0": "811eb50242ca86394caf8c2b9002119288651cc913975f829b300a6359734085",
+    "training/checkpoints/000050331648/commit_success.txt": "ad7f87c7f7e56e146eaf5d9c983d4fc7dd47a69058cf454f81150d39b04551cf",
+    "training/checkpoints/000050331648/d/9c9e8925b44ccaa8e34d5f60c76cb33e": "08007c169144235b3b684dfc6f534b0570db0b778d75628363224ad7d9cefe11",
+    "training/checkpoints/000050331648/manifest.ocdbt": "b95b3a7f69def4a433155bfe26504e91cf47d7715dbb4e6efa909fef8a1ce436",
+    "training/checkpoints/000050331648/ocdbt.process_0/d/1c07ff104227e570088064982e4ee278": "391f377c7995edddae27e0c0d357eed7e3290fed88b6cf644f9ce5b6a0d3af4a",
+    "training/checkpoints/000050331648/ocdbt.process_0/d/589d97effb5f7e63c5a8ac9433cfd091": "00555d49f3a088801d0b62a8c59571a393f2ca9de2a240eba06ad9e602e2fdee",
+    "training/checkpoints/000050331648/ocdbt.process_0/d/9b525c030cb76c171a215abbbbe10e9f": "55d2f52ebe97ed0a83696b8202961a7411b8410ac87c775a45b016bf61df3df9",
+    "training/checkpoints/000050331648/ocdbt.process_0/d/bd3a5460a8a057b15529031ec770866a": "69041e1800da244f1107e564a74113e31c52331f626c721aee961370b64b5a90",
+    "training/checkpoints/000050331648/ocdbt.process_0/d/d0ef4f5408cf721ec9963a3182d89d95": "cdf3ead9cf7f3a71b6d97006d07c4004d5d3d2835b8f120b7f2c6e2fc432a49b",
+    "training/checkpoints/000050331648/ocdbt.process_0/d/dba947d7167c2703132e9e7c83466076": "3ce9e8c66934b5ad56ab7ac389290eda60ef259ffb864f5e4954d167e420bc76",
+    "training/checkpoints/000050331648/ocdbt.process_0/manifest.ocdbt": "bdf4d97696cb28219d0958d0fd0e38f4dc2d22d2f354c1740b2a174b7a5e30d0",
+    "training/checkpoints/000050331648/ppo_network_config.json": "1b6fbb2a1d6af682968526f4fdde7377e6e3cf6ed33f8a67b910c4103b9c5ad1",
+    "training/config.json": "49d07c18ae42fb3a115295b8996570ddadad097ffcfbfd76c117fb0d29183df5",
+    "training/gpu.json": "4610c52c0eae31d8e5a2ee75f52d98cc95367fe41bb40fc58bfcc1f5b26c9ba0",
+    "training/invocation.json": "eb662aa90e26f12853fb83b225dde3510a56ba22835c2571e37f4854872f498e",
+    "training/metrics.jsonl": "ffc4dd5beff737cfe6642ae15d5e285ba6e1cfd396b9642bc5f788e8c486c064",
+    "training/provenance.json": "61a9570ec41037f08d55a349b2643c188b29346a60f80b08cf89c9b7fb937ae0",
+    "training/summary.json": "897ea28128a766ea5aeb4ddf39a850ce247267526876311a7fb4ce694856b660",
+    "evaluation/empty_hand-s2026-trace.npz": "b3261df1689f3be25a7ef5304f46a84108fbcc159914aa001d4cb23995ae1d9a",
+    "evaluation/empty_hand-s2026.json": "a16e216217f4915a454e489558447ac8b44ce4d6419d4bc5c558129c8433e0f3",
+    "evaluation/empty_hand-s2027-trace.npz": "d02a8ad53e6c68dd73e200287d8f5ffac973aadad7ae53eb2ad97b5b6ea0fb9e",
+    "evaluation/empty_hand-s2027.json": "44cb56f6833d970db12917787c026d6e6e331ae15cac5ae3a7a5a4b806fbf094",
+    "evaluation/empty_hand-s2028-trace.npz": "37725510db061ff31a6e5c89dc3c318e6012b71a262f69551f104f07722edcea",
+    "evaluation/empty_hand-s2028.json": "9cf0c9b10b73de226bc6a5cbccb66fb543af9ed10b5b71bc3e46a524ce433218",
+    "evaluation/evaluation.json": "74f323fe699b975919794863e475dab742a573ec7ece2bfa46f1482c06a57802",
+    "evaluation/mixed-s2026-trace.npz": "a761c17e55e06062b5fec0ec186938b797c658e8119b74bdd1bbe05cdfba1fb1",
+    "evaluation/mixed-s2026.json": "5b83ed09295f79037078896e27a4012faafef5d148a620b8150865fa7c5b1cce",
+    "evaluation/mixed-s2027-trace.npz": "918b9623de2190fff0b220655c9f1761eb48ba358533409508139163b4d62e5c",
+    "evaluation/mixed-s2027.json": "040aa8ab9e089caf8285ac17bf08809f0477bb4e240a639db7139f21631d2b3b",
+    "evaluation/mixed-s2028-trace.npz": "bc37fb808ea798dea06e11dff8d8cf29bccab048708c62e1668d9bbefba788f0",
+    "evaluation/mixed-s2028.json": "4b310c43fd0f79899c55867581eb45e0a5e1e6c33f976754db74f625049ad2dd",
+    "videos/first-four-00.jpg": "28ab0fc0aab0f4a6e3c8194bb2a048fc24ac786e719488ab77ba9db828826c67",
+    "videos/first-four-39.jpg": "c93e86ff6ad4e905370e6dcb1f31b2e4c589b63f7d671ef32fb681ad84c8d053",
+    "videos/first-four-79.jpg": "7e014a6b6b6a24dd221cb1ffe4b0cac517af9ec3175ea10325675ec367c0c082",
+    "videos/first-four.mp4": "a21f47b9b125b8f542299f95d7c257f66e1ea8c585b7ab6576fec1ed8c9402a1",
+    "videos/metadata.json": "5bccc2dd8dfb796bfdc02ab5652dd6f60d4dcb0ef1052865b65bfddd8d925143",
+    "videos/two-views-00.jpg": "a508bac77d86a1e49d21c6ccde65dfc2944ff0ce356d24c045f0fc1530a691cf",
+    "videos/two-views-39.jpg": "c75d8f8ec3b1854105b3d904a64c76804e731244961751f9e0cf380c8617b05b",
+    "videos/two-views-79.jpg": "5bd1696d816671bdaca99e86ff59bce09b7c7882d8500f67cb271b374016d548",
+    "videos/two-views.mp4": "1c960e91cfdf015fd111751bb5c046e6252aa16967cbd4d1a830b5b9c1b566ba",
+    "policy/export-validation.json": "3b71b80c5fa613380ec9737bf7df09ac1fe0b8db1192eaba94e9717187f551dc",
+    "policy/golden.npz": "3e1012549ebc7c33f3308e809e0b8ac36fe8d3de30eff42723e496039c26aef3",
+    "policy/policy.json": "9521d33551695b042f15bf1bbffb24cc0c19aff964e1ad46cc50b8370aa51506",
+    "policy/weights.npz": "3a3a07b21ac52ca868dccf62f6f09064ba6e28019b7899775d96441cf1859138"
+  },
+  "stage_to_archive_paths": {
+    "training": "artifacts/training",
+    "evaluation": "artifacts/evaluation",
+    "videos": "artifacts/videos",
+    "policy": "policies/show100-mlp"
+  },
+  "originals_modified": false,
+  "real_robot": false,
+  "validation": {
+    "cpu_tests": {
+      "passed": 14,
+      "skipped": 5,
+      "skipped_reason": "Optional historical LSTM exports not provided; current SHOW-100 export checked separately"
+    },
+    "copied_checkpoint_vs_original_golden": {
+      "status": "passed",
+      "checkpoint_action_max_abs_error": 0.0,
+      "vectors": 320,
+      "robot_connection": "none"
+    },
+    "numpy_export_max_action_abs_error": 5.066394805908203e-07,
+    "source_tree_unchanged_from_f0c1161": true
+  }
+}

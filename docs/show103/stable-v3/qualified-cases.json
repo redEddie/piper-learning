@@ -1,0 +1,30 @@
+[
+  {
+    "report": "near-s2028",
+    "scene": 1,
+    "release_tcp_mm": 54.65616226196289,
+    "cube_bottom_at_release_mm": 29.268165588378906,
+    "release_s": 0.5,
+    "qualified_s": 0.5,
+    "recontact_s": 1.1,
+    "impact_peak": 0.7559524774551392,
+    "basic_final": true,
+    "floor_support_final": true,
+    "max_clear_time": 0.0,
+    "final_gentle": false
+  },
+  {
+    "report": "near-s2028",
+    "scene": 67,
+    "release_tcp_mm": 54.578407287597656,
+    "cube_bottom_at_release_mm": 29.243314743041992,
+    "release_s": 0.5,
+    "qualified_s": 0.5,
+    "recontact_s": 0.8,
+    "impact_peak": 0.7779201865196228,
+    "basic_final": true,
+    "floor_support_final": true,
+    "max_clear_time": 0.0,
+    "final_gentle": false
+  }
+]

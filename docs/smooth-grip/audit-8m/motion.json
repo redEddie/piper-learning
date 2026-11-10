@@ -1,0 +1,70 @@
+{
+  "evaluation": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/interim-8388608",
+  "scope": "Same recorded scenes and20s horizon. Completion time is first inside among final successes, not independently verified gentle placement.",
+  "reports": {
+    "empty_hand-s2026": {
+      "final_successes": 117,
+      "completion_time_seconds_median": 11.9,
+      "completion_time_seconds_p90": 14.3,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 35.28768539428711,
+        "absolute_p99": 102.75840759277344
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.005143180023878813,
+        "p95": 0.018059445545077324,
+        "p99": 0.031096652150154114,
+        "maximum": 0.12292009592056274
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "mixed-s2026": {
+      "final_successes": 123,
+      "completion_time_seconds_median": 9.9,
+      "completion_time_seconds_p90": 13.76,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 28.683713912963867,
+        "absolute_p99": 83.20808410644531
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.0034572696313261986,
+        "p95": 0.01746431365609169,
+        "p99": 0.029981402680277824,
+        "maximum": 0.126570925116539
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    },
+    "preinside-s2026": {
+      "final_successes": 124,
+      "completion_time_seconds_median": 0.6000000000000001,
+      "completion_time_seconds_p90": 2.1,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 16.7308349609375,
+        "absolute_p99": 49.591064453125
+      },
+      "reference_limit_violating_episodes": 0,
+      "reference_speed_during_grip_max": 0.0,
+      "actual_max_joint_speed_during_grip": {
+        "p50": 0.0017968439497053623,
+        "p95": 0.014862029813230038,
+        "p99": 0.028842655941843987,
+        "maximum": 0.1421709805727005
+      },
+      "failure_reasons": {
+        "0": 128
+      }
+    }
+  },
+  "real_robot": false
+}

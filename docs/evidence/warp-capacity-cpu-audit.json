@@ -1,0 +1,195 @@
+{
+  "status": "cpu_native_and_static_source_audit_no_gpu_execution",
+  "packages": {
+    "mujoco": "3.16.0",
+    "mujoco-mjx": "3.16.0",
+    "warp-lang": "1.18.0"
+  },
+  "source_files": {
+    "mjx_io": {
+      "path": "/data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/mujoco/mjx/_src/io.py",
+      "sha256": "33ca178594993b9b48ab26e461f9541e4a0ebd7b1085600ad3411a3649638d7b"
+    },
+    "warp_io": {
+      "path": "/data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/mujoco/mjx/third_party/mujoco_warp/_src/io.py",
+      "sha256": "51834975fc00f88ea7613187eb27471bd3154a077b958d43f01130384d9fc98d"
+    },
+    "warp_collision_primitive": {
+      "path": "/data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/mujoco/mjx/third_party/mujoco_warp/_src/collision_primitive.py",
+      "sha256": "ff99b6ea5237b8f3e90ef6f8677cdb89c352926734e26711f8b9486a57bb371d"
+    },
+    "warp_collision_convex": {
+      "path": "/data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/mujoco/mjx/third_party/mujoco_warp/_src/collision_convex.py",
+      "sha256": "0990c884c2460384a17e0896e76b8078faf0b41a3372ec004de5efdcb7794602"
+    },
+    "warp_collision_driver": {
+      "path": "/data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/mujoco/mjx/third_party/mujoco_warp/_src/collision_driver.py",
+      "sha256": "d7777b142290b694f4aac97ac2a3505c374177a605d57c48e4a5b5e42ef409ab"
+    },
+    "robot_xml": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-20/chatgpt-docs-env-setup-brief-md/outputs/piper-sim-lab/src/piper_sim_lab/assets/agilex_piper/piper.xml",
+      "sha256": "a7b5b5d3b2a68d5c553b2ee9665d54a422bd8bf1fa6f3251bc11834993d37098"
+    },
+    "scene_xml": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-20/chatgpt-docs-env-setup-brief-md/outputs/piper-sim-lab/src/piper_sim_lab/assets/agilex_piper/scene.xml",
+      "sha256": "a4146e916ab3a85f5cfdc4139e2844b686bdaa2109f6ce2486df7e43b53bf602"
+    }
+  },
+  "model": {
+    "nv": 8,
+    "neq": 1,
+    "nhfield": 0,
+    "nflex": 0,
+    "has_sdf": false,
+    "contact_geometry": {
+      "plane": 1,
+      "capsule": 7,
+      "box": 4,
+      "mesh": 0
+    },
+    "explicit_pairs": 0,
+    "sensors": 0,
+    "disableflags": 0,
+    "cone": "elliptic",
+    "condim": 3
+  },
+  "actual_defaults": {
+    "nconmax_per_world_warp_heuristic": 48,
+    "naconmax_mjx_template_global": 48,
+    "naccdmax_mjx_template_global": 48,
+    "njmax_per_world": 64,
+    "reason": "MJX io._make_data_warp invokes bundled MuJoCo Warp make_data(nworld=1); vmap does not multiply shared contact arrays. The heuristic rounds 45 contacts to 48 and 53 constraint rows to 64."
+  },
+  "native_cpu_screening": {
+    "seed": 42,
+    "sampling_order": [
+      "nominal",
+      "reset_noise",
+      "joint_range"
+    ],
+    "arm_joint_limits": "bundled model jnt_range[:6]",
+    "gripper_qpos": [
+      0.025,
+      -0.025
+    ],
+    "qvel": 0,
+    "solver_iterations": 8,
+    "solver_ls_iterations": 4,
+    "timestep": 0.005,
+    "nominal": {
+      "sample_count": 1,
+      "ncon_min": 0,
+      "ncon_max": 0,
+      "ncon_sum": 0,
+      "nefc_min": 7,
+      "nefc_max": 7,
+      "nonzero_contact_samples": 0
+    },
+    "reset_noise": {
+      "sample_count": 4096,
+      "distribution": "nominal + uniform(-0.05,0.05) independently for each arm joint",
+      "ncon_min": 0,
+      "ncon_max": 0,
+      "ncon_sum": 0,
+      "nefc_min": 7,
+      "nefc_max": 7,
+      "nonzero_contact_samples": 0
+    },
+    "joint_range": {
+      "sample_count": 4096,
+      "distribution": "uniform over each arm joint range, following reset_noise draws from the same RNG",
+      "ncon_min": 0,
+      "ncon_max": 24,
+      "ncon_sum": 21630,
+      "nefc_min": 7,
+      "nefc_max": 79,
+      "nonzero_contact_samples": 1219
+    },
+    "limitation": "Native MuJoCo screening is not a Warp rollout or a guarantee of actual maximum contact counts."
+  },
+  "jax_cpu_static_allocation": {
+    "device": "cpu:0",
+    "ncon": 107,
+    "equality_rows": 1,
+    "friction_rows": 6,
+    "joint_limit_rows": 8,
+    "nefc": 336,
+    "efc_J_shape": [
+      336,
+      8
+    ],
+    "contact_condim_counts": {
+      "3": 107
+    }
+  },
+  "warp_static_candidate_bound": {
+    "calculation": "Replicate installed Warp io.py 737-823 mask, weld, parent-child and exclude filters, then multiply each pair count by the installed narrowphase write loop capacity. No explicit pair or sensor additions. Box-box uses CCD (NATIVECCD enabled and no box margin). Sleeping is disabled.",
+    "filtered_pair_count": 53,
+    "pairs": [
+      {
+        "types": "plane-capsule",
+        "pair_count": 6,
+        "contacts_per_pair": 2,
+        "contact_slots": 12
+      },
+      {
+        "types": "plane-box",
+        "pair_count": 4,
+        "contacts_per_pair": 8,
+        "contact_slots": 32
+      },
+      {
+        "types": "capsule-capsule",
+        "pair_count": 15,
+        "contacts_per_pair": 2,
+        "contact_slots": 30
+      },
+      {
+        "types": "capsule-box",
+        "pair_count": 24,
+        "contacts_per_pair": 2,
+        "contact_slots": 48
+      },
+      {
+        "types": "box-box",
+        "pair_count": 4,
+        "contacts_per_pair": 4,
+        "contact_slots": 16
+      }
+    ],
+    "contact_slots_per_world": 138,
+    "constraint_rows_per_world": 429,
+    "constraint_formula": "138 * 3 elliptic contact rows + 1 equality + 6 friction + 8 possible joint-limit rows",
+    "ccd_pairs_per_world": 4,
+    "scope": "Bound from static candidate counts and installed emission loops for the current unmodified contact model; recompute if geometry, masks, constraints, cone/condim or collision flags change. Not a measured GPU maximum."
+  },
+  "recommended_first_warp_validation": {
+    "contacts_per_env": 160,
+    "constraints_per_env": 512,
+    "ccd_pairs_per_env": 4,
+    "at_4096_envs": {
+      "naconmax": 655360,
+      "njmax": 512,
+      "naccdmax": 16384
+    },
+    "requirement": "Record actual overflow bits and nacon/nefc maxima during representative rollouts before claiming capacity sufficiency. Solver iteration bits are separate from contact/constraint overflow."
+  },
+  "ccd_scratch_payload_estimate": {
+    "basis": "collision_convex.py:1295-1419; box-only EPA iterations16, npolygonmax4,nmeshdegmax3; float/int32 and vec3 of3 floats; logical array payload only, not measured allocator/VRAM peak",
+    "bytes_per_ccd_slot": 2972,
+    "at_4096_envs_naccdmax_4N_mib": 46.4375,
+    "at_4096_envs_default_naccdmax_160N_mib": 1857.5
+  },
+  "anchors": {
+    "defaults": "warp_io:1414-1441;1862-1926; mjx_io:791-812,898-923",
+    "pair_filter": "warp_io:737-823",
+    "primitive_emission": "warp_collision_primitive:510-599,600-688,761-848,1161-1245",
+    "box_box_ccd": "warp_collision_driver:1046-1064; warp_collision_convex:899-986",
+    "ccd_allocation": "warp_collision_convex:1272-1305,1399-1419"
+  },
+  "official_references": [
+    "https://mujoco.readthedocs.io/en/stable/mjx.html#basic-usage",
+    "https://mujoco.readthedocs.io/en/stable/mjwarp/index.html",
+    "https://nvidia.github.io/warp/v1.18/user_guide/execution_and_performance/reducing_compilation_and_startup_time.html"
+  ]
+}

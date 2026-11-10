@@ -1,0 +1,65 @@
+{
+  "archive_sha256": "22631ba2992a48999252f0b77cbfbaed6d9bfefc59c8c6a9883daefe6c3c197e",
+  "archive_members_verified": 11,
+  "load_and_normalizer_equality": "passed",
+  "sequences": [
+    {
+      "start": "initial_a",
+      "steps": 64,
+      "logits_and_lstm_carry_bitwise_identical": true
+    },
+    {
+      "start": "pre_grasp",
+      "steps": 64,
+      "logits_and_lstm_carry_bitwise_identical": true
+    },
+    {
+      "start": "held",
+      "steps": 64,
+      "logits_and_lstm_carry_bitwise_identical": true
+    },
+    {
+      "start": "over_bowl",
+      "steps": 64,
+      "logits_and_lstm_carry_bitwise_identical": true
+    },
+    {
+      "start": "post_release",
+      "steps": 64,
+      "logits_and_lstm_carry_bitwise_identical": true
+    }
+  ],
+  "videos": [
+    {
+      "asset": "show108-pipeline-dr-wide-from14u-2u-initial_a-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "43034e1eddd857980fcdd6ed5633febc2b1d40cf7edcda6f50cdb88e806be60f"
+    },
+    {
+      "asset": "show108-pipeline-dr-wide-from14u-2u-pre_grasp-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "fa41d5747b879b1eaf29d8b0931fff9d412f5ebae5acc5d73ae22833f0553ffb"
+    },
+    {
+      "asset": "show108-pipeline-dr-wide-from14u-2u-held-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "24ee8f9ded762ae568f4904591478b8e55542032e65822f5b67f1475af211318"
+    },
+    {
+      "asset": "show108-pipeline-dr-wide-from14u-2u-over_bowl-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "b9e683e65f7560f8e042c2fb5b4c3cfa1cbd5bab6778aec49070832be2f1399b"
+    },
+    {
+      "asset": "show108-pipeline-dr-wide-from14u-2u-post_release-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "8a9fbbe44dc5b145d50d7120bc0c4a0d04e277578ce33c848c07cb468be161da"
+    }
+  ],
+  "scope": "Local packaging integrity; task success remains the separately recorded evaluation."
+}

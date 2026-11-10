@@ -1,0 +1,37 @@
+{
+  "scope": "Frozen old policy rerun with corrected reward ledger and real5ms GPU contacts; never used to initialize training",
+  "aggregate": {
+    "empty_hand": {
+      "episodes": 128,
+      "final_successes": 108,
+      "final_success_rate": 0.84375,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    }
+  },
+  "examples": [
+    {
+      "episode": 55,
+      "old_gentle": true,
+      "new_gentle": false,
+      "new_premature": true,
+      "new_qualified": false,
+      "old_impact": 0.0,
+      "new_impact": 0.3285965919494629,
+      "max_qpos_difference": 0.025740444660186768,
+      "max_action_difference": 0.048887789249420166
+    },
+    {
+      "episode": 63,
+      "old_gentle": true,
+      "new_gentle": false,
+      "new_premature": true,
+      "new_qualified": false,
+      "old_impact": 0.0,
+      "new_impact": 0.6088810563087463,
+      "max_qpos_difference": 7.443130016326904e-05,
+      "max_action_difference": 0.0001302659511566162
+    }
+  ],
+  "real_robot": false
+}

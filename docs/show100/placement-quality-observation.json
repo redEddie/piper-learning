@@ -1,0 +1,105 @@
+{
+  "checkpoint_steps": 33554432,
+  "seed": 2026,
+  "scene": 0,
+  "scope": "100ms saved snapshots; velocities are sampled states, not a validated pre-impact peak. Clearance accounts for cube/bowl orientation.",
+  "records": [
+    {
+      "time_s": 6.8,
+      "bottom_clearance_to_bowl_floor_mm": 124.40418733795126,
+      "relative_axis_velocity_m_s": -0.00039194393272733434,
+      "final_opening_goal_mm": 0.0,
+      "actual_width_mm": 49.88443374633789,
+      "inside": false
+    },
+    {
+      "time_s": 6.9,
+      "bottom_clearance_to_bowl_floor_mm": 124.58652402943379,
+      "relative_axis_velocity_m_s": 0.005434204825288695,
+      "final_opening_goal_mm": 0.0,
+      "actual_width_mm": 49.88373565673828,
+      "inside": false
+    },
+    {
+      "time_s": 7.0,
+      "bottom_clearance_to_bowl_floor_mm": 125.44069456192946,
+      "relative_axis_velocity_m_s": 0.011399207628236046,
+      "final_opening_goal_mm": 0.0,
+      "actual_width_mm": 49.887718200683594,
+      "inside": false
+    },
+    {
+      "time_s": 7.1,
+      "bottom_clearance_to_bowl_floor_mm": 125.96568846039364,
+      "relative_axis_velocity_m_s": 0.0030961201934901063,
+      "final_opening_goal_mm": 0.0,
+      "actual_width_mm": 49.88923645019531,
+      "inside": false
+    },
+    {
+      "time_s": 7.2,
+      "bottom_clearance_to_bowl_floor_mm": 125.95265322778148,
+      "relative_axis_velocity_m_s": -0.00429707580058291,
+      "final_opening_goal_mm": 100.0,
+      "actual_width_mm": 49.88553237915039,
+      "inside": false
+    },
+    {
+      "time_s": 7.3,
+      "bottom_clearance_to_bowl_floor_mm": 124.49983574704248,
+      "relative_axis_velocity_m_s": -0.02811461135818112,
+      "final_opening_goal_mm": 100.0,
+      "actual_width_mm": 50.02853012084961,
+      "inside": false
+    },
+    {
+      "time_s": 7.4,
+      "bottom_clearance_to_bowl_floor_mm": 103.87969123296932,
+      "relative_axis_velocity_m_s": -0.5994879008201155,
+      "final_opening_goal_mm": 100.0,
+      "actual_width_mm": 59.83694076538086,
+      "inside": false
+    },
+    {
+      "time_s": 7.5,
+      "bottom_clearance_to_bowl_floor_mm": -5.586723239509769,
+      "relative_axis_velocity_m_s": -1.2877909656134403,
+      "final_opening_goal_mm": 0.0,
+      "actual_width_mm": 39.731048583984375,
+      "inside": true
+    },
+    {
+      "time_s": 7.6,
+      "bottom_clearance_to_bowl_floor_mm": -0.270682652880533,
+      "relative_axis_velocity_m_s": 0.0015176386737640868,
+      "final_opening_goal_mm": 0.0,
+      "actual_width_mm": 21.033231735229492,
+      "inside": true
+    },
+    {
+      "time_s": 7.7,
+      "bottom_clearance_to_bowl_floor_mm": -0.2980358335264869,
+      "relative_axis_velocity_m_s": -0.0001388103130305673,
+      "final_opening_goal_mm": 100.0,
+      "actual_width_mm": 39.68790054321289,
+      "inside": true
+    },
+    {
+      "time_s": 7.8,
+      "bottom_clearance_to_bowl_floor_mm": -0.29795707914586234,
+      "relative_axis_velocity_m_s": -0.00015030631950077272,
+      "final_opening_goal_mm": 100.0,
+      "actual_width_mm": 59.707611083984375,
+      "inside": true
+    },
+    {
+      "time_s": 7.9,
+      "bottom_clearance_to_bowl_floor_mm": -0.29722367821115053,
+      "relative_axis_velocity_m_s": -0.0001740192767083584,
+      "final_opening_goal_mm": 100.0,
+      "actual_width_mm": 78.65538024902344,
+      "inside": true
+    }
+  ],
+  "proposed_followup": "Keep approach/grasp/transport reward and reset schema; review placing-only shaping and impact-aware placement reward in a separate follow-up after baseline training. No reward edits applied."
+}

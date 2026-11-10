@@ -1,0 +1,12 @@
+# force-capped binary gripper (gripper_force 3 N, kp 400, gripper_binary), ls 20, 5 cm / 80 g block
+block_half 0.025 block_mass 0.08
+env 0: at d=0.006 | w=0.0499 | lifted h=0.100 grasped=1 | above xy=0.001 | inside=1 block=[0.3449999988079071, 0.14800000190734863, 0.03099999949336052]
+env 1: at d=0.006 | w=0.0500 | lifted h=0.100 grasped=1 | above xy=0.001 | inside=1 block=[0.34299999475479126, 0.17299999296665192, 0.03099999949336052]
+env 2: at d=0.006 | w=0.0596 | lifted h=0.098 grasped=0 | above xy=0.001 | inside=1 block=[0.289000004529953, 0.19099999964237213, 0.03099999949336052]
+env 3: at d=0.058 | w=-0.0000 | lifted h=-0.000 grasped=0 | above xy=0.282 | inside=0 block=[0.25200000405311584, -0.10999999940395355, 0.02500000037252903]
+env 4: at d=0.006 | w=0.0496 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.32100000977516174, 0.11999999731779099, 0.03099999949336052]
+env 5: at d=0.006 | w=0.0499 | lifted h=0.100 grasped=1 | above xy=0.001 | inside=1 block=[0.2919999957084656, 0.1940000057220459, 0.03099999949336052]
+env 6: at d=0.006 | w=0.0496 | lifted h=0.100 grasped=1 | above xy=0.001 | inside=1 block=[0.3149999976158142, 0.13099999725818634, 0.03099999949336052]
+env 7: at d=0.006 | w=0.0507 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.34299999475479126, 0.16899999976158142, 0.03099999949336052]
+warp scripted success 7 / 8 overflow 0.0
+# env 3: script does not align yaw (45 deg cube, 71 mm diagonal > 70 mm opening) - same as before the gripper change

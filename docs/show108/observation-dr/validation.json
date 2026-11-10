@@ -1,0 +1,442 @@
+{
+  "unit_tests": {
+    "result": "47 passed",
+    "files": [
+      "tests/test_stage_observation_randomization.py",
+      "tests/test_stage_reward_env.py",
+      "tests/test_position_random_stage.py",
+      "tests/test_ternary_control.py",
+      "tests/test_stage_reward_v5.py"
+    ],
+    "log_sha256": "80289e5933f57f8be2b57b04e302e73c6b8fc0c509c1972c5ac48a390fd642cb"
+  },
+  "physics": {
+    "train": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 24,
+      "policy_transitions": 98304,
+      "reset_group_counts": [
+        858,
+        806,
+        816,
+        803,
+        813
+      ],
+      "invalid_held_resets": 0,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.010802711360156536,
+        "max_acceleration": 0.9985018372535706,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "perception_randomization": {
+        "enabled": true,
+        "obj_delay": {
+          "min": 0.0006549358367919922,
+          "max": 1.9996247291564941,
+          "std": 0.581429123878479
+        },
+        "robot_delay": {
+          "min": 6.198883056640625e-05,
+          "max": 0.4998140335083008,
+          "std": 0.14344777166843414
+        },
+        "hold_substeps": {
+          "min": 0.0,
+          "max": 10.0,
+          "std": 2.93484717156394
+        },
+        "size_scale": {
+          "min": 0.9500030279159546,
+          "max": 1.0499873161315918,
+          "std": 0.02869183011353016
+        },
+        "bowl_delay": {
+          "min": 0.0013833045959472656,
+          "max": 2.9994473457336426,
+          "std": 0.869452714920044
+        },
+        "cube_position_error_std_mm": [
+          2.982100486755371,
+          2.9282078742980957,
+          2.974278688430786
+        ],
+        "cube_position_error_abs_max_mm": 9.000003814697266,
+        "clean_critic_geometry_verified": true,
+        "observed_relative_positions_consistent": true
+      },
+      "initial_position_diversity": {
+        "0": {
+          "cube_xy_std": [
+            0.12062644213438034,
+            0.17426148056983948
+          ],
+          "bowl_xy_std": [
+            0.11858754605054855,
+            0.17720693349838257
+          ],
+          "samples": 858,
+          "cube_xy_min": [
+            0.10004987567663193,
+            -0.29657506942749023
+          ],
+          "cube_xy_max": [
+            0.49968457221984863,
+            0.29978781938552856
+          ],
+          "bowl_xy_min": [
+            0.10008406639099121,
+            -0.2994958162307739
+          ],
+          "bowl_xy_max": [
+            0.4997628629207611,
+            0.29998868703842163
+          ]
+        },
+        "1": {
+          "cube_xy_std": [
+            0.08597131818532944,
+            0.13918952643871307
+          ],
+          "bowl_xy_std": [
+            0.11881555616855621,
+            0.17869722843170166
+          ],
+          "samples": 806,
+          "cube_xy_min": [
+            0.10073470324277878,
+            -0.2983303964138031
+          ],
+          "cube_xy_max": [
+            0.41781651973724365,
+            0.23843520879745483
+          ],
+          "bowl_xy_min": [
+            0.10058870166540146,
+            -0.29931724071502686
+          ],
+          "bowl_xy_max": [
+            0.4996899962425232,
+            0.2998654246330261
+          ]
+        },
+        "2": {
+          "cube_xy_std": [
+            0.06546428054571152,
+            0.12223528325557709
+          ],
+          "bowl_xy_std": [
+            0.12035205960273743,
+            0.17980852723121643
+          ],
+          "samples": 816,
+          "cube_xy_min": [
+            0.10042839497327805,
+            -0.2988344132900238
+          ],
+          "cube_xy_max": [
+            0.3555392920970917,
+            0.2353239357471466
+          ],
+          "bowl_xy_min": [
+            0.10100150108337402,
+            -0.2991340458393097
+          ],
+          "bowl_xy_max": [
+            0.49973392486572266,
+            0.2987930178642273
+          ]
+        },
+        "3": {
+          "cube_xy_std": [
+            0.046046897768974304,
+            0.1115078255534172
+          ],
+          "bowl_xy_std": [
+            0.04611429199576378,
+            0.1116790622472763
+          ],
+          "samples": 803,
+          "cube_xy_min": [
+            0.10089556872844696,
+            -0.26100412011146545
+          ],
+          "cube_xy_max": [
+            0.284906268119812,
+            0.1818246990442276
+          ],
+          "bowl_xy_min": [
+            0.10009374469518661,
+            -0.26124629378318787
+          ],
+          "bowl_xy_max": [
+            0.2843598425388336,
+            0.18192927539348602
+          ]
+        },
+        "4": {
+          "cube_xy_std": [
+            0.04416000470519066,
+            0.11164136976003647
+          ],
+          "bowl_xy_std": [
+            0.04484187811613083,
+            0.11368247121572495
+          ],
+          "samples": 813,
+          "cube_xy_min": [
+            0.100112684071064,
+            -0.2577930688858032
+          ],
+          "cube_xy_max": [
+            0.2784390151500702,
+            0.1791570633649826
+          ],
+          "bowl_xy_min": [
+            0.10243760794401169,
+            -0.2621295750141144
+          ],
+          "bowl_xy_max": [
+            0.28341659903526306,
+            0.18229103088378906
+          ]
+        }
+      },
+      "elapsed_seconds": 38.58934358693659,
+      "config_sha256": "077e46c411c04446dd12133e2759207aa6d53c503a5b1cf7cbfd3ec6b96df427",
+      "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+      "training": false,
+      "real_robot": false,
+      "raw_file": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-4096-train-validation.json",
+      "raw_sha256": "6c3dea9edfb22404b209702734353d290404a616674be0349ec6f26705aa012d",
+      "delay_report_units": "obj_delay/robot_delay/bowl_delay in100ms control steps; hold_substeps in5ms physical steps"
+    },
+    "eval": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 24,
+      "policy_transitions": 98304,
+      "reset_group_counts": [
+        858,
+        806,
+        816,
+        803,
+        813
+      ],
+      "invalid_held_resets": 0,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.010745753534138203,
+        "max_acceleration": 0.9985018372535706,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "perception_randomization": {
+        "enabled": true,
+        "obj_delay": {
+          "min": 0.0006549358367919922,
+          "max": 1.9996247291564941,
+          "std": 0.581429123878479
+        },
+        "robot_delay": {
+          "min": 6.198883056640625e-05,
+          "max": 0.4998140335083008,
+          "std": 0.14344777166843414
+        },
+        "hold_substeps": {
+          "min": 0.0,
+          "max": 10.0,
+          "std": 2.93484717156394
+        },
+        "size_scale": {
+          "min": 0.9500030279159546,
+          "max": 1.0499873161315918,
+          "std": 0.02869183011353016
+        },
+        "bowl_delay": {
+          "min": 0.0013833045959472656,
+          "max": 2.9994473457336426,
+          "std": 0.869452714920044
+        },
+        "cube_position_error_std_mm": [
+          2.98210072517395,
+          2.928208112716675,
+          2.974278688430786
+        ],
+        "cube_position_error_abs_max_mm": 9.000003814697266,
+        "clean_critic_geometry_verified": true,
+        "observed_relative_positions_consistent": true
+      },
+      "initial_position_diversity": {
+        "0": {
+          "cube_xy_std": [
+            0.12062644213438034,
+            0.17426148056983948
+          ],
+          "bowl_xy_std": [
+            0.11858754605054855,
+            0.17720693349838257
+          ],
+          "samples": 858,
+          "cube_xy_min": [
+            0.10004987567663193,
+            -0.29657506942749023
+          ],
+          "cube_xy_max": [
+            0.49968457221984863,
+            0.29978781938552856
+          ],
+          "bowl_xy_min": [
+            0.10008406639099121,
+            -0.2994958162307739
+          ],
+          "bowl_xy_max": [
+            0.4997628629207611,
+            0.29998868703842163
+          ]
+        },
+        "1": {
+          "cube_xy_std": [
+            0.08559669554233551,
+            0.1355646401643753
+          ],
+          "bowl_xy_std": [
+            0.1203090250492096,
+            0.18084098398685455
+          ],
+          "samples": 806,
+          "cube_xy_min": [
+            0.10005610436201096,
+            -0.29879119992256165
+          ],
+          "cube_xy_max": [
+            0.4164380133152008,
+            0.2620742619037628
+          ],
+          "bowl_xy_min": [
+            0.10058870166540146,
+            -0.29931724071502686
+          ],
+          "bowl_xy_max": [
+            0.4996899962425232,
+            0.2994382381439209
+          ]
+        },
+        "2": {
+          "cube_xy_std": [
+            0.0692625567317009,
+            0.12897975742816925
+          ],
+          "bowl_xy_std": [
+            0.12018943578004837,
+            0.1801011711359024
+          ],
+          "samples": 816,
+          "cube_xy_min": [
+            0.09997442364692688,
+            -0.29945966601371765
+          ],
+          "cube_xy_max": [
+            0.3641647696495056,
+            0.2467908412218094
+          ],
+          "bowl_xy_min": [
+            0.10100150108337402,
+            -0.2986120581626892
+          ],
+          "bowl_xy_max": [
+            0.49973392486572266,
+            0.2987930178642273
+          ]
+        },
+        "3": {
+          "cube_xy_std": [
+            0.04158249497413635,
+            0.11804267019033432
+          ],
+          "bowl_xy_std": [
+            0.041646406054496765,
+            0.11822481453418732
+          ],
+          "samples": 803,
+          "cube_xy_min": [
+            0.1012425646185875,
+            -0.2644719183444977
+          ],
+          "cube_xy_max": [
+            0.2840813398361206,
+            0.17810602486133575
+          ],
+          "bowl_xy_min": [
+            0.1004721075296402,
+            -0.26488858461380005
+          ],
+          "bowl_xy_max": [
+            0.28362950682640076,
+            0.17811769247055054
+          ]
+        },
+        "4": {
+          "cube_xy_std": [
+            0.04043741896748543,
+            0.11240518093109131
+          ],
+          "bowl_xy_std": [
+            0.04103894904255867,
+            0.11447443068027496
+          ],
+          "samples": 813,
+          "cube_xy_min": [
+            0.10017185658216476,
+            -0.25982216000556946
+          ],
+          "cube_xy_max": [
+            0.2787665128707886,
+            0.17059390246868134
+          ],
+          "bowl_xy_min": [
+            0.10221564024686813,
+            -0.2640872299671173
+          ],
+          "bowl_xy_max": [
+            0.28371861577033997,
+            0.17334571480751038
+          ]
+        }
+      },
+      "elapsed_seconds": 30.113876590970904,
+      "config_sha256": "077e46c411c04446dd12133e2759207aa6d53c503a5b1cf7cbfd3ec6b96df427",
+      "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+      "training": false,
+      "real_robot": false,
+      "raw_file": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-4096-eval-validation.json",
+      "raw_sha256": "6abd10727a1191a0b8b6cf73b2e629a3c04e1dfc2e36c2c879109e5c886e1e4c",
+      "delay_report_units": "obj_delay/robot_delay/bowl_delay in100ms control steps; hold_substeps in5ms physical steps"
+    }
+  },
+  "old_selected_checkpoint_unchanged": true,
+  "continuation_plan_only_checked": true,
+  "source_sha256": {
+    "src/piper_sim_lab/pick_place.py": "d171ec79e3266904ec515e71a7a40b0e81c45df48ceb9bd28c25ab516f439018",
+    "src/piper_sim_lab/stage_reward_env.py": "faa604bb7efccaea51755dc06d63ad462f8bfb2f168c1b57e37290fe09cafd60",
+    "src/piper_sim_lab/position_random_stage.py": "cfd9f852755c366ec6108a8aa9eb04fb5b2d73ed325dd64498929d1c9a166758",
+    "scripts/show103/validate_stage_env.py": "8832ff10f9c2835a49f82c2c3e1cb0203567e196fc543cad7112a22582f9cd4c",
+    "scripts/show103/build_position_banks.py": "2cddf5f7a3f6c1c976cd8f2e8d47cf17d2460cc02e24e8b50fcea9cd977e0f34",
+    "scripts/show103/build_five_start_banks.py": "40054b6d81fe4f30d36ca267cad7b4867e8ed28c621808841b7481d32652bc8d",
+    "tests/test_stage_observation_randomization.py": "f746d5d117c800dea63d7b091f1dc782dae58dc1a4ae4c6da5c33d3f0409a4fc"
+  }
+}

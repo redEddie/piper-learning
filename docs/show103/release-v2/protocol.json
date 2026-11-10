@@ -1,0 +1,184 @@
+{
+  "issue": "SHOW-103",
+  "variant": "release-v2",
+  "target": "TCP50-60mm above bowl inner floor; not support-before-release",
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/refine-8m/checkpoints/000008388608",
+  "parent_lineage_transitions": 67108864,
+  "additional_transitions": 8388608,
+  "configuration": {
+    "seed": 7,
+    "environment": {
+      "task": "controlled_release",
+      "ctrl_dt": 0.1,
+      "sim_dt": 0.005,
+      "impl": "warp",
+      "solver_iterations": 8,
+      "solver_ls_iterations": 20,
+      "jacobian": "mjx",
+      "robot_model": "piper_v100",
+      "base_height": 0.015,
+      "nominal_qpos": [
+        0.0,
+        0.523,
+        -0.45,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gripper_max": 0.05,
+      "table_priority": 2,
+      "reset_ik_flip": true,
+      "stage_obs": false,
+      "bowl_arm_collision": true,
+      "size_obs": true,
+      "obs_randomization": true,
+      "physics_randomization": true,
+      "block_half": 0.025,
+      "block_mass": 0.07,
+      "block_mass_range": [
+        0.056,
+        0.084
+      ],
+      "block_rgba": [
+        0.1,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "bowl_r_bottom": 0.042,
+      "bowl_r_rim": 0.075,
+      "bowl_height": 0.067,
+      "bowl_wall": 0.003,
+      "bowl_floor": 0.003,
+      "bowl_free": true,
+      "bowl_mass": 0.11,
+      "block_x": [
+        0.25,
+        0.4
+      ],
+      "block_y": [
+        -0.3,
+        0.3
+      ],
+      "bowl_x": [
+        0.25,
+        0.35
+      ],
+      "bowl_y": [
+        -0.3,
+        0.3
+      ],
+      "spawn_min_distance": 0.14,
+      "spawn_max_radius": 0.4,
+      "spawn_candidates": 16,
+      "reset_stage_probs": [
+        0.4,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "batch_capacity": 1024,
+      "gripper_threshold": 0.5,
+      "gripper_goal_obs": true,
+      "finger_bridge": true,
+      "tcp_local_z": 0.1385,
+      "control_mode": "qp",
+      "control_acceleration": 4.0,
+      "control_floor": 0.0,
+      "max_joint_vel": 0.75,
+      "control_jerk": 300.0,
+      "max_lin_vel": 0.05,
+      "max_ang_vel": 0.5,
+      "gentle_near_fraction": 0.25,
+      "release_tcp_min": 0.05,
+      "release_tcp_max": 0.06,
+      "gentle_near_min": 0.03,
+      "gentle_near_max": 0.05,
+      "release_width_margin": 0.01,
+      "release_impact_limit": 1.0
+    },
+    "training": {
+      "num_timesteps": 8388608,
+      "num_envs": 1024,
+      "episode_length": 200,
+      "unroll_length": 16,
+      "batch_size": 256,
+      "num_minibatches": 4,
+      "num_updates_per_batch": 4,
+      "num_evals": 5,
+      "num_eval_envs": 64,
+      "learning_rate": 0.0003,
+      "discounting": 0.99,
+      "gae_lambda": 0.95,
+      "entropy_cost": 0.001,
+      "clipping_epsilon": 0.2,
+      "reward_scaling": 1.0,
+      "normalize_observations": true,
+      "max_grad_norm": 1.0,
+      "action_repeat": 1,
+      "bootstrap_on_timeout": false,
+      "deterministic_eval": true
+    },
+    "network": {
+      "policy_hidden_layer_sizes": [
+        256,
+        256
+      ],
+      "value_hidden_layer_sizes": [
+        256,
+        256
+      ],
+      "policy_obs_key": "state",
+      "value_obs_key": "privileged"
+    }
+  },
+  "height_reference": "bowl rotation transpose*(TCP-bowl position), z minus inner floor thickness",
+  "reset_mixture": [
+    0.4,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "near_fraction_of_all_resets": 0.05,
+  "near_tcp_height_range_mm": [
+    55,
+    75
+  ],
+  "interlock": "All closing strokes locked. During opening, keep arm locked until actual full width >= opening-start width +10mm. Then allow policy motion while continuing toward100mm. Width is hardware-observable; contact labels are not controller inputs.",
+  "qualification": "First sustained finger-contact loss20ms, opening intent, TCP50-60mm, object XYwithin17mm of bowl centre, measured TCP speed<=0.03m/s and preceding object speed<=0.2m/s. No recontact can repair failed first release.",
+  "completion": "Qualified release then basic inside, floor support stable100ms at<=0.02m/s, no later robot-cube/bowl contact, TCP point clearance80mm for200ms, peak precontact normal downward speed<=1m/s.",
+  "preserved": [
+    "Physical dimensions andTCP138.5mm",
+    "Reference0.75rad/s,4rad/s²,300rad/s³",
+    "Raw7 policy action costs",
+    "50actor/67critic dimensions",
+    "Original source/release and all prior checkpoints"
+  ],
+  "tests": 33,
+  "positive_control": "docs/show103/positive-release.json",
+  "static_opening_geometry": "docs/show103/tcp-band-opening-geometry.json",
+  "numeric_reward_validation": "docs/show103/release-v2/returns.json",
+  "source_checkpoint_sha256": {
+    "_METADATA": "4b9ae67d13351e348ca88bc00f1365d32e9fa9936563e556d22b418348ebb9d0",
+    "_CHECKPOINT_METADATA": "6edc1be06fea731d1e7c28584ef1763bed21ca84981a4ba7e379a81479ee49be",
+    "ppo_network_config.json": "10dd67820dd7319ffd7510b123086dd2f86debec01af9b3cb9d7931cc0ed40df",
+    "commit_success.txt": "1519cd318228aa1ab4de4632729886a9b710aa84d32d5d83f9a4ab3bdf343679",
+    "_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+    "manifest.ocdbt": "6ef149af2630aa397a8da732086c72d938ca4ef0f68bc2af38186c31204f10a1",
+    "ocdbt.process_0/manifest.ocdbt": "3824926cf4efb544ffcba2b445370433191db9064f23acbefe0e68dd6e7803d7",
+    "array_metadatas/process_0": "5e257d20367dd4e80bae8d98f784a3aec67be9fa25af16a7f7534731ac363462",
+    "d/5fa6f89e4f2676975f369ac18ac08ab1": "8d38d813513ea9fb26b59d1cb56a0c034247a5ff1406953e7b9694aca1f1f93c",
+    "ocdbt.process_0/d/38e5841860188b68ea346ec26bafcfb5": "3ca377e8db0eeca68854721fcacce9b368d7b8b41e7d5712072299a44a98cbd5",
+    "ocdbt.process_0/d/a633bfd01111ab5df6b1d64f0cd0d182": "fe464a7c7b444f60d7aa336ec0eba51165b2f247f72365dc9d091e1407010024",
+    "ocdbt.process_0/d/274b2bcc8655b4e8746379ccb095dbfa": "3820a72b548d2143a8acbfaa239a2b8bb4bb65f76b729d13a8a78ac2d10047a3",
+    "ocdbt.process_0/d/82b715fe1bf0bf0e3e1de2015e2bc8dc": "beed66cfcebb0f3c25cd06979f83cb01b418eaf9de2c5ab49ccd38a6a4617629",
+    "ocdbt.process_0/d/8e66af1d46d4a042bf3b382393163f35": "a9fb40b7b522d43d89feed2b841816f65ecf8412e8df2535097b87ccf6522522"
+  },
+  "limitations": [
+    "Controlled low-height release can have0.6-0.8m/s landing speed; it is not supported gentle placement",
+    "Point clearance and contact monitoring are not whole-arm collision certification",
+    "Single training seed; fixed GPU evaluation seeds do not yield bitwise repeatability",
+    "Real robot and real runner not used or modified"
+  ],
+  "real_robot": false
+}

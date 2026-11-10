@@ -1,0 +1,26 @@
+{
+  "parent_transitions": 16777216,
+  "additional_completed": 16777216,
+  "cumulative_completed": 33554432,
+  "evaluation_run": false,
+  "training_continued": true,
+  "metrics": {
+    "steps": 16777216,
+    "elapsed_seconds": 1786.9070297940634,
+    "training/sps": 9639.125092845628,
+    "training/walltime": 1740.5330710411072,
+    "training/entropy_loss": 0.005337069742381573,
+    "training/kl_mean": 0.019925015047192574,
+    "training/learning_rate": 0.00029999998514540493,
+    "training/policy_dist_max_loc": 5.554238319396973,
+    "training/policy_dist_max_std": 3.249539852142334,
+    "training/policy_dist_mean_loc": -0.24570052325725555,
+    "training/policy_dist_mean_std": 0.31780388951301575,
+    "training/policy_dist_min_loc": -5.103356838226318,
+    "training/policy_dist_min_std": 0.048536404967308044,
+    "training/policy_loss": -0.00658547505736351,
+    "training/total_loss": 16.924129486083984,
+    "training/v_loss": 16.925378799438477
+  },
+  "real_robot": false
+}

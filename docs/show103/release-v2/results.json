@@ -1,0 +1,543 @@
+{
+  "scope": "MLP,1024 training envs; same20s horizon. Basic inside and target-qualified release+contact-free withdrawal are distinct. Intermediate128 and final384 per mode; learning curves use paired seed2026/128.",
+  "target": "TCP50-60mm above bowl inner floor",
+  "results": {
+    "frozen-0": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 117,
+        "final_success_rate": 0.9140625,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 16,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 142.60914611816406,
+        "release_height_mm_mean": 142.86936950683594,
+        "release_tcp_height_mm_mean": 183.43971252441406,
+        "release_tcp_height_mm_median": 182.80479431152344,
+        "release_tcp_in_band": 1,
+        "precontact_downward_speed_m_s_median": 1.0265262126922607,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 1,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 3,
+          "completion_lost": 4,
+          "controller": 1,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 1,
+        "max_reference_speed_during_grip": 0.7499980926513672
+      },
+      "preinside": {
+        "episodes": 128,
+        "final_successes": 123,
+        "final_success_rate": 0.9609375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 6,
+        "post_landing_recontact_episodes": 5,
+        "release_height_mm_median": 102.25667572021484,
+        "release_height_mm_mean": 106.28337860107422,
+        "release_tcp_height_mm_mean": 136.25888061523438,
+        "release_tcp_height_mm_median": 130.16943359375,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.8457134962081909,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 5,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.0003356933594,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.7499980926513672
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 121,
+        "final_success_rate": 0.9453125,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 0,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 118.79209899902344,
+        "release_height_mm_mean": 119.89472961425781,
+        "release_tcp_height_mm_mean": 155.73504638671875,
+        "release_tcp_height_mm_median": 152.57949829101562,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.8992022275924683,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 2,
+          "completion_lost": 5,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.0003356933594,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.7499784827232361
+      }
+    },
+    "interim-2097152": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 109,
+        "final_success_rate": 0.8515625,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 12,
+        "post_landing_recontact_episodes": 2,
+        "release_height_mm_median": 123.49354553222656,
+        "release_height_mm_mean": 122.32643127441406,
+        "release_tcp_height_mm_mean": 162.61807250976562,
+        "release_tcp_height_mm_median": 161.19009399414062,
+        "release_tcp_in_band": 1,
+        "precontact_downward_speed_m_s_median": 0.9707406759262085,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 4,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 4,
+          "completion_lost": 8,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.7053139209747314
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 120,
+        "final_success_rate": 0.9375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 5,
+        "post_landing_recontact_episodes": 3,
+        "release_height_mm_median": 107.26316833496094,
+        "release_height_mm_mean": 108.97610473632812,
+        "release_tcp_height_mm_mean": 144.59532165527344,
+        "release_tcp_height_mm_median": 145.00613403320312,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.8728896379470825,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 7,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.6091058254241943
+      }
+    },
+    "interim-4194304": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 108,
+        "final_success_rate": 0.84375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 9,
+        "post_landing_recontact_episodes": 1,
+        "release_height_mm_median": 131.0387725830078,
+        "release_height_mm_mean": 129.43499755859375,
+        "release_tcp_height_mm_mean": 172.14022827148438,
+        "release_tcp_height_mm_median": 167.9056854248047,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 1.1485928297042847,
+        "failures": {
+          "approach": 1,
+          "grasp_lift": 6,
+          "held_start_lost": 0,
+          "transport": 2,
+          "place_release": 5,
+          "completion_lost": 4,
+          "controller": 2,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 2,
+        "max_reference_speed_during_grip": 0.75
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 125,
+        "final_success_rate": 0.9765625,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 4,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 113.16040802001953,
+        "release_height_mm_mean": 119.79149627685547,
+        "release_tcp_height_mm_mean": 156.9767303466797,
+        "release_tcp_height_mm_median": 151.62254333496094,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.9796791076660156,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 3,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.75
+      }
+    },
+    "interim-6291456": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 108,
+        "final_success_rate": 0.84375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 9,
+        "post_landing_recontact_episodes": 3,
+        "release_height_mm_median": 127.77696228027344,
+        "release_height_mm_mean": 126.00975799560547,
+        "release_tcp_height_mm_mean": 169.8066864013672,
+        "release_tcp_height_mm_median": 168.00955200195312,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 1.311299204826355,
+        "failures": {
+          "approach": 1,
+          "grasp_lift": 4,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 11,
+          "completion_lost": 3,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.75
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 122,
+        "final_success_rate": 0.953125,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 10,
+        "post_landing_recontact_episodes": 7,
+        "release_height_mm_median": 122.2254867553711,
+        "release_height_mm_mean": 122.08069610595703,
+        "release_tcp_height_mm_mean": 158.2203369140625,
+        "release_tcp_height_mm_median": 157.5540008544922,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.9011512398719788,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 5,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.0003356933594,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.693698525428772
+      }
+    },
+    "final-8m": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 346,
+        "final_success_rate": 0.9010416666666666,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 43,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 133.23800659179688,
+        "release_height_mm_mean": 132.6404571533203,
+        "release_tcp_height_mm_mean": 171.6150360107422,
+        "release_tcp_height_mm_median": 171.06100463867188,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 1.144394874572754,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 10,
+          "held_start_lost": 0,
+          "transport": 3,
+          "place_release": 6,
+          "completion_lost": 15,
+          "controller": 2,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 2,
+        "max_reference_speed_during_grip": 0.7453199028968811
+      },
+      "mixed": {
+        "episodes": 384,
+        "final_successes": 367,
+        "final_success_rate": 0.9557291666666666,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 31,
+        "post_landing_recontact_episodes": 4,
+        "release_height_mm_median": 133.68276977539062,
+        "release_height_mm_mean": 133.33285522460938,
+        "release_tcp_height_mm_mean": 170.0160369873047,
+        "release_tcp_height_mm_median": 172.52865600585938,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 1.113227367401123,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 3,
+          "held_start_lost": 0,
+          "transport": 3,
+          "place_release": 4,
+          "completion_lost": 7,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.75
+      },
+      "preinside": {
+        "episodes": 384,
+        "final_successes": 370,
+        "final_success_rate": 0.9635416666666666,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 2,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 97.334716796875,
+        "release_height_mm_mean": 98.51529693603516,
+        "release_tcp_height_mm_mean": 126.83358001708984,
+        "release_tcp_height_mm_median": 124.56813049316406,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.8338415622711182,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 13,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00030517578125,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.75
+      },
+      "near": {
+        "episodes": 384,
+        "final_successes": 375,
+        "final_success_rate": 0.9765625,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 3,
+        "gentle_before_withdrawal": 3,
+        "post_release_recontact_episodes": 44,
+        "post_landing_recontact_episodes": 37,
+        "release_height_mm_median": 105.96174621582031,
+        "release_height_mm_mean": 102.95491790771484,
+        "release_tcp_height_mm_mean": 138.49879455566406,
+        "release_tcp_height_mm_median": 140.31736755371094,
+        "release_tcp_in_band": 3,
+        "precontact_downward_speed_m_s_median": 0.9099310040473938,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 8,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.6397720575332642
+      }
+    }
+  },
+  "points": [
+    {
+      "additional_steps": 0,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.9140625,
+          "gentle": 0.0,
+          "height": 142.86935424804688,
+          "recontact": 0.125
+        },
+        "preinside": {
+          "basic": 0.9609375,
+          "gentle": 0.0,
+          "height": 106.28337097167969,
+          "recontact": 0.046875
+        },
+        "near": {
+          "basic": 0.9453125,
+          "gentle": 0.0,
+          "height": 119.89472961425781,
+          "recontact": 0.0
+        }
+      }
+    },
+    {
+      "additional_steps": 2097152,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.8515625,
+          "gentle": 0.0,
+          "height": 122.32642364501953,
+          "recontact": 0.09375
+        },
+        "near": {
+          "basic": 0.9375,
+          "gentle": 0.0,
+          "height": 108.97611236572266,
+          "recontact": 0.0390625
+        }
+      }
+    },
+    {
+      "additional_steps": 4194304,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.84375,
+          "gentle": 0.0,
+          "height": 129.43499755859375,
+          "recontact": 0.0703125
+        },
+        "near": {
+          "basic": 0.9765625,
+          "gentle": 0.0,
+          "height": 119.79149627685547,
+          "recontact": 0.03125
+        }
+      }
+    },
+    {
+      "additional_steps": 6291456,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.84375,
+          "gentle": 0.0,
+          "height": 126.009765625,
+          "recontact": 0.0703125
+        },
+        "near": {
+          "basic": 0.953125,
+          "gentle": 0.0,
+          "height": 122.0807113647461,
+          "recontact": 0.078125
+        }
+      }
+    },
+    {
+      "additional_steps": 8388608,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.890625,
+          "gentle": 0.0,
+          "height": 132.5074920654297,
+          "recontact": 0.078125
+        },
+        "mixed": {
+          "basic": 0.9609375,
+          "gentle": 0.0,
+          "height": 138.3350830078125,
+          "recontact": 0.0703125
+        },
+        "preinside": {
+          "basic": 0.96875,
+          "gentle": 0.0,
+          "height": 98.360107421875,
+          "recontact": 0.015625
+        },
+        "near": {
+          "basic": 0.984375,
+          "gentle": 0.0,
+          "height": 100.71481323242188,
+          "recontact": 0.125
+        }
+      }
+    }
+  ],
+  "preservation": {
+    "source_checkpoint_changed_files": [],
+    "original_source_changed_files": [],
+    "original_source_files_checked": 349
+  },
+  "real_robot": false
+}

@@ -1,0 +1,236 @@
+{
+  "empty_hand": {
+    "overall": {
+      "episodes": 128,
+      "final_successes": 0,
+      "final_success_rate": 0.0,
+      "failures": {
+        "approach": 12,
+        "grasp_lift": 39,
+        "held_start_lost": 0,
+        "transport": 75,
+        "place_release": 2,
+        "completion_lost": 0,
+        "controller": 0,
+        "physics": 0
+      },
+      "reached": {
+        "pre_grasp": 116,
+        "grasp": 77,
+        "pre_inside": 2,
+        "inside": 0
+      }
+    },
+    "by_initialization": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 0,
+        "final_success_rate": 0.0,
+        "failures": {
+          "approach": 12,
+          "grasp_lift": 39,
+          "held_start_lost": 0,
+          "transport": 75,
+          "place_release": 2,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 116,
+          "grasp": 77,
+          "pre_inside": 2,
+          "inside": 0
+        }
+      },
+      "pregrasp": {
+        "episodes": 0,
+        "final_successes": 0,
+        "final_success_rate": null,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 0,
+          "grasp": 0,
+          "pre_inside": 0,
+          "inside": 0
+        }
+      },
+      "grasp": {
+        "episodes": 0,
+        "final_successes": 0,
+        "final_success_rate": null,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 0,
+          "grasp": 0,
+          "pre_inside": 0,
+          "inside": 0
+        }
+      },
+      "preinside": {
+        "episodes": 0,
+        "final_successes": 0,
+        "final_success_rate": null,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 0,
+          "grasp": 0,
+          "pre_inside": 0,
+          "inside": 0
+        }
+      }
+    },
+    "gripper_raw_min_max": [
+      -0.9958502650260925,
+      0.9906615018844604
+    ],
+    "gripper_open_request_fraction": 0.3015625,
+    "gripper_close_request_fraction": 0.28427734375,
+    "gripper_hold_fraction": 0.4141601622104645,
+    "final_open_goal_fraction": 0.0078125
+  },
+  "mixed": {
+    "overall": {
+      "episodes": 128,
+      "final_successes": 0,
+      "final_success_rate": 0.0,
+      "failures": {
+        "approach": 5,
+        "grasp_lift": 17,
+        "held_start_lost": 0,
+        "transport": 88,
+        "place_release": 18,
+        "completion_lost": 0,
+        "controller": 0,
+        "physics": 0
+      },
+      "reached": {
+        "pre_grasp": 123,
+        "grasp": 106,
+        "pre_inside": 18,
+        "inside": 0
+      }
+    },
+    "by_initialization": {
+      "empty_hand": {
+        "episodes": 59,
+        "final_successes": 0,
+        "final_success_rate": 0.0,
+        "failures": {
+          "approach": 5,
+          "grasp_lift": 15,
+          "held_start_lost": 0,
+          "transport": 38,
+          "place_release": 1,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 54,
+          "grasp": 39,
+          "pre_inside": 1,
+          "inside": 0
+        }
+      },
+      "pregrasp": {
+        "episodes": 25,
+        "final_successes": 0,
+        "final_success_rate": 0.0,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 2,
+          "held_start_lost": 0,
+          "transport": 23,
+          "place_release": 0,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 25,
+          "grasp": 23,
+          "pre_inside": 0,
+          "inside": 0
+        }
+      },
+      "grasp": {
+        "episodes": 28,
+        "final_successes": 0,
+        "final_success_rate": 0.0,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 27,
+          "place_release": 1,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 28,
+          "grasp": 28,
+          "pre_inside": 1,
+          "inside": 0
+        }
+      },
+      "preinside": {
+        "episodes": 16,
+        "final_successes": 0,
+        "final_success_rate": 0.0,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 16,
+          "completion_lost": 0,
+          "controller": 0,
+          "physics": 0
+        },
+        "reached": {
+          "pre_grasp": 16,
+          "grasp": 16,
+          "pre_inside": 16,
+          "inside": 0
+        }
+      }
+    },
+    "gripper_raw_min_max": [
+      -0.9999430775642395,
+      0.99066162109375
+    ],
+    "gripper_open_request_fraction": 0.1435546875,
+    "gripper_close_request_fraction": 0.589453125,
+    "gripper_hold_fraction": 0.2669921815395355,
+    "final_open_goal_fraction": 0.0078125
+  }
+}

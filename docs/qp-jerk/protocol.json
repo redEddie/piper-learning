@@ -1,0 +1,40 @@
+{
+  "baseline_git_commit": "229ea13",
+  "worktree": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/qp-jerk-comparison",
+  "option": "environment.control_jerk:0 disables; positive value enables reference jerk in rad/s3",
+  "default_enabled": false,
+  "jerk_limits_tested": [
+    100,
+    300,
+    1000
+  ],
+  "velocity": 1.5,
+  "acceleration": 8.0,
+  "dt": 0.005,
+  "policy_dt": 0.1,
+  "inputs": "Same10Hz synthetic TCP velocity inputs and12 fixed recorded action sequences per variant",
+  "cpu_pin": [
+    2
+  ],
+  "cpu_scope": "controller includes DLS on each20th tick, bounds, floor FK/Jacobian, QP projection, nonlinear floor check; excludes MuJoCo step and logging; first20 ticks excluded",
+  "lag_scope": "0.5/1Hz least-squares fit after2s, q1; includes 10Hz sampling and native plant response",
+  "gpu_scope": "Controller-only GPU timings, followed by a fixed-action integration probe.\n\nNo PPO/gradient updates or robot I/O. GPU timings include dispatch and device\nsynchronization, exclude compilation, DLS and physics. Existing GPU work is\nrecorded and never interrupted.\n",
+  "gpu_external_processes": "245555, 114 MiB\n245706, 5662 MiB\n",
+  "caveats": [
+    "Lag is phase delay of simulated joint1 at0.5Hz, not compute latency; two poses averaged.",
+    "Replay completion means feasible controller execution, not task or learned-policy success.",
+    "Jerk limits concern reference motion, not a guarantee about plant jerk.",
+    "GPU timings were sampled concurrently with existing live perception; they are not isolated training-throughput measurements.",
+    "One-step jerk bounds do not preserve future feasibility near speed, tracking, position, or floor limits."
+  ],
+  "source_files_sha256": {
+    "src/piper_sim_lab/control_lab/tracking_qp.py": "19560529019a3089f13c83ed5b1eb80ea5c9b33b59c7c353637f5051e9f92970",
+    "src/piper_sim_lab/control_lab/tracking_env.py": "94c2b5edad60522006987d0604d5eb1616b848df35257cfc5ef4d65c900adfcf",
+    "src/piper_sim_lab/ternary_control.py": "4fe01f60dbcb614f01101efa13dcda54c3709a53cbeefe0a45c8ebca5e221437",
+    "scripts/qp_jerk/compare_cpu.py": "ae2650ed397ec6b98ce4acdb83205d8830355f1c461b78d1c24af384e9d84622",
+    "scripts/qp_jerk/compare_gpu.py": "adbb21eb039bd0c0afa690ac19fd70a27c49fb6e461e22f21b2a808048eb1437"
+  },
+  "training": false,
+  "policy_weights_modified": false,
+  "real_robot": false
+}

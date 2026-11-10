@@ -1,0 +1,8 @@
+# pp-full-03-block50 aborted at the 12.58M eval: RuntimeSafety callback fired (masked as 'failed to find a local CPU device' because JAX_PLATFORMS=cuda had no CPU device; fixed in runtime.configure -> 'cuda,cpu').
+# Diagnosis rollouts of checkpoint 000012582912, 128 envs, mixed starts (scratchpad diag_block50.py):
+## contacts 160 / ccd 4 (run config): envs ever done 126/128, overflow 126, nonfinite 0, first done step 57 in every env (all starts)
+# (contacts 384, ccd 4) first done step: min 57 median 59.0
+# (contacts 384, ccd 4) reset_stage 0: n=59 done=57 overflow=57
+# (contacts 384, ccd 4) reset_stage 1: n=32 done=32 overflow=32
+# (contacts 384, ccd 4) reset_stage 2: n=37 done=37 overflow=37
+## contacts 384 / constraints 1024 / ccd 16: envs ever done 0 overflow 0 nonfinite 0 (overflow bits at t=0 only solver-limit bits 1024/1536; nacon 930 for 128 envs)

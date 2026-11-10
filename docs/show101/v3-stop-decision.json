@@ -1,0 +1,17 @@
+{
+  "decision": "stop; do not launch another training round",
+  "rule": "Continue only when full A-empty-hand completion count over same384 scenes does not decrease",
+  "baseline_successes": 351,
+  "candidate_successes": 336,
+  "episodes": 384,
+  "baseline_rate": 0.9140625,
+  "candidate_rate": 0.875,
+  "change_percentage_points": -3.90625,
+  "preferred_preserved_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648",
+  "candidate_checkpoint_preserved": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show101/mlp-place-v3-episode-8m/checkpoints/000008388608",
+  "candidate_adopted": false,
+  "additional_steps": 8388608,
+  "candidate_lineage_steps": 58720256,
+  "diagonal_grasp_changes": false,
+  "real_robot": false
+}

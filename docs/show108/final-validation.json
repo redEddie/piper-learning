@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "export_source_commit": "d026d92b25d5e7b6f6c7d4f020df686fad1ec15a",
+  "training_source_commit": "d377cae0afdc87a389b09071eae6bcde72465e86",
+  "training_source_preserved": true,
+  "selected_learner_sha256": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+  "selected_checkpoint_exact_match": true,
+  "parent_and_selected_resolved_environment_equal": true,
+  "reference_runtime_commit": "e28046050f12f7aa98e392baf089184a20d60827",
+  "runtime_implementation_reused_from_reference": true,
+  "unit_regression_tests": {
+    "passed": 80,
+    "skipped": 0,
+    "legacy_fixture_scope": "Synthetic MLP/LSTM fixtures exercise the existing legacy export/runtime tests; these are not task evaluations of old policies.",
+    "log": "final-tests.log"
+  },
+  "synthetic_export": {
+    "status": "passed",
+    "actor": "mlp_lstm",
+    "steps": 80,
+    "batch": 4,
+    "max_action_abs_error": 8.642673492431641e-07,
+    "state_and_logit_max_abs_error": {
+      "logits": 6.67572021484375e-06,
+      "memory_c": 2.205371856689453e-06,
+      "memory_h": 1.5050172805786133e-06
+    },
+    "policy_only_cpu_latency_ms": {
+      "p50": 0.12804544530808926,
+      "p95": 0.13722509611397982
+    },
+    "robot_connection": "none",
+    "scope": "synthetic export parity vectors; not a task success evaluation"
+  },
+  "recorded_observation_replay": {
+    "status": "passed",
+    "recorded_input_scope": "First 4 scene trajectories from each of five initialization groups, seed2026, from stored 24u simulation evaluation. Offline observation replay, not a new closed-loop evaluation.",
+    "shape": [
+      200,
+      20,
+      49
+    ],
+    "source_npz_sha256": {
+      "initial_a-s2026.npz": "d9b136962cb1258579de5712a0e092d779a0c1d7654fdd96d2f7847e62124b38",
+      "pre_grasp-s2026.npz": "9d7b659f250112ae967d59c47a2584af2e47b2fba1947e2328d982f24014fce3",
+      "held-s2026.npz": "5fdbbab97baf4626a2bc4e863c4354da00088cf9a324aacacb00f8a4632e5708",
+      "over_bowl-s2026.npz": "7f2313b904b87504e743c7759710cb0f357166d24654114cc8692276327e78f8",
+      "post_release-s2026.npz": "73a8bc5826c731596f9a2849fe556b8bd746ce5bdb90fbdd063a486e2afb850d"
+    },
+    "max_abs_error": {
+      "actions": 1.1324882507324219e-06,
+      "logits": 8.58306884765625e-06,
+      "memory_c": 9.918212890625e-05,
+      "memory_h": 1.6093254089355469e-06
+    },
+    "tolerance": 0.0001,
+    "common_runtime": {
+      "status": "passed",
+      "profile": "piper-show108-49-v1",
+      "synthetic": {
+        "status": "passed",
+        "actor": "mlp_lstm",
+        "steps": 80,
+        "batch": 4,
+        "max_action_abs_error": 8.642673492431641e-07,
+        "state_and_logit_max_abs_error": {
+          "logits": 6.67572021484375e-06,
+          "memory_c": 2.205371856689453e-06,
+          "memory_h": 1.5050172805786133e-06
+        },
+        "policy_only_cpu_latency_ms": {
+          "p50": 0.11878693476319313,
+          "p95": 0.12971728574484587
+        },
+        "robot_connection": "none",
+        "scope": "synthetic export parity vectors; not a task success evaluation"
+      },
+      "recorded_max_abs_error": 9.918212890625e-05,
+      "training_or_robot_modules_loaded": false,
+      "robot_commands_sent": false
+    },
+    "hardware_commands_sent": false
+  },
+  "installed_wheel": {
+    "status": "passed",
+    "actor": "mlp_lstm",
+    "steps": 80,
+    "batch": 4,
+    "max_action_abs_error": 8.642673492431641e-07,
+    "state_and_logit_max_abs_error": {
+      "logits": 6.67572021484375e-06,
+      "memory_c": 2.205371856689453e-06,
+      "memory_h": 1.5050172805786133e-06
+    },
+    "policy_only_cpu_latency_ms": {
+      "p50": 0.1224324805662036,
+      "p95": 0.22308115148916838
+    },
+    "robot_connection": "none",
+    "scope": "synthetic export parity vectors; not a task success evaluation"
+  },
+  "new_training": false,
+  "new_closed_loop_task_evaluation": false,
+  "hardware_commands_sent": false,
+  "model_24u_hardware_success_rate_verified": false,
+  "remaining_integration": [
+    "Studio model registration and controlled hardware comparison",
+    "Physical placement completion detection and normal deceleration/control transition"
+  ]
+}

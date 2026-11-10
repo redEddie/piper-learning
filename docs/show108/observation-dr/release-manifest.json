@@ -1,0 +1,207 @@
+{
+  "issue": "SHOW-108",
+  "artifact": "MLP+lastLSTM observation-DR/wide-spawn continuation, original14u plus2u",
+  "branch": "codex/show108-observation-dr-wide-spawn",
+  "tag": "show108-mlp-lstm-obsdr-wide-14plus2u-20261101",
+  "release_url": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-obsdr-wide-14plus2u-20261101",
+  "training_source_commit": "0f5aa042416f49c7a8839396179e230a0e853242",
+  "results_commit": "1f091edefed533be82676d957b85da4f39b055c2",
+  "parent_transitions": 117440512,
+  "additional_transitions": 16777216,
+  "cumulative_transitions": 134217728,
+  "actor": "mlp_lstm",
+  "observation_size": {
+    "state": [
+      49
+    ],
+    "privileged": [
+      66
+    ]
+  },
+  "action_size": 7,
+  "checkpoint": {
+    "asset": "show108-mlp-lstm-obsdr-wide-14plus2u-checkpoint.tar.gz",
+    "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-obsdr-wide-14plus2u-20261101/show108-mlp-lstm-obsdr-wide-14plus2u-checkpoint.tar.gz",
+    "sha256": "22631ba2992a48999252f0b77cbfbaed6d9bfefc59c8c6a9883daefe6c3c197e",
+    "bytes": 2458207,
+    "run": "show108-mlp-lstm-obsdr-wide-14plus2u/training",
+    "directory": "show108-mlp-lstm-obsdr-wide-14plus2u/training/checkpoints/000016777216",
+    "member_sha256": {
+      "training/checkpoints/000016777216/learner.msgpack": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c",
+      "training/checkpoints/000016777216/metadata.json": "a5925141e0c680ac51b4006defc66f1e08c2600b4d0731975088942957b53210",
+      "training/config.json": "0a083727cb5f14a2a4bf923ce53e318942f1c5ffe5443da9b96f2fd5dadfab2a",
+      "training/continuation.json": "68690d19d924232a32db26136389fac35601a89f3ad78e4409ccf812b600ca1e",
+      "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+      "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+      "training/provenance.json": "202b1d0b03c3eec9b3d49cef91a4c99f627f50f81eff1e4f01e5226b52baf29c",
+      "training/reset-bank.json": "67964ebe7ba5b36b4612b1db5daf98317941bfd3c9e0b78eafe14248ba02f6ee",
+      "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+      "training/summary.json": "ed59eff19272bba197c6d4204000a6dcd16a4c87ee37bd15c03df7c9a25751ec",
+      "training.yaml": "3a3537a7ef405b34db65a7ea1c51a4a5157cdb94ea3bfa2efd0b4bb6bfaee87a"
+    }
+  },
+  "contents": "Full learner policy, critic, updated observation normalizer, optimizer, RNG and additional-step counter; keep training/config.json with checkpoint.",
+  "normalizer_requirement": "Replace policy weights and normalizer together from this learner; do not mix the previous fixed-size normalizer with this model.",
+  "worlds": 4096,
+  "reset_probabilities": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "stage_success": {
+    "initial_a": {
+      "episodes": 384,
+      "local_success": 377,
+      "final_complete": 21,
+      "failures": 16,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 1,
+      "home_complete": 21,
+      "high_drop_success": 0,
+      "local_success_rate": 0.9817708333333334,
+      "full_success_rate": 0.0546875,
+      "full_home_complete": 21,
+      "full_home_success_rate": 0.0546875,
+      "final_max_A_error_deg_median": 25.77883529663086,
+      "best_max_A_error_deg_median": 0.030368726700544357
+    },
+    "pre_grasp": {
+      "episodes": 384,
+      "local_success": 379,
+      "final_complete": 35,
+      "failures": 8,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 35,
+      "high_drop_success": 0,
+      "local_success_rate": 0.9869791666666666,
+      "full_success_rate": 0.09114583333333333,
+      "full_home_complete": 35,
+      "full_home_success_rate": 0.09114583333333333,
+      "final_max_A_error_deg_median": 25.69378662109375,
+      "best_max_A_error_deg_median": 17.564001083374023
+    },
+    "held": {
+      "episodes": 384,
+      "local_success": 382,
+      "final_complete": 40,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 39,
+      "high_drop_success": 1,
+      "local_success_rate": 0.9947916666666666,
+      "full_success_rate": 0.10416666666666667,
+      "full_home_complete": 39,
+      "full_home_success_rate": 0.1015625,
+      "final_max_A_error_deg_median": 23.89795684814453,
+      "best_max_A_error_deg_median": 15.614006042480469
+    },
+    "over_bowl": {
+      "episodes": 384,
+      "local_success": 383,
+      "final_complete": 42,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 42,
+      "high_drop_success": 0,
+      "local_success_rate": 0.9973958333333334,
+      "full_success_rate": 0.109375,
+      "full_home_complete": 42,
+      "full_home_success_rate": 0.109375,
+      "final_max_A_error_deg_median": 16.362682342529297,
+      "best_max_A_error_deg_median": 13.839462280273438
+    },
+    "post_release": {
+      "episodes": 384,
+      "local_success": 39,
+      "final_complete": 39,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 39,
+      "high_drop_success": 0,
+      "local_success_rate": 0.1015625,
+      "full_success_rate": 0.1015625,
+      "full_home_complete": 39,
+      "full_home_success_rate": 0.1015625,
+      "final_max_A_error_deg_median": 16.646743774414062,
+      "best_max_A_error_deg_median": 14.149785995483398
+    }
+  },
+  "initial_a_to_placement": {
+    "success": 294,
+    "episodes": 384,
+    "rate": 0.765625,
+    "high_drop_exceptions": 0
+  },
+  "evaluation": {
+    "episodes_per_start": 384,
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "conditions": "New observation DR and broad spawn for both parent and continued model; one training seed7.",
+    "success": "Stage-local achievement before failure. Actual full A excludes high-drop terminal exception; success history differs from final posture."
+  },
+  "videos": [
+    {
+      "start": "initial_a",
+      "asset": "show108-pipeline-dr-wide-from14u-2u-initial_a-first.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-obsdr-wide-14plus2u-20261101/show108-pipeline-dr-wide-from14u-2u-initial_a-first.mp4",
+      "sha256": "43034e1eddd857980fcdd6ed5633febc2b1d40cf7edcda6f50cdb88e806be60f",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "selection": "seed2026 scene0 first recorded case, not success-selected"
+    },
+    {
+      "start": "pre_grasp",
+      "asset": "show108-pipeline-dr-wide-from14u-2u-pre_grasp-first.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-obsdr-wide-14plus2u-20261101/show108-pipeline-dr-wide-from14u-2u-pre_grasp-first.mp4",
+      "sha256": "fa41d5747b879b1eaf29d8b0931fff9d412f5ebae5acc5d73ae22833f0553ffb",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "selection": "seed2026 scene0 first recorded case, not success-selected"
+    },
+    {
+      "start": "held",
+      "asset": "show108-pipeline-dr-wide-from14u-2u-held-first.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-obsdr-wide-14plus2u-20261101/show108-pipeline-dr-wide-from14u-2u-held-first.mp4",
+      "sha256": "24ee8f9ded762ae568f4904591478b8e55542032e65822f5b67f1475af211318",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "selection": "seed2026 scene0 first recorded case, not success-selected"
+    },
+    {
+      "start": "over_bowl",
+      "asset": "show108-pipeline-dr-wide-from14u-2u-over_bowl-first.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-obsdr-wide-14plus2u-20261101/show108-pipeline-dr-wide-from14u-2u-over_bowl-first.mp4",
+      "sha256": "b9e683e65f7560f8e042c2fb5b4c3cfa1cbd5bab6778aec49070832be2f1399b",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "selection": "seed2026 scene0 first recorded case, not success-selected"
+    },
+    {
+      "start": "post_release",
+      "asset": "show108-pipeline-dr-wide-from14u-2u-post_release-first.mp4",
+      "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-obsdr-wide-14plus2u-20261101/show108-pipeline-dr-wide-from14u-2u-post_release-first.mp4",
+      "sha256": "8a9fbbe44dc5b145d50d7120bc0c4a0d04e277578ce33c848c07cb468be161da",
+      "frames": 200,
+      "duration_seconds": 20.0,
+      "selection": "seed2026 scene0 first recorded case, not success-selected"
+    }
+  ],
+  "inference": "piper_sim_lab.recurrent.load_actor_checkpoint; encoder-first mlp_lstm not supported by the existing portable NumPy runtime.",
+  "prior_selected_release": "show108-mlp-lstm-16u-20261101",
+  "prior_release_preserved": true,
+  "real_robot_validated": false
+}

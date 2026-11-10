@@ -1,0 +1,23 @@
+{
+  "environments": 64,
+  "policy_transitions": 15360,
+  "injected_controller_failures": 2,
+  "failure_onsets": 2,
+  "avoided_absorbing_slot_steps": 353,
+  "max_settlement_error": 0.0,
+  "all_failures_reset_immediately": true,
+  "all_failed_slots_start_fresh": true,
+  "absorbing_slots": 0,
+  "positive_failure_reward_base": 0.0,
+  "resets": 65,
+  "physical_nonfinite": 0.0,
+  "capacity_overflow": 0.0,
+  "all_rewards_finite": true,
+  "task": "quadratic_release",
+  "failure_mode": "fast reset + discounted tail settlement",
+  "training_run": false,
+  "real_robot": false,
+  "note": "Finite controller-failure injection tests bookkeeping; no hardware failure or policy training.",
+  "historical_scope": true,
+  "superseded_by": "../task-failure/integration.json"
+}

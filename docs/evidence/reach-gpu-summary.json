@@ -1,0 +1,5 @@
+{
+  "sample_interval_seconds": 0.5,
+  "scope": "whole board, sampled, includes other processes",
+  "peak_board_memory_mib": 1405
+}

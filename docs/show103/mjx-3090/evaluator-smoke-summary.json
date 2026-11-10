@@ -1,0 +1,77 @@
+{
+  "reports": [
+    {
+      "start": "initial_a",
+      "seed": 2026,
+      "episodes": 4,
+      "final_complete": 0,
+      "ever_complete": 0,
+      "final_inside": 0,
+      "qualified_release": 0,
+      "settled": 0,
+      "retreated": 0,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "timeout_without_completion": 4,
+      "checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show103-stage-v1-smoke-4096-s7/checkpoints/000000131072",
+      "dynamics_dr": true,
+      "observation_dr": false,
+      "reset_stage_probs": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "final_section_counts": {
+        "-1": 0,
+        "0": 4,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      }
+    },
+    {
+      "start": "held",
+      "seed": 2026,
+      "episodes": 4,
+      "final_complete": 0,
+      "ever_complete": 0,
+      "final_inside": 0,
+      "qualified_release": 0,
+      "settled": 0,
+      "retreated": 0,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "timeout_without_completion": 4,
+      "checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show103-stage-v1-smoke-4096-s7/checkpoints/000000131072",
+      "dynamics_dr": true,
+      "observation_dr": false,
+      "reset_stage_probs": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "final_section_counts": {
+        "-1": 0,
+        "0": 0,
+        "1": 0,
+        "2": 4,
+        "3": 0,
+        "4": 0
+      }
+    }
+  ],
+  "success_definition": "qualified low release, supported settling, 80mm clearance and stationary return to A",
+  "first_episode_only": true,
+  "training_seed": 7,
+  "evaluation_seeds": [
+    2026
+  ],
+  "real_robot": false
+}

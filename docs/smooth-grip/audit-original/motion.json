@@ -1,0 +1,97 @@
+{
+  "evaluation": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/original-20s",
+  "scope": "Same recorded scenes and20s horizon. Completion time is first inside among final successes, not independently verified gentle placement.",
+  "reports": {
+    "empty_hand-s2026": {
+      "final_successes": 117,
+      "completion_time_seconds_median": 5.7,
+      "completion_time_seconds_p90": 7.380000000000002,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 155.98345947265625,
+        "absolute_p99": 626.8024291992188
+      }
+    },
+    "empty_hand-s2027": {
+      "final_successes": 120,
+      "completion_time_seconds_median": 5.7,
+      "completion_time_seconds_p90": 6.610000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 154.22573852539062,
+        "absolute_p99": 618.9346313476562
+      }
+    },
+    "empty_hand-s2028": {
+      "final_successes": 127,
+      "completion_time_seconds_median": 5.7,
+      "completion_time_seconds_p90": 6.740000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 148.34817504882812,
+        "absolute_p99": 593.1049194335938
+      }
+    },
+    "mixed-s2026": {
+      "final_successes": 122,
+      "completion_time_seconds_median": 4.15,
+      "completion_time_seconds_p90": 6.49,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 153.61817932128906,
+        "absolute_p99": 621.1995849609375
+      }
+    },
+    "mixed-s2027": {
+      "final_successes": 122,
+      "completion_time_seconds_median": 5.2,
+      "completion_time_seconds_p90": 6.2,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 149.56886291503906,
+        "absolute_p99": 607.4905395507812
+      }
+    },
+    "mixed-s2028": {
+      "final_successes": 125,
+      "completion_time_seconds_median": 5.0,
+      "completion_time_seconds_p90": 6.160000000000001,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 145.83773803710938,
+        "absolute_p99": 594.1390991210938
+      }
+    },
+    "preinside-s2026": {
+      "final_successes": 126,
+      "completion_time_seconds_median": 0.6000000000000001,
+      "completion_time_seconds_p90": 1.2000000000000002,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 153.8365478515625,
+        "absolute_p99": 623.10693359375
+      }
+    },
+    "preinside-s2027": {
+      "final_successes": 125,
+      "completion_time_seconds_median": 0.5,
+      "completion_time_seconds_p90": 1.0,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 162.1351776123047,
+        "absolute_p99": 650.4058837890625
+      }
+    },
+    "preinside-s2028": {
+      "final_successes": 123,
+      "completion_time_seconds_median": 0.6000000000000001,
+      "completion_time_seconds_p90": 1.1,
+      "actual_joint_jerk_estimate": {
+        "method": "Third difference of recorded actual joint positions at5ms; valid episodes, excluding first100ms; not a hard bound",
+        "rms": 150.35499572753906,
+        "absolute_p99": 608.42333984375
+      }
+    }
+  },
+  "real_robot": false
+}

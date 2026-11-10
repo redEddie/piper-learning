@@ -1,0 +1,45 @@
+# Stage-free policy (default since 2026-10-21) with bowl-arm collision and Dex-One2Many Table 10 domain randomization.
+# One shared policy; one Piper per environment. Object values: SHOW-20.
+seed: 7
+environment:
+  task: pick_place
+  ctrl_dt: 0.1
+  sim_dt: 0.005
+  impl: warp
+  solver_iterations: 8
+  solver_ls_iterations: 20
+  jacobian: mjx
+  stage_obs: false
+  bowl_arm_collision: true
+  size_obs: true
+  obs_randomization: true
+  physics_randomization: true
+  block_half: 0.025
+  block_mass: 0.08
+  block_rgba: [0.1, 0.8, 0.2, 1.0]
+training:
+  num_timesteps: 16777216
+  num_envs: 1024
+  episode_length: 80
+  unroll_length: 16
+  batch_size: 256
+  num_minibatches: 4
+  num_updates_per_batch: 4
+  num_evals: 5
+  num_eval_envs: 64
+  learning_rate: 0.0003
+  discounting: 0.99
+  gae_lambda: 0.95
+  entropy_cost: 0.001
+  clipping_epsilon: 0.2
+  reward_scaling: 1.0
+  normalize_observations: true
+  max_grad_norm: 1.0
+  action_repeat: 1
+  bootstrap_on_timeout: false
+  deterministic_eval: true
+network:
+  policy_hidden_layer_sizes: [256, 256]
+  value_hidden_layer_sizes: [256, 256]
+  policy_obs_key: state
+  value_obs_key: privileged

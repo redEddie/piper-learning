@@ -1,0 +1,38 @@
+<h2>작업 위치</h2>
+<p><code>/home/jeonchanwook/work/piper-sim-lab-lstm128</code>, branch <code>codex/lstm128-comparison</code>. 기존 piper-sim-lab의 작업 중 소스는 별도 snapshot으로 고정했고 기존 학습 디렉터리·체크포인트·프로세스는 수정하지 않았다. 코드 기준 커밋 <code>0c6c9aa213566a622455593ebb08b06ccbe1c448</code>. 설정: <code>configs/pick_place_lstm_comparison.yaml</code>, 실행·재현 설명: <code>experiments/lstm128/README.md</code>.</p>
+<h2>목적</h2>
+<p>1층·폭128 LSTM actor를 실제 PPO로 학습하고, 같은 학습 경로의 MLP와 빈손 집어서 놓기 성공률 및 학습 처리량을 비교한다. 후속 Mamba2 실험 SHOW-68의 기준 모델을 만든다.</p>
+<h2>이 이슈에서 다루는 범위</h2>
+<p>LSTM 구현, 환경별 기억 상태와 reset mask, 시퀀스 학습, CPU 검증, 두 모델 각각 16,777,216 transition의 GPU 학습, 고정된 별도 평가 seed, 실제 rollout 이미지, 재현 설정과 체크포인트 저장까지 완료했다. 아래 결과는 학습된 정책의 결과이며 scripted grasp 결과가 아니다.</p>
+<h2>실제 수행 범위에서 빠진 부분</h2>
+<p>모델별 학습 seed는 7 한 개다. 여러 학습 random seed를 사용한 독립 반복 학습은 수행하지 않았다. Domain randomization은 두 모델 모두 켰으며 반복 학습 검증과는 별개이다. 실제 로봇 배포·가림 스트레스 시험·Mamba2 학습·동일 파라미터 수로 맞춘 실험·시뮬레이터 상태까지 복원하는 정확한 training resume은 수행하지 않았다. 원 논문의 폭1024 LSTM과 동일한 모델 크기의 재현은 아니다.</p>
+<h2>실제 결과: 같은 실험 학습기에서 비교</h2>
+<table><tbody><tr><th>actor</th><th>DR 켬 최종 성공</th><th>DR 끔 최종 성공</th><th>학습 environment step/s</th><th>actor parameters</th></tr><tr><td>MLP [256,256]</td><td>301/384 (78.4%)</td><td>332/384 (86.5%)</td><td>25,352</td><td>81,934</td></tr><tr><td>LSTM 1층·폭128 + MLP [256,256]</td><td>340/384 (88.5%)</td><td>345/384 (89.8%)</td><td>23,080</td><td>193,294</td></tr></tbody></table>
+<p>각 성공률은 평가 seed 2026/2027/2028 ×128 episode, 합계384 episode이다. 모두 빈손(stage 0)에서 시작한다. 성공은 마지막 80번째 제어 step에서 물체가 그릇 안에 있고 그리퍼에서 떨어져 있으며, episode 전체에 물리 실패가 없는 경우다. ever 성공률과 최종 성공률을 구별한다. 두 actor의 평가 환경 설정과 초기 qpos·mocap 장면 SHA-256이 모두 일치함을 검사했다.</p>
+<p>같은 학습 경로에서 LSTM의 DR 최종 성공률 차이는 +10.2%p, 처리량은 MLP의 91.0%이다. 이는 단일 학습 seed pilot 결과이며 architecture의 일반적 우열을 입증하지 않는다.</p>
+<img src="7d422c77-d9fa-4474-a3bd-2ee05ca8a955" width="100%" alt="실제 최종 성공률과 학습 처리량 비교" />
+<h2>기존 Brax MLP 결과와 구별</h2>
+<p>앞선 백그라운드 학습의 16,777,216-step 체크포인트는 같은 평가 환경·동일한 task 소스에서 DR 86.2%, DR 끔 91.4%였다. 기존 파일은 읽기만 했으며 수정·재학습하지 않았다. 그래프 점선이 이 보조 기준이다.</p>
+<p>기존 stock Brax adapter는 SGD 전에 관측 정규화를 갱신한다. 이 실험 adapter는 수집과 SGD 동안 정규화를 고정하고 SGD 뒤에 갱신하며, sequence와 현재 가중치로 계산한 기억을 사용한다. 따라서 새 MLP를 같은 adapter에서 다시 학습한 결과를 주 비교군으로 두고 기존 MLP 결과는 별도로 표시했다. 두 결과를 같은 실행 결과로 취급하거나 기존 MLP가 새 MLP 수치로 바뀌었다고 해석하면 안 된다.</p>
+<h2>LSTM이 기억하는 방식</h2>
+<p>실기에서 얻을 수 있는 현재 actor 관측(이전 행동 포함) → 1층 LSTM(hidden/cell 각각128) → 출력 LayerNorm → swish MLP [256,256] → tanh-normal 연속 행동 분포. Critic은 privileged observation을 받는 memoryless MLP [256,256]이며 두 모델 모두 82,945 parameters이다. actor에 참 물체 상태나 미래 관측을 추가하지 않았다.</p>
+<p>환경마다 cell/hidden 상태를 분리하고 종료된 slot만 초기화한다. rollout 경계에서와 각 SGD 미니배치에서 현재 가중치로 해당 episode의 실제 과거 관측을 재처리한다(burn-in). prefix gradient는 끊고 16-step sequence에 truncated BPTT를 적용한다. 시간 step을 무작위로 섞지 않고 sequence 단위로 미니배치를 구성한다. PPO loss·GAE·행동 분포는 기존 Brax 구현을 재사용한다.</p>
+<h2>비교 조건과 속도 해석</h2>
+<p>RTX3090 한 장, MJX-Warp, 병렬1024 환경, 제어0.1초·물리0.005초, episode80 step, rollout16 step, 미니배치256 sequence ×4, epoch4, learning rate0.0003, discount0.99, GAE0.95, PPO clip0.2, entropy0.001, global gradient clip1.0. stage 입력 없음, 크기 관측 있음, bowl-arm collision 있음. 두 모델 모두 관측 잡음·지연·물리 domain randomization을 켜고 처음부터 학습했다.</p>
+<p>표의 step/s는 모든 병렬 환경의 제어 transition 수를 합산한 수집+PPO 업데이트 처리량이며 실로봇 제어 Hz가 아니다. JAX 완료를 기다려 시간을 쟀고 최초 iteration은 steady-state 계산에서 제외했다. 두 모델이 만드는 접촉 궤적 차이와 recurrent prefix 재처리 비용도 포함하므로 순수 신경망 kernel benchmark는 아니다.</p>
+<ul><li>MLP: loop wall time 11.82분, 첫 iteration(컴파일 포함) 21.03초, 이후 수집 649.05초 + PPO update 12.07초. 프로세스 전체 실행 13.20분.</li><li>LSTM: loop wall time 12.92분, 첫 iteration(컴파일 포함) 22.81초, 이후 수집 646.05초 + PPO update 80.16초. 프로세스 전체 실행 13.36분.</li></ul>
+<p>MLP 다음 LSTM 순으로 실행했으므로 startup cache 상태가 다르다. 프로세스 전체 시간에는 import·초기 환경 준비·컴파일·로그·체크포인트 저장이 포함된다. 전체 startup 시간을 architecture 자체의 속도 차이로 해석하지 않는다.</p>
+<h2>학습 곡선과 실제 시뮬레이터 이미지</h2>
+<p>학습 곡선의 보상은 mixed-stage reset 분포의 학습용 지표이며 빈손 성공률이 아니다.</p>
+<img src="092dbcca-f9b1-47ee-9bc3-bc1cc4b26f9c" width="100%" alt="두 모델 학습 보상과 반복 실행 시간" />
+<p>아래는 저장된 실제 정책 trajectory를 렌더링한 이미지다. actor별 평가 episode 한 개를 선택한 예시이며 전체 성공률을 대표하는 사진으로 사용하지 않는다. 최종 성공 여부와 시각은 이미지에 표시했다.</p>
+<img src="8cf9c580-8016-429a-a1b1-b568d305bd88" width="100%" alt="MLP와 LSTM 정책이 Piper로 물체를 집어 놓는 실제 시뮬레이터 상태" />
+<h2>검증 및 통계적 한계</h2>
+<p>CPU 테스트 7개 통과: sequence/step 일치, slot별 reset, 현재 가중치 prefix replay, 시간 gradient와 reset 경계, privileged 입력 분리, 체크포인트 round-trip, 동적 burn-in 이후 SGD gradient. CPU 실제 PPO64 transition/4 update도 통과했다. GPU에서도 두 정책의 파라미터 변경과 유한 loss/gradient를 확인했고 시작·비어 있지 않은 prefix·여러 update 후 행동 log-prob를 대조했다.</p>
+<ul><li>MLP / dr: 74.0–82.2% (최종 성공률 95% Wilson interval), ever 성공률 79.4%, 물리 실패 0건</li><li>MLP / nodr: 82.7–89.5% (최종 성공률 95% Wilson interval), ever 성공률 87.0%, 물리 실패 0건</li><li>LSTM / dr: 85.0–91.4% (최종 성공률 95% Wilson interval), ever 성공률 89.3%, 물리 실패 0건</li><li>LSTM / nodr: 86.4–92.5% (최종 성공률 95% Wilson interval), ever 성공률 90.1%, 물리 실패 0건</li></ul>
+<p>위 신뢰구간은 고정된 학습 정책에 대한 episode-level Wilson interval이며 학습 random seed 간 변동성을 나타내지 않는다.</p>
+<h2>기존 작업 보호와 저장 산출물</h2>
+<p>기존 학습 PID605956 및 이어진 평가가 스스로 종료된 뒤 GPU compute PID가 없는 상태를 1분 확인하고 시작했다. 새 실험은 별도 worktree·cache·runs 경로에서 순차 실행했다. 다른 프로세스에 signal·우선순위·전력 제한을 변경하지 않았다. 학습은 매 반복 전에 외부 compute PID를 확인해 양보하도록 구성했고, 10초 간격 점유 표본에서 외부 겹침 0건이었다.</p>
+<p>체크포인트: <code>runs/matched-mlp-s7/checkpoints/000016777216</code>, <code>runs/matched-lstm-s7/checkpoints/000016777216</code>. 두 경로의 evaluation 디렉터리에 seed별 결과와 실제 trajectory가 있다. 비교 JSON, 이미지, 코드와 재현 명령은 <code>experiments/lstm128/</code>에 보관했다. 첨부 파일4개는 업로드 후 다시 내려받아 SHA-256 일치를 검사했다.</p>
+<h2>후속 연결</h2>
+<p>SHOW-68: 소형 Mamba2 + attention 후속 비교. LSTM 기준 구현과 평가 계약을 활용하되 후속 architecture의 개선 여부는 별도 실험으로 판단한다.</p>

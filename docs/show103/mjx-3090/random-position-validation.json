@@ -1,0 +1,274 @@
+[
+  {
+    "status": "passed",
+    "environments": 128,
+    "steps": 24,
+    "bank_split": "train",
+    "invalid_held_resets": 0,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.00910709984600544,
+      "max_acceleration": 0.9098109006881714,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "initial_position_diversity": {
+      "0": {
+        "cube_xy_std": [
+          0.031684886664152145,
+          0.10947815328836441
+        ],
+        "bowl_xy_std": [
+          0.030523186549544334,
+          0.13719113171100616
+        ],
+        "samples": 45
+      },
+      "1": {
+        "cube_xy_std": [
+          0.03141563758254051,
+          0.08984220027923584
+        ],
+        "bowl_xy_std": [
+          0.023221516981720924,
+          0.13089312613010406
+        ],
+        "samples": 23
+      },
+      "2": {
+        "cube_xy_std": [
+          0.02906796708703041,
+          0.11438897252082825
+        ],
+        "bowl_xy_std": [
+          0.03249678388237953,
+          0.13150295615196228
+        ],
+        "samples": 38
+      },
+      "3": {
+        "cube_xy_std": [
+          0.012256195768713951,
+          0.06581682711839676
+        ],
+        "bowl_xy_std": [
+          0.012262341566383839,
+          0.06584382802248001
+        ],
+        "samples": 22
+      }
+    },
+    "config_sha256": "4f111565389c81384084ef499c80d4b36a3368462db51590177715fa32ff0414",
+    "peak_board_gpu_memory_mib": 813
+  },
+  {
+    "status": "passed",
+    "environments": 1024,
+    "steps": 24,
+    "bank_split": "train",
+    "invalid_held_resets": 0,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.009297286160290241,
+      "max_acceleration": 0.9206691980361938,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "initial_position_diversity": {
+      "0": {
+        "cube_xy_std": [
+          0.02912769839167595,
+          0.11762101203203201
+        ],
+        "bowl_xy_std": [
+          0.029598955065011978,
+          0.13456100225448608
+        ],
+        "samples": 399
+      },
+      "1": {
+        "cube_xy_std": [
+          0.03205583617091179,
+          0.11228547245264053
+        ],
+        "bowl_xy_std": [
+          0.0299722570925951,
+          0.12691815197467804
+        ],
+        "samples": 208
+      },
+      "2": {
+        "cube_xy_std": [
+          0.028762049973011017,
+          0.10505210608243942
+        ],
+        "bowl_xy_std": [
+          0.029504481703042984,
+          0.13580088317394257
+        ],
+        "samples": 192
+      },
+      "3": {
+        "cube_xy_std": [
+          0.013868283480405807,
+          0.07331576943397522
+        ],
+        "bowl_xy_std": [
+          0.013878287747502327,
+          0.07331003248691559
+        ],
+        "samples": 225
+      }
+    },
+    "config_sha256": "4f111565389c81384084ef499c80d4b36a3368462db51590177715fa32ff0414",
+    "peak_board_gpu_memory_mib": 1751
+  },
+  {
+    "status": "passed",
+    "environments": 4096,
+    "steps": 24,
+    "bank_split": "train",
+    "invalid_held_resets": 0,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.009301315993070602,
+      "max_acceleration": 0.9216297268867493,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "initial_position_diversity": {
+      "0": {
+        "cube_xy_std": [
+          0.029138561338186264,
+          0.11607141047716141
+        ],
+        "bowl_xy_std": [
+          0.029368698596954346,
+          0.13293945789337158
+        ],
+        "samples": 1664
+      },
+      "1": {
+        "cube_xy_std": [
+          0.03239820525050163,
+          0.11483690142631531
+        ],
+        "bowl_xy_std": [
+          0.029821015894412994,
+          0.13151034712791443
+        ],
+        "samples": 816
+      },
+      "2": {
+        "cube_xy_std": [
+          0.030607393011450768,
+          0.10364941507577896
+        ],
+        "bowl_xy_std": [
+          0.028865061700344086,
+          0.134282648563385
+        ],
+        "samples": 803
+      },
+      "3": {
+        "cube_xy_std": [
+          0.01347533892840147,
+          0.07175909727811813
+        ],
+        "bowl_xy_std": [
+          0.013484272174537182,
+          0.07175719738006592
+        ],
+        "samples": 813
+      }
+    },
+    "config_sha256": "4f111565389c81384084ef499c80d4b36a3368462db51590177715fa32ff0414",
+    "peak_board_gpu_memory_mib": 5017
+  },
+  {
+    "status": "passed",
+    "environments": 128,
+    "steps": 24,
+    "bank_split": "eval",
+    "invalid_held_resets": 0,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.00910709984600544,
+      "max_acceleration": 0.9098109006881714,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "initial_position_diversity": {
+      "0": {
+        "cube_xy_std": [
+          0.031684886664152145,
+          0.10947815328836441
+        ],
+        "bowl_xy_std": [
+          0.030523186549544334,
+          0.13719113171100616
+        ],
+        "samples": 45
+      },
+      "1": {
+        "cube_xy_std": [
+          0.027086112648248672,
+          0.1118401288986206
+        ],
+        "bowl_xy_std": [
+          0.025378966704010963,
+          0.1342497169971466
+        ],
+        "samples": 23
+      },
+      "2": {
+        "cube_xy_std": [
+          0.03182158246636391,
+          0.10452821850776672
+        ],
+        "bowl_xy_std": [
+          0.02876761369407177,
+          0.1332041621208191
+        ],
+        "samples": 38
+      },
+      "3": {
+        "cube_xy_std": [
+          0.015089383348822594,
+          0.06677417457103729
+        ],
+        "bowl_xy_std": [
+          0.015099117532372475,
+          0.06678585708141327
+        ],
+        "samples": 22
+      }
+    },
+    "config_sha256": "4f111565389c81384084ef499c80d4b36a3368462db51590177715fa32ff0414",
+    "peak_board_gpu_memory_mib": 815
+  }
+]

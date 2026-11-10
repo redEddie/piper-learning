@@ -1,0 +1,191 @@
+{
+  "issue": "SHOW-103",
+  "title": "젠틀하게 내려놓기",
+  "status": "Implementation and simulation validation complete; learned goal not met; issue remains in progress",
+  "height_reference": "TCP above bowl inner floor50-60mm",
+  "reset_probs": [
+    0.4,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "near_reset_fraction": 0.05,
+  "diagnostic": {
+    "episodes": 16,
+    "goal_successes": 16,
+    "learned_policy": false
+  },
+  "latest_additional_transitions": 4194304,
+  "latest_results": {
+    "empty_hand": {
+      "episodes": 384,
+      "final_successes": 338,
+      "final_success_rate": 0.8802083333333334,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0,
+      "controlled_final_successes": 0,
+      "controlled_final_success_rate": 0.0,
+      "qualified_release": 0,
+      "gentle_before_withdrawal": 0,
+      "post_release_recontact_episodes": 23,
+      "post_landing_recontact_episodes": 0,
+      "release_height_mm_median": 139.9231719970703,
+      "release_height_mm_mean": 140.06727600097656,
+      "release_tcp_height_mm_mean": 186.15576171875,
+      "release_tcp_height_mm_median": 187.23507690429688,
+      "release_tcp_in_band": 0,
+      "precontact_downward_speed_m_s_median": 1.47270929813385,
+      "failures": {
+        "approach": 11,
+        "grasp_lift": 10,
+        "held_start_lost": 0,
+        "transport": 7,
+        "place_release": 7,
+        "completion_lost": 7,
+        "controller": 4,
+        "physics": 0
+      },
+      "max_reference_jerk": 300.00091552734375,
+      "gripper_timeouts": 4,
+      "max_reference_speed_during_grip": 0.75,
+      "opening_diagnostics": {
+        "2026": {
+          "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+          "state_samples": 0,
+          "opening_probability_mean": null,
+          "opening_probability_median": null,
+          "opening_probability_max": null,
+          "raw_location_median": null,
+          "raw_scale_median": null,
+          "deterministic_open_fraction": null,
+          "deterministic_upward_fraction": null
+        },
+        "2027": {
+          "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+          "state_samples": 0,
+          "opening_probability_mean": null,
+          "opening_probability_median": null,
+          "opening_probability_max": null,
+          "raw_location_median": null,
+          "raw_scale_median": null,
+          "deterministic_open_fraction": null,
+          "deterministic_upward_fraction": null
+        },
+        "2028": {
+          "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+          "state_samples": 0,
+          "opening_probability_mean": null,
+          "opening_probability_median": null,
+          "opening_probability_max": null,
+          "raw_location_median": null,
+          "raw_scale_median": null,
+          "deterministic_open_fraction": null,
+          "deterministic_upward_fraction": null
+        }
+      }
+    },
+    "near": {
+      "episodes": 384,
+      "final_successes": 380,
+      "final_success_rate": 0.9895833333333334,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0,
+      "controlled_final_successes": 0,
+      "controlled_final_success_rate": 0.0,
+      "qualified_release": 2,
+      "gentle_before_withdrawal": 2,
+      "post_release_recontact_episodes": 42,
+      "post_landing_recontact_episodes": 29,
+      "release_height_mm_median": 105.57289123535156,
+      "release_height_mm_mean": 104.6403579711914,
+      "release_tcp_height_mm_mean": 140.45681762695312,
+      "release_tcp_height_mm_median": 141.9425811767578,
+      "release_tcp_in_band": 2,
+      "precontact_downward_speed_m_s_median": 1.0862455368041992,
+      "failures": {
+        "approach": 0,
+        "grasp_lift": 0,
+        "held_start_lost": 0,
+        "transport": 0,
+        "place_release": 1,
+        "completion_lost": 3,
+        "controller": 0,
+        "physics": 0
+      },
+      "max_reference_jerk": 300.00091552734375,
+      "gripper_timeouts": 0,
+      "max_reference_speed_during_grip": 0.7499980926513672,
+      "opening_diagnostics": {
+        "2026": {
+          "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+          "state_samples": 141,
+          "opening_probability_mean": 0.010850812809999092,
+          "opening_probability_median": 5.1843687189674845e-05,
+          "opening_probability_max": 0.20113625231293597,
+          "raw_location_median": -0.31103330850601196,
+          "raw_scale_median": 0.2194584757089615,
+          "deterministic_open_fraction": 0.0,
+          "deterministic_upward_fraction": 1.0
+        },
+        "2027": {
+          "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+          "state_samples": 136,
+          "opening_probability_mean": 0.018905825222258466,
+          "opening_probability_median": 9.243861681925851e-05,
+          "opening_probability_max": 0.2848011739627738,
+          "raw_location_median": -0.1767416000366211,
+          "raw_scale_median": 0.17877210676670074,
+          "deterministic_open_fraction": 0.0,
+          "deterministic_upward_fraction": 1.0
+        },
+        "2028": {
+          "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+          "state_samples": 135,
+          "opening_probability_mean": 0.014923005216936127,
+          "opening_probability_median": 3.635488499024475e-05,
+          "opening_probability_max": 0.6053470569318296,
+          "raw_location_median": -0.3133884370326996,
+          "raw_scale_median": 0.1973656862974167,
+          "deterministic_open_fraction": 0.014814814814814815,
+          "deterministic_upward_fraction": 1.0
+        }
+      }
+    }
+  },
+  "qualified_cases": [
+    {
+      "report": "near-s2028",
+      "scene": 1,
+      "release_tcp_mm": 54.65616226196289,
+      "cube_bottom_at_release_mm": 29.268165588378906,
+      "release_s": 0.5,
+      "qualified_s": 0.5,
+      "recontact_s": 1.1,
+      "impact_peak": 0.7559524774551392,
+      "basic_final": true,
+      "floor_support_final": true,
+      "max_clear_time": 0.0,
+      "final_gentle": false
+    },
+    {
+      "report": "near-s2028",
+      "scene": 67,
+      "release_tcp_mm": 54.578407287597656,
+      "cube_bottom_at_release_mm": 29.243314743041992,
+      "release_s": 0.5,
+      "qualified_s": 0.5,
+      "recontact_s": 0.8,
+      "impact_peak": 0.7779201865196228,
+      "basic_final": true,
+      "floor_support_final": true,
+      "max_clear_time": 0.0,
+      "final_gentle": false
+    }
+  ],
+  "adopted_as_replacement": false,
+  "real_robot": false,
+  "actor_video": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/stable-v3/videos-qualified-case/two-views.mp4",
+  "diagnostic_video": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/diagnostic-release-video/diagnostic.mp4",
+  "implementation_commit": "395952c",
+  "source_preservation": "docs/show103/stable-v3/preservation.json"
+}

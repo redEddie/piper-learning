@@ -1,0 +1,56 @@
+{
+  "python": "3.11.17",
+  "system": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "gpu_hardware": "NVIDIA GeForce RTX 3090, 580.178.04, 24576 MiB",
+  "packages": {
+    "piper-sim-lab": "0.1.0",
+    "playground": "0.2.0",
+    "mujoco": "3.16.0",
+    "mujoco-mjx": "3.16.0",
+    "mujoco-warp": "3.16.0",
+    "warp-lang": "1.18.0",
+    "jax": "0.10.2",
+    "jaxlib": "0.10.2",
+    "brax": "0.14.2",
+    "flax": "0.12.8",
+    "optax": "0.2.8"
+  },
+  "sources": {
+    "playground": {
+      "url": "https://github.com/google-deepmind/mujoco_playground.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "d59156e099a8785dd58fbce2e25a6ee1f7b5800c",
+        "requested_revision": "d59156e099a8785dd58fbce2e25a6ee1f7b5800c"
+      }
+    },
+    "brax": {
+      "url": "https://github.com/google/brax.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "6d039374b34a266107bd1e952180eea33ac4eab8",
+        "requested_revision": "6d039374b34a266107bd1e952180eea33ac4eab8"
+      }
+    }
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "code_sha256": {
+    "__init__.py": "f220f8df55c88d4aa4c96811cab810aa38847d7ee6f8e028e713e26478d534b2",
+    "assets.py": "f064b88abbee68c442cab18ccfc6cababcc05cea7fe02d1186e5215b6862e24a",
+    "benchmark.py": "bca31a7b4942376664b6788806057f6ded88ff40bedf1538b080ad12574fc105",
+    "env.py": "2a581de7b5c5fda550b4e661e00e00e061fca3d50fed5fa6d71e07df3a01c2cf",
+    "evaluate.py": "e6ddb8531d46ad082b3767f7a3ce65bcfaaa301bd9c41ca851190645a791a664",
+    "runtime.py": "2e24e671d69dd54b7813c25832fa37620a249bbdabeb49784f7a12561654f47f",
+    "train.py": "0625a322781020d0d83efdc0df40a089ebebb8852d58a0258de9a9fe5e58b0d6",
+    "wrappers.py": "5ca59ed83251d9ceff6be608d104aeb136eaf083eb77b6232dff2f5f416ae27e"
+  },
+  "assets": {
+    "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+    "revision": "62ab00f2bc44f6f20c1c9b7a13f3fb1dd41a4e35",
+    "license": "MIT",
+    "verified_files": 89
+  },
+  "platform": "gpu"
+}

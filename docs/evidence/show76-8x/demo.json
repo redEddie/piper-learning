@@ -1,0 +1,45 @@
+{
+  "policy": "show76-v1-mlp",
+  "cumulative_training_steps": 134217728,
+  "checkpoint_phase_steps": 83886080,
+  "training_code_commit": "b40fa4df0c8ef301421edab65250f9e3ed70037a",
+  "demo_code_commit": "8318ed1376d9dcadb429826768c8110e3f79ffa4",
+  "recorded_date_kst": "2026-10-28",
+  "seed": 2026,
+  "num_envs": 1,
+  "reset_stage_probs": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "observation_randomization": true,
+  "physics_randomization": true,
+  "deterministic_policy": true,
+  "physical_backend": "GPU-Warp",
+  "steps": 80,
+  "control_dt_s": 0.1,
+  "fps": 10,
+  "duration_s": 8.0,
+  "resolution": [
+    640,
+    480
+  ],
+  "video": "../../media/show76-v1-8x-demo.mp4",
+  "trained_policy_result": {
+    "initial_progress": 0.23852983117103577,
+    "final_progress": 0.007606718223541975,
+    "final_success_rate": 1.0,
+    "ever_success_rate": 1.0,
+    "failure_rate": 0.0,
+    "finite": true
+  },
+  "video_processing": "Crop the first 640x480 panel of the evaluator video; encode H.264 at the original 10 fps, real time",
+  "scope": "One newly simulated demonstration episode, first attempt seed 2026; not an estimate of aggregate success or real robot performance",
+  "sha256": {
+    "docs/media/show76-v1-8x-demo.mp4": "7a385cf30cbbc005345e599253305022cb0d706b6d40c891c7e85ac6375e056f",
+    "docs/media/show76-v1-8x-preview.png": "ed59f649cf8106bbb349874b61b47ad4abf43caee808fbb51b51f6e2ebdd4a24",
+    "docs/evidence/show76-8x/demo-evaluation.json": "c3a533fecebcad928256a558a27324ffa9862cd68fd34a94035299dec4d77721",
+    "docs/evidence/show76-8x/demo-trajectory.npz": "586c19bfe7c4070e791c1ea454dae9c09e977a7c3f9baa6d1e255c220b8904ee"
+  }
+}

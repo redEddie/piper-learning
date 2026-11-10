@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "scope": "Archive integrity and loader/inference equivalence on synthetic inputs. No new physics or hardware evaluation.",
+  "models": [
+    {
+      "id": "original-transformer-lstm-16u",
+      "archive_member_hashes_verified": true,
+      "parameters_and_normalizer_equal_to_original": true,
+      "episodes_batch": 8,
+      "steps": 70,
+      "reset_steps": [
+        0,
+        35
+      ],
+      "logits_and_memory_exact_match": true,
+      "finite": true
+    },
+    {
+      "id": "original-mlp-lstm-16u",
+      "archive_member_hashes_verified": true,
+      "parameters_and_normalizer_equal_to_original": true,
+      "episodes_batch": 8,
+      "steps": 70,
+      "reset_steps": [
+        0,
+        35
+      ],
+      "logits_and_memory_exact_match": true,
+      "finite": true
+    },
+    {
+      "id": "obsdr-temporal-transformer-18u",
+      "archive_member_hashes_verified": true,
+      "parameters_and_normalizer_equal_to_original": true,
+      "episodes_batch": 8,
+      "steps": 70,
+      "reset_steps": [
+        0,
+        35
+      ],
+      "logits_and_memory_exact_match": true,
+      "finite": true
+    },
+    {
+      "id": "obsdr-mlp-lstm-24u",
+      "archive_member_hashes_verified": true,
+      "parameters_and_normalizer_equal_to_original": true,
+      "episodes_batch": 8,
+      "steps": 70,
+      "reset_steps": [
+        0,
+        35
+      ],
+      "logits_and_memory_exact_match": true,
+      "finite": true
+    },
+    {
+      "id": "real-demo-obsdr-mlp-lstm-14plus2u",
+      "archive_member_hashes_verified": true,
+      "parameters_and_normalizer_equal_to_original": true,
+      "episodes_batch": 8,
+      "steps": 70,
+      "reset_steps": [
+        0,
+        35
+      ],
+      "logits_and_memory_exact_match": true,
+      "finite": true
+    }
+  ],
+  "real_demo_checkpoint_sha256_matches": true
+}

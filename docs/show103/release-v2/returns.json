@@ -1,0 +1,61 @@
+{
+  "scope": "Synthetic20s trajectories through actual reward/event functions; gamma.99, action cost.001 and action-rate cost.01. Not a feasibility or learning result.",
+  "results": {
+    "wait_high": {
+      "discounted_return": 259.4408773851371,
+      "undiscounted_return": 599.1696493625641,
+      "min_reward": 2.98589825630188,
+      "max_reward": 2.9958982467651367,
+      "qualified_release": false,
+      "premature": false,
+      "recontacts": 0.0
+    },
+    "gentle_retreat": {
+      "discounted_return": 605.5687673321738,
+      "undiscounted_return": 1501.610077381134,
+      "min_reward": 2.9990921020507812,
+      "max_reward": 7.999000072479248,
+      "qualified_release": true,
+      "premature": false,
+      "recontacts": 0.0
+    },
+    "drop": {
+      "discounted_return": 296.4114524693707,
+      "undiscounted_return": 692.8731507174671,
+      "min_reward": -0.04099999740719795,
+      "max_reward": 3.499000072479248,
+      "qualified_release": false,
+      "premature": true,
+      "recontacts": 0.0
+    },
+    "drop_recontact": {
+      "discounted_return": 217.4348410632262,
+      "undiscounted_return": 502.86975563690066,
+      "min_reward": -0.04099999740719795,
+      "max_reward": 3.499000072479248,
+      "qualified_release": false,
+      "premature": true,
+      "recontacts": 19.0
+    },
+    "out_and_back": {
+      "discounted_return": 580.1435815859069,
+      "undiscounted_return": 1421.5525875091553,
+      "min_reward": 2.9990921020507812,
+      "max_reward": 7.999000072479248,
+      "qualified_release": true,
+      "premature": false,
+      "recontacts": 0.0
+    },
+    "hold_in_target_height_band": {
+      "discounted_return": 548.8108838060323,
+      "undiscounted_return": 1331.8157439231873,
+      "min_reward": 2.9990921020507812,
+      "max_reward": 6.938822269439697,
+      "qualified_release": false,
+      "premature": false,
+      "recontacts": 0.0
+    }
+  },
+  "status": "passed",
+  "real_robot": false
+}

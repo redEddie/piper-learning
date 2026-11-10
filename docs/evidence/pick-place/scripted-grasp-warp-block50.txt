@@ -1,0 +1,10 @@
+env 0: at d=0.006 | w=0.0501 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.3440000116825104, 0.14800000190734863, 0.03099999949336052]
+env 1: at d=0.006 | w=0.0502 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.3440000116825104, 0.1770000010728836, 0.03099999949336052]
+env 2: at d=0.006 | w=0.0612 | lifted h=0.097 grasped=0 | above xy=0.002 | inside=1 block=[0.2930000126361847, 0.1889999955892563, 0.03099999949336052]
+env 3: at d=0.058 | w=-0.0000 | lifted h=-0.000 grasped=0 | above xy=0.286 | inside=0 block=[0.25099998712539673, -0.11400000005960464, 0.02500000037252903]
+env 4: at d=0.006 | w=0.0497 | lifted h=0.100 grasped=1 | above xy=0.001 | inside=1 block=[0.31700000166893005, 0.11699999868869781, 0.03099999949336052]
+env 5: at d=0.006 | w=0.0501 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.29600000381469727, 0.19599999487400055, 0.03099999949336052]
+env 6: at d=0.006 | w=0.0497 | lifted h=0.100 grasped=1 | above xy=0.001 | inside=1 block=[0.3149999976158142, 0.13300000131130219, 0.03099999949336052]
+env 7: at d=0.006 | w=0.0509 | lifted h=0.099 grasped=1 | above xy=0.001 | inside=1 block=[0.35600000619888306, 0.17000000178813934, 0.03099999949336052]
+warp scripted success 7 / 8 overflow 0.0
+# scripted approach does not rotate the gripper to the block yaw; env 3 (yaw ~45 deg, 7.1 cm footprint > 7 cm opening) pushed the block; env 2 held it at 61 mm width (off-axis) so grasp predicate stayed 0 but it was placed.

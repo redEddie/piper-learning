@@ -1,0 +1,29 @@
+{
+  "action": {
+    "current": "Base/world-aligned Cartesian twist, action 10Hz; axis-wise scales0.05m/s and0.5rad/s.",
+    "example": "a_z=-0.4 -> -0.02m/s -> nominal -2mm per100ms. Changing units to delta and converting back by dt produces the same DLS input.",
+    "ee_frame_change": "Separate from velocity-vs-displacement; needs frame rotation. No success-rate claim without experiment."
+  },
+  "reward_facts": {
+    "held_centered_tcp_cube12mm": 2.9400718964708563,
+    "old_inside_component": 5,
+    "old_release_component": 2,
+    "new_unqualified_drop_max": 2.5,
+    "new_qualified_state": 4,
+    "new_landed_withdrawn_state_max": 5,
+    "height_regression_penalty": 0,
+    "progress_total_cap": 3,
+    "dwell_total_cap": 1
+  },
+  "frozen_evaluation_facts": {
+    "near_episodes": 384,
+    "near_releases": 0,
+    "held_aligned_TCP50to60_MOVE_closed_goal_state_samples": 448,
+    "deterministic_open_choices": 0,
+    "deterministic_up_choices": 448
+  },
+  "inference": "Current reward makes ordinary release worse than continued holding unless the first release simultaneously meets narrow height/alignment/speed conditions. Best-so-far one-off progress pays no penalty for retreating upward. This is a strong candidate for exploration failure, not an isolated causal proof.",
+  "strict_metrics_vs_training": "Strict final success can remain separate from graded learning rewards.",
+  "implementation_changed": false,
+  "new_training_started": false
+}

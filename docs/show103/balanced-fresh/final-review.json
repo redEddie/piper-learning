@@ -1,0 +1,120 @@
+{
+  "issue": "SHOW-103",
+  "status": "Fresh training and evaluation complete; target behavior not learned.",
+  "training_transitions": 16777216,
+  "random_initialization": true,
+  "num_envs": 1024,
+  "actor_value_normalizer_restored": false,
+  "reset_probs": [
+    0.4,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "training_seconds": 2017.0325850029476,
+  "final_conditions": {
+    "empty_hand": {
+      "episodes": 384,
+      "final_successes": 12,
+      "final_success_rate": 0.03125,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0,
+      "controlled_final_successes": 0,
+      "controlled_final_success_rate": 0.0,
+      "qualified_releases": 0,
+      "qualified_release_rate": 0.0,
+      "recontact_episodes": 37,
+      "floor_contact_episodes": 17,
+      "failures": {
+        "approach": 26,
+        "grasp_lift": 106,
+        "held_start_lost": 0,
+        "transport": 46,
+        "place_release": 192,
+        "completion_lost": 0,
+        "controller": 2,
+        "physics": 0
+      }
+    },
+    "mixed": {
+      "episodes": 384,
+      "final_successes": 7,
+      "final_success_rate": 0.018229166666666668,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0,
+      "controlled_final_successes": 0,
+      "controlled_final_success_rate": 0.0,
+      "qualified_releases": 0,
+      "qualified_release_rate": 0.0,
+      "recontact_episodes": 16,
+      "floor_contact_episodes": 9,
+      "failures": {
+        "approach": 14,
+        "grasp_lift": 34,
+        "held_start_lost": 0,
+        "transport": 31,
+        "place_release": 298,
+        "completion_lost": 0,
+        "controller": 0,
+        "physics": 0
+      }
+    },
+    "preinside": {
+      "episodes": 384,
+      "final_successes": 0,
+      "final_success_rate": 0.0,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0,
+      "controlled_final_successes": 0,
+      "controlled_final_success_rate": 0.0,
+      "qualified_releases": 0,
+      "qualified_release_rate": 0.0,
+      "recontact_episodes": 0,
+      "floor_contact_episodes": 0,
+      "failures": {
+        "approach": 0,
+        "grasp_lift": 0,
+        "held_start_lost": 0,
+        "transport": 0,
+        "place_release": 384,
+        "completion_lost": 0,
+        "controller": 0,
+        "physics": 0
+      }
+    },
+    "near": {
+      "episodes": 384,
+      "final_successes": 0,
+      "final_success_rate": 0.0,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0,
+      "controlled_final_successes": 0,
+      "controlled_final_success_rate": 0.0,
+      "qualified_releases": 0,
+      "qualified_release_rate": 0.0,
+      "recontact_episodes": 0,
+      "floor_contact_episodes": 0,
+      "failures": {
+        "approach": 0,
+        "grasp_lift": 0,
+        "held_start_lost": 0,
+        "transport": 0,
+        "place_release": 384,
+        "completion_lost": 0,
+        "controller": 0,
+        "physics": 0
+      }
+    }
+  },
+  "adopted_as_replacement": false,
+  "finding": "No release in384 near starts and384 original placing starts; no qualified releases in any final condition. Near final TCP medians101.7-103.1mm vs target50-60mm.",
+  "interpretation": "Reward increased but release/landing/withdrawal was not learned. Synthetic return ordering did not guarantee exploration/convergence; no claim of divergence or that more steps alone will solve this.",
+  "original_source_files_checked": 349,
+  "original_source_changed_files": [],
+  "actual_robot": false,
+  "training_process_interrupted": false,
+  "evaluation_exception": "One in-flight external interim evaluation continued after the request; final evaluation ran after training completion.",
+  "checkpoint_retention": "Final16m and one12m comparison kept;4m and8m deleted after final evaluation.",
+  "model_path": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/balanced-fresh-16m/checkpoints/000016777216",
+  "plane_modified": false
+}

@@ -1,0 +1,322 @@
+{
+  "issue": "SHOW-108",
+  "selection": "MLP+last LSTM 16u selected by user on 2026-11-01",
+  "actor": "mlp_lstm",
+  "architecture": "actor49 -> SiLU Dense256 -> SiLU Dense64 -> LayerNorm -> LSTM128 -> linear14",
+  "actor_parameters": 129998,
+  "critic_parameters": 83201,
+  "training_seed": 7,
+  "units": 16,
+  "transitions": 134217728,
+  "worlds": 4096,
+  "reset_probabilities": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "reward": "stage_reward_v5 unchanged",
+  "branch": "codex/show108-mlp-lstm",
+  "release_tag": "show108-mlp-lstm-16u-20261101",
+  "release_url": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-16u-20261101",
+  "training_source_commit": "49267d34714545266fbdf85c77540307ca5c2f51",
+  "evaluation_results_commit": "df13140ed44249695b9dcba6fd54d31e7aaaf977",
+  "checkpoint": {
+    "asset": "show108-mlp-lstm-16u-checkpoint.tar.gz",
+    "url": "https://github.com/redEddie/piper-sim-lab/releases/download/show108-mlp-lstm-16u-20261101/show108-mlp-lstm-16u-checkpoint.tar.gz",
+    "sha256": "76377403300022c0f38c7055e766e0978c2e1be9f48d3595db3c0e2e865cd3d5",
+    "bytes": 2609510,
+    "run": "show108-mlp-lstm-16u/training",
+    "directory": "show108-mlp-lstm-16u/training/checkpoints/000134217728",
+    "contents": "Full learner: policy, critic, observation normalizer, optimizer, RNG and step. Keep training/config.json alongside checkpoints.",
+    "member_sha256": {
+      "training/checkpoints/000134217728/learner.msgpack": "6e52e2f5fd63c29ea5e3e6ae9676488acbe2ba5bf76823aeeb4a60cb9aa734de",
+      "training/checkpoints/000134217728/metadata.json": "b4d430e27985f94ad803689f0eed412b5cdc8113e8743418a4420958c8b0b84c",
+      "training/config.json": "f5ecd0b55466e8b42c1c81cfc54826fec50469f70ef2ed670eb50ad3c91e0852",
+      "training/gpu.json": "8a322a55b6474b673a7a2b5fd549ed03877ddac42cfb1b4348db5c58ca770c18",
+      "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+      "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+      "training/provenance.json": "89be582ba4758f719253cc146691ef0ea8a3b847687cd29c66b72d547095ebd5",
+      "training/reset-bank.json": "704d2587cf1d7e4a25c23bbc81f2ea361f53decc3321c5643774975be305f6c1",
+      "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+      "training/summary.json": "b0b4c0a836bb11eb903441decaf6b5a28da25ca98b71f8af3e762c4361a076d9",
+      "training.yaml": "eb04cb7686a1bc94cf4cb12bffcacbc1142114a46caed017b5347247771d4b50"
+    }
+  },
+  "final_evaluation": {
+    "units": 16,
+    "mlp_lstm": {
+      "initial_a": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 289,
+        "failures": 2,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 289,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.7526041666666666,
+        "full_home_complete": 289,
+        "full_home_success_rate": 0.7526041666666666,
+        "final_max_A_error_deg_median": 11.593034744262695,
+        "best_max_A_error_deg_median": 0.1697845757007599
+      },
+      "pre_grasp": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 235,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 235,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.6119791666666666,
+        "full_home_complete": 235,
+        "full_home_success_rate": 0.6119791666666666,
+        "final_max_A_error_deg_median": 12.770072937011719,
+        "best_max_A_error_deg_median": 9.722919464111328
+      },
+      "held": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 239,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 239,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.6223958333333334,
+        "full_home_complete": 239,
+        "full_home_success_rate": 0.6223958333333334,
+        "final_max_A_error_deg_median": 12.349143981933594,
+        "best_max_A_error_deg_median": 9.353437423706055
+      },
+      "over_bowl": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 361,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 361,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.9401041666666666,
+        "full_home_complete": 361,
+        "full_home_success_rate": 0.9401041666666666,
+        "final_max_A_error_deg_median": 14.354890823364258,
+        "best_max_A_error_deg_median": 8.645162582397461
+      },
+      "post_release": {
+        "episodes": 384,
+        "local_success": 369,
+        "final_complete": 369,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 369,
+        "high_drop_success": 0,
+        "local_success_rate": 0.9609375,
+        "full_success_rate": 0.9609375,
+        "full_home_complete": 369,
+        "full_home_success_rate": 0.9609375,
+        "final_max_A_error_deg_median": 12.179038047790527,
+        "best_max_A_error_deg_median": 7.796209335327148
+      }
+    },
+    "transformer_lstm": {
+      "initial_a": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 2,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 0,
+        "high_drop_success": 2,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.005208333333333333,
+        "full_home_complete": 0,
+        "full_home_success_rate": 0.0,
+        "final_max_A_error_deg_median": 25.78309440612793,
+        "best_max_A_error_deg_median": 0.18354099988937378
+      },
+      "pre_grasp": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 0,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.0,
+        "full_home_complete": 0,
+        "full_home_success_rate": 0.0,
+        "final_max_A_error_deg_median": 25.783098220825195,
+        "best_max_A_error_deg_median": 22.60243797302246
+      },
+      "held": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 0,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.0,
+        "full_home_complete": 0,
+        "full_home_success_rate": 0.0,
+        "final_max_A_error_deg_median": 25.78309440612793,
+        "best_max_A_error_deg_median": 22.348163604736328
+      },
+      "over_bowl": {
+        "episodes": 384,
+        "local_success": 384,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 0,
+        "high_drop_success": 0,
+        "local_success_rate": 1.0,
+        "full_success_rate": 0.0,
+        "full_home_complete": 0,
+        "full_home_success_rate": 0.0,
+        "final_max_A_error_deg_median": 25.783100128173828,
+        "best_max_A_error_deg_median": 22.82866668701172
+      },
+      "post_release": {
+        "episodes": 384,
+        "local_success": 0,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "home_complete": 0,
+        "high_drop_success": 0,
+        "local_success_rate": 0.0,
+        "full_success_rate": 0.0,
+        "full_home_complete": 0,
+        "full_home_success_rate": 0.0,
+        "final_max_A_error_deg_median": 25.783098220825195,
+        "best_max_A_error_deg_median": 21.469472885131836
+      }
+    },
+    "local_success_differences": {
+      "initial_a": {
+        "difference_mlp_minus_transformer": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      },
+      "pre_grasp": {
+        "difference_mlp_minus_transformer": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      },
+      "held": {
+        "difference_mlp_minus_transformer": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      },
+      "over_bowl": {
+        "difference_mlp_minus_transformer": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      },
+      "post_release": {
+        "difference_mlp_minus_transformer": 0.9609375,
+        "ci95": [
+          0.9401041666666666,
+          0.9791666666666666
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      }
+    },
+    "full_home_success_difference": {
+      "difference_mlp_minus_transformer": 0.7526041666666666,
+      "ci95": [
+        0.7083333333333334,
+        0.796875
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "noninferiority_supported": true
+    },
+    "A_error_difference_deg": {
+      "difference_mlp_minus_transformer": -13.604060173034668,
+      "ci95": [
+        -13.782846927642822,
+        -13.411438941955566
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "noninferiority_supported": true
+    },
+    "finite_evaluations": true,
+    "noninferiority_to_fresh_control_supported": true,
+    "historical_practical_target_point_estimates_reached": true,
+    "reproduction_supported_on_this_evaluation": true
+  },
+  "evaluation_protocol": {
+    "episodes_per_start": 384,
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_seed": 128,
+    "seconds": 20,
+    "success_semantics": "Existing completion conditions achieved and latched at some point; final pose error is reported separately. High-drop terminal exception excluded from actual A completion.",
+    "training_seed_limit": "One seed7 per architecture; does not establish architecture-wide superiority."
+  },
+  "videos": {
+    "manifest": "paired-videos-16u.json",
+    "release_asset": "show108-16u-paired-video-manifest.json",
+    "left": "mlp_lstm",
+    "right": "transformer_lstm",
+    "cases": "seed2026 scene0 first recorded case for every initialization; not success-selected"
+  },
+  "inference": "Use piper_sim_lab.recurrent.load_actor_checkpoint. Portable NumPy runtime does not support this encoder-first mlp_lstm actor.",
+  "real_robot_validated": false,
+  "preservation": "Original SHOW103 and fresh Transformer control checkpoints remain unchanged."
+}

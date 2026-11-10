@@ -1,0 +1,72 @@
+# v1 (SHOW-76): vendor URDF model with the 100 mm gripper (SHOW-79/84), real object values,
+# start pose A, full-width spawning, a free 110 g bowl and table friction that reaches block-table contacts.
+# Otherwise the same as pick_place_dr.yaml (stage-free, bowl-arm collision, Table 10 randomization).
+seed: 7
+environment:
+  task: pick_place
+  ctrl_dt: 0.1
+  sim_dt: 0.005
+  impl: warp
+  solver_iterations: 8
+  solver_ls_iterations: 20
+  jacobian: mjx
+  robot_model: piper_v100
+  base_height: 0.015                 # aluminium mounting plate (SHOW-79)
+  nominal_qpos: [0.0, 0.523, -0.450, 0.0, 0.0, 0.0]   # pose A (SHOW-84)
+  gripper_max: 0.05                  # 0-100 mm opening (SHOW-78/80)
+  table_priority: 2
+  reset_ik_flip: true
+  stage_obs: false
+  bowl_arm_collision: true
+  size_obs: true
+  obs_randomization: true
+  physics_randomization: true
+  # Green PLA cube: 50 mm, 70 g. Mass randomization stays +-20 % around it.
+  block_half: 0.025
+  block_mass: 0.07
+  block_mass_range: [0.056, 0.084]
+  block_rgba: [0.1, 0.8, 0.2, 1.0]
+  # Melamine bowl, 70 mm tall, 150 mm inner rim, 90 mm outer base, 3 mm thick (approximation, SHOW-76).
+  bowl_r_bottom: 0.042
+  bowl_r_rim: 0.075
+  bowl_height: 0.067
+  bowl_wall: 0.003
+  bowl_floor: 0.003
+  bowl_free: true                    # 110 g bowl that the arm or block can push or tip
+  bowl_mass: 0.11
+  # Both objects anywhere across y -0.3..0.3 m; x (forward) keeps the v0 ranges.
+  block_x: [0.25, 0.40]
+  block_y: [-0.30, 0.30]
+  bowl_x: [0.25, 0.35]
+  bowl_y: [-0.30, 0.30]
+  spawn_min_distance: 0.14           # bowl rim 0.078 + block half-diagonal 0.035 + 0.027 margin
+  spawn_max_radius: 0.40             # top-down reach at lift height; farther corners are not spawned
+  spawn_candidates: 16
+training:
+  # Start with 2x (33.6M), with checkpoints every 8.4M. Evaluate empty-hand
+  # success at 1x and 2x before increasing the budget; do not default to 8x.
+  num_timesteps: 33554432
+  num_envs: 1024
+  episode_length: 80
+  unroll_length: 16
+  batch_size: 256
+  num_minibatches: 4
+  num_updates_per_batch: 4
+  num_evals: 5
+  num_eval_envs: 64
+  learning_rate: 0.0003
+  discounting: 0.99
+  gae_lambda: 0.95
+  entropy_cost: 0.001
+  clipping_epsilon: 0.2
+  reward_scaling: 1.0
+  normalize_observations: true
+  max_grad_norm: 1.0
+  action_repeat: 1
+  bootstrap_on_timeout: false
+  deterministic_eval: true
+network:
+  policy_hidden_layer_sizes: [256, 256]
+  value_hidden_layer_sizes: [256, 256]
+  policy_obs_key: state
+  value_obs_key: privileged

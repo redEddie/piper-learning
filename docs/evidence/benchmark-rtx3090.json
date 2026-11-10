@@ -1,0 +1,228 @@
+{
+  "provenance": {
+    "python": "3.11.17",
+    "system": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "gpu_hardware": "NVIDIA GeForce RTX 3090, 580.178.04, 24576 MiB",
+    "packages": {
+      "piper-sim-lab": "0.1.0",
+      "playground": "0.2.0",
+      "mujoco": "3.16.0",
+      "mujoco-mjx": "3.16.0",
+      "mujoco-warp": "3.16.0",
+      "warp-lang": "1.18.0",
+      "jax": "0.10.2",
+      "jaxlib": "0.10.2",
+      "brax": "0.14.2",
+      "flax": "0.12.8",
+      "optax": "0.2.8"
+    },
+    "sources": {
+      "playground": {
+        "url": "https://github.com/google-deepmind/mujoco_playground.git",
+        "vcs_info": {
+          "vcs": "git",
+          "commit_id": "d59156e099a8785dd58fbce2e25a6ee1f7b5800c",
+          "requested_revision": "d59156e099a8785dd58fbce2e25a6ee1f7b5800c"
+        }
+      },
+      "brax": {
+        "url": "https://github.com/google/brax.git",
+        "vcs_info": {
+          "vcs": "git",
+          "commit_id": "6d039374b34a266107bd1e952180eea33ac4eab8",
+          "requested_revision": "6d039374b34a266107bd1e952180eea33ac4eab8"
+        }
+      }
+    },
+    "devices": [
+      "cuda:0"
+    ],
+    "code_sha256": {
+      "__init__.py": "f220f8df55c88d4aa4c96811cab810aa38847d7ee6f8e028e713e26478d534b2",
+      "assets.py": "f064b88abbee68c442cab18ccfc6cababcc05cea7fe02d1186e5215b6862e24a",
+      "benchmark.py": "bca31a7b4942376664b6788806057f6ded88ff40bedf1538b080ad12574fc105",
+      "checkpoint.py": "70d0c0869eec59de7085120f954cb2a42b41d6b4cfad300132b0d5b1cc254b31",
+      "env.py": "2a581de7b5c5fda550b4e661e00e00e061fca3d50fed5fa6d71e07df3a01c2cf",
+      "evaluate.py": "d6373c1a3696e8b6528ee2002fa099a908a1da1ebeb8ae623daf05b88a975bc3",
+      "runtime.py": "2e24e671d69dd54b7813c25832fa37620a249bbdabeb49784f7a12561654f47f",
+      "train.py": "0625a322781020d0d83efdc0df40a089ebebb8852d58a0258de9a9fe5e58b0d6",
+      "wrappers.py": "5ca59ed83251d9ceff6be608d104aeb136eaf083eb77b6232dff2f5f416ae27e"
+    },
+    "assets": {
+      "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+      "revision": "62ab00f2bc44f6f20c1c9b7a13f3fb1dd41a4e35",
+      "license": "MIT",
+      "verified_files": 89
+    },
+    "platform": "gpu"
+  },
+  "profile": "PiperReach, full collisions, zero actions, full fresh autoreset, no rendering/PPO",
+  "impl": "warp",
+  "results": [
+    {
+      "environment": {
+        "action_cost": 0.001,
+        "action_rate_cost": 0.01,
+        "action_repeat": 1,
+        "action_scale": 0.05,
+        "batch_capacity": 128,
+        "ccd_pairs_per_env": 4,
+        "contacts_per_env": 160,
+        "ctrl_dt": 0.05,
+        "episode_length": 100,
+        "goal_joint_radius": [
+          0.45,
+          0.3,
+          0.35,
+          0.4,
+          0.3,
+          0.4
+        ],
+        "gripper_opening": 0.025,
+        "impl": "warp",
+        "max_constraints_per_env": 512,
+        "nominal_qpos": [
+          0.0,
+          0.7,
+          -0.9,
+          0.0,
+          0.3,
+          0.0
+        ],
+        "reach_scale": 5.0,
+        "reset_joint_noise": 0.05,
+        "sim_dt": 0.005,
+        "solver_iterations": 8,
+        "solver_ls_iterations": 4,
+        "success_distance": 0.03
+      },
+      "num_envs": 128,
+      "steps_per_repeat": 128,
+      "reset_first_call_seconds": 2.0066872800016426,
+      "rollout_first_call_seconds": 4.141817938998429,
+      "warm_seconds": [
+        0.5905373560017324,
+        0.5849009230005322,
+        0.5422709630001918
+      ],
+      "warm_transitions_per_second": 28011.581715327695,
+      "warm_physics_steps_per_second": 280115.81715327693,
+      "policy_dt_seconds": 0.05,
+      "finite": true,
+      "nonfinite_transitions": 0,
+      "capacity_overflow_transitions": 0,
+      "minimum_episode_resets": 5,
+      "peak_board_memory_mib": 705
+    },
+    {
+      "environment": {
+        "action_cost": 0.001,
+        "action_rate_cost": 0.01,
+        "action_repeat": 1,
+        "action_scale": 0.05,
+        "batch_capacity": 1024,
+        "ccd_pairs_per_env": 4,
+        "contacts_per_env": 160,
+        "ctrl_dt": 0.05,
+        "episode_length": 100,
+        "goal_joint_radius": [
+          0.45,
+          0.3,
+          0.35,
+          0.4,
+          0.3,
+          0.4
+        ],
+        "gripper_opening": 0.025,
+        "impl": "warp",
+        "max_constraints_per_env": 512,
+        "nominal_qpos": [
+          0.0,
+          0.7,
+          -0.9,
+          0.0,
+          0.3,
+          0.0
+        ],
+        "reach_scale": 5.0,
+        "reset_joint_noise": 0.05,
+        "sim_dt": 0.005,
+        "solver_iterations": 8,
+        "solver_ls_iterations": 4,
+        "success_distance": 0.03
+      },
+      "num_envs": 1024,
+      "steps_per_repeat": 128,
+      "reset_first_call_seconds": 1.4240283750004892,
+      "rollout_first_call_seconds": 4.546714748998056,
+      "warm_seconds": [
+        0.7613985050011252,
+        0.7593827810014773,
+        0.7592868140018254
+      ],
+      "warm_transitions_per_second": 172603.3342856967,
+      "warm_physics_steps_per_second": 1726033.3428569671,
+      "policy_dt_seconds": 0.05,
+      "finite": true,
+      "nonfinite_transitions": 0,
+      "capacity_overflow_transitions": 0,
+      "minimum_episode_resets": 5,
+      "peak_board_memory_mib": 1161
+    },
+    {
+      "environment": {
+        "action_cost": 0.001,
+        "action_rate_cost": 0.01,
+        "action_repeat": 1,
+        "action_scale": 0.05,
+        "batch_capacity": 4096,
+        "ccd_pairs_per_env": 4,
+        "contacts_per_env": 160,
+        "ctrl_dt": 0.05,
+        "episode_length": 100,
+        "goal_joint_radius": [
+          0.45,
+          0.3,
+          0.35,
+          0.4,
+          0.3,
+          0.4
+        ],
+        "gripper_opening": 0.025,
+        "impl": "warp",
+        "max_constraints_per_env": 512,
+        "nominal_qpos": [
+          0.0,
+          0.7,
+          -0.9,
+          0.0,
+          0.3,
+          0.0
+        ],
+        "reach_scale": 5.0,
+        "reset_joint_noise": 0.05,
+        "sim_dt": 0.005,
+        "solver_iterations": 8,
+        "solver_ls_iterations": 4,
+        "success_distance": 0.03
+      },
+      "num_envs": 4096,
+      "steps_per_repeat": 128,
+      "reset_first_call_seconds": 1.4991948839997349,
+      "rollout_first_call_seconds": 5.414982047001104,
+      "warm_seconds": [
+        1.3432853509984852,
+        1.3472376399986388,
+        1.3543326929975592
+      ],
+      "warm_transitions_per_second": 389157.7732348168,
+      "warm_physics_steps_per_second": 3891577.732348168,
+      "policy_dt_seconds": 0.05,
+      "finite": true,
+      "nonfinite_transitions": 0,
+      "capacity_overflow_transitions": 0,
+      "minimum_episode_resets": 5,
+      "peak_board_memory_mib": 2739
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "original_source": "/home/pi_lab/robot/repos/piper-sim-lab-show76-v1-8x-20261023-r2",
+  "original_files_checked": 349,
+  "original_changed_files": [],
+  "original_release": "/home/pi_lab/robot/releases/thor-show76-v1-8x-20261023-r2",
+  "release_directory_exists": true,
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648",
+  "checkpoint_files_checked": 15,
+  "checkpoint_changed_files": [],
+  "pick_place_matches_preserved_SHOW100": true,
+  "real_robot": false
+}

@@ -1,0 +1,17 @@
+{
+  "interim_external_evaluations": false,
+  "reason": "User requested uninterrupted training followed by final evaluation.",
+  "scheduling_process_paused": 684633,
+  "training_process_running": 684636,
+  "training_process_signalled": false,
+  "final_evaluation_after_training": true,
+  "cleanup": "After final evaluation, retain final/needed comparison checkpoints and delete redundant checkpoints from this run only.",
+  "scheduling_process_terminated": true,
+  "training_completed": true,
+  "training_status": "passed",
+  "training_steps": 16777216,
+  "field_meaning": "Requested scheduling policy, not a claim that no in-flight child completed.",
+  "inflight_evaluation_completed_after_request": "interim-12582912",
+  "training_process_interrupted": false,
+  "final_evaluation_completed": true
+}

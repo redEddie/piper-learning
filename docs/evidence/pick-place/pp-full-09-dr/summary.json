@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "elapsed_seconds": 764.309607439005,
+  "policy_changed": true,
+  "policy_changes": [
+    {
+      "steps": 0,
+      "policy_l2_change": 0.0
+    },
+    {
+      "steps": 4194304,
+      "policy_l2_change": 4.515325466413346
+    },
+    {
+      "steps": 8388608,
+      "policy_l2_change": 5.610495602490905
+    },
+    {
+      "steps": 12582912,
+      "policy_l2_change": 7.111447114061605
+    },
+    {
+      "steps": 16777216,
+      "policy_l2_change": 8.500355901086696
+    }
+  ],
+  "checkpoint_semantics": "policy, value, observation normalizer; warm-start resets optimizer/RNG",
+  "metrics": {
+    "eval/walltime": 83.34110903739929,
+    "training/sps": 28738.585212771923,
+    "training/walltime": 660.1196119785309,
+    "training/entropy_loss": 0.006749732885509729,
+    "training/kl_mean": 0.07597982883453369,
+    "training/learning_rate": 0.00029999998514540493,
+    "training/policy_dist_max_loc": 5.677879333496094,
+    "training/policy_dist_max_std": 2.360522985458374,
+    "training/policy_dist_mean_loc": 0.2905846834182739,
+    "training/policy_dist_mean_std": 0.3939002752304077,
+    "training/policy_dist_min_loc": -4.366432189941406,
+    "training/policy_dist_min_std": 0.044619008898735046,
+    "training/policy_loss": -0.0028538957703858614,
+    "training/total_loss": 682.2252197265625,
+    "training/v_loss": 682.2213134765625,
+    "eval/episode_action_penalty": 0.2858716547489166,
+    "eval/episode_action_rate_penalty": 0.1699770838022232,
+    "eval/episode_block_bowl_xy": 6.637887001037598,
+    "eval/episode_block_height": 2.786656379699707,
+    "eval/episode_capacity_overflow": 0.0,
+    "eval/episode_grasped": 12.234375,
+    "eval/episode_nonfinite": 0.0,
+    "eval/episode_reward": 395.2342529296875,
+    "eval/episode_reward_carry": 4.863592624664307,
+    "eval/episode_reward_inside": 322.6875,
+    "eval/episode_reward_lift": 12.234375,
+    "eval/episode_reward_reach": 55.90465545654297,
+    "eval/episode_stage": 151.09375,
+    "eval/episode_success": 45.875,
+    "eval/episode_tcp_block": 5.443503379821777,
+    "eval/episode_action_penalty_std": 0.036653053015470505,
+    "eval/episode_action_rate_penalty_std": 0.06525333970785141,
+    "eval/episode_block_bowl_xy_std": 4.7158379554748535,
+    "eval/episode_block_height_std": 1.5168447494506836,
+    "eval/episode_capacity_overflow_std": 0.0,
+    "eval/episode_grasped_std": 10.866724014282227,
+    "eval/episode_nonfinite_std": 0.0,
+    "eval/episode_reward_std": 156.38063049316406,
+    "eval/episode_reward_carry_std": 3.7624638080596924,
+    "eval/episode_reward_inside_std": 159.99217224121094,
+    "eval/episode_reward_lift_std": 10.866724014282227,
+    "eval/episode_reward_reach_std": 6.557682991027832,
+    "eval/episode_stage_std": 67.37272644042969,
+    "eval/episode_success_std": 22.92276382446289,
+    "eval/episode_tcp_block_std": 1.845618724822998,
+    "eval/avg_episode_length": 80.0,
+    "eval/std_episode_length": 0.0,
+    "eval/epoch_eval_time": 1.8471291065216064,
+    "eval/sps": 2771.8690490680706
+  }
+}

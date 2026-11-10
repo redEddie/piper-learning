@@ -1,0 +1,41 @@
+{
+  "scope": "Deterministic evaluation and conditional distribution reads, not stochastic training frequencies.",
+  "results": [
+    {
+      "transitions": 4194304,
+      "episodes": 128,
+      "final_tcp_height_mm_median": 151.99050903320312,
+      "open_request_fraction": 0.0,
+      "qualifying_band_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 188,
+        "opening_probability_mean": 0.001145091926122435,
+        "opening_probability_median": 0.0001108382964329129,
+        "opening_probability_max": 0.03633913746252339,
+        "raw_location_median": -1.0883427858352661,
+        "raw_scale_median": 0.47806477546691895,
+        "deterministic_open_fraction": 0.0,
+        "deterministic_upward_fraction": 1.0
+      },
+      "release_episodes": 0
+    },
+    {
+      "transitions": 8388608,
+      "episodes": 128,
+      "final_tcp_height_mm_median": 120.13412475585938,
+      "open_request_fraction": 0.00015625,
+      "qualifying_band_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 194,
+        "opening_probability_mean": 7.889760111205091e-05,
+        "opening_probability_median": 3.0441443969813714e-06,
+        "opening_probability_max": 0.0026193068496550547,
+        "raw_location_median": -1.0164432525634766,
+        "raw_scale_median": 0.37008827924728394,
+        "deterministic_open_fraction": 0.0,
+        "deterministic_upward_fraction": 1.0
+      },
+      "release_episodes": 0
+    }
+  ]
+}

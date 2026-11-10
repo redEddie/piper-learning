@@ -1,0 +1,567 @@
+{
+  "version": "show103-five-start-v2",
+  "split": "train",
+  "seed": 41030,
+  "poses_per_stage": 64,
+  "native_stabilization_seconds": 0.3,
+  "records": [
+    {
+      "stage": 0,
+      "count": 64,
+      "attempts": 64,
+      "cube_xy_min": [
+        0.2517074537916951,
+        -0.19678030817959202
+      ],
+      "cube_xy_max": [
+        0.34826984287538687,
+        0.18196203550109324
+      ],
+      "bowl_xy_min": [
+        0.25307297819144103,
+        -0.19825729124700614
+      ],
+      "bowl_xy_max": [
+        0.3495126363015274,
+        0.1971377625601468
+      ],
+      "bilateral_held_contacts_verified": false
+    },
+    {
+      "stage": 1,
+      "count": 64,
+      "attempts": 71,
+      "cube_xy_min": [
+        0.2504572217106985,
+        -0.19089777872308233
+      ],
+      "cube_xy_max": [
+        0.34706999979347963,
+        0.17800043144677347
+      ],
+      "bowl_xy_min": [
+        0.25220720456994383,
+        -0.1955617363946205
+      ],
+      "bowl_xy_max": [
+        0.34659347503118637,
+        0.19781076826148186
+      ],
+      "bilateral_held_contacts_verified": false
+    },
+    {
+      "stage": 2,
+      "count": 64,
+      "attempts": 75,
+      "cube_xy_min": [
+        0.2523741305827868,
+        -0.19116295167402428
+      ],
+      "cube_xy_max": [
+        0.34881939605898454,
+        0.15448734063285877
+      ],
+      "bowl_xy_min": [
+        0.250498567237582,
+        -0.19298951666599473
+      ],
+      "bowl_xy_max": [
+        0.3482585388448771,
+        0.1980161487479951
+      ],
+      "bilateral_held_contacts_verified": true
+    },
+    {
+      "stage": 3,
+      "count": 64,
+      "attempts": 335,
+      "cube_xy_min": [
+        0.25121206256829365,
+        -0.12412088154702285
+      ],
+      "cube_xy_max": [
+        0.2838359817946682,
+        0.13355573087665423
+      ],
+      "bowl_xy_min": [
+        0.25046615921728427,
+        -0.12423999877228334
+      ],
+      "bowl_xy_max": [
+        0.28311837109361054,
+        0.13368170901393955
+      ],
+      "bilateral_held_contacts_verified": true
+    },
+    {
+      "stage": 4,
+      "count": 64,
+      "physical_prefix": "actual grasp, smooth lower, rate-limited OPEN and20ms detachment",
+      "bilateral_held_contacts_verified": false
+    }
+  ],
+  "sha256": "409abbb9eec986e5e695f4e66f60d9bfa4fefd78c353e4c719e3d55b3a388d58",
+  "geometry_sha256": "c9bfb04f742a5dd33664fb2745f4730ba4d9becdfd9291c61ab50467b1b67e05",
+  "physical_config": {
+    "robot_model": "piper_v100",
+    "base_height": 0.015,
+    "tcp_local_z": 0.1385,
+    "block_half": 0.025,
+    "block_mass": 0.07,
+    "bowl_r_bottom": 0.042,
+    "bowl_r_rim": 0.075,
+    "bowl_height": 0.067,
+    "bowl_floor": 0.003,
+    "bowl_wall": 0.003,
+    "bowl_mass": 0.11,
+    "gripper_max": 0.05,
+    "gripper_force": 3.0,
+    "gripper_kp": 400.0,
+    "finger_bridge": true
+  },
+  "joint1_pivot_world_xy": [
+    0.0,
+    0.0
+  ],
+  "sampling": "Coupled native-validated arm/cube pose bank plus continuous yaw; independent continuous empty cube/bowl draws; over-bowl is coupled",
+  "requested_xy_x": [
+    0.25,
+    0.35
+  ],
+  "requested_xy_y": [
+    -0.2,
+    0.2
+  ],
+  "max_radius": 0.4,
+  "minimum_free_cube_bowl_distance": 0.14,
+  "reward_history_prefilled": false,
+  "parent_bank_sha256": "8c4e444c3b833bff916ad42fd4c9e9810b5e509394a4550183c4ac37e596db36",
+  "prefix_settings": {
+    "physics_dt": 0.005,
+    "policy_dt": 0.1,
+    "approach_distance": 0.02,
+    "reach_scale": 5.0,
+    "grasp_seconds": 0.1,
+    "lift_height": 0.02,
+    "bowl_entry_radius": 0.05,
+    "alignment_radius": 0.017,
+    "release_height_min": 0.05,
+    "release_height_max": 0.06,
+    "lower_scale": 0.04,
+    "release_seconds": 0.02,
+    "target_speed": 0.01,
+    "target_seconds": 0.1,
+    "support_speed": 0.02,
+    "support_seconds": 0.1,
+    "clearance": 0.08,
+    "home_error": 0.05235987755982989,
+    "home_speed": 0.05,
+    "home_seconds": 0.2,
+    "home_progress_scale": 1.0,
+    "push_speed_scale": 0.05,
+    "face_distance_scale": 0.03,
+    "face_weight": 0.5,
+    "xy_weight": 0.5,
+    "dwell_weight": 0.5,
+    "push_weight": 0.5,
+    "recontact_weight": 0.5,
+    "action_weight": 0.001,
+    "action_rate_weight": 0.01,
+    "carry_margin": 0.005,
+    "carry_height_scale": 0.04,
+    "release_xy_scale": 0.04,
+    "away_distance": 0.1,
+    "away_weight": 0.5,
+    "prepare_credit_seconds": 1.0,
+    "drop_weight": 0.5
+  },
+  "reward_history_source": "Replay of recorded 5ms native grasp/lower/OPEN/release prefix; no fabricated timers",
+  "fifth_start": "20ms after first valid loss of both finger contacts; physical velocity preserved",
+  "release_records": [
+    {
+      "duration": 1.5,
+      "release_height": 0.05464681232514266,
+      "release_xy": 0.004049054907232197,
+      "parent_index": 0
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054649367120817596,
+      "release_xy": 0.004048378866303144,
+      "parent_index": 1
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054627596518545846,
+      "release_xy": 0.004050277132717955,
+      "parent_index": 2
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054667018095973255,
+      "release_xy": 0.004050245787374376,
+      "parent_index": 3
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054643454766726725,
+      "release_xy": 0.004052968142536326,
+      "parent_index": 4
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.0546175659637147,
+      "release_xy": 0.0040543455763587255,
+      "parent_index": 5
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.0547017335779662,
+      "release_xy": 0.004053428576669811,
+      "parent_index": 6
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05469973901143744,
+      "release_xy": 0.004058726610466816,
+      "parent_index": 7
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054628039822894645,
+      "release_xy": 0.004047836521995201,
+      "parent_index": 8
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054630236567358166,
+      "release_xy": 0.004047686404693731,
+      "parent_index": 9
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460049294621354,
+      "release_xy": 0.0040560559732371665,
+      "parent_index": 10
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054697181269686826,
+      "release_xy": 0.004052228364596135,
+      "parent_index": 11
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05462216366846334,
+      "release_xy": 0.004052111827234966,
+      "parent_index": 12
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05459847958753102,
+      "release_xy": 0.004051257816222473,
+      "parent_index": 13
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054607746696563764,
+      "release_xy": 0.00405437826495434,
+      "parent_index": 14
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05469745178267804,
+      "release_xy": 0.004050840368838038,
+      "parent_index": 15
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460920811762516,
+      "release_xy": 0.004052280344474209,
+      "parent_index": 16
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05468247223697019,
+      "release_xy": 0.004052506610698567,
+      "parent_index": 17
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.0546623672426042,
+      "release_xy": 0.00405751752721968,
+      "parent_index": 18
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05463854835062892,
+      "release_xy": 0.00404799908482984,
+      "parent_index": 19
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460430292615713,
+      "release_xy": 0.004048937620120428,
+      "parent_index": 20
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054705154516684985,
+      "release_xy": 0.004053268399380742,
+      "parent_index": 21
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05457933198695557,
+      "release_xy": 0.004039901939734407,
+      "parent_index": 22
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05468689423700214,
+      "release_xy": 0.004060485826346369,
+      "parent_index": 23
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05463156747375654,
+      "release_xy": 0.00405398618676416,
+      "parent_index": 24
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054645777935073116,
+      "release_xy": 0.004060759713889705,
+      "parent_index": 25
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05468591078248834,
+      "release_xy": 0.004050402960649841,
+      "parent_index": 26
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05463122855759536,
+      "release_xy": 0.004066636666398454,
+      "parent_index": 27
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05463398995780037,
+      "release_xy": 0.00405058669994347,
+      "parent_index": 28
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05464607954620539,
+      "release_xy": 0.004068111853053241,
+      "parent_index": 29
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05459380459881929,
+      "release_xy": 0.0040701592691867175,
+      "parent_index": 30
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05468110820011499,
+      "release_xy": 0.004050178708142903,
+      "parent_index": 31
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460441787813735,
+      "release_xy": 0.004066339672474534,
+      "parent_index": 32
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460152991543169,
+      "release_xy": 0.004075993807429483,
+      "parent_index": 33
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054628683414414944,
+      "release_xy": 0.0040525309243619025,
+      "parent_index": 34
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054690480359650476,
+      "release_xy": 0.004051216392647141,
+      "parent_index": 35
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05470102708291325,
+      "release_xy": 0.004058885443853926,
+      "parent_index": 36
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05464582124282305,
+      "release_xy": 0.0040574719524780105,
+      "parent_index": 37
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054600460751205504,
+      "release_xy": 0.004049570809831931,
+      "parent_index": 38
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05457672186356751,
+      "release_xy": 0.004046485178415777,
+      "parent_index": 39
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05464431591955491,
+      "release_xy": 0.004055716620704548,
+      "parent_index": 40
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.0546100217710464,
+      "release_xy": 0.004050094440945293,
+      "parent_index": 41
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05467304925228127,
+      "release_xy": 0.004052030234012175,
+      "parent_index": 42
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460880136721778,
+      "release_xy": 0.004057924533742812,
+      "parent_index": 43
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054703156032757355,
+      "release_xy": 0.004054025781420237,
+      "parent_index": 44
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05458263763695464,
+      "release_xy": 0.004046221233222998,
+      "parent_index": 45
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05470052662039754,
+      "release_xy": 0.004051399192618249,
+      "parent_index": 46
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05458206641827228,
+      "release_xy": 0.004071519095975005,
+      "parent_index": 47
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05462012447053232,
+      "release_xy": 0.004049888381107689,
+      "parent_index": 48
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054616680875981344,
+      "release_xy": 0.004066978289908557,
+      "parent_index": 49
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05465495337992486,
+      "release_xy": 0.004056304815002015,
+      "parent_index": 50
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.0546324592100947,
+      "release_xy": 0.004047697860812968,
+      "parent_index": 51
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054679061173085235,
+      "release_xy": 0.004058375191606452,
+      "parent_index": 52
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054610124722019156,
+      "release_xy": 0.004049530251488491,
+      "parent_index": 53
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054679580481215656,
+      "release_xy": 0.0040591838927995835,
+      "parent_index": 54
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460967996062097,
+      "release_xy": 0.004051633801798727,
+      "parent_index": 55
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05462534500666219,
+      "release_xy": 0.004054268549391524,
+      "parent_index": 56
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05458370187873182,
+      "release_xy": 0.004057305938576106,
+      "parent_index": 57
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05460696808939177,
+      "release_xy": 0.004064671601352904,
+      "parent_index": 58
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05458367785829476,
+      "release_xy": 0.004070099415811522,
+      "parent_index": 59
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05470813123605305,
+      "release_xy": 0.004051845129225565,
+      "parent_index": 60
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05464676853960503,
+      "release_xy": 0.004060670792865363,
+      "parent_index": 61
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.05464624286161971,
+      "release_xy": 0.004063701752124622,
+      "parent_index": 62
+    },
+    {
+      "duration": 1.5,
+      "release_height": 0.054626048130961315,
+      "release_xy": 0.0040484149849841266,
+      "parent_index": 63
+    }
+  ],
+  "rejected": []
+}

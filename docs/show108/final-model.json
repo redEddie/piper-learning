@@ -1,0 +1,126 @@
+{
+  "issue": "SHOW-108",
+  "selection_date": "2026-11-09",
+  "selection": "MLP+LSTM observation-DR 24u selected for final code and future robot use",
+  "actor": "mlp_lstm",
+  "actor_architecture": {
+    "hidden_sizes": [
+      256,
+      64
+    ],
+    "recurrent_width": 128
+  },
+  "actor_observation_size": 49,
+  "critic_observation_size": 66,
+  "action_size": 7,
+  "cumulative_units": 24,
+  "cumulative_transitions": 201326592,
+  "checkpoint_step": 33554432,
+  "parent_training_steps": 167772160,
+  "source_run": "show108-obsdr-joint-a-20plus4u-20261109",
+  "checkpoint_directory": "training/checkpoints/000033554432",
+  "checkpoint_sha256": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+  "training_source_commit": "d377cae0afdc87a389b09071eae6bcde72465e86",
+  "release_tag": "show108-mlp-lstm-24u-final-20261109",
+  "release_url": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-24u-final-20261109",
+  "branch": "codex/show108-mlp-lstm-24u-final",
+  "require_A_return": false,
+  "placement_evaluation": {
+    "initial_a": {
+      "episodes": 384,
+      "normal_place": 351,
+      "local_success": 384,
+      "high_drop": 1,
+      "final_inside_valid": 351,
+      "later_failure_after_place": 0,
+      "controller_failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "normal_place_rate": 0.9140625,
+      "local_success_rate": 1.0
+    },
+    "pre_grasp": {
+      "episodes": 384,
+      "normal_place": 360,
+      "local_success": 383,
+      "high_drop": 0,
+      "final_inside_valid": 361,
+      "later_failure_after_place": 0,
+      "controller_failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "normal_place_rate": 0.9375,
+      "local_success_rate": 0.9973958333333334
+    },
+    "held": {
+      "episodes": 384,
+      "normal_place": 376,
+      "local_success": 384,
+      "high_drop": 0,
+      "final_inside_valid": 376,
+      "later_failure_after_place": 0,
+      "controller_failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "normal_place_rate": 0.9791666666666666,
+      "local_success_rate": 1.0
+    },
+    "over_bowl": {
+      "episodes": 384,
+      "normal_place": 384,
+      "local_success": 384,
+      "high_drop": 0,
+      "final_inside_valid": 384,
+      "later_failure_after_place": 0,
+      "controller_failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "normal_place_rate": 1.0,
+      "local_success_rate": 1.0
+    }
+  },
+  "evaluation_protocol": {
+    "episodes_per_start": 384,
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_seed": 128,
+    "seconds": 20,
+    "criterion": "normal stage4 placement before first failure, high-drop terminal exception excluded",
+    "bank_sha256": "81c514412414edf9b741c8918de464693dc98c1e2dd8795dbe8dd412b78bf7df",
+    "latest_recheck_placement_count": 351,
+    "archived_placement_count": 349,
+    "training_seeds": 1
+  },
+  "observation_randomization": true,
+  "physics_randomization": true,
+  "spawn_m": {
+    "x": [
+      0.1,
+      0.5
+    ],
+    "y": [
+      -0.3,
+      0.3
+    ]
+  },
+  "runtime_profile_id": "show108-mlp-lstm-v1",
+  "reference_runtime": {
+    "repository": "https://github.com/redEddie/piper-runtime",
+    "commit": "e28046050f12f7aa98e392baf089184a20d60827",
+    "policy_arithmetic": "Portable Policy and replay checker reused from this common Runtime"
+  },
+  "robot_evaluation": {
+    "model_24u_executed": false,
+    "verified_parent": "14+2u MLP+LSTM",
+    "verified_parent_policy_id": "ee9da8b8f493eaa56c3c",
+    "parent_execution_date": "2026-11-01",
+    "reference": "real-demo-reference-20261101.json"
+  },
+  "completion_integration": "Caller must detect physical placement and stop or transition control after stage4. A return behavior remains in trained weights.",
+  "causal_limit": "Noise, delay, perceived size, spawn range and bank changed jointly. Observation DR alone not isolated.",
+  "target_rate": 0.98,
+  "target_met": false
+}

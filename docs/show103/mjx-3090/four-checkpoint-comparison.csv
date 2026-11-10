@@ -1,0 +1,17 @@
+checkpoint_units,training_transitions,start,episodes,final_complete,final_complete_rate,meets_50_percent,ever_complete,final_inside,qualified_release,settled,retreated,failures,controller_failures,nonfinite,overflow,timeout_without_completion
+2,16777216,initial_a,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+2,16777216,pre_grasp,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+2,16777216,held,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+2,16777216,over_bowl,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+4,33554432,initial_a,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+4,33554432,pre_grasp,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+4,33554432,held,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+4,33554432,over_bowl,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+6,50331648,initial_a,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+6,50331648,pre_grasp,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+6,50331648,held,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+6,50331648,over_bowl,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+8,67108864,initial_a,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+8,67108864,pre_grasp,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+8,67108864,held,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384
+8,67108864,over_bowl,384,0,0.0,False,0,0,0,0,0,0,0,0,0,384

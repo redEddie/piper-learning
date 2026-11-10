@@ -1,0 +1,67 @@
+{
+  "release_url": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-24u-final-20261109",
+  "branch": "codex/show108-mlp-lstm-24u-final",
+  "export_source_commit": "d026d92b25d5e7b6f6c7d4f020df686fad1ec15a",
+  "training_source_commit": "d377cae0afdc87a389b09071eae6bcde72465e86",
+  "checkpoint_sha256": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+  "archives": [
+    {
+      "asset": "show108-mlp-lstm-24u-final-checkpoint.tar.gz",
+      "bytes": 2461846,
+      "sha256": "299dd5a6610dab03d555c4d7966bd3b5323efd43a3b173c03ae4f617ee8d5b99",
+      "root": "show108-mlp-lstm-24u-final",
+      "member_sha256": {
+        "training/checkpoints/000033554432/learner.msgpack": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+        "training/checkpoints/000033554432/metadata.json": "e9d83aa4deb16d36382b6d45150c7c169f66aeeb72dcd7f489d271a62916f6a9",
+        "training/config.json": "dd6f8eb88c7e6425008a244bc73944f5d8578e657e9803d4011b682bc3b26139",
+        "training/continuation.json": "331dd577b7c5756247c75b46996c67838ab35da47db098803734a50d742be510",
+        "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+        "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+        "training/provenance.json": "eabf6625468b4ac09515ace87574c3a515784b854d3627f0c4e49f56d4c04023",
+        "training/reset-bank.json": "67964ebe7ba5b36b4612b1db5daf98317941bfd3c9e0b78eafe14248ba02f6ee",
+        "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+        "training/summary.json": "1d3ecb3bc6b83dee272eaa703322b278c5db6b11347238324f8c2dfd49c39b47",
+        "training.yaml": "84efb16b03de32bf80159608285d4399f8087aa0f3021db81bbe082c11245acc",
+        "MANIFEST.sha256": "2209165e26bec84bd821f30873697d17e16d9ef0d6d6b664240478c2db8829ca"
+      },
+      "reextraction_verified": true
+    },
+    {
+      "asset": "show108-mlp-lstm-24u-final-inference.tar.gz",
+      "bytes": 6202220,
+      "sha256": "1756c7966c07d21514e77511c439c8735df70ff24591978a3e934d536d6a21c9",
+      "root": "show108-mlp-lstm-24u-final-inference",
+      "member_sha256": {
+        "README.md": "649a931ec7d0aea72f3890cf724869661a66ada27029ae96ccfc244c8784b046",
+        "final-model.json": "4b9b1408f98476449dba6646474722ee53a95b9850cc7ed4738b69f98e027488",
+        "final-release.md": "78c29d5dc17a2fbdc403b782691efeeb947d0d17372e7f47bee67c4c1665cc8c",
+        "model-archive-20261109.json": "4f2f09f7860caa2c8de3edb91acfa5df9eddd31a5a3cac331e7c00ef23df3aac",
+        "model-archive-20261109.md": "418fb2df7e720f4d448844fa93fabc4b7d43d2211f84b899d0c65d743f6ff38f",
+        "policy/export-validation.json": "4c5504f6125666d02d245ef2c280c0799d2d78d4aae55b255e7a7eecdd229815",
+        "policy/golden.npz": "8e6406f84d8608022e577f4a007e36b09c115bf11eab7080835f6616e5d40871",
+        "policy/piper.xml": "828ed79064944d277c595fb08db19c9efa185ec2ca5e3f85347c6f8d214db3ea",
+        "policy/policy.json": "a72c3c246a3a42daca060d4c96273ff6d9431123dcf6969cd5683958a7b4c45e",
+        "policy/recorded-golden.npz": "f8f11c3bcbb2c19173ebba27d2d1149d32514b45b075f720fc669a34e0f1fb0a",
+        "policy/training-config.json": "dd6f8eb88c7e6425008a244bc73944f5d8578e657e9803d4011b682bc3b26139",
+        "policy/weights.npz": "d70b4081d5bf2599ec97b2c329127fff2236fdfcf75c959294b643abd9cd345c",
+        "real-demo-reference-20261101.json": "4a3ad29e5a7be29ba9554c1af9c4d932fe91cf00fbb0e53fcb70129b99c6adaa",
+        "runtime/pyproject.toml": "afe0c9e67cdc5eb04cc12bd051cd08e66859a5dc1cd90e78ee10b362ca837cca",
+        "runtime/src/piper_policy_runtime/__init__.py": "f7c0a93becac2cd38c2b5526e9529bae1107a87ffe97afe446cad337af928520",
+        "runtime/src/piper_policy_runtime/check.py": "fbed0371873501d8565b98998bbf049d18f408253b1c58264f2467f3bf1022a7",
+        "runtime/src/piper_policy_runtime/kinematics.py": "6d662f51bac1d3e8c092d01cac4a8ce5740095bf9e086186b5d8e6340594ce21",
+        "runtime/src/piper_policy_runtime/policy.py": "8a21573be2991ce0021166e01ab4de20f65b1ad695983b4660c717070a7be3f1",
+        "runtime/src/piper_policy_runtime/shadow.py": "34d4292d2f818710b702e800c181c4157bea850b06d6494016189cd26b409028",
+        "validation.json": "1f42ce266533650e887eaadd44ea7b4a89fe20e38656a53331f117575423a3c8",
+        "MANIFEST.sha256": "24029f28b016f1c1378d68691928ca477a177c0a4b45773247bffa80b9263341"
+      },
+      "reextraction_verified": true
+    }
+  ],
+  "wheel": {
+    "asset": "piper_policy_runtime-0.4.0-py3-none-any.whl",
+    "bytes": 13261,
+    "sha256": "3bc37788952c985875f67da7d85b0145236d1a764ae4095404fa85aa5ccce1f4"
+  },
+  "validation": "final-validation.json",
+  "scope": "Final selected model packaging and offline inference compatibility. Hardware task performance of24u remains unverified."
+}

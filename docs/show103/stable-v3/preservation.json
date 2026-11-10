@@ -1,0 +1,27 @@
+{
+  "docs/smooth-grip/bootstrap.json": {
+    "source": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648",
+    "checked": 15,
+    "changed": []
+  },
+  "docs/show103/protocol.json": {
+    "source": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/refine-16m/checkpoints/000008388608",
+    "checked": 14,
+    "changed": []
+  },
+  "docs/show103/release-v2/protocol.json": {
+    "source": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/refine-8m/checkpoints/000008388608",
+    "checked": 14,
+    "changed": []
+  },
+  "docs/show103/stable-v3/protocol.json": {
+    "source": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/release-v2-8m/checkpoints/000008388608",
+    "checked": 15,
+    "changed": []
+  },
+  "original_source": {
+    "checked": 349,
+    "changed": [],
+    "release_exists": true
+  }
+}

@@ -1,0 +1,23 @@
+UTC: 2026-10-19T17:37:39.991482+00:00
+Command: JAX_PLATFORMS=cpu PYTHONPATH=src /data/envs/venv/piper-sim-lab/bin/python -m pytest tests --ignore=tests/test_checkpoint.py -q
+Device: CPU only; no GPU computation
+Checkpoint save/load tests are validated separately on the host: upstream Orbax save waits in this child sandbox. The blocked combined attempt was interrupted and is not counted as passing.
+mujoco: 3.16.0
+mujoco-mjx: 3.16.0
+jax: 0.10.2
+brax: 0.14.2
+playground: 0.2.0
+flax: 0.12.8
+optax: 0.2.8
+Piper observation:30D (includes6 arm control target tracking errors); solver_iterations=8, solver_ls_iterations=4
+Warp capacities:160 contacts/env,512 constraints/env,4 CCD pairs/env. CPU tests inspect sizing/flag semantics; no Warp GPU physics.
+...................                                                      [100%]
+=============================== warnings summary ===============================
+../../../../../../../../data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/jaxopt/__init__.py:59
+  /data/envs/venv/piper-sim-lab/lib/python3.11/site-packages/jaxopt/__init__.py:59: DeprecationWarning: JAXopt is no longer maintained. See https://docs.jax.dev/en/latest/ for alternatives.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 1 warning in 86.13s (0:01:26)
+
+Exit code: 0

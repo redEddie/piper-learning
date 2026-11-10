@@ -1,0 +1,101 @@
+{
+  "status": "implemented_trained_evaluated",
+  "checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/refine-16m/checkpoints/000008388608",
+  "resolved_config": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/refine-16m/config.json",
+  "reason": "Higher384-scene empty-hand full completion than final16m checkpoint, with same reference limits; both full comparisons retained. Original SHOW100 completion rate not fully recovered.",
+  "source_transitions": 50331648,
+  "selected_additional_transitions": 8388608,
+  "total_additional_transitions_executed": 16777216,
+  "lineage_transitions_at_selected": 58720256,
+  "success": {
+    "empty_hand": {
+      "episodes": 384,
+      "final_successes": 352,
+      "final_success_rate": 0.9166666666666666,
+      "success_ever": 361,
+      "success_at8s": 0,
+      "failures": {
+        "approach": 7,
+        "grasp_lift": 9,
+        "held_start_lost": 0,
+        "transport": 2,
+        "place_release": 4,
+        "completion_lost": 9,
+        "controller": 1,
+        "physics": 0
+      },
+      "same_initial_scenes": true,
+      "coordinator": {
+        "max_reference_jerk": 300.00091552734375,
+        "max_reference_speed": 0.75,
+        "max_reference_acceleration": 4.000001907348633,
+        "max_reference_speed_during_grip": 0.0,
+        "operations_completed": 2427,
+        "rejected_proposals": 4,
+        "timeouts": 1
+      }
+    },
+    "mixed": {
+      "episodes": 384,
+      "final_successes": 350,
+      "final_success_rate": 0.9114583333333334,
+      "success_ever": 361,
+      "success_at8s": 135,
+      "failures": {
+        "approach": 5,
+        "grasp_lift": 8,
+        "held_start_lost": 0,
+        "transport": 6,
+        "place_release": 3,
+        "completion_lost": 11,
+        "controller": 1,
+        "physics": 0
+      },
+      "same_initial_scenes": true,
+      "coordinator": {
+        "max_reference_jerk": 300.00091552734375,
+        "max_reference_speed": 0.75,
+        "max_reference_acceleration": 4.000001907348633,
+        "max_reference_speed_during_grip": 0.0,
+        "operations_completed": 3290,
+        "rejected_proposals": 0,
+        "timeouts": 1
+      }
+    },
+    "preinside": {
+      "episodes": 384,
+      "final_successes": 368,
+      "final_success_rate": 0.9583333333333334,
+      "success_ever": 382,
+      "success_at8s": 363,
+      "failures": {
+        "approach": 0,
+        "grasp_lift": 0,
+        "held_start_lost": 0,
+        "transport": 0,
+        "place_release": 2,
+        "completion_lost": 14,
+        "controller": 0,
+        "physics": 0
+      },
+      "same_initial_scenes": true,
+      "coordinator": {
+        "max_reference_jerk": 300.00091552734375,
+        "max_reference_speed": 0.75,
+        "max_reference_acceleration": 4.000001907348633,
+        "max_reference_speed_during_grip": 0.0,
+        "operations_completed": 6712,
+        "rejected_proposals": 0,
+        "timeouts": 0
+      }
+    }
+  },
+  "observations": {
+    "actor": 50,
+    "critic": 67,
+    "phase_index": 42
+  },
+  "video": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-smooth-grip/runs/smooth-grip/videos-selected-8m/two-views.mp4",
+  "real_runner_updated": false,
+  "real_robot": false
+}

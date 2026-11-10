@@ -1,0 +1,36 @@
+{
+  "backend": "jax",
+  "ls_iterations": 20,
+  "num_envs": 1,
+  "block_mm": 50,
+  "seed": 3,
+  "reset_stage_probs": [
+    1,
+    0,
+    0
+  ],
+  "scripted_success": 1,
+  "approach_distance_m": [
+    0.0061913663521409035
+  ],
+  "grip_width_m": [
+    0.06632022559642792
+  ],
+  "lift_height_m": [
+    0.09963636845350266
+  ],
+  "above_bowl_xy_m": [
+    0.0014052737969905138
+  ],
+  "final_block_position": [
+    [
+      0.34443873167037964,
+      0.14625294506549835,
+      0.030892249196767807
+    ]
+  ],
+  "finite": true,
+  "wall_seconds_including_compilation": 103.6833256839891,
+  "scope": "scripted closed-loop grasp, not learned policy; C uses equivalent NumPy DLS controller",
+  "capacity_overflow": 0.0
+}

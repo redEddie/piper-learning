@@ -1,0 +1,385 @@
+{
+  "scope": "MLP,1024 training envs; same20s horizon. Basic inside and target-qualified release+contact-free withdrawal are distinct. Intermediate128 and final384 per mode; learning curves use paired seed2026/128.",
+  "target": "TCP50-60mm above bowl inner floor",
+  "results": {
+    "frozen-0": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 112,
+        "final_success_rate": 0.875,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 11,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 134.83389282226562,
+        "release_height_mm_mean": 132.26609802246094,
+        "release_tcp_height_mm_mean": 169.18772888183594,
+        "release_tcp_height_mm_median": 170.22598266601562,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 1.1715748310089111,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 4,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 4,
+          "completion_lost": 7,
+          "controller": 1,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 1,
+        "max_reference_speed_during_grip": 0.6786239743232727,
+        "opening_diagnostics": {
+          "2026": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 0,
+            "opening_probability_mean": null,
+            "opening_probability_median": null,
+            "opening_probability_max": null,
+            "raw_location_median": null,
+            "raw_scale_median": null,
+            "deterministic_open_fraction": null,
+            "deterministic_upward_fraction": null
+          }
+        }
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 126,
+        "final_success_rate": 0.984375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 1,
+        "gentle_before_withdrawal": 1,
+        "post_release_recontact_episodes": 16,
+        "post_landing_recontact_episodes": 14,
+        "release_height_mm_median": 104.61709594726562,
+        "release_height_mm_mean": 100.71595764160156,
+        "release_tcp_height_mm_mean": 135.38462829589844,
+        "release_tcp_height_mm_median": 138.7659149169922,
+        "release_tcp_in_band": 1,
+        "precontact_downward_speed_m_s_median": 0.8928053379058838,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 1,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.0003356933594,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.6224775910377502,
+        "opening_diagnostics": {
+          "2026": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 137,
+            "opening_probability_mean": 0.03766391658938259,
+            "opening_probability_median": 0.003917982489625332,
+            "opening_probability_max": 0.7811318971527907,
+            "raw_location_median": -0.1619347482919693,
+            "raw_scale_median": 0.23495478928089142,
+            "deterministic_open_fraction": 0.0072992700729927005,
+            "deterministic_upward_fraction": 1.0
+          }
+        }
+      }
+    },
+    "interim-2097152": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 106,
+        "final_success_rate": 0.828125,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 8,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 144.5432586669922,
+        "release_height_mm_mean": 145.42054748535156,
+        "release_tcp_height_mm_mean": 189.73739624023438,
+        "release_tcp_height_mm_median": 190.09237670898438,
+        "release_tcp_in_band": 1,
+        "precontact_downward_speed_m_s_median": 1.1827778816223145,
+        "failures": {
+          "approach": 6,
+          "grasp_lift": 2,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 6,
+          "completion_lost": 6,
+          "controller": 2,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 2,
+        "max_reference_speed_during_grip": 0.7499980926513672,
+        "opening_diagnostics": {
+          "2026": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 0,
+            "opening_probability_mean": null,
+            "opening_probability_median": null,
+            "opening_probability_max": null,
+            "raw_location_median": null,
+            "raw_scale_median": null,
+            "deterministic_open_fraction": null,
+            "deterministic_upward_fraction": null
+          }
+        }
+      },
+      "near": {
+        "episodes": 128,
+        "final_successes": 120,
+        "final_success_rate": 0.9375,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 5,
+        "post_landing_recontact_episodes": 3,
+        "release_height_mm_median": 120.32414245605469,
+        "release_height_mm_mean": 118.5064468383789,
+        "release_tcp_height_mm_mean": 155.0669708251953,
+        "release_tcp_height_mm_median": 157.68504333496094,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 0.9395982027053833,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 5,
+          "completion_lost": 3,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.6334918737411499,
+        "opening_diagnostics": {
+          "2026": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 141,
+            "opening_probability_mean": 0.008537386363948268,
+            "opening_probability_median": 0.00021654791271715106,
+            "opening_probability_max": 0.12999582035605423,
+            "raw_location_median": -0.4567819833755493,
+            "raw_scale_median": 0.29352545738220215,
+            "deterministic_open_fraction": 0.0,
+            "deterministic_upward_fraction": 1.0
+          }
+        }
+      }
+    },
+    "final-4m": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 338,
+        "final_success_rate": 0.8802083333333334,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 0,
+        "gentle_before_withdrawal": 0,
+        "post_release_recontact_episodes": 23,
+        "post_landing_recontact_episodes": 0,
+        "release_height_mm_median": 139.9231719970703,
+        "release_height_mm_mean": 140.06727600097656,
+        "release_tcp_height_mm_mean": 186.15576171875,
+        "release_tcp_height_mm_median": 187.23507690429688,
+        "release_tcp_in_band": 0,
+        "precontact_downward_speed_m_s_median": 1.47270929813385,
+        "failures": {
+          "approach": 11,
+          "grasp_lift": 10,
+          "held_start_lost": 0,
+          "transport": 7,
+          "place_release": 7,
+          "completion_lost": 7,
+          "controller": 4,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 4,
+        "max_reference_speed_during_grip": 0.75,
+        "opening_diagnostics": {
+          "2026": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 0,
+            "opening_probability_mean": null,
+            "opening_probability_median": null,
+            "opening_probability_max": null,
+            "raw_location_median": null,
+            "raw_scale_median": null,
+            "deterministic_open_fraction": null,
+            "deterministic_upward_fraction": null
+          },
+          "2027": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 0,
+            "opening_probability_mean": null,
+            "opening_probability_median": null,
+            "opening_probability_max": null,
+            "raw_location_median": null,
+            "raw_scale_median": null,
+            "deterministic_open_fraction": null,
+            "deterministic_upward_fraction": null
+          },
+          "2028": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 0,
+            "opening_probability_mean": null,
+            "opening_probability_median": null,
+            "opening_probability_max": null,
+            "raw_location_median": null,
+            "raw_scale_median": null,
+            "deterministic_open_fraction": null,
+            "deterministic_upward_fraction": null
+          }
+        }
+      },
+      "near": {
+        "episodes": 384,
+        "final_successes": 380,
+        "final_success_rate": 0.9895833333333334,
+        "gentle_final_successes": 0,
+        "gentle_final_success_rate": 0.0,
+        "controlled_final_successes": 0,
+        "controlled_final_success_rate": 0.0,
+        "qualified_release": 2,
+        "gentle_before_withdrawal": 2,
+        "post_release_recontact_episodes": 42,
+        "post_landing_recontact_episodes": 29,
+        "release_height_mm_median": 105.57289123535156,
+        "release_height_mm_mean": 104.6403579711914,
+        "release_tcp_height_mm_mean": 140.45681762695312,
+        "release_tcp_height_mm_median": 141.9425811767578,
+        "release_tcp_in_band": 2,
+        "precontact_downward_speed_m_s_median": 1.0862455368041992,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 3,
+          "controller": 0,
+          "physics": 0
+        },
+        "max_reference_jerk": 300.00091552734375,
+        "gripper_timeouts": 0,
+        "max_reference_speed_during_grip": 0.7499980926513672,
+        "opening_diagnostics": {
+          "2026": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 141,
+            "opening_probability_mean": 0.010850812809999092,
+            "opening_probability_median": 5.1843687189674845e-05,
+            "opening_probability_max": 0.20113625231293597,
+            "raw_location_median": -0.31103330850601196,
+            "raw_scale_median": 0.2194584757089615,
+            "deterministic_open_fraction": 0.0,
+            "deterministic_upward_fraction": 1.0
+          },
+          "2027": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 136,
+            "opening_probability_mean": 0.018905825222258466,
+            "opening_probability_median": 9.243861681925851e-05,
+            "opening_probability_max": 0.2848011739627738,
+            "raw_location_median": -0.1767416000366211,
+            "raw_scale_median": 0.17877210676670074,
+            "deterministic_open_fraction": 0.0,
+            "deterministic_upward_fraction": 1.0
+          },
+          "2028": {
+            "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+            "state_samples": 135,
+            "opening_probability_mean": 0.014923005216936127,
+            "opening_probability_median": 3.635488499024475e-05,
+            "opening_probability_max": 0.6053470569318296,
+            "raw_location_median": -0.3133884370326996,
+            "raw_scale_median": 0.1973656862974167,
+            "deterministic_open_fraction": 0.014814814814814815,
+            "deterministic_upward_fraction": 1.0
+          }
+        }
+      }
+    }
+  },
+  "points": [
+    {
+      "additional_steps": 0,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.875,
+          "gentle": 0.0,
+          "height": 169.1876983642578,
+          "recontact": 0.0859375
+        },
+        "near": {
+          "basic": 0.984375,
+          "gentle": 0.0,
+          "height": 135.3845977783203,
+          "recontact": 0.125
+        }
+      }
+    },
+    {
+      "additional_steps": 2097152,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.828125,
+          "gentle": 0.0,
+          "height": 189.73741149902344,
+          "recontact": 0.0625
+        },
+        "near": {
+          "basic": 0.9375,
+          "gentle": 0.0,
+          "height": 155.0669708251953,
+          "recontact": 0.0390625
+        }
+      }
+    },
+    {
+      "additional_steps": 4194304,
+      "paired_seed2026": {
+        "empty_hand": {
+          "basic": 0.84375,
+          "gentle": 0.0,
+          "height": 181.80633544921875,
+          "recontact": 0.1015625
+        },
+        "near": {
+          "basic": 0.9765625,
+          "gentle": 0.0,
+          "height": 136.79254150390625,
+          "recontact": 0.0859375
+        }
+      }
+    }
+  ],
+  "preservation": {
+    "source_checkpoint_changed_files": [],
+    "original_source_changed_files": [],
+    "original_source_files_checked": 349
+  },
+  "real_robot": false
+}

@@ -1,0 +1,23 @@
+{
+  "hyperparameter_diff": {
+    "num_timesteps": [
+      83886080,
+      50331648
+    ],
+    "num_evals": [
+      11,
+      7
+    ]
+  },
+  "rewards_unchanged": true,
+  "original_16m_final_success": {
+    "dr": "0/384",
+    "nodr": "0/384"
+  },
+  "old_divergence_record": "historical failed run value loss 1.71e8 at 1x and 1.24e12 at 2x; not the selected successful training path",
+  "current_v_loss_8m_16m": [
+    30.84946060180664,
+    24.78974151611328
+  ],
+  "interpretation": "No value-loss explosion/NaN observed; directional policy bias does not prove numerical divergence or sufficient learning. Keep planned budget and compare later checkpoints."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "actor": "mlp",
+  "steps": 80,
+  "batch": 4,
+  "max_action_abs_error": 4.76837158203125e-07,
+  "policy_only_cpu_latency_ms": {
+    "p50": 0.048093992518261075,
+    "p95": 0.06096042925491929
+  },
+  "robot_connection": "none",
+  "scope": "synthetic export parity vectors; not a task success evaluation"
+}

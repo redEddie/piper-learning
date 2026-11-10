@@ -1,0 +1,158 @@
+[
+  {
+    "row": 0,
+    "states": [
+      {
+        "time": 0.0,
+        "height_mm": 5.098206505920712,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.1,
+        "height_mm": 5.0243855742376144,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.5,
+        "height_mm": 4.3831427469526405,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      }
+    ]
+  },
+  {
+    "row": 1,
+    "states": [
+      {
+        "time": 0.0,
+        "height_mm": 12.590089461614964,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.1,
+        "height_mm": 12.513727613263084,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.5,
+        "height_mm": 11.86484410606935,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      }
+    ]
+  },
+  {
+    "row": 2,
+    "states": [
+      {
+        "time": 0.0,
+        "height_mm": 20.082040023684964,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.1,
+        "height_mm": 20.003204762532327,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.5,
+        "height_mm": 19.346870067025048,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      }
+    ]
+  },
+  {
+    "row": 3,
+    "states": [
+      {
+        "time": 0.0,
+        "height_mm": 5.098206505920684,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.1,
+        "height_mm": 5.022907919519054,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.5,
+        "height_mm": 4.378995275647716,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      }
+    ]
+  },
+  {
+    "row": 4,
+    "states": [
+      {
+        "time": 0.0,
+        "height_mm": 12.590089461614992,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.1,
+        "height_mm": 12.512234626285412,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.5,
+        "height_mm": 11.860634240558026,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      }
+    ]
+  },
+  {
+    "row": 5,
+    "states": [
+      {
+        "time": 0.0,
+        "height_mm": 20.08204002368499,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.1,
+        "height_mm": 20.001697103472306,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      },
+      {
+        "time": 0.5,
+        "height_mm": 19.342600596581683,
+        "left": 4.0,
+        "right": 4.0,
+        "support": 0.0
+      }
+    ]
+  }
+]

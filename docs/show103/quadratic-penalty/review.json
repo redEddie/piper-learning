@@ -1,0 +1,60 @@
+{
+  "status": "Numerical audit complete; do not train this proposal yet.",
+  "requested_horizontal_cost": "0.8 * (max(horizontal_center_distance_mm-17,0)/50)^2",
+  "vertical_cost_preserved": "0.8 * height_error_mm/(40+height_error_mm)",
+  "unfinished_cost_per100ms": 0.6,
+  "production_environment_changed": false,
+  "training_run": false,
+  "real_robot": false,
+  "result": "Alignment/lowering/qualified completion beat corresponding waits in tested trajectories. Invalid release retains first-loss debt; empty lowering and regrasp do not remove it.",
+  "blocker": "Uncapped costs make far/outside-failure returns negative; zero bootstrap on early controller termination can cancel remaining costs. Prior0-state-score floor removes most of this advantage but truncates quadratic distance feedback and retains a small action-cost escape incentive.",
+  "next_requirement": "Specify and validate early-failure remaining-cost accounting before adopting the uncapped quadratic proposal; no production implementation of terminal handling in this task.",
+  "raw_scenario_returns": {
+    "far_wait": -79.181,
+    "align_only": 132.86,
+    "align_lower_wait": 166.28,
+    "complete": 270.057,
+    "late_release": 193.033,
+    "xy_roundtrip": 125.625,
+    "height_roundtrip": 146.839,
+    "bad_high_drop": 101.74,
+    "bad_drop_then_lower": 101.721,
+    "bad_drop_regrasp": 77.107,
+    "bad_outside_drop": -250.587
+  },
+  "early_termination_checks": {
+    "far_wait": {
+      "raw": {
+        "full20s": -79.18088961165515,
+        "terminated_at1s": -8.751314675016129,
+        "termination_advantage": 70.42957493663901
+      },
+      "floor": {
+        "full20s": -0.09659574612726463,
+        "terminated_at1s": -0.01956108993084607,
+        "termination_advantage": 0.07703465619641855
+      }
+    },
+    "bad_outside_drop": {
+      "raw": {
+        "full20s": -250.58722275780372,
+        "terminated_at1s": -17.713309999150805,
+        "termination_advantage": 232.87391275865292
+      },
+      "floor": {
+        "full20s": -0.13464023829061553,
+        "terminated_at1s": -0.05760099013805745,
+        "termination_advantage": 0.07703924815255808
+      }
+    }
+  },
+  "unit_tests_passed": 10,
+  "scope": "Synthetic features through production reward/event functions, not a feasible-robot-path or convergence guarantee.",
+  "unchanged_runtime_sha256": {
+    "src/piper_sim_lab/balanced_release.py": "2d8a2d83503d9da0c0f449f71fc0df71daf77f5ee80f36910a35723493babf41",
+    "src/piper_sim_lab/controlled_release.py": "60551b1e85995aa2bd5a0a8b438aef84325be463aae14813e99577eb26792c46",
+    "src/piper_sim_lab/smooth_grip.py": "4ffd2519008c945d07f445e56712d0eb930fe7db4cfb9baec2e29fe5eb81344d",
+    "src/piper_sim_lab/pick_place.py": "669aa028c088c2d994d3551c186148f2416b807559825740c611dbf04f829199",
+    "configs/show103/balanced-to-50m.yaml": "2e56ace637074aa933ca510600007b89d19ef7c8a50aa0a29278146d82cdb415"
+  }
+}

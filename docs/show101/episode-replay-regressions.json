@@ -1,0 +1,188 @@
+{
+  "scope": "Audit saved positive labels using native contacts at recorded 100 ms poses.\n\nThis replay is not a fresh physics rollout or a reconstruction of missing 5 ms\ncontacts. Substep timing is tested separately and frozen GPU reruns use 5 ms.\n",
+  "episodes": 15,
+  "old_raw_gentle_records": 10,
+  "corrected_qualified_records": 0,
+  "records": [
+    {
+      "evaluation": "final-v2-evaluation",
+      "recording": "empty_hand-s2026",
+      "episode": 29,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-v2-evaluation",
+      "recording": "empty_hand-s2028",
+      "episode": 45,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-v2-evaluation",
+      "recording": "mixed-s2027",
+      "episode": 18,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-v2-evaluation",
+      "recording": "mixed-s2028",
+      "episode": 110,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "interim-continuation-6291456-evaluation",
+      "recording": "empty_hand-s2026",
+      "episode": 55,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "interim-continuation-6291456-evaluation",
+      "recording": "empty_hand-s2026",
+      "episode": 61,
+      "old_raw_gentle": false,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "interim-continuation-6291456-evaluation",
+      "recording": "empty_hand-s2026",
+      "episode": 63,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "interim-continuation-6291456-evaluation",
+      "recording": "mixed-s2026",
+      "episode": 48,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "interim-continuation-6291456-evaluation",
+      "recording": "mixed-s2026",
+      "episode": 61,
+      "old_raw_gentle": false,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-continuation-evaluation",
+      "recording": "empty_hand-s2026",
+      "episode": 97,
+      "old_raw_gentle": false,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-continuation-evaluation",
+      "recording": "empty_hand-s2027",
+      "episode": 10,
+      "old_raw_gentle": false,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-continuation-evaluation",
+      "recording": "empty_hand-s2027",
+      "episode": 90,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-continuation-evaluation",
+      "recording": "empty_hand-s2028",
+      "episode": 76,
+      "old_raw_gentle": false,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-continuation-evaluation",
+      "recording": "mixed-s2027",
+      "episode": 18,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    },
+    {
+      "evaluation": "final-continuation-evaluation",
+      "recording": "mixed-s2027",
+      "episode": 90,
+      "old_raw_gentle": true,
+      "corrected_qualified": false,
+      "corrected_premature": true,
+      "carried_witness": true,
+      "corrected_opening_credit": 0.0
+    }
+  ],
+  "grasp_angles": [
+    {
+      "episode": 55,
+      "definition": "angle between gripper closing axis and nearest cube face normal; 0 degrees is face alignment",
+      "first_lift_contact_seconds": 3.1,
+      "first_lift_contact_angle_deg": 47.12121878933106,
+      "median_lift_contact_angle_deg": 46.484632110997886,
+      "median_projected_cube_span_mm": 82.98630903311384,
+      "median_gripper_width_mm": 79.70215752720833
+    },
+    {
+      "episode": 61,
+      "definition": "angle between gripper closing axis and nearest cube face normal; 0 degrees is face alignment",
+      "first_lift_contact_seconds": 2.6,
+      "first_lift_contact_angle_deg": 2.687431849428073,
+      "median_lift_contact_angle_deg": 0.807149515434881,
+      "median_projected_cube_span_mm": 50.86714706732823,
+      "median_gripper_width_mm": 50.02967454493046
+    },
+    {
+      "episode": 63,
+      "definition": "angle between gripper closing axis and nearest cube face normal; 0 degrees is face alignment",
+      "first_lift_contact_seconds": 2.8000000000000003,
+      "first_lift_contact_angle_deg": 11.991148028239277,
+      "median_lift_contact_angle_deg": 6.652192297293869,
+      "median_projected_cube_span_mm": 56.08129653915518,
+      "median_gripper_width_mm": 51.92086100578308
+    }
+  ],
+  "real_robot": false
+}

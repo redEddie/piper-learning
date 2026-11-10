@@ -1,0 +1,73 @@
+{
+  "issue": "SHOW-103",
+  "status": "implemented_and_numerically_validated_not_trained",
+  "configuration": "configs/show103/balanced-release.yaml",
+  "compatibility": "Opt-in release_balanced_rewards; prior configurations and checkpoints preserved.",
+  "preserved": [
+    "approach/grasp/transport rewards before placing",
+    "reset40/20/20/20; near5% overall",
+    "1024 training environment configuration",
+    "DLS+QP v0.75,a4,jerk300",
+    "50/67 observations and7 actions",
+    "release TCP50-60mm, XY<=17mm and existing release speed limits"
+  ],
+  "reward": {
+    "holding_max_per_step": 3,
+    "progress_episode_max": 3,
+    "progress_rule": "Positive improvement of episode best proximity; initialized from reset pose; no regrasp refill.",
+    "dwell": {
+      "interval_s": 0.1,
+      "tcp_relative_speed_max_m_s": 0.01,
+      "reward_per_interval": 0.5,
+      "episode_count_max": 2,
+      "nonoverlapping": true,
+      "interruption_resets_interval_not_count": true
+    },
+    "release": {
+      "state_reward": 4,
+      "once_bonus": 2,
+      "flight_grace_s": 0.5
+    },
+    "landing": {
+      "cube_inner_floor_contact": true,
+      "cube_bowl_relative_translation_speed_max_m_s": 0.02,
+      "continuous_s": 0.1,
+      "xy_filter": false,
+      "height_filter": false,
+      "angular_speed_filter": false,
+      "once_bonus": 2
+    },
+    "withdrawal": {
+      "state_reward_addition_max": 1,
+      "point_clearance_m": 0.08,
+      "continuous_s": 0.2,
+      "once_bonus": 3,
+      "robot_recontact_invalidates": true
+    },
+    "ordinary_drop_max_per_step": 2.5,
+    "once_bonus_total_upper_bound": 11,
+    "costs": "action .001; action-rate .01; impact/recontact unchanged"
+  },
+  "verification": {
+    "synthetic_scenarios": 11,
+    "production_update_dt_s": 0.005,
+    "production_reward_dt_s": 0.1,
+    "discount": 0.99,
+    "tests_passed": 46,
+    "fixed_action_gpu_environments": 64,
+    "fixed_action_policy_transitions": 15360,
+    "reset_events": 64,
+    "controller_faults": 0,
+    "nonfinite": 0,
+    "overflow": 0
+  },
+  "limitations": [
+    "Reward ordering is for explicit synthetic examples, not proof over all possible trajectories.",
+    "Fixed-action integration uses small commands, not a full-speed controller stress test.",
+    "No new learned policy or success-rate measurement.",
+    "Per-state rewards intentionally repeat; progress/dwell/event bonuses have episode-wide caps."
+  ],
+  "training_run": false,
+  "real_robot": false,
+  "plane_modified": false
+}

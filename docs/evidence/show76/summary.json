@@ -1,0 +1,131 @@
+{
+  "selected_policy": "show76-v1-mlp",
+  "training_seed": 7,
+  "independent_training_repetitions": 1,
+  "cumulative_training_steps": 50331648,
+  "final_phase_steps": 16777216,
+  "parent_training_steps": 33554432,
+  "reset_stage_probs": [
+    0.5,
+    0.2,
+    0.2,
+    0.1
+  ],
+  "base_height_m": 0.015,
+  "tcp_link6_z_m": 0.1358,
+  "gripper_full_width_m": 0.1,
+  "bowl_free": true,
+  "bowl_mass_kg": 0.11,
+  "block_width_m": 0.05,
+  "block_mass_kg": 0.07,
+  "evaluation_reset_stage_probs": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "evaluation_seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "num_envs_per_seed": 128,
+  "final_success_counts": {
+    "dr": 334,
+    "nodr": 296
+  },
+  "groups": [
+    {
+      "randomization": "dr",
+      "completed_seeds": 3,
+      "before_final_success_rate": 0.3802083333333333,
+      "final_success_rate_mean": 0.8697916666666666,
+      "final_success_rate_seed_sd": 0.044423755492791615,
+      "ever_success_rate_mean": 0.9166666666666666,
+      "ever_success_rate_seed_sd": 0.011933790872280834,
+      "final_success_change_percentage_points": 48.95833333333333
+    },
+    {
+      "randomization": "nodr",
+      "completed_seeds": 3,
+      "before_final_success_rate": 0.359375,
+      "final_success_rate_mean": 0.7708333333333334,
+      "final_success_rate_seed_sd": 0.03157384284630766,
+      "ever_success_rate_mean": 0.8203125,
+      "ever_success_rate_seed_sd": 0.04752158226795484,
+      "final_success_change_percentage_points": 41.145833333333336
+    }
+  ],
+  "per_seed": [
+    {
+      "randomization": "dr",
+      "seed": 2026,
+      "final_success_rate": 0.8203125,
+      "ever_success_rate": 0.90625,
+      "failure_rate": 0.0,
+      "finite": true,
+      "before_final_success_rate": 0.421875,
+      "change_percentage_points": 39.84375
+    },
+    {
+      "randomization": "dr",
+      "seed": 2027,
+      "final_success_rate": 0.90625,
+      "ever_success_rate": 0.9296875,
+      "failure_rate": 0.0,
+      "finite": true,
+      "before_final_success_rate": 0.3515625,
+      "change_percentage_points": 55.46875
+    },
+    {
+      "randomization": "dr",
+      "seed": 2028,
+      "final_success_rate": 0.8828125,
+      "ever_success_rate": 0.9140625,
+      "failure_rate": 0.0,
+      "finite": true,
+      "before_final_success_rate": 0.3671875,
+      "change_percentage_points": 51.5625
+    },
+    {
+      "randomization": "nodr",
+      "seed": 2026,
+      "final_success_rate": 0.7421875,
+      "ever_success_rate": 0.765625,
+      "failure_rate": 0.0,
+      "finite": true,
+      "before_final_success_rate": 0.3828125,
+      "change_percentage_points": 35.9375
+    },
+    {
+      "randomization": "nodr",
+      "seed": 2027,
+      "final_success_rate": 0.765625,
+      "ever_success_rate": 0.84375,
+      "failure_rate": 0.0,
+      "finite": true,
+      "before_final_success_rate": 0.359375,
+      "change_percentage_points": 40.625
+    },
+    {
+      "randomization": "nodr",
+      "seed": 2028,
+      "final_success_rate": 0.8046875,
+      "ever_success_rate": 0.8515625,
+      "failure_rate": 0.0,
+      "finite": true,
+      "before_final_success_rate": 0.3359375,
+      "change_percentage_points": 46.875
+    }
+  ],
+  "physics_failures": 0,
+  "artifact_root": "/data/projects/piper-sim-lab/artifacts/show76-v1-20261023",
+  "selected_checkpoint": "runs/pp-v1-curriculum-empty50-plus1x-s7/checkpoints/000016777216",
+  "parent_checkpoint": "runs/pp-v1-rerun-2x-free-s7/checkpoints/000033554432",
+  "limitations": [
+    "simulation success, not physical robot success",
+    "one training seed; evaluation seeds are not training repetitions",
+    "reset-ratio change, extra training and optimizer restart are confounded",
+    "LSTM comparison and training-budget plateau study deferred"
+  ]
+}

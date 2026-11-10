@@ -1,0 +1,185 @@
+{
+  "scope": "Frozen deterministic policies, not stochastic training frequencies.",
+  "results": [
+    {
+      "mode": "empty_hand",
+      "seed": 2026,
+      "release_episodes": 21,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 181.55780029296875,
+      "open_request_fraction": 0.2758984375,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 0,
+        "opening_probability_mean": null,
+        "opening_probability_median": null,
+        "opening_probability_max": null,
+        "raw_location_median": null,
+        "raw_scale_median": null,
+        "deterministic_open_fraction": null,
+        "deterministic_upward_fraction": null
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "empty_hand",
+      "seed": 2027,
+      "release_episodes": 19,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 214.1063232421875,
+      "open_request_fraction": 0.2791796875,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 0,
+        "opening_probability_mean": null,
+        "opening_probability_median": null,
+        "opening_probability_max": null,
+        "raw_location_median": null,
+        "raw_scale_median": null,
+        "deterministic_open_fraction": null,
+        "deterministic_upward_fraction": null
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "empty_hand",
+      "seed": 2028,
+      "release_episodes": 18,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 199.27854919433594,
+      "open_request_fraction": 0.261171875,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 0,
+        "opening_probability_mean": null,
+        "opening_probability_median": null,
+        "opening_probability_max": null,
+        "raw_location_median": null,
+        "raw_scale_median": null,
+        "deterministic_open_fraction": null,
+        "deterministic_upward_fraction": null
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "near",
+      "seed": 2026,
+      "release_episodes": 0,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 103.10932159423828,
+      "open_request_fraction": 0.0006640625,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 210,
+        "opening_probability_mean": 7.722714397041612e-07,
+        "opening_probability_median": 1.4198216469674752e-11,
+        "opening_probability_max": 0.00011050188761741485,
+        "raw_location_median": -1.085386037826538,
+        "raw_scale_median": 0.22408047318458557,
+        "deterministic_open_fraction": 0.0,
+        "deterministic_upward_fraction": 0.9476190476190476
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "near",
+      "seed": 2027,
+      "release_episodes": 0,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 102.163818359375,
+      "open_request_fraction": 0.000625,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 208,
+        "opening_probability_mean": 1.792937152348715e-06,
+        "opening_probability_median": 8.191748342998737e-16,
+        "opening_probability_max": 0.00020987454390809657,
+        "raw_location_median": -0.9454958438873291,
+        "raw_scale_median": 0.18052268028259277,
+        "deterministic_open_fraction": 0.0,
+        "deterministic_upward_fraction": 0.9375
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "near",
+      "seed": 2028,
+      "release_episodes": 0,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 101.68978881835938,
+      "open_request_fraction": 0.0009375,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 212,
+        "opening_probability_mean": 2.8139663710642487e-07,
+        "opening_probability_median": 1.4968077851139318e-15,
+        "opening_probability_max": 5.366761730127229e-05,
+        "raw_location_median": -0.9620646834373474,
+        "raw_scale_median": 0.1808462142944336,
+        "deterministic_open_fraction": 0.0,
+        "deterministic_upward_fraction": 0.9056603773584906
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "preinside",
+      "seed": 2026,
+      "release_episodes": 0,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 104.37295532226562,
+      "open_request_fraction": 0.0,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 0,
+        "opening_probability_mean": null,
+        "opening_probability_median": null,
+        "opening_probability_max": null,
+        "raw_location_median": null,
+        "raw_scale_median": null,
+        "deterministic_open_fraction": null,
+        "deterministic_upward_fraction": null
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "preinside",
+      "seed": 2027,
+      "release_episodes": 0,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 105.55941009521484,
+      "open_request_fraction": 7.8125e-05,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 0,
+        "opening_probability_mean": null,
+        "opening_probability_median": null,
+        "opening_probability_max": null,
+        "raw_location_median": null,
+        "raw_scale_median": null,
+        "deterministic_open_fraction": null,
+        "deterministic_upward_fraction": null
+      },
+      "actual_full_goal": 0
+    },
+    {
+      "mode": "preinside",
+      "seed": 2028,
+      "release_episodes": 0,
+      "qualified_releases": 0,
+      "final_tcp_height_mm_median": 104.72834777832031,
+      "open_request_fraction": 3.90625e-05,
+      "target_distribution": {
+        "scope": "Conditional probabilities at recorded deterministic-evaluation states: held, aligned, TCP50-60mm, MOVE and closed target. Not observed stochastic-training frequencies.",
+        "state_samples": 0,
+        "opening_probability_mean": null,
+        "opening_probability_median": null,
+        "opening_probability_max": null,
+        "raw_location_median": null,
+        "raw_scale_median": null,
+        "deterministic_open_fraction": null,
+        "deterministic_upward_fraction": null
+      },
+      "actual_full_goal": 0
+    }
+  ]
+}

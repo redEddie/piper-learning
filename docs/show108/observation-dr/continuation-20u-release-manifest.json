@@ -1,0 +1,112 @@
+{
+  "branch": "codex/show108-obsdr-joint-a-20u",
+  "release_tag": "show108-mlp-lstm-obsdr-wide-20u-20261109",
+  "training_source": "ecfd17ed4be39fa598ac064522cb4a86f2a7f32a",
+  "archive": "show108-mlp-lstm-obsdr-wide-20u-checkpoints.tar.gz",
+  "archive_sha256": "ca395f4ac8579b0d71e8e3e36e55f718ba37d19da25f427d176ea150ce5f2a59",
+  "files": {
+    "training/checkpoints/000016777216/learner.msgpack": "4d14f973448ba32f2f4743fbb2760b8be2bde6570abcaf9d205f0cc1bf348c86",
+    "training/checkpoints/000016777216/metadata.json": "da9cc5c160f3f1ca91fd082b0d190b239077f9eed964fbcaef22029d0241b190",
+    "training/checkpoints/000033554432/learner.msgpack": "f3ddd297173295aadce140b1f9c5815e5e05e8acaa666290c519c9fd23679553",
+    "training/checkpoints/000033554432/metadata.json": "75bc09885a5ccb0f70709e0f02829ace61a41c1c41cdaa0af5f954b6533a767f",
+    "training/config.json": "2194c0b3715840add8ba43d9a2135fa111c8258ea374af9643bcd1dd9f96d652",
+    "training/continuation.json": "832d834a04bcc4e2b8cb7f024bda2313cac4fd64515936bbe764e1ad6b144e92",
+    "training/gpu.json": "75c823782c6b7e188c86140f266d9e9c23c0792c8f857a96f770ba3031abc1b2",
+    "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+    "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+    "training/provenance.json": "d079d3995b116c617d7c113a5d8c6afb5fb851daa5d573cf7acd41fbba73702d",
+    "training/reset-bank.json": "67964ebe7ba5b36b4612b1db5daf98317941bfd3c9e0b78eafe14248ba02f6ee",
+    "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+    "training/summary.json": "fbd60e3f24171dfc73131b5201c82aba32fbc4d4518223ac98d0e7141b7a1d21",
+    "training.yaml": "84efb16b03de32bf80159608285d4399f8087aa0f3021db81bbe082c11245acc"
+  },
+  "checkpoints": {
+    "000016777216": {
+      "additional_units": 2,
+      "cumulative_units": 18
+    },
+    "000033554432": {
+      "additional_units": 4,
+      "cumulative_units": 20
+    }
+  },
+  "reward": "joint-A v5",
+  "normalizer": "Use each checkpoint with its saved normalizer and config",
+  "stage_local_20u": [
+    383,
+    372,
+    381,
+    384,
+    263
+  ],
+  "initial_a_actual_A_20u": 161,
+  "episodes_per_start": 384,
+  "videos": [
+    {
+      "asset": "show108-mlp-lstm-obsdr-wide-20u-01-initial_a.mp4",
+      "start": "initial_a",
+      "seed": 2026,
+      "scene": 0,
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "53a61a59818c743040ccffac045c4e8452d2cedf5b51ee99851db83c7a4c80a5",
+      "selection": "First case, not success-selected",
+      "home_complete": false,
+      "first_home_seconds": null,
+      "final_max_A_error_deg": 31.496740341186523
+    },
+    {
+      "asset": "show108-mlp-lstm-obsdr-wide-20u-02-pre_grasp.mp4",
+      "start": "pre_grasp",
+      "seed": 2026,
+      "scene": 0,
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "51888cb0c5f2e8e5ebde13c0e5702ed6b91a63297c2519922a94d416de7bea08",
+      "selection": "First case, not success-selected",
+      "home_complete": false,
+      "first_home_seconds": null,
+      "final_max_A_error_deg": 17.25397491455078
+    },
+    {
+      "asset": "show108-mlp-lstm-obsdr-wide-20u-03-held.mp4",
+      "start": "held",
+      "seed": 2026,
+      "scene": 0,
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "f3740c00561f20f7615ade5641f6502e42a72befb5220bf008b2b53c913f9559",
+      "selection": "First case, not success-selected",
+      "home_complete": false,
+      "first_home_seconds": null,
+      "final_max_A_error_deg": 15.151782035827637
+    },
+    {
+      "asset": "show108-mlp-lstm-obsdr-wide-20u-04-over_bowl.mp4",
+      "start": "over_bowl",
+      "seed": 2026,
+      "scene": 0,
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "c21504877608fdbbe597425c9bad4a2eca83a4e4b7dd8d7abd72ad212dec0c67",
+      "selection": "First case, not success-selected",
+      "home_complete": true,
+      "first_home_seconds": 5.300000000000001,
+      "final_max_A_error_deg": 19.705156326293945
+    },
+    {
+      "asset": "show108-mlp-lstm-obsdr-wide-20u-05-post_release.mp4",
+      "start": "post_release",
+      "seed": 2026,
+      "scene": 0,
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "e4a97d336123ccf9d35e28d201a99b1771ebc8f263d050e1b2fac3b06719bd91",
+      "selection": "First case, not success-selected",
+      "home_complete": true,
+      "first_home_seconds": 5.4,
+      "final_max_A_error_deg": 20.915552139282227
+    }
+  ],
+  "real_robot": false
+}

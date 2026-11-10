@@ -1,0 +1,5 @@
+{
+  "config": "/home/jeonchanwook/Documents/Codex/2026-10-20/chatgpt-docs-env-setup-brief-md/outputs/piper-sim-lab/configs/reach.yaml",
+  "platform": "gpu",
+  "warm_start": null
+}

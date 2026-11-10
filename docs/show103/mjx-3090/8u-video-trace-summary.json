@@ -1,0 +1,38 @@
+[
+  {
+    "start": "initial_a",
+    "episodes": 384,
+    "episodes_with_any_open_request": 384,
+    "final_bilateral_contact": 384,
+    "final_tcp_height_mm_median": 52.57296180725098,
+    "final_xy_mm_median": 437.63206481933594,
+    "final_main_reward_median": 3.5
+  },
+  {
+    "start": "pre_grasp",
+    "episodes": 384,
+    "episodes_with_any_open_request": 384,
+    "final_bilateral_contact": 384,
+    "final_tcp_height_mm_median": 52.578474044799805,
+    "final_xy_mm_median": 424.55775451660156,
+    "final_main_reward_median": 3.5
+  },
+  {
+    "start": "held",
+    "episodes": 384,
+    "episodes_with_any_open_request": 0,
+    "final_bilateral_contact": 384,
+    "final_tcp_height_mm_median": 53.00221252441406,
+    "final_xy_mm_median": 424.5591735839844,
+    "final_main_reward_median": 3.5
+  },
+  {
+    "start": "over_bowl",
+    "episodes": 384,
+    "episodes_with_any_open_request": 0,
+    "final_bilateral_contact": 384,
+    "final_tcp_height_mm_median": 51.067453384399414,
+    "final_xy_mm_median": 422.3026580810547,
+    "final_main_reward_median": 3.5
+  }
+]

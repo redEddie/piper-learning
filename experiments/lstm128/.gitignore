@@ -1,0 +1,4 @@
+*.log
+queue*.jsonl
+occupancy.jsonl
+uploads.json

@@ -1,0 +1,51 @@
+environment:
+  block_half: 0.025
+  block_mass: 0.08
+  block_rgba:
+  - 0.1
+  - 0.8
+  - 0.2
+  - 1.0
+  bowl_arm_collision: true
+  ctrl_dt: 0.1
+  impl: jax
+  jacobian: mjx
+  obs_randomization: true
+  physics_randomization: false
+  sim_dt: 0.005
+  size_obs: true
+  solver_iterations: 8
+  solver_ls_iterations: 20
+  stage_obs: false
+  task: pick_place
+network:
+  policy_hidden_layer_sizes:
+  - 256
+  - 256
+  policy_obs_key: state
+  value_hidden_layer_sizes:
+  - 256
+  - 256
+  value_obs_key: privileged
+seed: 7
+training:
+  action_repeat: 1
+  batch_size: 2
+  bootstrap_on_timeout: false
+  clipping_epsilon: 0.2
+  deterministic_eval: true
+  discounting: 0.99
+  entropy_cost: 0.001
+  episode_length: 8
+  gae_lambda: 0.95
+  learning_rate: 0.0003
+  max_grad_norm: 1.0
+  normalize_observations: true
+  num_envs: 4
+  num_eval_envs: 4
+  num_evals: 2
+  num_minibatches: 2
+  num_timesteps: 64
+  num_updates_per_batch: 1
+  reward_scaling: 1.0
+  unroll_length: 4

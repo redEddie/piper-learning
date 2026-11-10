@@ -1,0 +1,107 @@
+[
+  {
+    "status": "passed",
+    "environments": 128,
+    "steps": 24,
+    "policy_transitions": 3072,
+    "reset_group_counts": [
+      45,
+      23,
+      38,
+      22
+    ],
+    "invalid_held_resets": 0,
+    "actor": 49,
+    "critic": 66,
+    "action": 7,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.00910709984600544,
+      "max_acceleration": 0.9098109006881714,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "elapsed_seconds": 91.34807013196405,
+    "config_sha256": "1b6a7dceeb7ffba76374f27f2175943ca6659867e06af8957ab242c71bbdbef4",
+    "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+    "training": false,
+    "real_robot": false,
+    "peak_board_gpu_memory_mib": 1197
+  },
+  {
+    "status": "passed",
+    "environments": 1024,
+    "steps": 24,
+    "policy_transitions": 24576,
+    "reset_group_counts": [
+      399,
+      208,
+      192,
+      225
+    ],
+    "invalid_held_resets": 0,
+    "actor": 49,
+    "critic": 66,
+    "action": 7,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.00910709984600544,
+      "max_acceleration": 0.9098109006881714,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "elapsed_seconds": 23.27728550694883,
+    "config_sha256": "1b6a7dceeb7ffba76374f27f2175943ca6659867e06af8957ab242c71bbdbef4",
+    "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+    "training": false,
+    "real_robot": false,
+    "peak_board_gpu_memory_mib": 1777
+  },
+  {
+    "status": "passed",
+    "environments": 4096,
+    "steps": 24,
+    "policy_transitions": 98304,
+    "reset_group_counts": [
+      1664,
+      816,
+      803,
+      813
+    ],
+    "invalid_held_resets": 0,
+    "actor": 49,
+    "critic": 66,
+    "action": 7,
+    "checks": {
+      "nonfinite": 0,
+      "capacity_overflow": 0,
+      "controller_failed": 0,
+      "max_speed": 0.009107100777328014,
+      "max_acceleration": 0.9098109006881714,
+      "max_jerk": 99.90009307861328,
+      "max_gripper_reference_step": 0.010000001639127731,
+      "max_reward_replay_error": 0.0,
+      "reward_memory_replay_error": 0.0,
+      "all_finite": true,
+      "passed": true
+    },
+    "elapsed_seconds": 25.43631804792676,
+    "config_sha256": "47acba9007ffda8161e53529e47bd2af7db61134a7c22ea5caa789f7103bab75",
+    "scope": "Actual GPU-Warp physics with dynamics DR, fixed actions; not policy training or success evaluation",
+    "training": false,
+    "real_robot": false,
+    "peak_board_gpu_memory_mib": 5049
+  }
+]

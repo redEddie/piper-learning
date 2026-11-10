@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "elapsed_seconds": 56.29414045100202,
+  "policy_changed": true,
+  "policy_changes": [
+    {
+      "steps": 0,
+      "policy_l2_change": 0.0
+    },
+    {
+      "steps": 4194304,
+      "policy_l2_change": 1.2386254182423593
+    }
+  ],
+  "checkpoint_semantics": "policy, value, observation normalizer; warm-start resets optimizer/RNG",
+  "metrics": {
+    "eval/walltime": 11.388230800628662,
+    "training/sps": 112123.00572070484,
+    "training/walltime": 37.408058881759644,
+    "training/entropy_loss": 0.01147344522178173,
+    "training/kl_mean": 0.010756663978099823,
+    "training/learning_rate": 9.999997564591467e-05,
+    "training/policy_dist_max_loc": 1.5626598596572876,
+    "training/policy_dist_max_std": 0.293918251991272,
+    "training/policy_dist_mean_loc": -0.03701825439929962,
+    "training/policy_dist_mean_std": 0.04129154235124588,
+    "training/policy_dist_min_loc": -1.591392993927002,
+    "training/policy_dist_min_std": 0.008354734629392624,
+    "training/policy_loss": 0.0014746054075658321,
+    "training/total_loss": 0.03492685407400131,
+    "training/v_loss": 0.02197880670428276,
+    "eval/episode_action_penalty": 0.026029665023088455,
+    "eval/episode_action_rate_penalty": 0.13425596058368683,
+    "eval/episode_capacity_overflow": 0.0,
+    "eval/episode_distance": 3.5154378414154053,
+    "eval/episode_nonfinite": 0.0,
+    "eval/episode_reward": 82.96656036376953,
+    "eval/episode_reward_reach": 83.12683868408203,
+    "eval/episode_success": 55.484375,
+    "eval/episode_action_penalty_std": 0.03665139153599739,
+    "eval/episode_action_rate_penalty_std": 0.26012247800827026,
+    "eval/episode_capacity_overflow_std": 0.0,
+    "eval/episode_distance_std": 2.6220755577087402,
+    "eval/episode_nonfinite_std": 0.0,
+    "eval/episode_reward_std": 12.047808647155762,
+    "eval/episode_reward_reach_std": 11.801843643188477,
+    "eval/episode_success_std": 43.02033996582031,
+    "eval/avg_episode_length": 100.0,
+    "eval/std_episode_length": 0.0,
+    "eval/epoch_eval_time": 5.210584878921509,
+    "eval/sps": 1228.269023289508
+  }
+}

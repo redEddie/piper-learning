@@ -1,0 +1,21 @@
+{
+  "random_initialization": true,
+  "restored_policy": false,
+  "restored_value": false,
+  "restored_normalizer": false,
+  "seed": 7,
+  "num_envs": 1024,
+  "num_timesteps": 16777216,
+  "config": "configs/show103/balanced-fresh-16m.yaml",
+  "reference_checkpoint": "none",
+  "reset_probs": [
+    0.4,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "near_fraction": 0.05,
+  "real_robot": false,
+  "reward_audit": "docs/show103/balanced-rewards/audit.json",
+  "scope": "Reward/reset/controller settings fixed throughout the run."
+}

@@ -1,0 +1,32 @@
+{
+  "environments": 64,
+  "policy_transitions": 15360,
+  "table_drop_first_failure_s": 0.4,
+  "table_drop_reason": 2,
+  "no_failure_during_initial_100ms_flight": true,
+  "bowl_landing_first_reset_s": 20.0,
+  "bowl_landing_task_failure_before_reset": false,
+  "first_grasp_timeout_s": 12.0,
+  "grasp_timeouts": 124,
+  "outside_drops": 1,
+  "controller_interruptions": 1,
+  "injected_controller_tail": 0.0,
+  "injected_controller_task_failure": false,
+  "max_settlement_error": 0.0,
+  "all_failures_reset_immediately": true,
+  "all_failed_slots_start_fresh": true,
+  "absorbing_slots": 0,
+  "positive_failure_reward_base": 0.0,
+  "physical_nonfinite": 0.0,
+  "capacity_overflow": 0.0,
+  "all_rewards_finite": true,
+  "training_run": false,
+  "real_robot": false,
+  "scope": "Fixed actions and constructed physical scenes; no learned-policy success-rate evaluation.",
+  "config": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/configs/show103/qp-v1-a5-j100-bounded-base.yaml",
+  "controller_limits": {
+    "velocity": 1.0,
+    "acceleration": 5.0,
+    "jerk": 100.0
+  }
+}

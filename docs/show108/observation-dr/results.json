@@ -1,0 +1,458 @@
+{
+  "status": "completed",
+  "source_commit": "0f5aa042416f49c7a8839396179e230a0e853242",
+  "parent_units": 14,
+  "additional_units": 2,
+  "cumulative_units": 16,
+  "transitions_added": 16777216,
+  "parent_checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm/training/checkpoints/000117440512",
+  "checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/training/checkpoints/000016777216",
+  "checkpoint_metadata": {
+    "actor": "mlp_lstm",
+    "width": 128,
+    "step": 16777216,
+    "actor_architecture": {
+      "hidden_sizes": [
+        256,
+        64
+      ]
+    },
+    "action_size": 7,
+    "exploration": {
+      "gripper_min_std": 0.5,
+      "arm_min_std": 0.25
+    },
+    "observation_size": {
+      "privileged": [
+        66
+      ],
+      "state": [
+        49
+      ]
+    },
+    "parent_transitions": 117440512,
+    "cumulative_transitions": 134217728,
+    "state": "learner checkpoint; continuation restores learner with fresh simulator episodes"
+  },
+  "checkpoint_sha256": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c",
+  "evaluation": "Both policies evaluated in identical new observation-DR/wide-spawn conditions, three seeds x128=384 per start; old narrow/no-observation-DR success is separate",
+  "parent_new_conditions": {
+    "initial_a": {
+      "episodes": 384,
+      "local_success": 1,
+      "final_complete": 0,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 0,
+      "high_drop_success": 0,
+      "local_success_rate": 0.0026041666666666665,
+      "full_success_rate": 0.0,
+      "full_home_complete": 0,
+      "full_home_success_rate": 0.0,
+      "final_max_A_error_deg_median": 137.20172119140625,
+      "best_max_A_error_deg_median": 0.0350877121090889
+    },
+    "pre_grasp": {
+      "episodes": 384,
+      "local_success": 1,
+      "final_complete": 0,
+      "failures": 1,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 0,
+      "high_drop_success": 0,
+      "local_success_rate": 0.0026041666666666665,
+      "full_success_rate": 0.0,
+      "full_home_complete": 0,
+      "full_home_success_rate": 0.0,
+      "final_max_A_error_deg_median": 135.72671508789062,
+      "best_max_A_error_deg_median": 77.227783203125
+    },
+    "held": {
+      "episodes": 384,
+      "local_success": 32,
+      "final_complete": 0,
+      "failures": 231,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 0,
+      "high_drop_success": 0,
+      "local_success_rate": 0.08333333333333333,
+      "full_success_rate": 0.0,
+      "full_home_complete": 0,
+      "full_home_success_rate": 0.0,
+      "final_max_A_error_deg_median": 110.88102722167969,
+      "best_max_A_error_deg_median": 76.35166931152344
+    },
+    "over_bowl": {
+      "episodes": 384,
+      "local_success": 169,
+      "final_complete": 3,
+      "failures": 22,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 0,
+      "high_drop_success": 3,
+      "local_success_rate": 0.4401041666666667,
+      "full_success_rate": 0.0078125,
+      "full_home_complete": 0,
+      "full_home_success_rate": 0.0,
+      "final_max_A_error_deg_median": 134.77255249023438,
+      "best_max_A_error_deg_median": 76.59001159667969
+    },
+    "post_release": {
+      "episodes": 384,
+      "local_success": 1,
+      "final_complete": 1,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 1,
+      "high_drop_success": 0,
+      "local_success_rate": 0.0026041666666666665,
+      "full_success_rate": 0.0026041666666666665,
+      "full_home_complete": 1,
+      "full_home_success_rate": 0.0026041666666666665,
+      "final_max_A_error_deg_median": 135.10433959960938,
+      "best_max_A_error_deg_median": 75.6657485961914
+    }
+  },
+  "continued_new_conditions": {
+    "initial_a": {
+      "episodes": 384,
+      "local_success": 377,
+      "final_complete": 21,
+      "failures": 16,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 1,
+      "home_complete": 21,
+      "high_drop_success": 0,
+      "local_success_rate": 0.9817708333333334,
+      "full_success_rate": 0.0546875,
+      "full_home_complete": 21,
+      "full_home_success_rate": 0.0546875,
+      "final_max_A_error_deg_median": 25.77883529663086,
+      "best_max_A_error_deg_median": 0.030368726700544357
+    },
+    "pre_grasp": {
+      "episodes": 384,
+      "local_success": 379,
+      "final_complete": 35,
+      "failures": 8,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 35,
+      "high_drop_success": 0,
+      "local_success_rate": 0.9869791666666666,
+      "full_success_rate": 0.09114583333333333,
+      "full_home_complete": 35,
+      "full_home_success_rate": 0.09114583333333333,
+      "final_max_A_error_deg_median": 25.69378662109375,
+      "best_max_A_error_deg_median": 17.564001083374023
+    },
+    "held": {
+      "episodes": 384,
+      "local_success": 382,
+      "final_complete": 40,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 39,
+      "high_drop_success": 1,
+      "local_success_rate": 0.9947916666666666,
+      "full_success_rate": 0.10416666666666667,
+      "full_home_complete": 39,
+      "full_home_success_rate": 0.1015625,
+      "final_max_A_error_deg_median": 23.89795684814453,
+      "best_max_A_error_deg_median": 15.614006042480469
+    },
+    "over_bowl": {
+      "episodes": 384,
+      "local_success": 383,
+      "final_complete": 42,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 42,
+      "high_drop_success": 0,
+      "local_success_rate": 0.9973958333333334,
+      "full_success_rate": 0.109375,
+      "full_home_complete": 42,
+      "full_home_success_rate": 0.109375,
+      "final_max_A_error_deg_median": 16.362682342529297,
+      "best_max_A_error_deg_median": 13.839462280273438
+    },
+    "post_release": {
+      "episodes": 384,
+      "local_success": 39,
+      "final_complete": 39,
+      "failures": 0,
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "home_complete": 39,
+      "high_drop_success": 0,
+      "local_success_rate": 0.1015625,
+      "full_success_rate": 0.1015625,
+      "full_home_complete": 39,
+      "full_home_success_rate": 0.1015625,
+      "final_max_A_error_deg_median": 16.646743774414062,
+      "best_max_A_error_deg_median": 14.149785995483398
+    }
+  },
+  "stage_local_paired_differences": {
+    "initial_a": {
+      "ci95": [
+        0.9635416666666666,
+        0.9921875
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "difference_after_minus_parent": 0.9791666666666667
+    },
+    "pre_grasp": {
+      "ci95": [
+        0.9713541666666666,
+        0.9947916666666667
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "difference_after_minus_parent": 0.984375
+    },
+    "held": {
+      "ci95": [
+        0.8828125,
+        0.9401041666666666
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "difference_after_minus_parent": 0.9114583333333333
+    },
+    "over_bowl": {
+      "ci95": [
+        0.5078125,
+        0.6067708333333333
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "difference_after_minus_parent": 0.5572916666666667
+    },
+    "post_release": {
+      "ci95": [
+        0.0703125,
+        0.1328125
+      ],
+      "paired_cases": 384,
+      "bootstrap_draws": 4000,
+      "difference_after_minus_parent": 0.09895833333333333
+    }
+  },
+  "full_A_paired_difference": {
+    "ci95": [
+      0.033854166666666664,
+      0.078125
+    ],
+    "paired_cases": 384,
+    "bootstrap_draws": 4000,
+    "difference_after_minus_parent": 0.0546875
+  },
+  "final_A_error_paired_difference": {
+    "ci95": [
+      -119.00209605693817,
+      -117.98679165840149
+    ],
+    "paired_cases": 384,
+    "bootstrap_draws": 4000,
+    "difference_after_minus_parent": -118.45759582519531
+  },
+  "success_semantics": "Stage-local achievement before failure is latched; full actual A excludes high-drop terminal exception. Final error is separate from ever completing A.",
+  "videos": [
+    {
+      "start": "initial_a",
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/videos/2u-initial_a-first.mp4",
+      "published_copy": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-from14u-2u-initial_a-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "43034e1eddd857980fcdd6ed5633febc2b1d40cf7edcda6f50cdb88e806be60f",
+      "selection": "seed2026 scene0 first recorded case, not success-selected",
+      "metadata": {
+        "trace": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/evaluation/2u/initial_a-s2026.npz",
+        "scene": 0,
+        "selection": "explicit scene index; default 0 is first recorded case, no success selection",
+        "fps": 10,
+        "control_dt_s": 0.1,
+        "duration_seconds": 20.0,
+        "rendered_frames": 200,
+        "recorded_frames": 200,
+        "stopped_at_first_failure": false,
+        "stopped_at_terminal_success": false,
+        "final_complete": false,
+        "diagnostic": true,
+        "label": "추가 2배 / ① 접근",
+        "real_robot": false
+      }
+    },
+    {
+      "start": "pre_grasp",
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/videos/2u-pre_grasp-first.mp4",
+      "published_copy": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-from14u-2u-pre_grasp-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "fa41d5747b879b1eaf29d8b0931fff9d412f5ebae5acc5d73ae22833f0553ffb",
+      "selection": "seed2026 scene0 first recorded case, not success-selected",
+      "metadata": {
+        "trace": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/evaluation/2u/pre_grasp-s2026.npz",
+        "scene": 0,
+        "selection": "explicit scene index; default 0 is first recorded case, no success selection",
+        "fps": 10,
+        "control_dt_s": 0.1,
+        "duration_seconds": 20.0,
+        "rendered_frames": 200,
+        "recorded_frames": 200,
+        "stopped_at_first_failure": false,
+        "stopped_at_terminal_success": false,
+        "final_complete": false,
+        "diagnostic": true,
+        "label": "추가 2배 / ② 파지·들기",
+        "real_robot": false
+      }
+    },
+    {
+      "start": "held",
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/videos/2u-held-first.mp4",
+      "published_copy": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-from14u-2u-held-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "24ee8f9ded762ae568f4904591478b8e55542032e65822f5b67f1475af211318",
+      "selection": "seed2026 scene0 first recorded case, not success-selected",
+      "metadata": {
+        "trace": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/evaluation/2u/held-s2026.npz",
+        "scene": 0,
+        "selection": "explicit scene index; default 0 is first recorded case, no success selection",
+        "fps": 10,
+        "control_dt_s": 0.1,
+        "duration_seconds": 20.0,
+        "rendered_frames": 200,
+        "recorded_frames": 200,
+        "stopped_at_first_failure": false,
+        "stopped_at_terminal_success": false,
+        "final_complete": false,
+        "diagnostic": true,
+        "label": "추가 2배 / ③ 운반",
+        "real_robot": false
+      }
+    },
+    {
+      "start": "over_bowl",
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/videos/2u-over_bowl-first.mp4",
+      "published_copy": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-from14u-2u-over_bowl-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "b9e683e65f7560f8e042c2fb5b4c3cfa1cbd5bab6778aec49070832be2f1399b",
+      "selection": "seed2026 scene0 first recorded case, not success-selected",
+      "metadata": {
+        "trace": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/evaluation/2u/over_bowl-s2026.npz",
+        "scene": 0,
+        "selection": "explicit scene index; default 0 is first recorded case, no success selection",
+        "fps": 10,
+        "control_dt_s": 0.1,
+        "duration_seconds": 20.0,
+        "rendered_frames": 200,
+        "recorded_frames": 200,
+        "stopped_at_first_failure": false,
+        "stopped_at_terminal_success": false,
+        "final_complete": true,
+        "diagnostic": true,
+        "label": "추가 2배 / ④ 정렬·하강·해제",
+        "real_robot": false
+      }
+    },
+    {
+      "start": "post_release",
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/videos/2u-post_release-first.mp4",
+      "published_copy": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/outputs/show108-pipeline-dr-wide-from14u-2u-post_release-first.mp4",
+      "frames": 200,
+      "seconds": 20.0,
+      "sha256": "8a9fbbe44dc5b145d50d7120bc0c4a0d04e277578ce33c848c07cb468be161da",
+      "selection": "seed2026 scene0 first recorded case, not success-selected",
+      "metadata": {
+        "trace": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/evaluation/2u/post_release-s2026.npz",
+        "scene": 0,
+        "selection": "explicit scene index; default 0 is first recorded case, no success selection",
+        "fps": 10,
+        "control_dt_s": 0.1,
+        "duration_seconds": 20.0,
+        "rendered_frames": 200,
+        "recorded_frames": 200,
+        "stopped_at_first_failure": false,
+        "stopped_at_terminal_success": false,
+        "final_complete": true,
+        "diagnostic": true,
+        "label": "추가 2배 / ⑤ 안착·후퇴·A 복귀",
+        "real_robot": false
+      }
+    }
+  ],
+  "training": {
+    "actor": "mlp_lstm",
+    "seed": 7,
+    "timesteps": 16777216,
+    "elapsed_seconds": 1570.353688745061,
+    "first_iteration_compile_and_execute_seconds": 27.72029357100837,
+    "steady_state_collection_seconds": 1367.3006146599073,
+    "steady_state_update_seconds": 168.37149931653403,
+    "steady_state_sps": 10882.323021889797,
+    "policy_l2_change": 12.79024782430563,
+    "max_initial_log_prob_error": 1.9073486328125e-06,
+    "parameters": {
+      "actor": 129998,
+      "critic": 83201
+    }
+  },
+  "source_unchanged": true,
+  "real_robot": false,
+  "resources": {
+    "peak_board_memory_mib": 9522,
+    "mean_gpu_utilization_percent": 94.14643931795386,
+    "scope": "whole board, sampled, includes other processes"
+  },
+  "placement": {
+    "initial_a_to_placement": {
+      "success": 294,
+      "episodes": 384,
+      "rate": 0.765625,
+      "high_drop_exceptions": 0
+    },
+    "post_release_final_A_max_error_deg_median": 16.646743774414062,
+    "post_release_best_A_max_error_deg_median": 14.149785995483398
+  },
+  "normalizer_size_diagnostic": {
+    "parent14u": {
+      "size_mean": 0.02500000223517418,
+      "size_std": 9.999999974752427e-07
+    },
+    "continued14plus2u": {
+      "size_mean": 0.02500114031136036,
+      "size_std": 0.0002551883808337152
+    }
+  },
+  "training_controller_failed_transitions": 127,
+  "limitations": [
+    "All domain changes are combined; not a delay-only ablation.",
+    "One training seed7. Paired384 cases per initialization; bootstrap uncertainty conditional on these policies.",
+    "Old published 14u/no-observation-DR success rates are a different condition.",
+    "Size-observation noise is new: parent normalizer std for half-size is1e-6m; uniform±5% noise can produce normalized excursions about±1250. This is a material input-distribution change; its task effect has not been isolated.",
+    "The added2u model improves new-condition stage-local success, but stage5=10.2% and full actual A=5.5% do not meet the historical50% goal.",
+    "Original selected16u release is preserved; new adaptation checkpoint is not automatically promoted."
+  ]
+}

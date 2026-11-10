@@ -1,0 +1,167 @@
+{
+  "checkpoint": 8388608,
+  "seed": 2026,
+  "scope": "Frozen-policy diagnosis only. Counterfactual open branch alters executed gripper action, not learned weights or training configuration.",
+  "results": {
+    "policy": {
+      "episodes": 128,
+      "distance_initial_mm_percentiles": [
+        278.62900495529175,
+        350.3980487585068,
+        432.9555332660675
+      ],
+      "distance_closest_mm_percentiles": [
+        122.35633283853531,
+        335.7224017381668,
+        431.80957436561584
+      ],
+      "distance_final_mm_percentiles": [
+        122.35633283853531,
+        465.51670134067535,
+        735.0454330444336
+      ],
+      "ever50mm": 0,
+      "ever20mm": 0,
+      "requested_toward_mm_s_percentiles": [
+        -91.034912109375,
+        -25.361577033996582,
+        -14.61480188369751,
+        -3.7199267148971558,
+        66.64730834960938
+      ],
+      "requested_away_fraction": 0.8034505208333333,
+      "actual_toward_mm_s_percentiles": [
+        -84.59504699707031,
+        -17.28698444366455,
+        -8.501697540283203,
+        -1.3816437125205994,
+        114.00980377197266
+      ],
+      "arm_rejections": 0,
+      "controller_failure_episodes": 0,
+      "reference_faults": 0,
+      "return_mean": -3.575949192047119,
+      "discounted_return_mean": -1.1104038056342653,
+      "shaping_discounted_mean": 5.108405671111211e-08,
+      "event_bonuses": 0.0,
+      "actual_width_mm_min": -17.820505142211914
+    },
+    "keep_open_diagnostic": {
+      "episodes": 128,
+      "distance_initial_mm_percentiles": [
+        278.62900495529175,
+        350.3980487585068,
+        432.9555332660675
+      ],
+      "distance_closest_mm_percentiles": [
+        143.7731236219406,
+        316.4890855550766,
+        428.0071556568146
+      ],
+      "distance_final_mm_percentiles": [
+        176.9806295633316,
+        399.2292732000351,
+        601.0121703147888
+      ],
+      "ever50mm": 0,
+      "ever20mm": 0,
+      "requested_toward_mm_s_percentiles": [
+        -96.6714096069336,
+        -18.128026485443115,
+        -4.41248345375061,
+        10.132246732711792,
+        61.819602966308594
+      ],
+      "requested_away_fraction": 0.561328125,
+      "actual_toward_mm_s_percentiles": [
+        -80.47606658935547,
+        -19.294299602508545,
+        -4.7637858390808105,
+        9.231701612472534,
+        116.13484191894531
+      ],
+      "arm_rejections": 9,
+      "controller_failure_episodes": 0,
+      "reference_faults": 0,
+      "return_mean": -3.7475640773773193,
+      "discounted_return_mean": -1.185222396531493,
+      "shaping_discounted_mean": 5.691735045047232e-08,
+      "event_bonuses": 0.0,
+      "actual_width_mm_min": 83.5704574584961
+    }
+  },
+  "saved_evaluation_findings": {
+    "episodes": 128,
+    "close_in_first100ms": 119,
+    "close_within1s": 120,
+    "close_distance_mm_percentiles": [
+      200.16582310199738,
+      346.57207131385803,
+      432.9947531223297
+    ],
+    "examples": [
+      {
+        "time_s": 0.1,
+        "case": 0,
+        "gripper_action": -0.6646850109100342,
+        "goal_full_width_mm": 0.0,
+        "actual_width_mm": -3.44122052192688,
+        "paid_reward": 0.03566103056073189,
+        "raw_reach_diagnostic": 0.050036609172821045,
+        "unfinished_cost": 0.0,
+        "failure_tail_cost": 0.0
+      },
+      {
+        "time_s": 1.0,
+        "case": 0,
+        "gripper_action": -0.5248996615409851,
+        "goal_full_width_mm": 0.0,
+        "actual_width_mm": -0.0053206682205200195,
+        "paid_reward": -0.001124069094657898,
+        "raw_reach_diagnostic": 0.041455745697021484,
+        "unfinished_cost": 0.0,
+        "failure_tail_cost": 0.0
+      },
+      {
+        "time_s": 4.0,
+        "case": 0,
+        "gripper_action": -0.5550275444984436,
+        "goal_full_width_mm": 0.0,
+        "actual_width_mm": -0.007352510467171669,
+        "paid_reward": -0.0014930516481399536,
+        "raw_reach_diagnostic": 0.020599663257598877,
+        "unfinished_cost": 0.0,
+        "failure_tail_cost": 0.0
+      },
+      {
+        "time_s": 12.0,
+        "case": 0,
+        "gripper_action": -0.41136419773101807,
+        "goal_full_width_mm": 0.0,
+        "actual_width_mm": 0.010369704104959965,
+        "paid_reward": -3.3923187255859375,
+        "raw_reach_diagnostic": 0.0,
+        "unfinished_cost": 0.05999999865889549,
+        "failure_tail_cost": 3.2817118167877197
+      }
+    ]
+  },
+  "reward_findings": {
+    "formula": "F_t=.99*Phi_(t+1)-Phi_t; Phi is episode best clipped state score, reset and all terminal potentials0.",
+    "discounted_shaping_sum": "~0 including terminal settlement",
+    "one_shot_event_bonuses_in_empty_A": 0,
+    "discounted_actual_return": -1.1104038167601522,
+    "discounted_action_and_rate_cost": 0.09985539738666763,
+    "analytical_idle_return": -1.010548564866358,
+    "idle_scope": "Analytic same12s timeout/remaining80-step settlement, zero actions, no grasp/event or controller failure; not a separately observed idle physics rollout.",
+    "interpretation": "Approach-only paths receive no independent discounted state return once terminal shaping is included. Until grasp/placing events are experienced, failed movement pays extra action costs; early-close bias is not directly rewarded by an explicit close bonus."
+  },
+  "additional_physics_observation": {
+    "episodes_with_width_below_minus1mm": 100,
+    "minimum_width_mm": -17.820505142211914,
+    "scope": "Simulated soft-limit transient after closing, not a physically possible negative hardware opening; keep-open branch also fails approach, so this does not establish the main cause."
+  },
+  "source_modified": false,
+  "training_restarted": false,
+  "existing_training_resumed": true
+}

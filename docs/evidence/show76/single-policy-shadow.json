@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "mode": "diagnostic_snapshot",
+  "input_source": "new_camera_snapshot_and_passive_robot_feedback",
+  "loop": "single_snapshot_no_plant_feedback",
+  "hardware_commands_sent": false,
+  "command_transport": "absent; JSON files only",
+  "control_ready": false,
+  "sources": {
+    "vision": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show76-single-policy-check/camera/vision.json",
+      "sha256": "b036826f43e38663b18b9b66906eec40e97299b2c8fbe314bee4cb7279e1369c"
+    },
+    "robot_feedback": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show76-single-policy-check/robot.json",
+      "sha256": "e1561c2b492c338fc0c9d2882050271e359c062bf2ae71c4aa98e48d5f4f42ce"
+    },
+    "calibration": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show76-single-policy-check/calibration.json",
+      "sha256": "5b52f595687373724a0b5d6b23b8d9671a7d73c8db98bdfef0a1690156a6c891"
+    },
+    "training_model_xml": {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/src/piper_sim_lab/assets/agilex_piper_v100/piper.xml",
+      "sha256": "828ed79064944d277c595fb08db19c9efa185ec2ca5e3f85347c6f8d214db3ea"
+    },
+    "camera_color": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show76-single-policy-check/camera/color/0.png",
+      "sha256": "fa6b9e9993cad0f9f9de5595176ef866a4d4f984ec7a417a9459996510f2c132"
+    },
+    "camera_depth": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show76-single-policy-check/camera/depth/0.png",
+      "sha256": "fa6b9e9993cad0f9f9de5595176ef866a4d4f984ec7a417a9459996510f2c132"
+    },
+    "camera_metadata": {
+      "path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show76-single-policy-check/camera/meta.json",
+      "sha256": "fa6b9e9993cad0f9f9de5595176ef866a4d4f984ec7a417a9459996510f2c132"
+    }
+  },
+  "snapshot_age_at_evaluation_s": null,
+  "warnings": [
+    "camera_to_base_calibration_untrusted",
+    "joint_velocity_feedback_scale_requires_hardware_validation",
+    "virtual_joint_target_initialized_at_measured_q_not_actual_servo_target",
+    "physical_object_dimensions_not_verified",
+    "training_kinematics_used_real_robot_fk_tcp_not_yet_validated",
+    "offline_snapshot_replay_not_live_control"
+  ],
+  "observation_provenance": {
+    "joint_position": "passively received CAN feedback, rad",
+    "joint_velocity": "passively received CAN high-speed feedback, rad/s",
+    "gripper_width": "passively received full opening, m; not half opening",
+    "joint_target": "virtual shadow target initialized at measured q; never sent",
+    "tcp": "training piper_v100 FK, link6 local [0.0, 0.0, 0.1358]m",
+    "block_bowl_pose": "new RGB-D snapshot -> existing SAM3/geometric pose scripts",
+    "block_half_size": "task configuration; physical measurement validity recorded separately",
+    "previous_action": "zero at explicitly reset first shadow step",
+    "lstm_memory": "cell/hidden reset for a new single-snapshot shadow episode"
+  },
+  "object_roles": {
+    "block": "block",
+    "bowl": "bowl"
+  },
+  "status": "diagnostic_completed",
+  "policy_evaluated": true,
+  "policies": 1
+}

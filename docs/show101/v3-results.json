@@ -1,0 +1,386 @@
+{
+  "scope": "Same seed2026/128 per mode at intermediate checkpoints; baseline/final aggregates use384 per mode. Episode tracking fix enabled.",
+  "points": [
+    {
+      "additional_steps": 0,
+      "lineage_steps": 50331648,
+      "modes": {
+        "empty_hand": {
+          "episodes": 128,
+          "basic": 111,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 120.9350814819336,
+          "contact_mean_m_s": 1.1584826707839966,
+          "contact_median_m_s": 1.1706962585449219,
+          "same_initial_scene": true
+        },
+        "mixed": {
+          "episodes": 128,
+          "basic": 121,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 108.25413513183594,
+          "contact_mean_m_s": 1.042485237121582,
+          "contact_median_m_s": 0.9733200073242188,
+          "same_initial_scene": true
+        },
+        "preinside": {
+          "episodes": 128,
+          "basic": 125,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 97.9968490600586,
+          "contact_mean_m_s": 0.9888964891433716,
+          "contact_median_m_s": 0.8981936573982239,
+          "same_initial_scene": true
+        }
+      }
+    },
+    {
+      "additional_steps": 2097152,
+      "lineage_steps": 52428800,
+      "modes": {
+        "empty_hand": {
+          "episodes": 128,
+          "basic": 118,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 129.00660705566406,
+          "contact_mean_m_s": 1.0635745525360107,
+          "contact_median_m_s": 1.008223056793213,
+          "same_initial_scene": true
+        },
+        "mixed": {
+          "episodes": 128,
+          "basic": 124,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 108.60264587402344,
+          "contact_mean_m_s": 1.07270348072052,
+          "contact_median_m_s": 0.9954565763473511,
+          "same_initial_scene": true
+        },
+        "preinside": {
+          "episodes": 128,
+          "basic": 126,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 93.77945709228516,
+          "contact_mean_m_s": 0.973171591758728,
+          "contact_median_m_s": 0.8892378211021423,
+          "same_initial_scene": true
+        }
+      }
+    },
+    {
+      "additional_steps": 4194304,
+      "lineage_steps": 54525952,
+      "modes": {
+        "empty_hand": {
+          "episodes": 128,
+          "basic": 115,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 100.8356704711914,
+          "contact_mean_m_s": 0.956903338432312,
+          "contact_median_m_s": 0.8805526494979858,
+          "same_initial_scene": true
+        },
+        "mixed": {
+          "episodes": 128,
+          "basic": 126,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 93.26605987548828,
+          "contact_mean_m_s": 1.0075031518936157,
+          "contact_median_m_s": 0.9571608304977417,
+          "same_initial_scene": true
+        },
+        "preinside": {
+          "episodes": 128,
+          "basic": 128,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 86.8819808959961,
+          "contact_mean_m_s": 0.995585024356842,
+          "contact_median_m_s": 0.9324307441711426,
+          "same_initial_scene": true
+        }
+      }
+    },
+    {
+      "additional_steps": 6291456,
+      "lineage_steps": 56623104,
+      "modes": {
+        "empty_hand": {
+          "episodes": 128,
+          "basic": 111,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 91.39073181152344,
+          "contact_mean_m_s": 1.088101863861084,
+          "contact_median_m_s": 1.1865302324295044,
+          "same_initial_scene": true
+        },
+        "mixed": {
+          "episodes": 128,
+          "basic": 122,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 87.95779418945312,
+          "contact_mean_m_s": 1.039596676826477,
+          "contact_median_m_s": 1.0410311222076416,
+          "same_initial_scene": true
+        },
+        "preinside": {
+          "episodes": 128,
+          "basic": 128,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 87.22457122802734,
+          "contact_mean_m_s": 1.0056596994400024,
+          "contact_median_m_s": 0.9598848223686218,
+          "same_initial_scene": true
+        }
+      }
+    },
+    {
+      "additional_steps": 8388608,
+      "lineage_steps": 58720256,
+      "modes": {
+        "empty_hand": {
+          "episodes": 128,
+          "basic": 113,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 92.37904357910156,
+          "contact_mean_m_s": 1.0078893899917603,
+          "contact_median_m_s": 1.0368318557739258,
+          "same_initial_scene": true
+        },
+        "mixed": {
+          "episodes": 128,
+          "basic": 123,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 88.8272933959961,
+          "contact_mean_m_s": 0.9838910698890686,
+          "contact_median_m_s": 0.946520209312439,
+          "same_initial_scene": true
+        },
+        "preinside": {
+          "episodes": 128,
+          "basic": 126,
+          "gentle": 0,
+          "supported_release": 0,
+          "release_height_mm": 87.62914276123047,
+          "contact_mean_m_s": 0.9668564796447754,
+          "contact_median_m_s": 0.938159704208374,
+          "same_initial_scene": true
+        }
+      }
+    }
+  ],
+  "baseline_384": {
+    "empty_hand": {
+      "episodes": 384,
+      "final_successes": 351,
+      "final_success_rate": 0.9140625,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    },
+    "mixed": {
+      "episodes": 384,
+      "final_successes": 373,
+      "final_success_rate": 0.9713541666666666,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    },
+    "preinside": {
+      "episodes": 384,
+      "final_successes": 375,
+      "final_success_rate": 0.9765625,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    }
+  },
+  "baseline_placing_384": {
+    "empty_hand": {
+      "supported_release": 0,
+      "release_episodes": 366,
+      "release_height_mean_mm": 123.9202949232091,
+      "contact_peak_mean_m_s": 1.2057356046305763
+    },
+    "mixed": {
+      "supported_release": 0,
+      "release_episodes": 380,
+      "release_height_mean_mm": 111.52115596972014,
+      "contact_peak_mean_m_s": 1.0863206286179392
+    },
+    "preinside": {
+      "supported_release": 0,
+      "release_episodes": 384,
+      "release_height_mean_mm": 98.5460942586263,
+      "contact_peak_mean_m_s": 0.9917223850886027
+    }
+  },
+  "source_checkpoint_changed_files": [],
+  "real_robot": false,
+  "final_384": {
+    "empty_hand": {
+      "episodes": 384,
+      "final_successes": 336,
+      "final_success_rate": 0.875,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    },
+    "mixed": {
+      "episodes": 384,
+      "final_successes": 363,
+      "final_success_rate": 0.9453125,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    },
+    "preinside": {
+      "episodes": 384,
+      "final_successes": 381,
+      "final_success_rate": 0.9921875,
+      "gentle_final_successes": 0,
+      "gentle_final_success_rate": 0.0
+    }
+  },
+  "final_placing_384": {
+    "empty_hand": {
+      "supported_release": 0,
+      "release_episodes": 364,
+      "release_height_mean_mm": 92.61340742844801,
+      "contact_peak_mean_m_s": 1.037188533672505
+    },
+    "mixed": {
+      "supported_release": 0,
+      "release_episodes": 377,
+      "release_height_mean_mm": 89.63108779138216,
+      "contact_peak_mean_m_s": 1.0004148339903032
+    },
+    "preinside": {
+      "supported_release": 0,
+      "release_episodes": 384,
+      "release_height_mean_mm": 87.84824625651042,
+      "contact_peak_mean_m_s": 0.9814901153246561
+    }
+  },
+  "final_errors": {
+    "controller": 0,
+    "physics": 0
+  },
+  "training": {
+    "status": "passed",
+    "elapsed_seconds": 853.5262553630164,
+    "policy_changed": true,
+    "policy_changes": [
+      {
+        "steps": 0,
+        "policy_l2_change": 0.0
+      },
+      {
+        "steps": 2097152,
+        "policy_l2_change": 3.6722949312362845
+      },
+      {
+        "steps": 4194304,
+        "policy_l2_change": 5.1610363631464145
+      },
+      {
+        "steps": 6291456,
+        "policy_l2_change": 6.213175042429686
+      },
+      {
+        "steps": 8388608,
+        "policy_l2_change": 6.978961340380361
+      }
+    ],
+    "checkpoint_semantics": "policy, value, observation normalizer; warm-start resets optimizer/RNG",
+    "metrics": {
+      "eval/walltime": 78.89532566070557,
+      "training/sps": 11127.270192381433,
+      "training/walltime": 735.4618394374847,
+      "training/entropy_loss": 0.004867797717452049,
+      "training/kl_mean": 0.2521107792854309,
+      "training/learning_rate": 0.00029999998514540493,
+      "training/policy_dist_max_loc": 6.60135555267334,
+      "training/policy_dist_max_std": 2.9966142177581787,
+      "training/policy_dist_mean_loc": -0.10052337497472763,
+      "training/policy_dist_mean_std": 0.33322328329086304,
+      "training/policy_dist_min_loc": -5.77377462387085,
+      "training/policy_dist_min_std": 0.037095651030540466,
+      "training/policy_loss": -0.006811900995671749,
+      "training/total_loss": 31.407302856445312,
+      "training/v_loss": 31.409244537353516,
+      "eval/episode_action_penalty": 0.1780104637145996,
+      "eval/episode_action_rate_penalty": 0.658574104309082,
+      "eval/episode_block_bowl_xy": 4.4687299728393555,
+      "eval/episode_block_height": 1.3483538627624512,
+      "eval/episode_capacity_overflow": 0.0,
+      "eval/episode_controller_failed": 0.0,
+      "eval/episode_gentle_success": 0.0,
+      "eval/episode_grasped": 7.625,
+      "eval/episode_gripper_goal_open": 46.25,
+      "eval/episode_gripper_goal_switch": 12.296875,
+      "eval/episode_gripper_hold": 34.65625,
+      "eval/episode_nonfinite": 0.0,
+      "eval/episode_penalty_place_impact": 9.196584701538086,
+      "eval/episode_place_floor_seen": 57.59375,
+      "eval/episode_place_impact_peak": 58.03424835205078,
+      "eval/episode_place_premature_release": 58.578125,
+      "eval/episode_place_quality": 0.0,
+      "eval/episode_place_release_height": 5.281145095825195,
+      "eval/episode_place_supported": 40.578125,
+      "eval/episode_reward": 261.87347412109375,
+      "eval/episode_reward_carry": 3.982668399810791,
+      "eval/episode_reward_inside": 198.625,
+      "eval/episode_reward_lift": 7.625,
+      "eval/episode_reward_place_hold_bridge": 0.7546029090881348,
+      "eval/episode_reward_place_opening": 0.0,
+      "eval/episode_reward_place_progress": 0.2531154751777649,
+      "eval/episode_reward_reach": 60.666282653808594,
+      "eval/episode_stage": 180.015625,
+      "eval/episode_success": 56.75,
+      "eval/episode_tcp_block": 4.26738166809082,
+      "eval/episode_action_penalty_std": 0.047355081886053085,
+      "eval/episode_action_rate_penalty_std": 0.1803123503923416,
+      "eval/episode_block_bowl_xy_std": 5.416372299194336,
+      "eval/episode_block_height_std": 1.0188707113265991,
+      "eval/episode_capacity_overflow_std": 0.0,
+      "eval/episode_controller_failed_std": 0.0,
+      "eval/episode_gentle_success_std": 0.0,
+      "eval/episode_grasped_std": 8.853848457336426,
+      "eval/episode_gripper_goal_open_std": 6.717514514923096,
+      "eval/episode_gripper_goal_switch_std": 4.256170749664307,
+      "eval/episode_gripper_hold_std": 8.396835327148438,
+      "eval/episode_nonfinite_std": 0.0,
+      "eval/episode_penalty_place_impact_std": 3.7180192470550537,
+      "eval/episode_place_floor_seen_std": 24.348201751708984,
+      "eval/episode_place_impact_peak_std": 31.351869583129883,
+      "eval/episode_place_premature_release_std": 24.415544509887695,
+      "eval/episode_place_quality_std": 0.0,
+      "eval/episode_place_release_height_std": 2.295106887817383,
+      "eval/episode_place_supported_std": 19.81934356689453,
+      "eval/episode_reward_std": 84.99812316894531,
+      "eval/episode_reward_carry_std": 3.616386651992798,
+      "eval/episode_reward_inside_std": 88.96646118164062,
+      "eval/episode_reward_lift_std": 8.853848457336426,
+      "eval/episode_reward_place_hold_bridge_std": 2.462667226791382,
+      "eval/episode_reward_place_opening_std": 0.0,
+      "eval/episode_reward_place_progress_std": 0.20721085369586945,
+      "eval/episode_reward_reach_std": 3.9453816413879395,
+      "eval/episode_stage_std": 73.50945281982422,
+      "eval/episode_success_std": 25.418989181518555,
+      "eval/episode_tcp_block_std": 1.2635142803192139,
+      "eval/avg_episode_length": 80.0,
+      "eval/std_episode_length": 0.0,
+      "eval/epoch_eval_time": 2.4917733669281006,
+      "eval/sps": 2054.76150758928
+    }
+  }
+}

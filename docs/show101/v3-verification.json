@@ -1,0 +1,12 @@
+{
+  "original_source_files_checked": 349,
+  "original_source_changed": [],
+  "hyperparameters_unchanged": true,
+  "network_unchanged": true,
+  "actual_training_invocation": {
+    "config": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/configs/show101/refine-v3-episode-8m.yaml",
+    "platform": "gpu",
+    "warm_start": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648"
+  },
+  "real_robot": false
+}

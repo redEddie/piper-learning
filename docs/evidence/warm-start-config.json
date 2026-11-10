@@ -1,0 +1,81 @@
+{
+  "seed": 7,
+  "environment": {
+    "ctrl_dt": 0.05,
+    "sim_dt": 0.005,
+    "impl": "warp",
+    "solver_iterations": 8,
+    "solver_ls_iterations": 4,
+    "batch_capacity": 1024
+  },
+  "training": {
+    "num_timesteps": 4194304,
+    "num_envs": 1024,
+    "episode_length": 100,
+    "unroll_length": 16,
+    "batch_size": 256,
+    "num_minibatches": 4,
+    "num_updates_per_batch": 4,
+    "num_evals": 2,
+    "num_eval_envs": 64,
+    "learning_rate": 0.0001,
+    "discounting": 0.99,
+    "gae_lambda": 0.95,
+    "entropy_cost": 0.001,
+    "clipping_epsilon": 0.2,
+    "reward_scaling": 1.0,
+    "normalize_observations": true,
+    "max_grad_norm": 1.0,
+    "action_repeat": 1,
+    "bootstrap_on_timeout": false,
+    "deterministic_eval": true
+  },
+  "network": {
+    "policy_hidden_layer_sizes": [
+      128,
+      128
+    ],
+    "value_hidden_layer_sizes": [
+      128,
+      128
+    ],
+    "policy_obs_key": "state",
+    "value_obs_key": "state"
+  },
+  "resolved_environment": {
+    "action_cost": 0.001,
+    "action_rate_cost": 0.01,
+    "action_repeat": 1,
+    "action_scale": 0.05,
+    "batch_capacity": 1024,
+    "ccd_pairs_per_env": 4,
+    "contacts_per_env": 160,
+    "ctrl_dt": 0.05,
+    "episode_length": 100,
+    "goal_joint_radius": [
+      0.45,
+      0.3,
+      0.35,
+      0.4,
+      0.3,
+      0.4
+    ],
+    "gripper_opening": 0.025,
+    "impl": "warp",
+    "max_constraints_per_env": 512,
+    "nominal_qpos": [
+      0.0,
+      0.7,
+      -0.9,
+      0.0,
+      0.3,
+      0.0
+    ],
+    "reach_scale": 5.0,
+    "reset_joint_noise": 0.05,
+    "sim_dt": 0.005,
+    "solver_iterations": 8,
+    "solver_ls_iterations": 4,
+    "success_distance": 0.03
+  }
+}

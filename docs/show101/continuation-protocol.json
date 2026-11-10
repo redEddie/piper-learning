@@ -1,0 +1,66 @@
+{
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show101/mlp-place-v2-8m/checkpoints/000008388608",
+  "source_lineage_transitions": 58720256,
+  "additional_transitions": 8388608,
+  "target_lineage_transitions": 67108864,
+  "config": "configs/show101/refine-v2-8m.yaml",
+  "config_sha256": "c8ad4c85ce714b58df5e8878418b24dcf6b2dd4aa5b32833e98b589f1169cd18",
+  "code_commit": "9c98226e5df0540b168fa91f8905476a4b347cb6",
+  "source_files_sha256": {
+    "_METADATA": "b76c9842b1ae07f9035e6cc3459ae0899bc525be15af11c50b37af11236dee4d",
+    "_CHECKPOINT_METADATA": "9b6551ab2ac76e4f873a785180c7ed12c9f2ff4abba3b11ec8937a695512183e",
+    "ppo_network_config.json": "1b6fbb2a1d6af682968526f4fdde7377e6e3cf6ed33f8a67b910c4103b9c5ad1",
+    "commit_success.txt": "c4df7c592ce86705d9c9d270863c130f97424f8e14355c48482fece9204da257",
+    "_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+    "manifest.ocdbt": "6fa59e0f39271cd71b3c08a2eacdfa4ed89b314c800758b2e153d1108d53d5c9",
+    "ocdbt.process_0/manifest.ocdbt": "0544fc802e349d236e8151a3e645237cdef4147d2990f1f094a7fa0d1471cf59",
+    "array_metadatas/process_0": "811eb50242ca86394caf8c2b9002119288651cc913975f829b300a6359734085",
+    "d/3e44dadbfb439e54fdd9e9054bb139c8": "f58a1898f43ae06e62eb7ec183a36d1710e2e9123920ca0d7e35b54c845e9b6f",
+    "ocdbt.process_0/d/feacb5688fb45892ef542e9d5d2aa3da": "724e7ca9e09b233818feb6b6f0a52da5dec0e68e1a9cd5f09ae318d235cf0eec",
+    "ocdbt.process_0/d/350054177c307a0e9fb8439d1b641d08": "2e4f53c60a2d14f8244cddf7d81475ea5e6cebfed25a4df26453b6863fdbc269",
+    "ocdbt.process_0/d/d6be02acd4327a18af08507219623ebe": "55d2f52ebe97ed0a83696b8202961a7411b8410ac87c775a45b016bf61df3df9",
+    "ocdbt.process_0/d/00b53c87229850e8874db957f0365091": "391f377c7995edddae27e0c0d357eed7e3290fed88b6cf644f9ce5b6a0d3af4a",
+    "ocdbt.process_0/d/0c73606f076afa03ebc1c52cc2c4f821": "2649256a18fa135e676d2ce3782179616ffbd948fb3f148b40275764b5ca60b4"
+  },
+  "unchanged": [
+    "reward",
+    "reset mixture 30/10/10/50",
+    "1024 environments",
+    "entropy 0.001",
+    "MLP",
+    "3-state gripper",
+    "DLS+QP",
+    "physics and perception randomization"
+  ],
+  "restore_semantics": "policy/value/normalizer restored; upstream checkpoint does not include optimizer or RNG, restarted as in previous refinement",
+  "interim_additional_steps": [
+    2097152,
+    4194304,
+    6291456
+  ],
+  "interim_evaluation": {
+    "seeds": [
+      2026
+    ],
+    "num_envs": 128,
+    "modes": [
+      "empty_hand",
+      "mixed",
+      "preinside"
+    ]
+  },
+  "final_evaluation": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "num_envs": 128,
+    "modes": [
+      "empty_hand",
+      "mixed",
+      "preinside"
+    ]
+  },
+  "real_robot": false
+}

@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-30",
+  "status": "full training/evaluation/videos completed; stage-local50% criterion unmet",
+  "architecture": {
+    "actor": "transformer_lstm",
+    "observation": 49,
+    "token_roles": [
+      "robot25",
+      "cube7",
+      "bowl6",
+      "interaction11"
+    ],
+    "summary_token": true,
+    "transformer_blocks": 2,
+    "token_width": 64,
+    "heads": 4,
+    "feedforward": "SwiGLU128, pre-LayerNorm residual",
+    "temporal": "final LSTM128; (cell,hidden) carried every100ms, reset per episode",
+    "output": "linear14 for7-dimensional tanh-normal action; no hidden MLP after LSTM",
+    "critic": "unchanged privileged66 -> SiLU256 -> SiLU256 -> value1",
+    "parameters": {
+      "actor": 188110,
+      "critic": 83201
+    }
+  },
+  "runtime": {
+    "stack": "existing JAX0.10.2 / Flax Linen0.12.8 / Brax PPO loss",
+    "new_dependencies": false,
+    "actor_inputs": "current actor49 only; attention across current roles, LSTM across time; privileged state never enters actor",
+    "prefix_replay": "real current-episode observation history under current weights and normalizer, detached for TBPTT16",
+    "immutable_task": "same v2 reward/physical parameters, five starts20% each, A completion remains",
+    "initialization": "fresh architecture weights; previous MLP checkpoints preserved and not used to initialize this actor"
+  },
+  "validation": {
+    "unit_tests": "20 passed (recurrent/Transformer/campaign)",
+    "gpu_training": {
+      "actor": "transformer_lstm",
+      "seed": 7,
+      "timesteps": 524288,
+      "elapsed_seconds": 84.20077532401774,
+      "first_iteration_compile_and_execute_seconds": 39.241566882818006,
+      "steady_state_collection_seconds": 34.224465494276956,
+      "steady_state_update_seconds": 8.983996220049448,
+      "steady_state_sps": 10617.179640253056,
+      "policy_l2_change": 1.3891397679286648,
+      "max_initial_log_prob_error": 1.9073486328125e-06,
+      "parameters": {
+        "actor": 188110,
+        "critic": 83201
+      }
+    },
+    "peak_board_gpu_mib": 9273,
+    "controller_failures": 17,
+    "controller_failure_scope": "terminated/reset episodes within524288 random-initialized smoke transitions; not numeric physics errors",
+    "nonfinite": 0,
+    "capacity_overflow": 0,
+    "checkpoint_reload": "same stage evaluator, all five starts x8 worlds x seed2026",
+    "evaluation_physics_errors": 0
+  },
+  "smoke_run": "runs/show103-transformer-lstm-4096-smoke-20261030",
+  "smoke_checkpoint": "runs/show103-transformer-lstm-4096-smoke-20261030/checkpoints/000000524288",
+  "smoke_evaluation": "runs/show103-transformer-lstm-smoke-evaluation-20261030",
+  "smoke_config": "configs/show103/stage-reward-v2-transformer-lstm-smoke.yaml",
+  "full_config": "configs/show103/stage-reward-v2-transformer-lstm-4096-2-4-6-8.yaml",
+  "checkpoint_units": "fresh cumulative2/4/6/8 x8,388,608 transitions; no parent4u",
+  "performance_improvement_demonstrated": false,
+  "real_robot": false,
+  "commands": {
+    "smoke": "scripts/run.sh env PYTHONPATH=src:runtime/src .venv/bin/python -m piper_sim_lab.recurrent_train --config configs/show103/stage-reward-v2-transformer-lstm-smoke.yaml --output runs/UNIQUE_SMOKE --actor transformer_lstm --platform gpu",
+    "full_campaign": "scripts/run.sh env PYTHONPATH=src:runtime/src .venv/bin/python scripts/show103/run_stage_campaign.py --config configs/show103/stage-reward-v2-transformer-lstm-4096-2-4-6-8.yaml --output runs/UNIQUE_CAMPAIGN --artifact-prefix show103-transformer-lstm"
+  },
+  "full_training_started_at_smoke_validation": false,
+  "full_training_authorized": true,
+  "full_run": "runs/show103-transformer-lstm-4096-s7-2-4-6-8u-20261030",
+  "live_status": "runs/show103-transformer-lstm-4096-s7-2-4-6-8u-20261030/campaign.json",
+  "ended_utc": "2026-10-30T08:42:05.819598+00:00",
+  "full_training_completed": true,
+  "result": {
+    "local_success_counts_by_stage": {
+      "1": [
+        383,
+        384,
+        384,
+        384
+      ],
+      "2": [
+        384,
+        384,
+        384,
+        384
+      ],
+      "3": [
+        384,
+        384,
+        384,
+        379
+      ],
+      "4": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "5": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "episodes_per_cell": 384,
+    "settled_then_80mm_clearance_counts": [
+      282,
+      384,
+      384,
+      384
+    ],
+    "a_reached_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "open_requested_over_bowl_episode_counts": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "threshold_met": false,
+    "comparison": "comparison.json/csv",
+    "videos": "videos/{4u,8u}-{initial_a,pre_grasp,held,over_bowl,post_release}-first.mp4",
+    "automatic_candidate": "4u tied with6u on primary local-stage rates; smaller-budget tiebreak, not a successful final policy",
+    "evaluation_nonfinite": 0,
+    "evaluation_overflow": 0,
+    "evaluation_controller_failures": 0
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "common_training_source_sha256": {
+    "pick_place.py": "fce2efea1ce244ad3458452e2ffed069c7f47c45305a20a1b7387ca754f04d6a",
+    "env.py": "cf99189f6b4d8f43a9078ce654bf36f66e62be730f861a66aabcf9bd771d1a36",
+    "tasks.py": "a39fd1c83cbec964b8ce6bf19a68db3e4a4f53d8571c69f160c37296b0abcef3",
+    "wrappers.py": "5ca59ed83251d9ceff6be608d104aeb136eaf083eb77b6232dff2f5f416ae27e",
+    "recurrent.py": "8711cfed5e606d4ba96806c4c0b77b269582c7637c151344c46fd48645ba3397",
+    "recurrent_train.py": "bc70989fad3c3f063da456238bd7036b89db4edcc02db0b2da69ee40646a9daf"
+  },
+  "unit_tests_stdout": ".......                                                                  [100%]\n7 passed in 19.40s\n",
+  "cpu_ppo_smoke": {
+    "actor": "lstm",
+    "seed": 7,
+    "timesteps": 64,
+    "elapsed_seconds": 127.42542322698864,
+    "first_iteration_compile_and_execute_seconds": 85.58472486099345,
+    "steady_state_collection_seconds": 41.45408545999089,
+    "steady_state_update_seconds": 0.01478557102382183,
+    "steady_state_sps": 1.1574947377781428,
+    "policy_l2_change": 0.4224908845457068,
+    "max_initial_log_prob_error": 0.0,
+    "parameters": {
+      "actor": 193294,
+      "critic": 82945
+    }
+  },
+  "cpu_checkpoint_evaluation": {
+    "actor": "lstm",
+    "training_seed": 7,
+    "checkpoint": "/home/jeonchanwook/work/piper-sim-lab-lstm128/runs/lstm128-smoke-cpu-02/checkpoints/000000000064",
+    "train_steps": 64,
+    "reset_distribution": "empty hand; all episodes stage 0",
+    "success_definition": "block centre inside the bowl floor radius, below the rim, not held (inside predicate)",
+    "confidence_interval_scope": "episode-level Wilson; does not quantify training-seed variability",
+    "conditions": [
+      {
+        "condition": "nodr",
+        "episodes": 4,
+        "final_successes": 0,
+        "final_success_rate": 0.0,
+        "wilson_95_interval": [
+          0.0,
+          0.48990002040399916
+        ],
+        "ever_success_rate": 0.0,
+        "failures": 0,
+        "by_seed": [
+          {
+            "condition": "nodr",
+            "seed": 2026,
+            "episodes": 4,
+            "final_successes": 0,
+            "ever_successes": 0,
+            "failures": 0,
+            "final_success_rate": 0.0,
+            "ever_success_rate": 0.0,
+            "elapsed_compile_and_rollout_seconds": 54.228333657985786,
+            "final_success_per_episode": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "ever_success_per_episode": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "valid_per_episode": [
+              true,
+              true,
+              true,
+              true
+            ]
+          }
+        ],
+        "environment": {
+          "action_cost": 0.001,
+          "action_delay_max": 0.05,
+          "action_rate_cost": 0.01,
+          "action_repeat": 1,
+          "batch_capacity": 4,
+          "block_friction_scale": 0.1,
+          "block_half": 0.025,
+          "block_mass": 0.08,
+          "block_mass_range": [
+            0.064,
+            0.096
+          ],
+          "block_rgba": [
+            0.1,
+            0.8,
+            0.2,
+            1.0
+          ],
+          "block_x": [
+            0.25,
+            0.4
+          ],
+          "block_y": [
+            -0.15,
+            -0.02
+          ],
+          "bowl_arm_collision": true,
+          "bowl_floor": 0.004,
+          "bowl_height": 0.05,
+          "bowl_r_bottom": 0.055,
+          "bowl_r_rim": 0.075,
+          "bowl_segments": 12,
+          "bowl_wall": 0.004,
+          "bowl_x": [
+            0.25,
+            0.35
+          ],
+          "bowl_y": [
+            0.12,
+            0.2
+          ],
+          "ccd_pairs_per_env": 16,
+          "contacts_per_env": 384,
+          "ctrl_dt": 0.1,
+          "episode_length": 80,
+          "grasp_distance": 0.02,
+          "gripper_binary": true,
+          "gripper_force": 3.0,
+          "gripper_gain_scale": [
+            0.8,
+            1.25
+          ],
+          "gripper_kp": 400.0,
+          "gripper_max": 0.035,
+          "gripper_rate": 0.01,
+          "ik_damping": 0.05,
+          "impl": "jax",
+          "inside_reward": 5.0,
+          "jacobian": "mjx",
+          "lift_height": 0.02,
+          "lift_reset_height": 0.08,
+          "max_ang_vel": 1.0,
+          "max_constraints_per_env": 1024,
+          "max_joint_vel": 1.5,
+          "max_lin_vel": 0.1,
+          "max_target_lag": 0.15,
+          "nominal_qpos": [
+            0.0,
+            1.743,
+            -1.087,
+            0.0,
+            1.002,
+            0.0
+          ],
+          "obj_pos_noise": 0.01,
+          "obj_pos_noise_cap": 0.03,
+          "obj_pose_delay_max": 0.15,
+          "obj_rot_noise": 5.0,
+          "obs_randomization": false,
+          "physics_randomization": false,
+          "pregrasp_height": 0.03,
+          "preinside_height": 0.03,
+          "reach_scale": 5.0,
+          "release_bonus": 2.0,
+          "reset_joint_noise": 0.05,
+          "reset_stage_probs": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reset_table_grid": 4,
+          "reset_table_yaws": 8,
+          "robot_state_delay_max": 0.05,
+          "sim_dt": 0.005,
+          "size_noise": 0.1,
+          "size_obs": true,
+          "solver_iterations": 8,
+          "solver_ls_iterations": 20,
+          "stage_obs": false,
+          "static_pos_noise": 0.005,
+          "static_pos_noise_cap": 0.015,
+          "table_friction_range": [
+            0.3,
+            0.6
+          ],
+          "task": "pick_place"
+        }
+      }
+    ]
+  }
+}

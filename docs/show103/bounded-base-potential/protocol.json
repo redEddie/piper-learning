@@ -1,0 +1,70 @@
+{
+  "status": "Validated reward; fresh training preflight scheduled",
+  "candidate_config": "configs/show103/qp-v1-a5-j100-bounded-base.yaml",
+  "preserved_run": "runs/show103/qp-v1-a5-j100-fresh-50m",
+  "decisions": {
+    "base_reward": "Replace repeated state scores with discounted best-score potential; no repayment for returning to an old score.",
+    "potential_max": 4.0,
+    "discount": 0.99,
+    "terminal_potential": 0.0,
+    "event_caps": {
+      "progress": 3.0,
+      "dwell": 1.0,
+      "release": 2.0,
+      "landing": 2.0,
+      "withdrawal": 3.0
+    },
+    "episode_net_reward_upper_bound": 11.0,
+    "unfinished_cost": "same XY/height formula interpreted per second; integrate ctrl_dt=0.1, including task-failure minimum/tail",
+    "action_and_action_rate_costs": "unchanged",
+    "impact_and_recontact_costs": "unchanged",
+    "controller_limits": {
+      "velocity": 1.0,
+      "acceleration": 5.0,
+      "jerk": 100.0
+    },
+    "action_scales": {
+      "linear_per_axis_m_s": 0.1,
+      "angular_per_axis_rad_s": 0.5
+    },
+    "initialization_probs": [
+      0.4,
+      0.2,
+      0.2,
+      0.2
+    ]
+  },
+  "validation": {
+    "cpu_tests": 54,
+    "gpu_fixed_action_transitions": 15360,
+    "audit": "audit.json",
+    "physics_and_resets": "task-failure/integration.json",
+    "evaluator_smoke": "runs/show103/bounded-gripper-metrics-smoke/evaluation.json"
+  },
+  "gripper_diagnosis": {
+    "recording": "runs/show103/qp-v1-a5-j100-final-video",
+    "scope": "first four seed2026 cases per initialization; frozen deterministic policy",
+    "empty_hand": {
+      "steps": 480,
+      "move_steps": 480,
+      "close_requests": 0
+    },
+    "grasp": {
+      "steps": 800,
+      "move_steps": 800,
+      "open_requests": 0,
+      "close_requests": 800
+    },
+    "interpretation": "No opposite goal request was issued in these cases; coordinator is in MOVE and does not reject an opposite request. Training effects of serialized arm/gripper coordination are not isolated."
+  },
+  "limitations": [
+    "Synthetic paths establish accounting/incentive ordering, not feasibility or convergence.",
+    "Repricing frozen trajectories is not a newly learned success rate.",
+    "Net reward upper bound does not bound individual negative costs or guarantee critic gradient balance."
+  ],
+  "training": false,
+  "real_robot": false,
+  "plane_modified": false,
+  "planned_run": "runs/show103/qp-v1-a5-j100-bounded-fresh-50m",
+  "planned_training_steps": 50331648
+}

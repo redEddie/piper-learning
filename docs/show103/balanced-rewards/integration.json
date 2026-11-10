@@ -1,0 +1,47 @@
+{
+  "environments": 64,
+  "policy_transitions": 15360,
+  "reset_events": 64,
+  "max_reference_jerk": 300.0000305175781,
+  "max_reference_speed": 0.03899804875254631,
+  "max_reference_acceleration": 3.0,
+  "max_reference_speed_during_grip": 0.03637911006808281,
+  "controller_failed_transitions": 0,
+  "failure_codes": [
+    0.0
+  ],
+  "operations_completed": 979.0,
+  "rejected_proposals": 0.0,
+  "nonfinite": 0.0,
+  "overflow": 0.0,
+  "reset_backup_error": 0.0,
+  "elapsed_seconds": 29.275640688021667,
+  "training": false,
+  "real_robot": false,
+  "failed_events": [],
+  "near_reset_policy_steps": 240,
+  "near_table": {
+    "accepted": 51,
+    "rejected": {
+      "ik": 0,
+      "collision": 0,
+      "grasp": 0
+    },
+    "requested_height_range_m": [
+      0.03,
+      0.05
+    ]
+  },
+  "near_reset_slots": 1,
+  "placement_bad_initial_credit": 0.0,
+  "reset_stage_probs": [
+    0.4,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "conditional_near_fraction": 0.25,
+  "max_reference_speed_while_locked": 0.0,
+  "max_reference_speed_during_any_grip": 0.03637911006808281,
+  "task": "controlled_release"
+}

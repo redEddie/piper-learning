@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "elapsed_seconds": 166.66267229699952,
+  "policy_changed": true,
+  "policy_changes": [
+    {
+      "steps": 0,
+      "policy_l2_change": 0.0
+    },
+    {
+      "steps": 4194304,
+      "policy_l2_change": 3.646119633797921
+    },
+    {
+      "steps": 8388608,
+      "policy_l2_change": 5.502259233075597
+    },
+    {
+      "steps": 12582912,
+      "policy_l2_change": 7.411726689166054
+    },
+    {
+      "steps": 16777216,
+      "policy_l2_change": 8.09227753651925
+    }
+  ],
+  "checkpoint_semantics": "policy, value, observation normalizer; warm-start resets optimizer/RNG",
+  "metrics": {
+    "eval/walltime": 21.986188411712646,
+    "training/sps": 149699.01128487324,
+    "training/walltime": 136.7516655921936,
+    "training/entropy_loss": 0.008961696177721024,
+    "training/kl_mean": 0.016526514664292336,
+    "training/learning_rate": 0.00029999998514540493,
+    "training/policy_dist_max_loc": 1.4501280784606934,
+    "training/policy_dist_max_std": 0.42593079805374146,
+    "training/policy_dist_mean_loc": -0.0330793634057045,
+    "training/policy_dist_mean_std": 0.062030792236328125,
+    "training/policy_dist_min_loc": -1.3507905006408691,
+    "training/policy_dist_min_std": 0.017751242965459824,
+    "training/policy_loss": 0.005253409035503864,
+    "training/total_loss": 0.045007552951574326,
+    "training/v_loss": 0.03079245053231716,
+    "eval/episode_action_penalty": 0.016439031809568405,
+    "eval/episode_action_rate_penalty": 0.04993551969528198,
+    "eval/episode_capacity_overflow": 0.0,
+    "eval/episode_distance": 3.1979777812957764,
+    "eval/episode_nonfinite": 0.0,
+    "eval/episode_reward": 84.34957122802734,
+    "eval/episode_reward_reach": 84.41594696044922,
+    "eval/episode_success": 59.203125,
+    "eval/episode_action_penalty_std": 0.009994754567742348,
+    "eval/episode_action_rate_penalty_std": 0.024568190798163414,
+    "eval/episode_capacity_overflow_std": 0.0,
+    "eval/episode_distance_std": 1.654945969581604,
+    "eval/episode_nonfinite_std": 0.0,
+    "eval/episode_reward_std": 7.903265476226807,
+    "eval/episode_reward_reach_std": 7.897304058074951,
+    "eval/episode_success_std": 41.96992111206055,
+    "eval/avg_episode_length": 100.0,
+    "eval/std_episode_length": 0.0,
+    "eval/epoch_eval_time": 0.5160655975341797,
+    "eval/sps": 12401.524206573602
+  }
+}

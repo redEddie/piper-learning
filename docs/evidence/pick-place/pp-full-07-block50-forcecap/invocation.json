@@ -1,0 +1,5 @@
+{
+  "config": "/home/jeonchanwook/work/piper-sim-lab/configs/pick_place.yaml",
+  "platform": "gpu",
+  "warm_start": null
+}

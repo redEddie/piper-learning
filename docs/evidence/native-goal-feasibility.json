@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "scope": "Native MuJoCo CPU feasibility diagnostic; privileged goal-joint controller, not learned-policy evaluation or Warp validation",
+  "model_source": "Bundled Menagerie agilex_piper scene.xml at 62ab00f2bc44f6f20c1c9b7a13f3fb1dd41a4e35",
+  "mujoco_version": "3.16.0",
+  "rng": "numpy.random.default_rng(2026)",
+  "num_goals": 64,
+  "nominal_qpos": [0.0, 0.7, -0.9, 0.0, 0.3, 0.0],
+  "initial_joint_uniform_noise_rad": 0.05,
+  "goal_joint_radius_rad": [0.45, 0.3, 0.35, 0.4, 0.3, 0.4],
+  "target_method": "Forward kinematics at sampled goal joints; goals clipped to actuator limits",
+  "tcp_link6_local_m": [0.0, 0.0, 0.09003],
+  "finger_initial_qpos_m": [0.025, -0.025],
+  "finger_ctrl_m": 0.025,
+  "controller": "Each control step adds clip(goal_qpos-current_ctrl,-0.05,0.05) to six arm controls; controller receives privileged goal joint coordinates",
+  "control_steps": 100,
+  "physics_substeps_per_control_step": 10,
+  "sim_dt_s": 0.005,
+  "solver_iterations": 8,
+  "solver_ls_iterations": 4,
+  "initial_mean_distance_m": 0.11692445633686016,
+  "final_mean_distance_m": 0.00003421958439140339,
+  "final_max_distance_m": 0.0000644490775823567,
+  "final_success_rate_at_0_03_m": 1.0,
+  "target_z_range_m": [0.1826331007731607, 0.5883887290720916],
+  "max_contact_count": 0,
+  "final_max_joint_tracking_error_rad": 0.0003575937608762958,
+  "limitations": [
+    "These 64 samples establish feasibility for the sampled cases, not all possible goals or control paths.",
+    "No policy learning or policy inference was involved.",
+    "Native CPU simulation does not independently validate GPU Warp behavior."
+  ]
+}

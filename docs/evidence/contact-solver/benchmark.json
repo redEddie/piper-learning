@@ -1,0 +1,59 @@
+{
+  "backend": "MJX-Warp",
+  "num_envs": 256,
+  "control_steps_per_call": 16,
+  "physics_steps_per_control": 20,
+  "policy_dt": 0.1,
+  "physics_dt": 0.005,
+  "repeats": 9,
+  "warmup_calls_per_variant": 3,
+  "warmup_seconds_excluded": {
+    "4": 2.446802596008638,
+    "20": 2.3131768550083507
+  },
+  "seconds_per_call": {
+    "4": [
+      0.2710407349950401,
+      0.30544861700036563,
+      0.30542136600706726,
+      0.3356816540035652,
+      0.29074057399702724,
+      0.2697580459935125,
+      0.27237893801066093,
+      0.25575194899283815,
+      0.25096583299455233
+    ],
+    "20": [
+      0.3008210130064981,
+      0.3045185590017354,
+      0.3057981449965155,
+      0.3252049370057648,
+      0.2847660520055797,
+      0.2692134860117221,
+      0.2606626210035756,
+      0.2572343530046055,
+      0.2493332660087617
+    ]
+  },
+  "median_seconds": {
+    "4": 0.27237893801066093,
+    "20": 0.2847660520055797
+  },
+  "increase_percent": 4.547750308958887,
+  "paired_median_increase_percent": -0.30448918307890427,
+  "paired_ratio_q25_q75": [
+    0.9794506769065241,
+    1.001233636645576
+  ],
+  "env_control_steps_per_second": {
+    "4": 15037.873449083212,
+    "20": 14383.737004998557
+  },
+  "source_sha256": "e21f370683af14beb3f59bcdb99292162a8e834dce152fe38f6a3435e02042b3",
+  "scope": "task.step including IK, physics and reward; held-block state; no PPO optimization, perception or rendering; actual full training slowdown is not measured",
+  "mean_seconds": {
+    "4": 0.28413196799940327,
+    "20": 0.2841724924494176
+  },
+  "mean_increase_percent": 0.01426254507708169
+}

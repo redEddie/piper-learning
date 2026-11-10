@@ -1,0 +1,28 @@
+[
+  {
+    "report": "empty_hand-s2028",
+    "scene": 92,
+    "time_seconds": 8.525,
+    "reason": 128,
+    "phase": 2,
+    "accepted_goal_mm": 0.0,
+    "actuated_goal_mm": 0.0,
+    "width_mm": 46.7126579284668,
+    "width_range_last100ms_mm": 0.6936043500900269,
+    "arm_ref_speed": 0.0,
+    "actual_arm_speed": 0.0030787712894380093
+  },
+  {
+    "report": "mixed-s2028",
+    "scene": 92,
+    "time_seconds": 8.525,
+    "reason": 128,
+    "phase": 2,
+    "accepted_goal_mm": 0.0,
+    "actuated_goal_mm": 0.0,
+    "width_mm": 46.71824645996094,
+    "width_range_last100ms_mm": 0.6933659315109253,
+    "arm_ref_speed": 0.0,
+    "actual_arm_speed": 0.0030789412558078766
+  }
+]

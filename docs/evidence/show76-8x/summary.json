@@ -1,0 +1,67 @@
+{
+  "selected_policy": "show76-v1-mlp",
+  "actor": "mlp",
+  "training_seed": 7,
+  "independent_training_repetitions": 1,
+  "cumulative_training_steps": 134217728,
+  "checkpoint_phase_steps": 83886080,
+  "evaluation_seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "num_envs_per_seed": 128,
+  "episode_control_steps": 80,
+  "evaluation_reset_stage_probs": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "training_reset_stage_probs": [
+    0.5,
+    0.2,
+    0.2,
+    0.1
+  ],
+  "final_success_counts": {
+    "dr": 371,
+    "nodr": 324
+  },
+  "ever_success_counts": {
+    "dr": 376,
+    "nodr": 333
+  },
+  "episodes_per_mode": 384,
+  "code_commit": "b40fa4df0c8ef301421edab65250f9e3ed70037a",
+  "archive_sha256": "125ecf7df4daa4bf311667d34f5f5e5163f4319b5c7c1393db4d4674fc7c4c85",
+  "weights_sha256": "087abda903449401c553f6e57bbb48d7e555a05e33292bb5e86b6d1dbb11670a",
+  "thor_validation": {
+    "status": "passed",
+    "raw_checkpoint_files": 13,
+    "file_verification": {
+      "status": "verified",
+      "files": 138
+    },
+    "policy_max_action_abs_error": 1.039355993270874e-06,
+    "kinematics_states": 100,
+    "max_tcp_error_m": 2.220446049250313e-16,
+    "max_jacobian_error": 2.220446049250313e-16,
+    "policy_only_latency_ms": {
+      "count": 10000,
+      "p50": 0.05463,
+      "p95": 0.056149,
+      "p99": 0.0595,
+      "max": 0.080815,
+      "mean": 0.0547340082
+    },
+    "hardware_commands_sent": false,
+    "activated": false
+  },
+  "scope": "Simulation task success; native Thor inference validation is not physical closed-loop validation",
+  "limitations": [
+    "One training seed",
+    "Evaluation seeds reused for selection; no fresh final holdout",
+    "Motion smoothness not measured"
+  ]
+}

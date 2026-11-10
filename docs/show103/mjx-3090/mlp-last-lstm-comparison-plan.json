@@ -1,0 +1,23 @@
+{
+  "plane_issue": "SHOW-108",
+  "plane_issue_id": "a4da68fd-c614-4b00-acb8-b2441139386c",
+  "status": "completed",
+  "actor_proposal": "SiLU MLP encoder -> final LSTM128 -> linear14; encoder output64 to keep LSTM interface",
+  "legacy_actor_lstm": "LSTM128 -> LayerNorm -> MLP256x256 -> linear14; not the proposed comparator",
+  "baseline_stage_success": [
+    1,
+    1,
+    1,
+    1,
+    0.20572916666666666
+  ],
+  "baseline_full_from_initial_a": 0.5208333333333334,
+  "baseline_post_release_final_error_median_deg": 16.072965621948242,
+  "controlled_comparison_note": "Historical16u Transformer used v2/v3/v5. For causal architecture comparison, initialize both actors fresh under identical finalv5 rewards and budgets. Fix budget/seeds/equivalence tolerance before running.",
+  "description_html": "<h2>목적</h2><p>SHOW-103 누적16배 Transformer+LSTM 결과를 기준으로, MLP 인코더+마지막 LSTM으로 유사한 수행 성능을 얻을 수 있는지 확인한다. GitHub/Plane 결과 정리 이후 진행하는 후속 검증이며 아직 학습을 시작하지 않았다.</p><h2>기준 결과</h2><p>①~④ 스테이지 내 성공률 각384/384(100%), ⑤79/384(20.6%), ①에서 전체 완료200/384(52.1%), ⑤ 최종 최대 A 관절 오차 중앙값16.1°. RTX3090·4096환경·다섯 초기화 각20%, actor49/critic66/action7, v5 보상, 20초 평가다.</p><h2>비교할 구조</h2><ul><li>대조군: 역할 토큰+Transformer 2블록(64폭/4head/SwiGLU128) → 마지막 LSTM128 → 선형14.</li><li>시험군: 평탄한 관측의 SiLU MLP 인코더 → 마지막 LSTM128 → 선형14. LSTM 입력 폭64를 맞추는 구성을 우선 검토하고 총 파라미터 수를 함께 기록한다. Critic MLP256×256은 동일하게 유지한다.</li><li><strong>기존 --actor lstm은 LSTM128→LayerNorm→MLP256×256→선형14이므로 위 시험군과 다르다.</strong> 기존 정책/로더를 보존하고 새 구조는 별도 이름으로 구현·검증해야 한다.</li><li>Transformer 체크포인트를 형태가 다른 MLP 정책에 복원하지 않는다. 비교 모델의 정책·가치망은 새로 초기화한다.</li></ul><h2>동일하게 유지할 것</h2><ul><li>v5 보상·완료 조건·DLS/QP·그리퍼 개폐와 탐색 scale 최소항(팔0.25/그리퍼0.5).</li><li>4096환경, 초기화 각20%, 위치 랜덤화·동역학 DR·독립 train/eval reset bank.</li><li>관측·행동·정규화·현재 episode prefix 재생·TBPTT16·PPO 하이퍼파라미터.</li><li>비교할 학습량과 평가 시드, 조건부 초기화별3seed×128회 평가. 추가2배 단위로 보존하며 단계별 성공률·전체 완료율·A 오차·비디오·속도/메모리를 함께 기록한다.</li></ul><h2>공정한 비교를 위한 주의</h2><p>기존 Transformer 누적16배는 처음8배의 v2, 추가2배의 v3, 이후6배의 v5를 거쳤다. 최종 v5로 처음부터 학습한 MLP와 이것만 비교하면 구조 효과와 학습 이력이 섞인다. 현재16배는 실용적인 재현 목표로 두되, 구조 자체를 비교하려면 Transformer와 MLP+LSTM을 모두 동일 v5·같은 학습량·초기화에서 새로 학습하는 대조 실험을 별도로 둔다. 본학습 예산/반복 seed/성능 허용차는 실행 전에 명시한다.</p><h2>완료 기준</h2><ol><li>현재 Transformer 정책과 원본 체크포인트를 보존한다.</li><li>새 MLP 인코더+마지막 LSTM의 reset·prefix 재생·PPO 수집/시퀀스 확률·체크포인트 재로딩 검사를 통과한다.</li><li>동일 조건의 단계별 성공률과 A 최종/최소 오차, 전체 완료율, GPU 시간·메모리·파라미터 수를 표와 영상으로 비교한다.</li><li>한 번의 점추정만으로 동일 성능을 단정하지 않고, 사전 정의한 허용차와 평가 불확실성을 함께 기록한다.</li></ol><p>원본 실험 SHOW-103<br>보상 설계 교훈 SHOW-107<br><a href=\"https://github.com/redEddie/piper-sim-lab/tree/codex/show103-mjx-3090\">기준 코드 브랜치</a></p>",
+  "implementation_actor_kind": "mlp_lstm",
+  "active_protocol": "docs/show108/experiment.json",
+  "approved_units_per_fresh_actor": 16,
+  "comparison_results": "docs/show108/matched-comparison.json",
+  "conclusion": "In this matched final-v5 seed7 run, MLP+lastLSTM meets the practical target and outperforms fresh Transformer control; not a multi-training-seed architecture claim."
+}

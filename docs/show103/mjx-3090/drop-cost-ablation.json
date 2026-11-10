@@ -1,0 +1,146 @@
+{
+  "experiment": "invalid-release-direct-cost-ablation",
+  "status": "validated_ready_to_launch",
+  "user_decision": "Remove direct drop penalty and train; reconsider further reward changes after observing results",
+  "hypothesis": "The explicit negative first-drop cost may suppress OPEN exploration; this is not yet a demonstrated cause",
+  "single_reward_change": {
+    "setting": "environment.five_start_drop_weight",
+    "before": 0.5,
+    "after": 0.0
+  },
+  "preserved": [
+    "immediate invalid-release/outside-drop terminal and reset",
+    "qualified low release conditions and reward",
+    "A return completion",
+    "other shaping and costs",
+    "4096 environments",
+    "five reset groups at 20%",
+    "dynamics and position randomization",
+    "Transformer+LSTM architecture"
+  ],
+  "not_added": [
+    "holding time penalty",
+    "new A progress shaping",
+    "new bowl collision cost"
+  ],
+  "parent": "runs/show103-transformer-lstm-4096-s7-2-4-6-8u-20261030/training/checkpoints/000067108864",
+  "continuation": {
+    "additional_units": 2,
+    "additional_transitions": 16777216,
+    "cumulative_units": 10,
+    "restored": [
+      "policy",
+      "value",
+      "normalizer",
+      "optimizer",
+      "rng"
+    ],
+    "simulator": "fresh episodes and empty carry"
+  },
+  "config": "configs/show103/stage-reward-v2-transformer-lstm-no-drop-cost-plus2.yaml",
+  "run": "runs/show103-transformer-lstm-no-drop-cost-from8u-plus2u-20261030",
+  "evaluation": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_start": 384,
+    "metrics": [
+      "stage-local success",
+      "OPEN-command episodes including first failing interval",
+      "invalid-release episodes",
+      "qualified release",
+      "full completion"
+    ],
+    "videos": "first scene from seed2026 for each of five initializations"
+  },
+  "interpretation_limits": [
+    "No direct cost does not remove foregone future reward on failure termination",
+    "Only one training seed; continuation is an exploratory ablation without a matched equal-budget control",
+    "An already trained holding policy may need further exploration; failure to improve does not prove drop cost irrelevant"
+  ],
+  "validation": {
+    "unit_tests": "30 passed; outputs/show103-no-drop-cost-tests.txt",
+    "gpu_failure_reset": {
+      "status": "passed",
+      "worlds": 128,
+      "steps": 10,
+      "terminal_resets": 384,
+      "drop_weight": 0.0,
+      "terminal_reward_range": [
+        -0.0010000000474974513,
+        -0.0010000000474974513
+      ],
+      "action": "stationary arm, rate-limited OPEN at125mm",
+      "records": [
+        {
+          "step": 1,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 2,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 3,
+          "newly_reset": 128,
+          "terminal_task_failure": 1.0
+        },
+        {
+          "step": 4,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 5,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 6,
+          "newly_reset": 128,
+          "terminal_task_failure": 1.0
+        },
+        {
+          "step": 7,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 8,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        },
+        {
+          "step": 9,
+          "newly_reset": 128,
+          "terminal_task_failure": 1.0
+        },
+        {
+          "step": 10,
+          "newly_reset": 0,
+          "terminal_task_failure": 0.0
+        }
+      ],
+      "verified": "terminal done/episode metrics retained; physical state and reward memory already fresh on the same transition",
+      "training": false,
+      "real_robot": false
+    },
+    "parent_full_learner_restore": {
+      "status": "passed",
+      "parent_steps": 67108864,
+      "optimizer_count": 65536,
+      "logit_max_abs_error": 0.0,
+      "restored": [
+        "policy",
+        "value",
+        "normalizer",
+        "optimizer",
+        "rng"
+      ]
+    }
+  }
+}

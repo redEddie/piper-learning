@@ -1,0 +1,322 @@
+{
+  "random_initialization": true,
+  "restored_checkpoint": null,
+  "training_status": "passed",
+  "real_robot": false,
+  "configuration": "configs/show103/balanced-fresh-16m.yaml",
+  "definitions": {
+    "basic": "Final original geometric inside predicate; control/physics faults count as failure.",
+    "controlled": "Final qualified first release at TCP50-60mm, floor contact+relative speed<=20mm/s for100ms, no recontact, clearance80mm for200ms.",
+    "rates": "Full-episode outcomes from each initialization; not isolated stage skill rates.",
+    "qualification": "First release geometry/velocity qualification; later recontact may still invalidate final goal."
+  },
+  "points": [
+    {
+      "transitions": 4194304,
+      "evaluation": "interim-4194304",
+      "conditions": {
+        "empty_hand": {
+          "episodes": 128,
+          "final_successes": 0,
+          "final_success_rate": 0.0,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 3,
+          "floor_contact_episodes": 3,
+          "failures": {
+            "approach": 113,
+            "grasp_lift": 6,
+            "held_start_lost": 0,
+            "transport": 2,
+            "place_release": 0,
+            "completion_lost": 0,
+            "controller": 7,
+            "physics": 0
+          }
+        },
+        "near": {
+          "episodes": 128,
+          "final_successes": 0,
+          "final_success_rate": 0.0,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 0,
+          "floor_contact_episodes": 0,
+          "failures": {
+            "approach": 0,
+            "grasp_lift": 0,
+            "held_start_lost": 0,
+            "transport": 0,
+            "place_release": 128,
+            "completion_lost": 0,
+            "controller": 0,
+            "physics": 0
+          }
+        }
+      }
+    },
+    {
+      "transitions": 8388608,
+      "evaluation": "interim-8388608",
+      "conditions": {
+        "empty_hand": {
+          "episodes": 128,
+          "final_successes": 1,
+          "final_success_rate": 0.0078125,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 6,
+          "floor_contact_episodes": 2,
+          "failures": {
+            "approach": 58,
+            "grasp_lift": 23,
+            "held_start_lost": 0,
+            "transport": 22,
+            "place_release": 17,
+            "completion_lost": 0,
+            "controller": 7,
+            "physics": 0
+          }
+        },
+        "near": {
+          "episodes": 128,
+          "final_successes": 0,
+          "final_success_rate": 0.0,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 0,
+          "floor_contact_episodes": 0,
+          "failures": {
+            "approach": 0,
+            "grasp_lift": 0,
+            "held_start_lost": 0,
+            "transport": 0,
+            "place_release": 128,
+            "completion_lost": 0,
+            "controller": 0,
+            "physics": 0
+          }
+        }
+      }
+    },
+    {
+      "transitions": 12582912,
+      "evaluation": "interim-12582912",
+      "conditions": {
+        "empty_hand": {
+          "episodes": 128,
+          "final_successes": 4,
+          "final_success_rate": 0.03125,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 10,
+          "floor_contact_episodes": 6,
+          "failures": {
+            "approach": 15,
+            "grasp_lift": 34,
+            "held_start_lost": 0,
+            "transport": 35,
+            "place_release": 36,
+            "completion_lost": 0,
+            "controller": 4,
+            "physics": 0
+          }
+        },
+        "near": {
+          "episodes": 128,
+          "final_successes": 0,
+          "final_success_rate": 0.0,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 0,
+          "floor_contact_episodes": 0,
+          "failures": {
+            "approach": 0,
+            "grasp_lift": 0,
+            "held_start_lost": 0,
+            "transport": 0,
+            "place_release": 128,
+            "completion_lost": 0,
+            "controller": 0,
+            "physics": 0
+          }
+        }
+      }
+    },
+    {
+      "transitions": 16777216,
+      "evaluation": "final-16m",
+      "conditions": {
+        "empty_hand": {
+          "episodes": 384,
+          "final_successes": 12,
+          "final_success_rate": 0.03125,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 37,
+          "floor_contact_episodes": 17,
+          "failures": {
+            "approach": 26,
+            "grasp_lift": 106,
+            "held_start_lost": 0,
+            "transport": 46,
+            "place_release": 192,
+            "completion_lost": 0,
+            "controller": 2,
+            "physics": 0
+          }
+        },
+        "mixed": {
+          "episodes": 384,
+          "final_successes": 7,
+          "final_success_rate": 0.018229166666666668,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 16,
+          "floor_contact_episodes": 9,
+          "failures": {
+            "approach": 14,
+            "grasp_lift": 34,
+            "held_start_lost": 0,
+            "transport": 31,
+            "place_release": 298,
+            "completion_lost": 0,
+            "controller": 0,
+            "physics": 0
+          }
+        },
+        "preinside": {
+          "episodes": 384,
+          "final_successes": 0,
+          "final_success_rate": 0.0,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 0,
+          "floor_contact_episodes": 0,
+          "failures": {
+            "approach": 0,
+            "grasp_lift": 0,
+            "held_start_lost": 0,
+            "transport": 0,
+            "place_release": 384,
+            "completion_lost": 0,
+            "controller": 0,
+            "physics": 0
+          }
+        },
+        "near": {
+          "episodes": 384,
+          "final_successes": 0,
+          "final_success_rate": 0.0,
+          "gentle_final_successes": 0,
+          "gentle_final_success_rate": 0.0,
+          "controlled_final_successes": 0,
+          "controlled_final_success_rate": 0.0,
+          "qualified_releases": 0,
+          "qualified_release_rate": 0.0,
+          "recontact_episodes": 0,
+          "floor_contact_episodes": 0,
+          "failures": {
+            "approach": 0,
+            "grasp_lift": 0,
+            "held_start_lost": 0,
+            "transport": 0,
+            "place_release": 384,
+            "completion_lost": 0,
+            "controller": 0,
+            "physics": 0
+          }
+        }
+      }
+    }
+  ],
+  "training_metrics": [
+    {
+      "steps": 0,
+      "elapsed_seconds": 87.98160878091585,
+      "eval/episode_reward": 169.3871307373047,
+      "eval/episode_coord_reference_fault": 0.0,
+      "eval/episode_controlled_success": 0.0
+    },
+    {
+      "steps": 4194304,
+      "elapsed_seconds": 575.9553513679421,
+      "training/sps": 9473.15472762916,
+      "training/v_loss": 19.147430419921875,
+      "training/policy_loss": -0.0023163913283497095,
+      "training/kl_mean": 0.04053385555744171,
+      "eval/episode_reward": 229.55038452148438,
+      "eval/episode_coord_reference_fault": 0.0,
+      "eval/episode_controlled_success": 0.0
+    },
+    {
+      "steps": 8388608,
+      "elapsed_seconds": 1085.1624414629769,
+      "training/sps": 9085.292599274264,
+      "training/v_loss": 17.955490112304688,
+      "training/policy_loss": -0.0068267276510596275,
+      "training/kl_mean": 0.015264616347849369,
+      "eval/episode_reward": 401.7545166015625,
+      "eval/episode_coord_reference_fault": 0.0,
+      "eval/episode_controlled_success": 0.0
+    },
+    {
+      "steps": 12582912,
+      "elapsed_seconds": 1564.751954782987,
+      "training/sps": 9740.213240643066,
+      "training/v_loss": 22.916732788085938,
+      "training/policy_loss": -0.007368267513811588,
+      "training/kl_mean": 0.01734844595193863,
+      "eval/episode_reward": 422.0147705078125,
+      "eval/episode_coord_reference_fault": 0.0,
+      "eval/episode_controlled_success": 0.0
+    },
+    {
+      "steps": 16777216,
+      "elapsed_seconds": 2015.692642299924,
+      "training/sps": 9498.98444927777,
+      "training/v_loss": 21.480695724487305,
+      "training/policy_loss": -0.00784660317003727,
+      "training/kl_mean": 0.017962612211704254,
+      "eval/episode_reward": 445.048583984375,
+      "eval/episode_coord_reference_fault": 0.0,
+      "eval/episode_controlled_success": 0.0
+    }
+  ]
+}

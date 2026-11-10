@@ -1,0 +1,258 @@
+{
+  "status": "passed",
+  "formula": "Phi=episode-record max(clip(raw_state_score,0,4)); F=.99*Phi_next-Phi_previous; Phi_reset=Phi_terminal=0. Replace repeated raw state score with F.",
+  "upper_bound": "Positive shaping increments <=4; one-shot events <=11; undiscounted episode NET reward <=11, because total shaping <=0 and all retained costs are nonnegative.",
+  "notes": [
+    "Same frozen trajectories repriced; this does not predict the newly trained policy.",
+    "Synthetic scenarios use production5ms event and100ms reward functions, not physical rollouts.",
+    "Unfinished XY/height cost is a per-second rate integrated over100ms (0.1x per step), including failure min and tail. Other action/contact costs are retained. Large negative costs remain possible.",
+    "True termination cancels potential at finite horizon, task failure and controller interruption.",
+    "No reward for leaving and returning to an already recorded score; existing action/action-rate penalties retained."
+  ],
+  "checks": {
+    "complete_beats_wait": true,
+    "fast_beats_late": true,
+    "late_beats_wait": true,
+    "alignment_beats_far_wait": true,
+    "lowering_beats_aligned_wait": true,
+    "xy_roundtrip_no_gain": true,
+    "height_roundtrip_no_gain": true,
+    "positive_increment_budget": true,
+    "net_total_upper_bound": true,
+    "shaping_terminal_accounting": true
+  },
+  "synthetic": {
+    "far_wait": {
+      "old_total": -182.84840995089218,
+      "new_total": -72.96404266357422,
+      "old_discounted": -79.18088961165515,
+      "new_discounted": -29.46461355947013,
+      "shaping_discounted": 1.9939251520505012e-06,
+      "positive_shaping_sum": 2.4531750679016113,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.0,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "align_only": {
+      "old_total": 330.55075582564666,
+      "new_total": -31.135408401489258,
+      "old_discounted": 132.87955211752995,
+      "new_discounted": -11.713549767139062,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.024420607835054398,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "align_lower_wait": {
+      "old_total": 427.5447749165626,
+      "new_total": -17.866554260253906,
+      "old_discounted": 166.3189280403978,
+      "new_discounted": -6.085836612733649,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 0.0,
+        "progress": 2.9999990463256836,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "complete": {
+      "old_total": 788.2826080588433,
+      "new_total": -5.413991928100586,
+      "old_discounted": 270.111620878894,
+      "new_discounted": -0.9708336321759804,
+      "shaping_discounted": 2.718698929731443e-06,
+      "positive_shaping_sum": 3.4888181686401367,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9999990463256836,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "release_paid": true,
+      "landing_paid": true,
+      "withdrawal_paid": true
+    },
+    "late_release": {
+      "old_total": 575.4883537558648,
+      "new_total": -9.366046905517578,
+      "old_discounted": 193.0796035204321,
+      "new_discounted": -4.2408776627066445,
+      "shaping_discounted": 2.432663685144297e-06,
+      "positive_shaping_sum": 3.4888181686401367,
+      "bonuses": {
+        "dwell": 1.0,
+        "landing": 2.0,
+        "progress": 2.9999990463256836,
+        "release": 2.0,
+        "withdrawal": 3.0
+      },
+      "release_paid": true,
+      "landing_paid": true,
+      "withdrawal_paid": true
+    },
+    "xy_roundtrip": {
+      "old_total": 298.8623296606727,
+      "new_total": -28.083423614501953,
+      "old_discounted": 125.71808621269217,
+      "new_discounted": -9.57271837456206,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 2.9999990463256836,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "height_roundtrip": {
+      "old_total": 366.8721384607004,
+      "new_total": -24.90620994567871,
+      "old_discounted": 146.95794574311546,
+      "new_discounted": -8.587693040680788,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 2.9999990463256836,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_high_drop": {
+      "old_total": 249.63861794670447,
+      "new_total": -33.17540740966797,
+      "old_discounted": 101.75930438640033,
+      "new_discounted": -13.193098503803808,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.024420607835054398,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_drop_then_lower": {
+      "old_total": 249.63090939720496,
+      "new_total": -33.1831169128418,
+      "old_discounted": 101.754572980398,
+      "new_discounted": -13.197829909806144,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.024420607835054398,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_drop_regrasp": {
+      "old_total": 199.52820534904822,
+      "new_total": -63.285823822021484,
+      "old_discounted": 77.17127130345247,
+      "new_discounted": -27.81778762515851,
+      "shaping_discounted": 2.329021628470415e-06,
+      "positive_shaping_sum": 2.4688899517059326,
+      "bonuses": {
+        "dwell": 0.0,
+        "landing": 0.0,
+        "progress": 0.024420607835054398,
+        "release": 0.0,
+        "withdrawal": 0.0
+      },
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    }
+  },
+  "frozen_trajectory_replay": {
+    "empty_hand": {
+      "episodes": 384,
+      "old_total_mean": 11.608413696289062,
+      "new_total_mean": -4.533489227294922,
+      "new_total_max": -3.539759397506714,
+      "old_discounted_mean": 11.261490774744901,
+      "new_discounted_mean": -1.3699999594206125
+    },
+    "pregrasp": {
+      "episodes": 384,
+      "old_total_mean": 64.94009399414062,
+      "new_total_mean": -5.909975528717041,
+      "new_total_max": -5.000555992126465,
+      "old_discounted_mean": 47.80239942992707,
+      "new_discounted_mean": -1.8748016706096928
+    },
+    "grasp": {
+      "episodes": 384,
+      "old_total_mean": -35.92062759399414,
+      "new_total_mean": -66.91756439208984,
+      "new_total_max": -26.171552658081055,
+      "old_discounted_mean": -183.03726649668957,
+      "new_discounted_mean": -42.49686053435243
+    },
+    "preinside": {
+      "episodes": 384,
+      "old_total_mean": 435.6861877441406,
+      "new_total_mean": -21.775236129760742,
+      "new_total_max": -17.580907821655273,
+      "old_discounted_mean": 187.94960083362676,
+      "new_discounted_mean": -6.133836278964971
+    },
+    "near": {
+      "episodes": 384,
+      "old_total_mean": 443.5625915527344,
+      "new_total_mean": -22.802927017211914,
+      "new_total_max": -19.651845932006836,
+      "old_discounted_mean": 192.34704100646022,
+      "new_discounted_mean": -7.068020149208745
+    },
+    "mixed": {
+      "episodes": 384,
+      "old_total_mean": 85.2981948852539,
+      "new_total_mean": -20.58674430847168,
+      "new_total_max": -3.5689377784729004,
+      "old_discounted_mean": 7.33239460243324,
+      "new_discounted_mean": -10.977107884114227
+    }
+  },
+  "training": false,
+  "real_robot": false
+}

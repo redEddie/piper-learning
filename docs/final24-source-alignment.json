@@ -1,0 +1,26 @@
+{
+  "upstream_commit": "939bdb623a6bd641152388429396b8ad74e1e70a",
+  "identical_source_and_asset_files": 162,
+  "import_only_differences": [
+    "control_lab/controllers.py",
+    "control_lab/hierarchy.py",
+    "control_lab/hierarchy_env.py",
+    "control_lab/smooth_plan.py",
+    "control_lab/tracking_qp.py"
+  ],
+  "shared_math_verified": [
+    "controllers.py",
+    "hierarchy.py",
+    "smooth_plan.py",
+    "tracking_qp.py",
+    "jax_kinematics.py"
+  ],
+  "native_geometry_guard": {
+    "expected": "c9bfb04f742a5dd33664fb2745f4730ba4d9becdfd9291c61ab50467b1b67e05",
+    "upstream_thor": "440b5ee40acccb45ab800fe9630235ef864b22791dca45e3131907176501c629",
+    "split_thor": "440b5ee40acccb45ab800fe9630235ef864b22791dca45e3131907176501c629",
+    "guard_preserved": true,
+    "root_cause_not_yet_isolated": true,
+    "scope": "both unmodified upstream and split version reject bank geometry on this Thor; not a completed native physics validation"
+  }
+}

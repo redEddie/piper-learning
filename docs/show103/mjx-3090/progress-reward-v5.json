@@ -1,0 +1,255 @@
+{
+  "version": "stage_reward_v5",
+  "status": "completed",
+  "training_started": true,
+  "config": "configs/show103/stage-reward-v5-transformer-lstm-progress-plus2.yaml",
+  "run": "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031",
+  "parent": "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030/training/checkpoints/000016777216",
+  "parent_cumulative_transitions": 83886080,
+  "additional_transitions": 16777216,
+  "cumulative_transitions": 100663296,
+  "principle": "Completed-stage credit plus continuous current-goal progress minus unwanted-action costs. No extra completion event bonus.",
+  "stages": [
+    {
+      "stage": 1,
+      "baseline": 0,
+      "progress": "Linear initial TCP-cube gap closure to20mm, max1",
+      "complete": "<=20mm or finger contact"
+    },
+    {
+      "stage": 2,
+      "baseline": 1,
+      "progress": "g=clip(bilateral contact time/100ms),l=clip(bottom height/20mm); 0.5*g+0.5*g*l",
+      "complete": "100ms bilateral contact and20mm lift"
+    },
+    {
+      "stage": 3,
+      "baseline": 2,
+      "progress": "0.8 normalized XY gap closure to50mm +0.2 normalized height gap closure above rim",
+      "complete": "held cube XY<=50mm and centre above rim"
+    },
+    {
+      "stage": 4,
+      "baseline": 3,
+      "progress": "Actual finger opening0..0.5 to projected cube width+10mm, plus supported low-drop settling0..0.5",
+      "complete": "Actual release, floor-supported full-cube containment100ms and actual target opening",
+      "carryover": {
+        "drop<=7cm": 1,
+        "7cm<drop<10cm": 0.5
+      },
+      "high_drop": ">=10cm inside is successful terminal without landing bonus or stage5",
+      "close_cost": "-0.1/100ms while goal is CLOSE, independent of physical detachment"
+    },
+    {
+      "stage": 5,
+      "baseline": "3+place_quality",
+      "progress": "0.8*clip(1-D/D0)+0.2*clip(home hold/200ms)",
+      "distance": "excess_i=max(abs(q_i-A_i)-0.2rad,0); D=0.7*max(excess)+0.3*mean(excess); D0 frozen at entry/reset end",
+      "complete": "each joint<=0.2rad, max speed<=0.05rad/s, supported100ms, clearance>=80mm, no contact, hold200ms",
+      "max_total": "5 for low drop;4.5 for middle drop",
+      "approach_independent_of_retreat": true
+    }
+  ],
+  "penalties": {
+    "face": "stages1/2 only, -0.5*clip(nearest cube face normal/finger closing axis angle /45deg)",
+    "carry_away": "while held after grasp: distance from achieved best XY>=10cm, -0.5*(lost distance/0.1m)",
+    "miss": "-2 once then immediate terminal/reset",
+    "recontact": "-0.5 per100ms window",
+    "action": "-0.001*sum(a^2)",
+    "action_rate": "-0.01*sum(delta_a^2)"
+  },
+  "exploration": {
+    "arm_min_std": 0.25,
+    "gripper_min_std": 0.5,
+    "previous_arm_min_std": 0.2,
+    "previous_gripper_min_std": 0.4,
+    "interpretation": "Additive minimum Gaussian scale before tanh; same distribution in sampling and PPO likelihoods"
+  },
+  "preserved": {
+    "environments": 4096,
+    "reset_probabilities": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "actor": 49,
+    "critic": 66,
+    "action": 7,
+    "real_robot": false,
+    "original_checkpoints": true
+  },
+  "reset": {
+    "actual_physics_settle_seconds": 0.4,
+    "prefix": "Original measured airborne prefixes replayed under v5",
+    "fabricated_timers": false
+  },
+  "validation": {
+    "cpu": "61 passed, outputs/show103-progress-v5-final-tests.txt",
+    "gpu": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 8,
+      "reset_group_counts": [
+        858,
+        806,
+        816,
+        803,
+        813
+      ],
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.00933589693158865,
+        "max_acceleration": 0.9322073459625244,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      }
+    },
+    "learner_connection": {
+      "updates_observed": 10,
+      "restored": [
+        "policy",
+        "value",
+        "normalizer",
+        "optimizer",
+        "rng"
+      ],
+      "collection_sequence_likelihood_checks": "passed at updates1,2,8",
+      "physics_errors": 0,
+      "exploration_floor": {
+        "arms": 0.25,
+        "gripper": 0.5
+      },
+      "full_training_completed": true,
+      "max_log_probability_error": 3.814697265625e-06
+    }
+  },
+  "evaluation": {
+    "episodes_per_start": 384,
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "criterion": "Measured stage-local achievements before terminal failure; high-drop success and home completion separate",
+    "videos": "First scene of each of five initializations, no successful-scene selection",
+    "report": "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/comparison.json"
+  },
+  "training_code_commit": "e58d7cf60029f9152ffec812d670cc0f369582d4",
+  "campaign_status_file": "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/campaign.json",
+  "checkpoint": "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/training/checkpoints/000016777216",
+  "training_summary": {
+    "actor": "transformer_lstm",
+    "seed": 7,
+    "timesteps": 16777216,
+    "elapsed_seconds": 1948.2902297029505,
+    "first_iteration_compile_and_execute_seconds": 29.901185633148998,
+    "steady_state_collection_seconds": 1367.2967708039796,
+    "steady_state_update_seconds": 543.4518791239243,
+    "steady_state_sps": 8746.14251363232,
+    "policy_l2_change": 14.514728071316677,
+    "max_initial_log_prob_error": 3.814697265625e-06,
+    "parameters": {
+      "actor": 188110,
+      "critic": 83201
+    }
+  },
+  "results": {
+    "local_stage_success": {
+      "initial_a": {
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "open_command_episodes": 384,
+        "high_drop_success": 0,
+        "home_complete": 0
+      },
+      "pre_grasp": {
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "open_command_episodes": 384,
+        "high_drop_success": 0,
+        "home_complete": 0
+      },
+      "held": {
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "open_command_episodes": 384,
+        "high_drop_success": 0,
+        "home_complete": 0
+      },
+      "over_bowl": {
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "open_command_episodes": 384,
+        "high_drop_success": 0,
+        "home_complete": 0
+      },
+      "post_release": {
+        "episodes": 384,
+        "local_success": 0,
+        "local_success_rate": 0.0,
+        "final_complete": 0,
+        "failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "controller_failures": 0,
+        "open_command_episodes": 384,
+        "high_drop_success": 0,
+        "home_complete": 0
+      }
+    },
+    "post_release_A_error_deg_median": {
+      "first": 96.03276824951172,
+      "final": 32.30956268310547,
+      "all384_improved": true,
+      "completion_tolerance": 11.459155902616464
+    },
+    "stage4_drop": {
+      "median_mm": 92.9737548828125,
+      "at_most70mm": 44,
+      "above70_below100mm": 340,
+      "at_least100mm": 0
+    },
+    "interpretation": "Stages1-4 all384 succeeded. Stage4 actual opening/settling is learned; most over-bowl starts land from7-10cm, so the <=7cm quality target is not consistently met. Stage5 moves toward A but none reach0.2rad tolerance; full-task completion remains0. No additional training beyond requested+2u."
+  },
+  "campaign_status": "completed",
+  "videos": [
+    "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/videos/2u-held-first.mp4",
+    "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/videos/2u-initial_a-first.mp4",
+    "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/videos/2u-over_bowl-first.mp4",
+    "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/videos/2u-post_release-first.mp4",
+    "runs/show103-transformer-lstm-progress-v5-from10u-plus2u-20261031/videos/2u-pre_grasp-first.mp4"
+  ],
+  "video_validation": "All five20s/200frame videos decode without errors; scene0, no success selection"
+}

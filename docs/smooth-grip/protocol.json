@@ -1,0 +1,210 @@
+{
+  "baseline": "SHOW100 selected50,331,648 transitions",
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648",
+  "additional_transitions": 16777216,
+  "training_config": {
+    "seed": 7,
+    "environment": {
+      "task": "show100_smooth_grip",
+      "ctrl_dt": 0.1,
+      "sim_dt": 0.005,
+      "impl": "warp",
+      "solver_iterations": 8,
+      "solver_ls_iterations": 20,
+      "jacobian": "mjx",
+      "robot_model": "piper_v100",
+      "base_height": 0.015,
+      "nominal_qpos": [
+        0.0,
+        0.523,
+        -0.45,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gripper_max": 0.05,
+      "table_priority": 2,
+      "reset_ik_flip": true,
+      "stage_obs": false,
+      "bowl_arm_collision": true,
+      "size_obs": true,
+      "obs_randomization": true,
+      "physics_randomization": true,
+      "block_half": 0.025,
+      "block_mass": 0.07,
+      "block_mass_range": [
+        0.056,
+        0.084
+      ],
+      "block_rgba": [
+        0.1,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "bowl_r_bottom": 0.042,
+      "bowl_r_rim": 0.075,
+      "bowl_height": 0.067,
+      "bowl_wall": 0.003,
+      "bowl_floor": 0.003,
+      "bowl_free": true,
+      "bowl_mass": 0.11,
+      "block_x": [
+        0.25,
+        0.4
+      ],
+      "block_y": [
+        -0.3,
+        0.3
+      ],
+      "bowl_x": [
+        0.25,
+        0.35
+      ],
+      "bowl_y": [
+        -0.3,
+        0.3
+      ],
+      "spawn_min_distance": 0.14,
+      "spawn_max_radius": 0.4,
+      "spawn_candidates": 16,
+      "reset_stage_probs": [
+        0.5,
+        0.2,
+        0.2,
+        0.1
+      ],
+      "batch_capacity": 1024,
+      "gripper_threshold": 0.5,
+      "gripper_goal_obs": true,
+      "finger_bridge": true,
+      "tcp_local_z": 0.1385,
+      "control_mode": "qp",
+      "control_acceleration": 4.0,
+      "control_floor": 0.0,
+      "max_joint_vel": 0.75,
+      "control_jerk": 300.0,
+      "max_lin_vel": 0.05,
+      "max_ang_vel": 0.5
+    },
+    "training": {
+      "num_timesteps": 16777216,
+      "num_envs": 1024,
+      "episode_length": 200,
+      "unroll_length": 16,
+      "batch_size": 256,
+      "num_minibatches": 4,
+      "num_updates_per_batch": 4,
+      "num_evals": 5,
+      "num_eval_envs": 64,
+      "learning_rate": 0.0003,
+      "discounting": 0.99,
+      "gae_lambda": 0.95,
+      "entropy_cost": 0.001,
+      "clipping_epsilon": 0.2,
+      "reward_scaling": 1.0,
+      "normalize_observations": true,
+      "max_grad_norm": 1.0,
+      "action_repeat": 1,
+      "bootstrap_on_timeout": false,
+      "deterministic_eval": true
+    },
+    "network": {
+      "policy_hidden_layer_sizes": [
+        256,
+        256
+      ],
+      "value_hidden_layer_sizes": [
+        256,
+        256
+      ],
+      "policy_obs_key": "state",
+      "value_obs_key": "privileged"
+    }
+  },
+  "design": [
+    "At10Hz, replan20 successive5ms QP reference samples and64-step full-stop tail; execute the packet and monitor feedback at200Hz. The tracking QP is not re-solved from measured feedback at every5ms.",
+    "jerk-aware speed and mechanical-bound braking; nonlinear TCP floor checked over entire plan",
+    "MOVE/BRAKE/GRIP coordinator; arm stops before active stroke; busy goal changes do not restart stroke",
+    "phase observed at actor index42; zero input weight insertion preserves source initial policy outputs"
+  ],
+  "validation": {
+    "unit_tests": 24,
+    "batch_environments": 1024,
+    "batch_transitions": 40960,
+    "batch_faults": 0,
+    "reset_probe_transitions": 15360,
+    "reset_probe_operations": 1015
+  },
+  "parameter_adjustments": [
+    {
+      "parameter": "gripper_stability",
+      "before": "instantaneous width speed below5mm/s for100ms",
+      "after": "width range <=0.5mm across100ms",
+      "evidence": "contact chatter caused false busy without net stroke progress"
+    },
+    {
+      "parameter": "grip_timeout",
+      "before": 2.0,
+      "after": 3.0,
+      "evidence": "one existing held reset settled just after2s; arm remained held throughout"
+    },
+    {
+      "parameter": "opening_complete",
+      "before": "actual width within2mm of100mm",
+      "after": "at least2mm opening progress, commanded ramp completed and100ms stable; full nominal width also accepted",
+      "evidence": "force-limited equilibrium widths90-97mm produced false timeouts despite completed opening"
+    },
+    {
+      "parameter": "mechanical_braking",
+      "after": "0.5s approach envelope plus jerk-aware stop room",
+      "evidence": "rejecting whole packets near wrist position bounds froze all joint motion; enforce per-joint braking before certification"
+    }
+  ],
+  "invariants": {
+    "reward_and_reset_source_unchanged": true,
+    "reset_ratio": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "gripper_force_N": 3.0,
+    "episode_seconds": 20.0,
+    "raw_action_components": 7,
+    "actor_observations": 50,
+    "critic_observations": 67,
+    "reward_equations_and_coefficients": "Identical inherited SHOW100 pick_place.py; raw7 actions retained in reward costs",
+    "initialization_generators_and_ratio": "Original SHOW100 50/20/20/10; no new stage or reset pose changes"
+  },
+  "limitations": [
+    "Reference limits and sampled TCP plane are not whole-arm collision guarantees",
+    "Controller faults terminate the episode; no reward formula changes",
+    "Existing real-runner and release not modified; robot I/O not used"
+  ],
+  "real_robot": false,
+  "intentional_changes_besides_limits": [
+    "Episode duration8s->20s to accommodate reduced movement speed and serial gripper strokes",
+    "Observed coordinator phase inserted at actor/critic index42; initial extra input weights zero",
+    "Gripper command ramp now updated5ms at the same original average rate; arm must brake first",
+    "Checked100ms reference packet with nonlinear stop backup; actual reference gap monitored5ms"
+  ],
+  "completed_results": {
+    "selected_additional_transitions": 8388608,
+    "executed_additional_transitions": 16777216,
+    "evaluation_seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_start_condition": 384,
+    "evaluation_horizon_seconds": 20,
+    "selected_empty_A_successes": 352,
+    "reference_limit_violations_in_selected_1152_episodes": 0,
+    "selected_gripper_timeout_episodes": 2,
+    "timeout_detail": "Same scene92 at seed2028 included in both empty and mixed modes; closing width range0.69mm/100ms exceeded0.5mm stabilization criterion. Stops retained; counted as failures.",
+    "selection": "docs/smooth-grip/selection.json",
+    "comparison": "docs/smooth-grip/results.json",
+    "preservation": "docs/smooth-grip/preservation.json"
+  }
+}

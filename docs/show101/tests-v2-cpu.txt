@@ -1,0 +1,8 @@
+.....................                                                    [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/jaxopt/__init__.py:59
+  /home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/.venv/lib/python3.12/site-packages/jaxopt/__init__.py:59: DeprecationWarning: JAXopt is no longer maintained. See https://docs.jax.dev/en/latest/ for alternatives.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 11.69s

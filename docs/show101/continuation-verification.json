@@ -1,0 +1,20 @@
+{
+  "configuration_identical": true,
+  "source_checkpoint_changed": [],
+  "show100_checkpoint_changed": [],
+  "original_source_files_checked": 349,
+  "original_source_changed": [],
+  "training_metric_steps": [
+    0,
+    2097152,
+    4194304,
+    6291456,
+    8388608
+  ],
+  "numerical_controller_or_capacity_errors": {
+    "eval/episode_controller_failed": 0.0,
+    "eval/episode_nonfinite": 0.0,
+    "eval/episode_capacity_overflow": 0.0
+  },
+  "real_robot": false
+}

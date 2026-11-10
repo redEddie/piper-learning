@@ -1,0 +1,702 @@
+{
+  "scope": "All episodes20s; old SHOW100 published8s rate is not substituted into this comparison. Intermediate learning curve uses same128 seed2026 scenes, final tables384 scenes per mode.",
+  "results": {
+    "original-20s": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 364,
+        "final_success_rate": 0.9479166666666666,
+        "success_ever": 376,
+        "success_at8s": 350,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 4,
+          "held_start_lost": 0,
+          "transport": 2,
+          "place_release": 0,
+          "completion_lost": 12,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true
+      },
+      "mixed": {
+        "episodes": 384,
+        "final_successes": 369,
+        "final_success_rate": 0.9609375,
+        "success_ever": 378,
+        "success_at8s": 360,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 1,
+          "held_start_lost": 0,
+          "transport": 3,
+          "place_release": 0,
+          "completion_lost": 9,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true
+      },
+      "preinside": {
+        "episodes": 384,
+        "final_successes": 374,
+        "final_success_rate": 0.9739583333333334,
+        "success_ever": 384,
+        "success_at8s": 376,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 10,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true
+      }
+    },
+    "frozen-baseline": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 74,
+        "final_success_rate": 0.19270833333333334,
+        "success_ever": 82,
+        "success_at8s": 0,
+        "failures": {
+          "approach": 123,
+          "grasp_lift": 73,
+          "held_start_lost": 0,
+          "transport": 99,
+          "place_release": 1,
+          "completion_lost": 8,
+          "controller": 6,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2702,
+          "rejected_proposals": 2,
+          "timeouts": 6
+        }
+      },
+      "mixed": {
+        "episodes": 384,
+        "final_successes": 132,
+        "final_success_rate": 0.34375,
+        "success_ever": 138,
+        "success_at8s": 80,
+        "failures": {
+          "approach": 67,
+          "grasp_lift": 37,
+          "held_start_lost": 0,
+          "transport": 138,
+          "place_release": 0,
+          "completion_lost": 6,
+          "controller": 4,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 3445,
+          "rejected_proposals": 0,
+          "timeouts": 4
+        }
+      },
+      "preinside": {
+        "episodes": 384,
+        "final_successes": 365,
+        "final_success_rate": 0.9505208333333334,
+        "success_ever": 383,
+        "success_at8s": 362,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 18,
+          "controller": 1,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 6350,
+          "rejected_proposals": 0,
+          "timeouts": 1
+        }
+      }
+    },
+    "interim-4194304": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 116,
+        "final_success_rate": 0.90625,
+        "success_ever": 122,
+        "success_at8s": 0,
+        "failures": {
+          "approach": 3,
+          "grasp_lift": 1,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 2,
+          "completion_lost": 6,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 599,
+          "rejected_proposals": 1,
+          "timeouts": 0
+        }
+      },
+      "mixed": {
+        "episodes": 128,
+        "final_successes": 117,
+        "final_success_rate": 0.9140625,
+        "success_ever": 125,
+        "success_at8s": 46,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 8,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 950,
+          "rejected_proposals": 2,
+          "timeouts": 0
+        }
+      },
+      "preinside": {
+        "episodes": 128,
+        "final_successes": 121,
+        "final_success_rate": 0.9453125,
+        "success_ever": 127,
+        "success_at8s": 120,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 6,
+          "controller": 1,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.0003356933594,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2076,
+          "rejected_proposals": 0,
+          "timeouts": 1
+        }
+      }
+    },
+    "interim-8388608": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 117,
+        "final_success_rate": 0.9140625,
+        "success_ever": 121,
+        "success_at8s": 0,
+        "failures": {
+          "approach": 5,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 1,
+          "completion_lost": 4,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 805,
+          "rejected_proposals": 1,
+          "timeouts": 0
+        }
+      },
+      "mixed": {
+        "episodes": 128,
+        "final_successes": 123,
+        "final_success_rate": 0.9609375,
+        "success_ever": 125,
+        "success_at8s": 51,
+        "failures": {
+          "approach": 1,
+          "grasp_lift": 1,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 2,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 1108,
+          "rejected_proposals": 0,
+          "timeouts": 0
+        }
+      },
+      "preinside": {
+        "episodes": 128,
+        "final_successes": 124,
+        "final_success_rate": 0.96875,
+        "success_ever": 127,
+        "success_at8s": 122,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 3,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.0003356933594,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2300,
+          "rejected_proposals": 0,
+          "timeouts": 0
+        }
+      }
+    },
+    "candidate-8m": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 352,
+        "final_success_rate": 0.9166666666666666,
+        "success_ever": 361,
+        "success_at8s": 0,
+        "failures": {
+          "approach": 7,
+          "grasp_lift": 9,
+          "held_start_lost": 0,
+          "transport": 2,
+          "place_release": 4,
+          "completion_lost": 9,
+          "controller": 1,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2427,
+          "rejected_proposals": 4,
+          "timeouts": 1
+        }
+      },
+      "mixed": {
+        "episodes": 384,
+        "final_successes": 350,
+        "final_success_rate": 0.9114583333333334,
+        "success_ever": 361,
+        "success_at8s": 135,
+        "failures": {
+          "approach": 5,
+          "grasp_lift": 8,
+          "held_start_lost": 0,
+          "transport": 6,
+          "place_release": 3,
+          "completion_lost": 11,
+          "controller": 1,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 3290,
+          "rejected_proposals": 0,
+          "timeouts": 1
+        }
+      },
+      "preinside": {
+        "episodes": 384,
+        "final_successes": 368,
+        "final_success_rate": 0.9583333333333334,
+        "success_ever": 382,
+        "success_at8s": 363,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 2,
+          "completion_lost": 14,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 6712,
+          "rejected_proposals": 0,
+          "timeouts": 0
+        }
+      }
+    },
+    "interim-12582912": {
+      "empty_hand": {
+        "episodes": 128,
+        "final_successes": 112,
+        "final_success_rate": 0.875,
+        "success_ever": 117,
+        "success_at8s": 0,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 7,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 1,
+          "completion_lost": 5,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 775,
+          "rejected_proposals": 11,
+          "timeouts": 0
+        }
+      },
+      "mixed": {
+        "episodes": 128,
+        "final_successes": 117,
+        "final_success_rate": 0.9140625,
+        "success_ever": 121,
+        "success_at8s": 48,
+        "failures": {
+          "approach": 1,
+          "grasp_lift": 3,
+          "held_start_lost": 0,
+          "transport": 1,
+          "place_release": 2,
+          "completion_lost": 4,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 1006,
+          "rejected_proposals": 0,
+          "timeouts": 0
+        }
+      },
+      "preinside": {
+        "episodes": 128,
+        "final_successes": 124,
+        "final_success_rate": 0.96875,
+        "success_ever": 128,
+        "success_at8s": 123,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 0,
+          "completion_lost": 4,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.0003356933594,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2011,
+          "rejected_proposals": 0,
+          "timeouts": 0
+        }
+      }
+    },
+    "final-16m": {
+      "empty_hand": {
+        "episodes": 384,
+        "final_successes": 336,
+        "final_success_rate": 0.875,
+        "success_ever": 356,
+        "success_at8s": 0,
+        "failures": {
+          "approach": 3,
+          "grasp_lift": 16,
+          "held_start_lost": 0,
+          "transport": 3,
+          "place_release": 5,
+          "completion_lost": 20,
+          "controller": 1,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2005,
+          "rejected_proposals": 1,
+          "timeouts": 1
+        }
+      },
+      "mixed": {
+        "episodes": 384,
+        "final_successes": 348,
+        "final_success_rate": 0.90625,
+        "success_ever": 368,
+        "success_at8s": 147,
+        "failures": {
+          "approach": 2,
+          "grasp_lift": 7,
+          "held_start_lost": 0,
+          "transport": 3,
+          "place_release": 4,
+          "completion_lost": 20,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.00091552734375,
+          "max_reference_speed": 0.75,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 2190,
+          "rejected_proposals": 1,
+          "timeouts": 0
+        }
+      },
+      "preinside": {
+        "episodes": 384,
+        "final_successes": 370,
+        "final_success_rate": 0.9635416666666666,
+        "success_ever": 383,
+        "success_at8s": 360,
+        "failures": {
+          "approach": 0,
+          "grasp_lift": 0,
+          "held_start_lost": 0,
+          "transport": 0,
+          "place_release": 1,
+          "completion_lost": 13,
+          "controller": 0,
+          "physics": 0
+        },
+        "same_initial_scenes": true,
+        "coordinator": {
+          "max_reference_jerk": 300.0003356933594,
+          "max_reference_speed": 0.736599326133728,
+          "max_reference_acceleration": 4.000001907348633,
+          "max_reference_speed_during_grip": 0.0,
+          "operations_completed": 3290,
+          "rejected_proposals": 0,
+          "timeouts": 0
+        }
+      }
+    }
+  },
+  "points": [
+    {
+      "additional_steps": 0,
+      "paired128_rates": {
+        "empty_hand": 0.2265625,
+        "mixed": 0.359375,
+        "preinside": 0.9609375
+      },
+      "aggregate": {
+        "empty_hand": {
+          "episodes": 384,
+          "final_successes": 74,
+          "final_success_rate": 0.19270833333333334
+        },
+        "mixed": {
+          "episodes": 384,
+          "final_successes": 132,
+          "final_success_rate": 0.34375
+        },
+        "preinside": {
+          "episodes": 384,
+          "final_successes": 365,
+          "final_success_rate": 0.9505208333333334
+        }
+      }
+    },
+    {
+      "additional_steps": 4194304,
+      "paired128_rates": {
+        "empty_hand": 0.90625,
+        "mixed": 0.9140625,
+        "preinside": 0.9453125
+      },
+      "aggregate": {
+        "empty_hand": {
+          "episodes": 128,
+          "final_successes": 116,
+          "final_success_rate": 0.90625
+        },
+        "mixed": {
+          "episodes": 128,
+          "final_successes": 117,
+          "final_success_rate": 0.9140625
+        },
+        "preinside": {
+          "episodes": 128,
+          "final_successes": 121,
+          "final_success_rate": 0.9453125
+        }
+      }
+    },
+    {
+      "additional_steps": 8388608,
+      "paired128_rates": {
+        "empty_hand": 0.9140625,
+        "mixed": 0.9609375,
+        "preinside": 0.96875
+      },
+      "aggregate": {
+        "empty_hand": {
+          "episodes": 128,
+          "final_successes": 117,
+          "final_success_rate": 0.9140625
+        },
+        "mixed": {
+          "episodes": 128,
+          "final_successes": 123,
+          "final_success_rate": 0.9609375
+        },
+        "preinside": {
+          "episodes": 128,
+          "final_successes": 124,
+          "final_success_rate": 0.96875
+        }
+      }
+    },
+    {
+      "additional_steps": 12582912,
+      "paired128_rates": {
+        "empty_hand": 0.875,
+        "mixed": 0.9140625,
+        "preinside": 0.96875
+      },
+      "aggregate": {
+        "empty_hand": {
+          "episodes": 128,
+          "final_successes": 112,
+          "final_success_rate": 0.875
+        },
+        "mixed": {
+          "episodes": 128,
+          "final_successes": 117,
+          "final_success_rate": 0.9140625
+        },
+        "preinside": {
+          "episodes": 128,
+          "final_successes": 124,
+          "final_success_rate": 0.96875
+        }
+      }
+    },
+    {
+      "additional_steps": 16777216,
+      "paired128_rates": {
+        "empty_hand": 0.8203125,
+        "mixed": 0.875,
+        "preinside": 0.96875
+      },
+      "aggregate": {
+        "empty_hand": {
+          "episodes": 384,
+          "final_successes": 336,
+          "final_success_rate": 0.875
+        },
+        "mixed": {
+          "episodes": 384,
+          "final_successes": 348,
+          "final_success_rate": 0.90625
+        },
+        "preinside": {
+          "episodes": 384,
+          "final_successes": 370,
+          "final_success_rate": 0.9635416666666666
+        }
+      }
+    }
+  ],
+  "repeatability": {
+    "checkpoint_additional_transitions": 8388608,
+    "mode": "empty_hand",
+    "seed": 2026,
+    "episodes": 128,
+    "same_initial_qpos_sha256": true,
+    "successes": [
+      117,
+      120
+    ],
+    "first_action_max_difference": 0.0,
+    "first_step_actual_qpos_max_difference": 2.9802322387695312e-08,
+    "note": "Frozen policy and identical first action/initial poses; tiny GPU physics differences grow through contact. Fixed seeds do not give bitwise-repeatable trajectories."
+  },
+  "source_checkpoint_changed_files": [],
+  "real_robot": false
+}

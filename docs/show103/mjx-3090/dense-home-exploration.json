@@ -1,0 +1,345 @@
+{
+  "experiment": "per-joint-continuous-home-with-arm-and-gripper-exploration",
+  "status": "completed_threshold_unmet",
+  "config": "configs/show103/stage-reward-v3-transformer-lstm-dense-home-explore-plus2.yaml",
+  "reward": {
+    "version": "stage_reward_v3",
+    "enabled_by": "five_start_dense_home",
+    "home_progress": "mean(exp(-abs(q_i-A_i)/1rad)), i=1..6",
+    "home_bonus_weight": 0.5,
+    "active": "qualified release, settled, clearance>=80mm and no contact; same gates as before",
+    "complete": "unchanged: all six absolute joint errors<=3deg, max joint speed<=0.05rad/s, stationary hold>=200ms; plus existing release/settling/clearance/no-contact predicates",
+    "cap": "main<=4.99 before final completion, 5.0 after it",
+    "legacy": "v1 and v2 rewards retained without flag",
+    "extra_measurements": "six absolute joint errors in reward features only; actor49/critic66/action7 unchanged",
+    "drop_cost": 0,
+    "invalid_drop": "immediate terminal/reset"
+  },
+  "exploration": {
+    "arm_min_std": 0.2,
+    "gripper_min_std": 0.4,
+    "units": "pre-tanh Gaussian scale=softplus(raw_scale)+axis minimum",
+    "shared_by": [
+      "collection",
+      "PPO log_prob",
+      "entropy",
+      "KL",
+      "checkpoint loader"
+    ]
+  },
+  "parent": "runs/show103-transformer-lstm-4096-s7-2-4-6-8u-20261030/training/checkpoints/000067108864",
+  "continuation": {
+    "additional_units": 2,
+    "cumulative_units": 10,
+    "transitions": 16777216,
+    "restore": [
+      "policy",
+      "value",
+      "normalizer",
+      "optimizer",
+      "rng"
+    ],
+    "simulator": "fresh episodes, empty recurrent memory"
+  },
+  "environment": {
+    "worlds": 4096,
+    "reset_probabilities": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "position_dr": true,
+    "physics_dr": true,
+    "observation_dr": false
+  },
+  "evaluation": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_start": 384,
+    "metrics": [
+      "stage-local success",
+      "full completion",
+      "OPEN commands",
+      "invalid releases"
+    ],
+    "videos": "first unselected scene, all five reset groups"
+  },
+  "run": "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030",
+  "supersedes": "runs/show103-transformer-lstm-no-drop-cost-gripper-explore-from8u-plus2u-20261030",
+  "validation": {
+    "unit_tests": "50 passed; outputs/show103-dense-home-exploration-tests.txt",
+    "updated_all_axis_tests": "9 passed; outputs/show103-dense-home-all-axis-exploration-tests.txt",
+    "gpu": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 8,
+      "reset_group_counts": [
+        858,
+        806,
+        816,
+        803,
+        813
+      ],
+      "elapsed_seconds": 22.08981595397927,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.009335876442492008,
+        "max_acceleration": 0.9322073459625244,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "report": "outputs/show103-dense-home-4096-validation.json"
+    }
+  },
+  "interpretation": "Home shaping and arm exploration change together as authorized; this run does not isolate their individual effects",
+  "real_robot": false,
+  "superseded_execution_status": {
+    "status": "cancelled_by_user_request",
+    "last_observed_transitions": 11862016,
+    "saved_checkpoints": [],
+    "logs_preserved": true,
+    "original_8u_checkpoint_preserved": true
+  },
+  "completed_utc": "2026-10-30T12:05:54.683077+00:00",
+  "training_summary": {
+    "actor": "transformer_lstm",
+    "seed": 7,
+    "timesteps": 16777216,
+    "elapsed_seconds": 1352.1432095189812,
+    "first_iteration_compile_and_execute_seconds": 25.98349853302352,
+    "steady_state_collection_seconds": 744.9325602848548,
+    "steady_state_update_seconds": 573.5918200599262,
+    "steady_state_sps": 12674.532416025604,
+    "policy_l2_change": 14.931046423868032,
+    "max_initial_log_prob_error": 2.86102294921875e-06,
+    "parameters": {
+      "actor": 188110,
+      "critic": 83201
+    }
+  },
+  "results": {
+    "evaluation_rows": [
+      {
+        "additional_units": 2,
+        "cumulative_units": 10,
+        "additional_transitions": 16777216,
+        "cumulative_transitions": 83886080,
+        "stage": 1,
+        "start": "initial_a",
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "meets_50_percent": true,
+        "local_success_definition": "TCP-cube <=20mm or finger contact",
+        "final_complete": 0,
+        "qualified_release": 0,
+        "settled": 0,
+        "failures": 1,
+        "controller_failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "open_command_episodes": 384,
+        "invalid_release_episodes": 1
+      },
+      {
+        "additional_units": 2,
+        "cumulative_units": 10,
+        "additional_transitions": 16777216,
+        "cumulative_transitions": 83886080,
+        "stage": 2,
+        "start": "pre_grasp",
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "meets_50_percent": true,
+        "local_success_definition": "bilateral contact100ms and cube bottom >=20mm",
+        "final_complete": 0,
+        "qualified_release": 0,
+        "settled": 0,
+        "failures": 1,
+        "controller_failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "open_command_episodes": 383,
+        "invalid_release_episodes": 1
+      },
+      {
+        "additional_units": 2,
+        "cumulative_units": 10,
+        "additional_transitions": 16777216,
+        "cumulative_transitions": 83886080,
+        "stage": 3,
+        "start": "held",
+        "episodes": 384,
+        "local_success": 384,
+        "local_success_rate": 1.0,
+        "meets_50_percent": true,
+        "local_success_definition": "after lift, finger contact, XY<=50mm and cube center above rim",
+        "final_complete": 0,
+        "qualified_release": 0,
+        "settled": 0,
+        "failures": 0,
+        "controller_failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "open_command_episodes": 0,
+        "invalid_release_episodes": 0
+      },
+      {
+        "additional_units": 2,
+        "cumulative_units": 10,
+        "additional_transitions": 16777216,
+        "cumulative_transitions": 83886080,
+        "stage": 4,
+        "start": "over_bowl",
+        "episodes": 384,
+        "local_success": 0,
+        "local_success_rate": 0.0,
+        "meets_50_percent": false,
+        "local_success_definition": "qualified low first release with OPEN intention and20ms detachment",
+        "final_complete": 0,
+        "qualified_release": 0,
+        "settled": 0,
+        "failures": 0,
+        "controller_failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "open_command_episodes": 0,
+        "invalid_release_episodes": 0
+      },
+      {
+        "additional_units": 2,
+        "cumulative_units": 10,
+        "additional_transitions": 16777216,
+        "cumulative_transitions": 83886080,
+        "stage": 5,
+        "start": "post_release",
+        "episodes": 384,
+        "local_success": 0,
+        "local_success_rate": 0.0,
+        "meets_50_percent": false,
+        "local_success_definition": "settled100ms, clearance80mm, stationary A within3deg for200ms",
+        "final_complete": 0,
+        "qualified_release": 384,
+        "settled": 384,
+        "failures": 0,
+        "controller_failures": 0,
+        "nonfinite": 0,
+        "overflow": 0,
+        "open_command_episodes": 384,
+        "invalid_release_episodes": 0
+      }
+    ],
+    "all_stages_at_least_50_percent": false,
+    "initializations_1_to_3": "100% local success each; full completion0 across all starts",
+    "stage4": {
+      "episodes": 384,
+      "a_best_max_joint_error_deg_quantiles": [
+        69.56985484783785,
+        78.77922088691406,
+        88.68475395714383,
+        94.59482273085477,
+        101.15226024919411
+      ],
+      "a_final_max_joint_error_deg_median": 92.12654113769531,
+      "a_position_ever": 0,
+      "a_position_speed_ever": 0,
+      "settled_and_retreated_ever": 0,
+      "final_clearance_mm_median": 0.0,
+      "final_main_median": 3.4241490364074707,
+      "open_episodes": 0,
+      "release_ready_ever": 6,
+      "final_tcp_height_mm_median": 64.73728942871094,
+      "final_xy_mm_median": 3.082596778869629,
+      "median_final_abs_joint_errors_deg": [
+        13.66806571793635,
+        71.86024619716333,
+        38.99047911855196,
+        3.7197355361409303,
+        69.71376010346084,
+        92.12655116671037
+      ],
+      "bilateral_contact_episodes": 384
+    },
+    "stage5": {
+      "episodes": 384,
+      "a_best_max_joint_error_deg_quantiles": [
+        65.44121040024024,
+        82.71566381126752,
+        90.4040355146411,
+        96.39289564307002,
+        109.37053510385022
+      ],
+      "a_final_max_joint_error_deg_median": 97.37898254394531,
+      "a_position_ever": 0,
+      "a_position_speed_ever": 0,
+      "settled_and_retreated_ever": 384,
+      "final_clearance_mm_median": 95.58280181884766,
+      "final_main_median": 4.744612693786621,
+      "open_episodes": 384,
+      "release_ready_ever": 0,
+      "final_tcp_height_mm_median": 99.86863708496094,
+      "final_xy_mm_median": 4.976390838623047,
+      "median_final_abs_joint_errors_deg": [
+        8.511185809664807,
+        82.2299759988601,
+        63.30015031809743,
+        2.005492417095309,
+        59.58694939469017,
+        97.37899395920685
+      ],
+      "bilateral_contact_episodes": 0
+    },
+    "stage5_mean_joint_error": {
+      "episodes": 384,
+      "mean_abs_joint_error_first_sample_median_deg": 41.57012985782506,
+      "mean_abs_joint_error_final_median_deg": 52.15271584351421,
+      "episodes_mean_joint_error_improved": 0,
+      "episodes_mean_joint_error_worsened": 384
+    },
+    "stage4_reward_counterexample": {
+      "scope": "Pure reward simulation using one recorded held-state geometry; static measurements and zero policy actions, not physical rollout or causal proof",
+      "conditions": "same held geometry and XY, only TCP height feature changes; no release",
+      "runs": {
+        "hover_65mm": {
+          "final_main": 3.427665948867798,
+          "final_prepare_time": 0.0,
+          "sum_reward_20s": 685.533203125,
+          "mean_reward_last10s": 3.427666425704956
+        },
+        "inside_55mm": {
+          "final_main": 2.989842414855957,
+          "final_prepare_time": 19.99964714050293,
+          "sum_reward_20s": 601.2183837890625,
+          "mean_reward_last10s": 2.989841938018799
+        }
+      },
+      "finding": "Preparation credit only ages while in50-60mm; low-height shaping still pays outside. Holding at65mm retains preparation credit and higher long-run reward than entering55mm and waiting."
+    },
+    "interpretation": "No qualified releases and no A completion. Partial reward increases must not be interpreted as success. Every post-release episode ended with larger mean absolute joint error than its first observation.",
+    "training_sampling_open_rate_last32_updates": 0.1536726951599121,
+    "evaluation_mode": "deterministic representative actions; zero OPEN in stage4 does not mean no sampled OPEN during training",
+    "reports": [
+      "outputs/show103-dense-home-result-audit.json",
+      "outputs/show103-dense-home-followup-audit.json"
+    ],
+    "videos": [
+      "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030/videos/2u-held-first.mp4",
+      "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030/videos/2u-initial_a-first.mp4",
+      "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030/videos/2u-over_bowl-first.mp4",
+      "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030/videos/2u-post_release-first.mp4",
+      "runs/show103-transformer-lstm-dense-home-explore-from8u-plus2u-20261030/videos/2u-pre_grasp-first.mp4"
+    ]
+  }
+}

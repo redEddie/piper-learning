@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-09",
+  "scope": "Completed 3090 experiments. Separate Thor training evaluation continues in SHOW-115.",
+  "require_A_return": false,
+  "criterion": "initial_a through normal stage4 placement before failure, excluding high-drop exception",
+  "target_rate": 0.98,
+  "observation_dr_target_met": false,
+  "causal_limit": "Noise, delay, perceived size, spawn range and evaluation bank changed jointly. Observation randomization alone was not isolated. Transformer architectures and training histories also differ.",
+  "training_seeds_per_architecture": 1,
+  "release_url": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-model-archive-20261109",
+  "source_code_branch": "codex/show115-randomized-placement-selection",
+  "models": [
+    {
+      "id": "original-transformer-lstm-16u",
+      "actor": "transformer_lstm",
+      "source_run": "show108-matched-v5-mlp-vs-transformer-16u-20261101/transformer_lstm",
+      "training_source_commit": "49267d34714545266fbdf85c77540307ca5c2f51",
+      "units": 16,
+      "observation_randomization": false,
+      "physics_randomization": true,
+      "normal_place": 380,
+      "episodes": 384,
+      "rate": 0.9895833333333334,
+      "spawn_m": {
+        "x": [
+          0.25,
+          0.35
+        ],
+        "y": [
+          -0.2,
+          0.2
+        ]
+      },
+      "checkpoint": "original-transformer-lstm-16u/training/checkpoints/000134217728",
+      "learner_sha256": "db47e0f0623bef4aa190865500123aae77b40902be672a38765d9804c48a4555",
+      "asset": "original-transformer-lstm-16u.tar.gz",
+      "asset_sha256": "44d5761457c541da04431506abdac500fcc096a8d9ac966f4ee9e1cefc02649d",
+      "asset_bytes": 3085225,
+      "member_sha256": {
+        "training/checkpoints/000134217728/learner.msgpack": "db47e0f0623bef4aa190865500123aae77b40902be672a38765d9804c48a4555",
+        "training/checkpoints/000134217728/metadata.json": "79e44ff372896639099ac4dd9378250bb53ff4b330fdd557d84209c9967741c2",
+        "training/config.json": "d103965929415196b5a3bb171ae48db21aff64a6be1ec268eb872dcba7b71dd6",
+        "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+        "training/parameters.json": "0d1a931db0f1b4b11cd93170b49de5f8dc081cd5d06221c481071293a7137ccd",
+        "training/provenance.json": "89be582ba4758f719253cc146691ef0ea8a3b847687cd29c66b72d547095ebd5",
+        "training/reset-bank.json": "704d2587cf1d7e4a25c23bbc81f2ea361f53decc3321c5643774975be305f6c1",
+        "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+        "training/summary.json": "2884a0b194f1717f93dfad4592bc451280d2209678fb2c75935952eb9e009e26",
+        "training.yaml": "1aaef0e0c61f855299ac933631b50e051383acf1692f90810c9ba370019bcd62"
+      },
+      "previous_release": null,
+      "evaluation_kind": "archived evaluation",
+      "real_robot_execution_documented": false
+    },
+    {
+      "id": "original-mlp-lstm-16u",
+      "actor": "mlp_lstm",
+      "source_run": "show108-matched-v5-mlp-vs-transformer-16u-20261101/mlp_lstm",
+      "training_source_commit": "49267d34714545266fbdf85c77540307ca5c2f51",
+      "units": 16,
+      "observation_randomization": false,
+      "physics_randomization": true,
+      "normal_place": 372,
+      "episodes": 384,
+      "rate": 0.96875,
+      "spawn_m": {
+        "x": [
+          0.25,
+          0.35
+        ],
+        "y": [
+          -0.2,
+          0.2
+        ]
+      },
+      "checkpoint": "original-mlp-lstm-16u/training/checkpoints/000134217728",
+      "learner_sha256": "6e52e2f5fd63c29ea5e3e6ae9676488acbe2ba5bf76823aeeb4a60cb9aa734de",
+      "asset": "original-mlp-lstm-16u.tar.gz",
+      "asset_sha256": "5572748c71eee7382481375e60029b6bcaaad7f41e491cdf4924ab6c9ec37cf9",
+      "asset_bytes": 2439915,
+      "member_sha256": {
+        "training/checkpoints/000134217728/learner.msgpack": "6e52e2f5fd63c29ea5e3e6ae9676488acbe2ba5bf76823aeeb4a60cb9aa734de",
+        "training/checkpoints/000134217728/metadata.json": "b4d430e27985f94ad803689f0eed412b5cdc8113e8743418a4420958c8b0b84c",
+        "training/config.json": "f5ecd0b55466e8b42c1c81cfc54826fec50469f70ef2ed670eb50ad3c91e0852",
+        "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+        "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+        "training/provenance.json": "89be582ba4758f719253cc146691ef0ea8a3b847687cd29c66b72d547095ebd5",
+        "training/reset-bank.json": "704d2587cf1d7e4a25c23bbc81f2ea361f53decc3321c5643774975be305f6c1",
+        "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+        "training/summary.json": "b0b4c0a836bb11eb903441decaf6b5a28da25ca98b71f8af3e762c4361a076d9",
+        "training.yaml": "eb04cb7686a1bc94cf4cb12bffcacbc1142114a46caed017b5347247771d4b50"
+      },
+      "previous_release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-16u-20261101",
+      "evaluation_kind": "archived evaluation",
+      "real_robot_execution_documented": false
+    },
+    {
+      "id": "obsdr-temporal-transformer-18u",
+      "actor": "temporal_transformer",
+      "source_run": "show111-temporal-kv-home-limit-16plus2u-20261105",
+      "training_source_commit": "f2107b293e1996c8e2fb1266c8a4de73dcad57d8",
+      "units": 18,
+      "observation_randomization": true,
+      "physics_randomization": true,
+      "normal_place": 353,
+      "episodes": 384,
+      "rate": 0.9192708333333334,
+      "spawn_m": {
+        "x": [
+          0.1,
+          0.5
+        ],
+        "y": [
+          -0.3,
+          0.3
+        ]
+      },
+      "checkpoint": "obsdr-temporal-transformer-18u/training/checkpoints/000016777216",
+      "learner_sha256": "6a64bd45b4f880bc4cb7be3de09a26420fe1f92d4c6e952f94f994b66db47d5e",
+      "asset": "obsdr-temporal-transformer-18u.tar.gz",
+      "asset_sha256": "19cb462bde18796cc84784ca15034c785137cc86233e87ab84137c16191ade0a",
+      "asset_bytes": 2922879,
+      "member_sha256": {
+        "training/checkpoints/000016777216/learner.msgpack": "6a64bd45b4f880bc4cb7be3de09a26420fe1f92d4c6e952f94f994b66db47d5e",
+        "training/checkpoints/000016777216/metadata.json": "a0a496a279cf6a84cf43897d4ce215dfe35f1fcd600ec2100d2264311726f880",
+        "training/config.json": "326993f0b7b9eb4f27368ddc5d38b9c83755fdd774ed3c9211316022d51a399b",
+        "training/continuation.json": "5055ec7360dcdacd4fc307c043b54a6d4ec7c7ea8fa0456c363fc6fe7b7bda85",
+        "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+        "training/parameters.json": "3e09e26d32d667922ceed38c6477499caf08c558151f959ce66287ccd0c3c156",
+        "training/provenance.json": "201069df2bda4f29de9d3e43e1f8c5fe4dc0a6311b0386be994b36610336e093",
+        "training/reset-bank.json": "ffe9c77a14645850d51485d58ada9db1bf6a18d5f1f316715a1b4ef1ffbf3969",
+        "training/reward-settings.json": "10a006f23202f02d3cf74e2f5660c522d7e3f3e0b83d9ffdea5111c3533b1aa6",
+        "training/summary.json": "c5cc388f66a7690d1196f8ff58e00dbe7003c69f4232526b3a402eb5c52773ab",
+        "training.yaml": "ddf8a244b3c5a0d08e01d21aea90c2b4d9cc3fce629332a8f63c3dfb4a8b0d91"
+      },
+      "previous_release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show115-randomized-placement-candidate-20261109",
+      "evaluation_kind": "latest source recheck",
+      "real_robot_execution_documented": false
+    },
+    {
+      "id": "obsdr-mlp-lstm-24u",
+      "actor": "mlp_lstm",
+      "source_run": "show108-obsdr-joint-a-20plus4u-20261109",
+      "training_source_commit": "d377cae0afdc87a389b09071eae6bcde72465e86",
+      "units": 24,
+      "observation_randomization": true,
+      "physics_randomization": true,
+      "normal_place": 351,
+      "episodes": 384,
+      "rate": 0.9140625,
+      "spawn_m": {
+        "x": [
+          0.1,
+          0.5
+        ],
+        "y": [
+          -0.3,
+          0.3
+        ]
+      },
+      "checkpoint": "obsdr-mlp-lstm-24u/training/checkpoints/000033554432",
+      "learner_sha256": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+      "asset": "obsdr-mlp-lstm-24u.tar.gz",
+      "asset_sha256": "a354c58b87380ff2db1f6c72f48461daa1d86406fa528e0d8e02a0a046bf3862",
+      "asset_bytes": 2460951,
+      "member_sha256": {
+        "training/checkpoints/000033554432/learner.msgpack": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+        "training/checkpoints/000033554432/metadata.json": "e9d83aa4deb16d36382b6d45150c7c169f66aeeb72dcd7f489d271a62916f6a9",
+        "training/config.json": "dd6f8eb88c7e6425008a244bc73944f5d8578e657e9803d4011b682bc3b26139",
+        "training/continuation.json": "331dd577b7c5756247c75b46996c67838ab35da47db098803734a50d742be510",
+        "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+        "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+        "training/provenance.json": "eabf6625468b4ac09515ace87574c3a515784b854d3627f0c4e49f56d4c04023",
+        "training/reset-bank.json": "67964ebe7ba5b36b4612b1db5daf98317941bfd3c9e0b78eafe14248ba02f6ee",
+        "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+        "training/summary.json": "1d3ecb3bc6b83dee272eaa703322b278c5db6b11347238324f8c2dfd49c39b47",
+        "training.yaml": "84efb16b03de32bf80159608285d4399f8087aa0f3021db81bbe082c11245acc"
+      },
+      "previous_release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-obsdr-wide-24u-20261109",
+      "evaluation_kind": "latest source recheck",
+      "real_robot_execution_documented": false
+    },
+    {
+      "id": "real-demo-obsdr-mlp-lstm-14plus2u",
+      "actor": "mlp_lstm",
+      "source_run": "show108-pipeline-dr-wide-from14u-plus2u-20261101",
+      "training_source_commit": "0f5aa042416f49c7a8839396179e230a0e853242",
+      "units": 16,
+      "observation_randomization": true,
+      "physics_randomization": true,
+      "normal_place": 294,
+      "episodes": 384,
+      "rate": 0.765625,
+      "spawn_m": {
+        "x": [
+          0.1,
+          0.5
+        ],
+        "y": [
+          -0.3,
+          0.3
+        ]
+      },
+      "checkpoint": "real-demo-obsdr-mlp-lstm-14plus2u/training/checkpoints/000016777216",
+      "learner_sha256": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c",
+      "asset": "real-demo-obsdr-mlp-lstm-14plus2u.tar.gz",
+      "asset_sha256": "08ef2096be6e208c68ff7c38fe6477f61570827f9a40d4b7e00740bce0b18893",
+      "asset_bytes": 2458196,
+      "member_sha256": {
+        "training/checkpoints/000016777216/learner.msgpack": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c",
+        "training/checkpoints/000016777216/metadata.json": "a5925141e0c680ac51b4006defc66f1e08c2600b4d0731975088942957b53210",
+        "training/config.json": "0a083727cb5f14a2a4bf923ce53e318942f1c5ffe5443da9b96f2fd5dadfab2a",
+        "training/continuation.json": "68690d19d924232a32db26136389fac35601a89f3ad78e4409ccf812b600ca1e",
+        "training/initial-resets.json": "6fd4eb76877f8a4a71aeaec09050426a66e796a85d2a5e297371a9a8f9d39696",
+        "training/parameters.json": "36a50226fb194079faee2c4d85b284d55d43857b5a83a1ac79576e428b853bf3",
+        "training/provenance.json": "202b1d0b03c3eec9b3d49cef91a4c99f627f50f81eff1e4f01e5226b52baf29c",
+        "training/reset-bank.json": "67964ebe7ba5b36b4612b1db5daf98317941bfd3c9e0b78eafe14248ba02f6ee",
+        "training/reward-settings.json": "2080c99f5f7916a077836ddb4887c3f6b77ad4bd5486fbe93c520542963fa0a2",
+        "training/summary.json": "ed59eff19272bba197c6d4204000a6dcd16a4c87ee37bd15c03df7c9a25751ec",
+        "training.yaml": "3a3537a7ef405b34db65a7ea1c51a4a5157cdb94ea3bfa2efd0b4bb6bfaee87a"
+      },
+      "previous_release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-obsdr-wide-14plus2u-20261101",
+      "evaluation_kind": "archived evaluation",
+      "real_robot_execution_documented": true
+    }
+  ],
+  "real_robot_reference": "real-demo-reference-20261101.json",
+  "real_robot_policy_id": "ee9da8b8f493eaa56c3c",
+  "real_robot_execution_date": "2026-11-01",
+  "real_robot_evaluation_trials": 1
+}

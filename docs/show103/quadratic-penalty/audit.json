@@ -1,0 +1,372 @@
+{
+  "scope": "Audit-only proposal composed with production5ms events and100ms rewards. Synthetic features, not a physics rollout or learning result.",
+  "formula": "0.6 +0.8*(max(dxy-0.017,0)/0.050)^2 +0.8*ez/(0.040+ez);ez=distance(TCP height,[0.050,0.060]).",
+  "rule": "Activate after confirmed carry. End only on first qualified release. Wrong first release locks first-loss XY/height errors; opening/regrasp cannot clear it.",
+  "modes": {
+    "raw": "Uncapped squared penalty; state reward may become negative.",
+    "floor": "Earlier proposal: new cost cannot exceed positive state score. Existing action/rate/impact/contact penalties remain."
+  },
+  "horizon_s": 20,
+  "discount": 0.99,
+  "initial_conditions": "All principal cases start held at XY100mm offset andTCP170mm above inner floor.",
+  "scenario_definitions": {
+    "align": "XY100->0mm in2.5s",
+    "lower": "TCP170->55mm during2.5-5s",
+    "complete": "Release6s, ballistic landing then withdrawal6.4-9.4s",
+    "late_release": "Same alignment/lowering, wait at goal until14s, finish withdrawal17.4s",
+    "bad_high_drop": "Align then release atTCP170mm after3.1s",
+    "bad_outside_drop": "Release atXY100mm,TCP170mm after0.6s; no bowl-floor support"
+  },
+  "grid": [
+    {
+      "center_distance_mm": 0,
+      "error_mm": 0.0,
+      "unfinished": 0.6,
+      "horizontal": 0.0,
+      "vertical": 0.0,
+      "total": 0.6,
+      "held_score": 2.9400718964708563,
+      "raw_net": 2.3400718964708562,
+      "floor_net": 2.3400718964708562
+    },
+    {
+      "center_distance_mm": 17,
+      "error_mm": 0.0,
+      "unfinished": 0.6,
+      "horizontal": 0.0,
+      "vertical": 0.0,
+      "total": 0.6,
+      "held_score": 2.855276014922154,
+      "raw_net": 2.255276014922154,
+      "floor_net": 2.255276014922154
+    },
+    {
+      "center_distance_mm": 30,
+      "error_mm": 12.999999999999998,
+      "unfinished": 0.6,
+      "horizontal": 0.05407999999999999,
+      "vertical": 0.0,
+      "total": 0.65408,
+      "held_score": 2.7911868628475385,
+      "raw_net": 2.1371068628475385,
+      "floor_net": 2.1371068628475385
+    },
+    {
+      "center_distance_mm": 50,
+      "error_mm": 33.0,
+      "unfinished": 0.6,
+      "horizontal": 0.34848000000000007,
+      "vertical": 0.0,
+      "total": 0.94848,
+      "held_score": 2.6951532340671474,
+      "raw_net": 1.7466732340671474,
+      "floor_net": 1.7466732340671474
+    },
+    {
+      "center_distance_mm": 75,
+      "error_mm": 57.99999999999999,
+      "unfinished": 0.6,
+      "horizontal": 1.0764799999999999,
+      "vertical": 0.0,
+      "total": 1.6764799999999997,
+      "held_score": 2.5817144981200704,
+      "raw_net": 0.9052344981200706,
+      "floor_net": 0.9052344981200706
+    },
+    {
+      "center_distance_mm": 100,
+      "error_mm": 83.0,
+      "unfinished": 0.6,
+      "horizontal": 2.2044799999999998,
+      "vertical": 0.0,
+      "total": 2.80448,
+      "held_score": 2.4779547392108467,
+      "raw_net": -0.3265252607891531,
+      "floor_net": 0.0
+    },
+    {
+      "center_distance_mm": 150,
+      "error_mm": 133.0,
+      "unfinished": 0.6,
+      "horizontal": 5.660480000000001,
+      "vertical": 0.0,
+      "total": 6.26048,
+      "held_score": 2.304922944083569,
+      "raw_net": -3.9555570559164313,
+      "floor_net": 0.0
+    },
+    {
+      "center_distance_mm": 200,
+      "error_mm": 183.0,
+      "unfinished": 0.6,
+      "horizontal": 10.716479999999999,
+      "vertical": 0.0,
+      "total": 11.316479999999999,
+      "held_score": 2.1784777405150915,
+      "raw_net": -9.138002259484907,
+      "floor_net": 0.0
+    },
+    {
+      "center_distance_mm": 300,
+      "error_mm": 283.0,
+      "unfinished": 0.6,
+      "horizontal": 25.628479999999993,
+      "vertical": 0.0,
+      "total": 26.228479999999994,
+      "held_score": 2.03492364282599,
+      "raw_net": -24.193556357174003,
+      "floor_net": 0.0
+    }
+  ],
+  "results": {
+    "far_wait": {
+      "baseline_return": 214.4993113506667,
+      "raw_return": -79.18088961165515,
+      "state_floor_return": -0.09659574612726463,
+      "raw_cost_max": 3.3911467483647666,
+      "floor_cost_max": 2.477954626083374,
+      "floor_saturated_steps": 200,
+      "progress_bonus": 0.0,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "align_only": {
+      "baseline_return": 249.16558519640307,
+      "raw_return": 132.86034996726954,
+      "state_floor_return": 134.36776922268126,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 4,
+      "progress_bonus": 0.024420607835054398,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "align_lower_wait": {
+      "baseline_return": 251.68336550578712,
+      "raw_return": 166.27997963043907,
+      "state_floor_return": 167.7873988858508,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 4,
+      "progress_bonus": 2.9999990463256836,
+      "dwell_bonus": 1.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "complete": {
+      "baseline_return": 330.66944204892974,
+      "raw_return": 270.05667422554967,
+      "state_floor_return": 271.5640934809614,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 4,
+      "progress_bonus": 2.9999990463256836,
+      "dwell_bonus": 1.0,
+      "release_bonus": 2.0,
+      "landing_bonus": 2.0,
+      "withdrawal_bonus": 3.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": true,
+      "landing_paid": true,
+      "withdrawal_paid": true
+    },
+    "late_release": {
+      "baseline_return": 271.78374394990885,
+      "raw_return": 193.03349552517892,
+      "state_floor_return": 194.5409147805906,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 4,
+      "progress_bonus": 2.9999990463256836,
+      "dwell_bonus": 1.0,
+      "release_bonus": 2.0,
+      "landing_bonus": 2.0,
+      "withdrawal_bonus": 3.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": true,
+      "landing_paid": true,
+      "withdrawal_paid": true
+    },
+    "xy_roundtrip": {
+      "baseline_return": 239.69490417665818,
+      "raw_return": 125.62452804137027,
+      "state_floor_return": 127.63143402806114,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 13,
+      "progress_bonus": 2.9999990463256836,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "height_roundtrip": {
+      "baseline_return": 250.97486257793534,
+      "raw_return": 146.83911181873046,
+      "state_floor_return": 148.34653107414215,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 4,
+      "progress_bonus": 2.9999990463256836,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": false,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_high_drop": {
+      "baseline_return": 218.04533746527346,
+      "raw_return": 101.74010223613993,
+      "state_floor_return": 104.29892774911998,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 6,
+      "progress_bonus": 0.024420607835054398,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": true,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_drop_then_lower": {
+      "baseline_return": 218.0264163745943,
+      "raw_return": 101.72118114546078,
+      "state_floor_return": 104.28000665844083,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 6,
+      "progress_bonus": 0.024420607835054398,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": true,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_drop_regrasp": {
+      "baseline_return": 193.41180163093347,
+      "raw_return": 77.10656640179992,
+      "state_floor_return": 79.66539191477997,
+      "raw_cost_max": 3.18378671140035,
+      "floor_cost_max": 2.5431413650512695,
+      "floor_saturated_steps": 6,
+      "progress_bonus": 0.024420607835054398,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": true,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    },
+    "bad_outside_drop": {
+      "baseline_return": 43.09297820451814,
+      "raw_return": -250.58722275780372,
+      "state_floor_return": -0.13464023829061553,
+      "raw_cost_max": 3.3911467483647666,
+      "floor_cost_max": 2.477954626083374,
+      "floor_saturated_steps": 200,
+      "progress_bonus": 0.0,
+      "dwell_bonus": 0.0,
+      "release_bonus": 0.0,
+      "landing_bonus": 0.0,
+      "withdrawal_bonus": 0.0,
+      "error_locked_after_bad_release": true,
+      "release_paid": false,
+      "landing_paid": false,
+      "withdrawal_paid": false
+    }
+  },
+  "trajectory_checks": {
+    "raw": {
+      "alignment_beats_far_wait": true,
+      "alignment_and_lowering_beats_alignment_only": true,
+      "completion_beats_target_wait": true,
+      "fast_completion_beats_late": true,
+      "late_release_beats_target_wait": true,
+      "xy_roundtrip_does_not_improve_return": true,
+      "height_roundtrip_does_not_improve_return": true,
+      "high_drop_worse_than_held_high": true,
+      "empty_lowering_cannot_clear_cost": true,
+      "regrasp_cannot_clear_cost": true
+    },
+    "floor": {
+      "alignment_beats_far_wait": true,
+      "alignment_and_lowering_beats_alignment_only": true,
+      "completion_beats_target_wait": true,
+      "fast_completion_beats_late": true,
+      "late_release_beats_target_wait": true,
+      "xy_roundtrip_does_not_improve_return": true,
+      "height_roundtrip_does_not_improve_return": true,
+      "high_drop_worse_than_held_high": true,
+      "empty_lowering_cannot_clear_cost": true,
+      "regrasp_cannot_clear_cost": true
+    }
+  },
+  "early_termination_checks": {
+    "far_wait": {
+      "raw": {
+        "full20s": -79.18088961165515,
+        "terminated_at1s": -8.751314675016129,
+        "termination_advantage": 70.42957493663901
+      },
+      "floor": {
+        "full20s": -0.09659574612726463,
+        "terminated_at1s": -0.01956108993084607,
+        "termination_advantage": 0.07703465619641855
+      }
+    },
+    "bad_outside_drop": {
+      "raw": {
+        "full20s": -250.58722275780372,
+        "terminated_at1s": -17.713309999150805,
+        "termination_advantage": 232.87391275865292
+      },
+      "floor": {
+        "full20s": -0.13464023829061553,
+        "terminated_at1s": -0.05760099013805745,
+        "termination_advantage": 0.07703924815255808
+      }
+    }
+  },
+  "outcome": "Standard alignment/completion ordering passes, but raw negative rewards permit early-exit accounting advantage; prior state floor truncates the quadratic penalty. Not ready for training as an unqualified fix.",
+  "limitations": [
+    "Synthetic trajectories do not establish collision-free feasibility.",
+    "Early-exit comparison tests reward accounting, not physical reachability of intentional controller faults.",
+    "Bad regrasp is an event stress case, not a validated motion.",
+    "No universal no-exploit or convergence proof."
+  ],
+  "training_run": false,
+  "real_robot": false,
+  "registered_training_environment_changed": false
+}

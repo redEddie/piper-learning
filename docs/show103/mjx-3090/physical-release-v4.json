@@ -1,0 +1,421 @@
+{
+  "version": "stage_reward_v4",
+  "status": "validated_not_trained",
+  "training_started": false,
+  "config": "configs/show103/stage-reward-v4-transformer-lstm-physical-release-plus2.yaml",
+  "user_confirmed": {
+    "high_drop": ">=10cm inside is success, terminate without landing bonus",
+    "opening": "requires actual detachment and latched OPEN goal",
+    "away_cost": "keep existing minimum-distance-relative carry penalty"
+  },
+  "stage4": {
+    "preparation": "keep existing position/height shaping; remove time decay and one-time dwell bonus",
+    "open_bonus": 0.5,
+    "open_qualification": "confirmed20ms no finger contact, still physically detached, OPEN goal maintained",
+    "release_qualification": "physical detachment then floor support and full-cube containment; old TCP height and17mm XY limits no longer veto release",
+    "miss": "cube centre outside the bowl cross-section at its current height after confirmed release; -2 once and immediate terminal/reset",
+    "containment": "floor supported, all cube corners inside bowl frustum,2mm radial/rim and5mm floor penetration tolerance",
+    "contact_caveat": "Transient table/floor contacts during bowl landing do not alone prove an outside miss",
+    "fall_height": "maximum measured cube-centre height during first detached flight minus centre height at first bowl-floor contact, in bowl frame",
+    "inside_bonus": [
+      {
+        "condition": "height<=0.07m",
+        "per_step": 1.0
+      },
+      {
+        "condition": "0.07m<height<0.10m",
+        "per_step": 0.5
+      },
+      {
+        "condition": "height>=0.10m",
+        "per_step": 0.0,
+        "successful_terminal": true
+      }
+    ],
+    "interval_seconds": 0.1,
+    "physics_dt": 0.005,
+    "boundary_tolerance_metres": 1e-06,
+    "away_cost": "unchanged, while held,0.5*(distance_lost/0.1m) once>=0.1m farther than achieved minimum"
+  },
+  "stage5": {
+    "base": 4.0,
+    "settling_max": 0.25,
+    "retreat_max": 0.25,
+    "home_max": 0.5,
+    "home": "mean(exp(-abs(q-A)/1rad)), after settling, independent of clearance/contact gates",
+    "final_home": "unchanged, all joints<=3deg,max speed<=0.05rad/s,hold>=200ms; qualified release,supported settling,80mm clearance,no contact",
+    "high_drop_exception": "high inside drop is a separate success terminal and does not require home",
+    "existing_base_preserved": true,
+    "combined_max_before_common_costs": 6.5,
+    "completion_event_bonus": 0.0
+  },
+  "preserved": {
+    "actor": 49,
+    "critic": 66,
+    "action": 7,
+    "worlds": 4096,
+    "reset_probabilities": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "exploration": {
+      "arm_min_std": 0.2,
+      "gripper_min_std": 0.4
+    },
+    "controller": "unchanged DLS+QP with jerk100",
+    "original_policies_and_checkpoints": true,
+    "real_robot": false
+  },
+  "history": "v2 native airborne prefixes replayed under v4 rules; absence of floor contacts verified; actual reset settling continues physics; no fabricated grasp/landing/home timers",
+  "evaluator": "freeze terminal outcomes, distinguish successful termination from failure; report high_drop_success and home_complete separately",
+  "validation": {
+    "cpu": "30 passed; outputs/show103-physical-release-final-tests.txt",
+    "gpu": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 8,
+      "reset_group_counts": [
+        858,
+        806,
+        816,
+        803,
+        813
+      ],
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.009335876442492008,
+        "max_acceleration": 0.9322073459625244,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      }
+    },
+    "physics_fixtures": {
+      "status": "passed",
+      "scope": "GPU fixtures: low landing, high successful termination, and immediate miss.\n\nUses recorded airborne release prefixes with deterministic test scene offsets.\nThese are physics fixtures, not learned rollouts, training resets or robot runs.\n",
+      "records": [
+        {
+          "case": "recorded_low_release",
+          "worlds": 16,
+          "terminal": 0,
+          "successes": 0,
+          "failures": 0,
+          "freefall_height_min_max": 0.03140343725681305,
+          "freefall_height_max": 0.03148181736469269,
+          "final_opening_bonus_min_max": [
+            0.5,
+            0.5
+          ],
+          "final_landing_bonus_min_max": [
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "case": "raised_cube_high_drop",
+          "worlds": 16,
+          "terminal": 16,
+          "successes": 16,
+          "failures": 0,
+          "freefall_height_min_max": 0.1811789572238922,
+          "freefall_height_max": 0.18121899664402008,
+          "final_opening_bonus_min_max": [
+            0.5,
+            0.5
+          ],
+          "final_landing_bonus_min_max": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "case": "sideways_miss",
+          "worlds": 16,
+          "terminal": 16,
+          "successes": 0,
+          "failures": 16,
+          "freefall_height_min_max": 0.0,
+          "freefall_height_max": 0.0,
+          "final_opening_bonus_min_max": [
+            0.0,
+            0.0
+          ],
+          "final_landing_bonus_min_max": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "first_miss_done_step": 1,
+      "successful_terminal_is_not_failure": true,
+      "training": false,
+      "real_robot": false
+    },
+    "checkpoint_inference_connection": {
+      "status": "passed",
+      "scope": "existing v3 weights under the new task; no learning",
+      "episodes_per_start": 8,
+      "seed": 2026,
+      "starts": [
+        "over_bowl",
+        "post_release"
+      ],
+      "nonfinite": 0,
+      "overflow": 0,
+      "controller_failures": 0,
+      "report": "runs/show103-physical-release-inference-check-20261031/evaluation/summary.json"
+    }
+  },
+  "home_control_audit": {
+    "offline": {
+      "scope": "offline analysis of saved deterministic policy rollouts; no training or robot control",
+      "policy_control_intervals": 76800,
+      "qp_rejected_intervals": 2,
+      "controller_failure_episodes": 0,
+      "late_max_abs_arm_action_median": 0.004028222523629665,
+      "late_max_abs_arm_action_p95": 0.026801042817532993,
+      "native_vs_training_jacobian_max_error": 2.9489503616808577e-08,
+      "sampled_direction_counts": {
+        "samples": 2688,
+        "requested_L2_error_increasing": 1200,
+        "requested_L2_error_decreasing": 1488,
+        "requested_home_progress_increasing": 1584,
+        "home_directed_projected_commands_decrease_L2": 2688
+      },
+      "mean_exponential_joint_progress_first_median": 0.5581281185150146,
+      "mean_exponential_joint_progress_final_median": 0.48922567069530487,
+      "home_bonus_gate_active_episode_fraction_median": 0.955,
+      "at_A": {
+        "tcp_position": [
+          0.2545177597822198,
+          0.001415514086047908,
+          0.3413306176608339
+        ],
+        "singular_values": [
+          1.825225672888494,
+          1.4143672635408808,
+          1.031672110141197,
+          0.20052403526402893,
+          0.13513136716956023,
+          3.1744293163852473e-07
+        ],
+        "rank_at_1e_6": 5,
+        "damped_singular_direction_gains": [
+          0.9992501384447579,
+          0.9987518315350556,
+          0.9976566469263191,
+          0.941465546387316,
+          0.8795789292861095,
+          4.030800593727969e-11
+        ]
+      },
+      "final_policy_samples": [
+        {
+          "seed_trace": "post_release-s2026.npz",
+          "q": [
+            0.29207080602645874,
+            1.9813127517700195,
+            -1.5507608652114868,
+            0.06320283561944962,
+            1.0256458520889282,
+            1.7184778451919556
+          ],
+          "singular_values": [
+            1.8180472977782032,
+            1.5195083333560444,
+            0.9307711573789073,
+            0.30208143249223324,
+            0.23702745328201924,
+            0.12500180105411945
+          ],
+          "action": [
+            -0.001113183330744505,
+            -0.0018406877061352134,
+            -0.0014220819575712085,
+            0.0009464385220780969,
+            0.0008037423249334097,
+            0.008574910461902618
+          ],
+          "desired_joint_velocity": [
+            -0.0010500123221135558,
+            -2.4206728759039366e-05,
+            0.0005796066071441355,
+            0.0018773313013373078,
+            2.5764372145515094e-05,
+            -0.00608100208598285
+          ],
+          "actual_joint_velocity": [
+            -0.0010604941053315997,
+            1.6150534065673128e-05,
+            0.0006420077406801283,
+            0.001965251984074712,
+            -1.5449793863808736e-05,
+            -0.0064433254301548
+          ]
+        },
+        {
+          "seed_trace": "post_release-s2027.npz",
+          "q": [
+            0.3300648629665375,
+            1.993276596069336,
+            -1.5606036186218262,
+            0.13015244901180267,
+            1.0501419305801392,
+            1.5451940298080444
+          ],
+          "singular_values": [
+            1.8156570590236822,
+            1.5176410171865102,
+            0.9337210961104705,
+            0.30296243935712724,
+            0.2423827155558525,
+            0.12406147336667152
+          ],
+          "action": [
+            -0.0025175746995955706,
+            -0.0023809883277863264,
+            -0.0023352971766144037,
+            0.0003288639709353447,
+            0.001417013700120151,
+            0.02040211483836174
+          ],
+          "desired_joint_velocity": [
+            -0.0013544233031115467,
+            0.0004946472593289107,
+            7.64796391740253e-05,
+            0.002647250234390228,
+            0.0014686720634523873,
+            -0.012511079353743583
+          ],
+          "actual_joint_velocity": [
+            -0.0014635386178269982,
+            0.0004894270095974207,
+            7.832278788555413e-05,
+            0.0027271017897874117,
+            0.0014971885830163956,
+            -0.013007436878979206
+          ]
+        },
+        {
+          "seed_trace": "post_release-s2028.npz",
+          "q": [
+            0.4120975732803345,
+            1.9975886344909668,
+            -1.566880464553833,
+            0.12235859036445618,
+            1.06907057762146,
+            1.5186442136764526
+          ],
+          "singular_values": [
+            1.8145577544873552,
+            1.515024899277093,
+            0.9359908136155951,
+            0.30382030723696474,
+            0.2453758103150879,
+            0.12361937494234057
+          ],
+          "action": [
+            -0.006261727772653103,
+            -0.00421461695805192,
+            -0.003034314140677452,
+            -0.0008681133622303605,
+            0.0016476421151310205,
+            0.036533232778310776
+          ],
+          "desired_joint_velocity": [
+            -0.0015562408476147843,
+            -3.871142209307607e-06,
+            0.0010511777332967475,
+            0.0033334567370905616,
+            0.00215537450071902,
+            -0.021026917048410806
+          ],
+          "actual_joint_velocity": [
+            -0.0016456691082566977,
+            4.068148336955346e-05,
+            0.0010809054365381598,
+            0.0034548714756965637,
+            0.00208613951690495,
+            -0.021533532068133354
+          ]
+        }
+      ]
+    },
+    "simulation": {
+      "scope": "Diagnostic simulation controllers, not learned policies or training modifications. Same randomized post-release starts, same5s learned prefix and same DLS/QP/limits.",
+      "seed": 2026,
+      "envs_per_controller": 16,
+      "learned_prefix_seconds": 5.0,
+      "probe_seconds": 20.0,
+      "records": [
+        {
+          "controller": "learned_policy",
+          "episodes": 16,
+          "start_max_error_deg_median": 107.61164855957031,
+          "best_max_error_deg_median": 97.70897674560547,
+          "final_max_error_deg_median": 97.70897674560547,
+          "completed": 0,
+          "failed": 0,
+          "qp_rejected_intervals": 0,
+          "controller_failure_episodes": 0,
+          "nonfinite": 0,
+          "overflow": 0
+        },
+        {
+          "controller": "zero_arm_open",
+          "episodes": 16,
+          "start_max_error_deg_median": 107.61104583740234,
+          "best_max_error_deg_median": 106.35848999023438,
+          "final_max_error_deg_median": 106.35848999023438,
+          "completed": 0,
+          "failed": 0,
+          "qp_rejected_intervals": 0,
+          "controller_failure_episodes": 0,
+          "nonfinite": 0,
+          "overflow": 0
+        },
+        {
+          "controller": "joint_descent_projected_to_TCP",
+          "episodes": 16,
+          "start_max_error_deg_median": 107.61042022705078,
+          "best_max_error_deg_median": 24.803802490234375,
+          "final_max_error_deg_median": 24.803802490234375,
+          "completed": 0,
+          "failed": 0,
+          "qp_rejected_intervals": 0,
+          "controller_failure_episodes": 0,
+          "nonfinite": 0,
+          "overflow": 0
+        },
+        {
+          "controller": "joint_descent_DLS_compensated_TCP",
+          "episodes": 16,
+          "start_max_error_deg_median": 107.61165618896484,
+          "best_max_error_deg_median": 1.0801721811294556,
+          "final_max_error_deg_median": 1.0801721811294556,
+          "completed": 16,
+          "failed": 0,
+          "qp_rejected_intervals": 0,
+          "controller_failure_episodes": 0,
+          "nonfinite": 0,
+          "overflow": 0
+        }
+      ],
+      "real_robot": false,
+      "training": false
+    },
+    "interpretation": "Learned actions stall; repeated QP rejection is not the cause in these traces. A has a wrist singularity but current stopped poses are full rank. Do not attribute the current~97deg stall to the near-A singularity.",
+    "diagnostic_controllers_are_not_policies": true,
+    "production_controller_changed": false,
+    "limits": "One simulation seed,16 repeated scenes; successful diagnostic feedback shows feasibility, not learned performance or a universal guarantee."
+  },
+  "reward_and_policy_effect": "Reward changes alter optimization incentives; improvement requires a new learning/evaluation comparison, not the diagnostic servo success."
+}

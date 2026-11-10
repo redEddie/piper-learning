@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-01",
+  "policy_id": "ee9da8b8f493eaa56c3c",
+  "source_release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-obsdr-wide-14plus2u-20261101",
+  "checkpoint_sha256": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c",
+  "weights_sha256": "91d1fa9ab188c66fb9e195164330d8c4f16155287cba8828f362c956849938b4",
+  "runtime_profile": {
+    "controller": "show108_checked_plan_independent",
+    "max_joint_vel": 1.0,
+    "control_acceleration": 5.0,
+    "control_jerk": 100.0,
+    "tcp_local_position_m": [
+      0.0,
+      0.0,
+      0.1385
+    ],
+    "tcp_floor_clearance_m": 0.01,
+    "gripper_force": 0.5,
+    "control_dt_s": 0.005,
+    "policy_dt_s": 0.1,
+    "arm_hold_while_gripping": false,
+    "gripper_reference_rule": "latched final goal; full-width reference changes by <=20mm once per 100ms policy packet",
+    "max_lin_vel": 0.1,
+    "max_ang_vel": 0.5
+  },
+  "policy_duration_s": 10,
+  "policy_calls": 98,
+  "execution_completed": true,
+  "runtime_error": null,
+  "placement_visually_confirmed": true,
+  "full_return_to_A_verified": false,
+  "evaluation_trials": 1,
+  "scope": "One recorded hardware episode, not a success-rate estimate. Visual review shows cube grasped, transported, released into bowl and remaining inside in final frames.",
+  "video": {
+    "file": "show108-obsdr-wide-real-pick-place-20261101.mp4",
+    "sha256": "c4dbfbfaf87ce0c715ef4a5a2711aa407e9d11d6f95e70ff38a7c881aa281698",
+    "width": 848,
+    "height": 480,
+    "frames": 523,
+    "duration_s": 17.445972
+  },
+  "scene_estimator": {
+    "schema": "showonce_scene_state_v2",
+    "source_sha256": "51b1654e5242f718bbd90100f06fa784c7fe6d6fbb4c406e7f64cf670e95b480",
+    "episode_horizon_s": 20.0,
+    "scope": "deployment object-state inference; actor weights and controller unchanged"
+  },
+  "source_counts": {
+    "stationary_memory": 1,
+    "vision_update": 30,
+    "grasp_from_approach_memory": 1,
+    "held_tcp": 27,
+    "released_prediction": 1,
+    "released_rest": 39
+  },
+  "robot_commands_sent": true
+}

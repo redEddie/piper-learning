@@ -1,0 +1,104 @@
+{
+  "status": "authorized_validated",
+  "branch": "codex/show108-obsdr-joint-a-20u",
+  "base_source": "c3d76e52c4d697003adad155881202ed99a524fa",
+  "parent_checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-pipeline-dr-wide-from14u-plus2u-20261101/training/checkpoints/000016777216",
+  "parent_learner_sha256": "19438a198e31345d04e4234073028c1e0d9f20b48b90f9cb917af48b55f09c2c",
+  "parent_metadata": {
+    "actor": "mlp_lstm",
+    "width": 128,
+    "step": 16777216,
+    "actor_architecture": {
+      "hidden_sizes": [
+        256,
+        64
+      ]
+    },
+    "action_size": 7,
+    "exploration": {
+      "gripper_min_std": 0.5,
+      "arm_min_std": 0.25
+    },
+    "observation_size": {
+      "privileged": [
+        66
+      ],
+      "state": [
+        49
+      ]
+    },
+    "parent_transitions": 117440512,
+    "cumulative_transitions": 134217728,
+    "state": "learner checkpoint; continuation restores learner with fresh simulator episodes"
+  },
+  "parent_units": 16,
+  "additional_units": 4,
+  "cumulative_units": 20,
+  "checkpoint_additional_units": [
+    2,
+    4
+  ],
+  "configuration_differences": {
+    "num_timesteps": [
+      16777216,
+      33554432
+    ],
+    "num_evals": [
+      2,
+      3
+    ]
+  },
+  "config": "configs/show108/stage-reward-v5-mlp-lstm-observation-dr-wide-4096-plus4.yaml",
+  "config_sha256": "84efb16b03de32bf80159608285d4399f8087aa0f3021db81bbe082c11245acc",
+  "restore": [
+    "policy",
+    "value",
+    "normalizer",
+    "optimizer",
+    "rng"
+  ],
+  "environment_identical_to_parent": true,
+  "reward": "joint-A v5",
+  "tests_passed": 38,
+  "validation": {
+    "train": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 8,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.010700887069106102,
+        "max_acceleration": 0.9985018372535706,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "bank_split": "train"
+    },
+    "eval": {
+      "status": "passed",
+      "environments": 4096,
+      "steps": 8,
+      "checks": {
+        "nonfinite": 0,
+        "capacity_overflow": 0,
+        "controller_failed": 0,
+        "max_speed": 0.010645706206560135,
+        "max_acceleration": 0.9985018372535706,
+        "max_jerk": 99.90009307861328,
+        "max_gripper_reference_step": 0.010000001639127731,
+        "max_reward_replay_error": 0.0,
+        "reward_memory_replay_error": 0.0,
+        "all_finite": true,
+        "passed": true
+      },
+      "bank_split": "eval"
+    }
+  },
+  "real_robot": false
+}

@@ -1,0 +1,77 @@
+{
+  "issue": "SHOW-103",
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/balanced-fresh-16m/checkpoints/000016777216",
+  "parent_lineage_transitions": 16777216,
+  "additional_transitions": 33554432,
+  "final_lineage_transitions": 50331648,
+  "config": "configs/show103/balanced-to-50m.yaml",
+  "configuration_diff": {
+    "num_timesteps": [
+      16777216,
+      33554432
+    ],
+    "num_evals": [
+      5,
+      3
+    ],
+    "run_evals": [
+      null,
+      false
+    ]
+  },
+  "preserved": [
+    "all environment settings",
+    "all reward settings",
+    "all network settings",
+    "1024 environments",
+    "reset40/20/20/20; near5% overall"
+  ],
+  "restore": [
+    "policy",
+    "value",
+    "observation normalizer"
+  ],
+  "restart": [
+    "optimizer state",
+    "RNG"
+  ],
+  "explanation": "Existing checkpoint format stores model/value/normalizer only; warm-start continues trained weights with fresh optimizer and RNG. It is not a fresh policy.",
+  "intermediate_evaluations": false,
+  "internal_evaluations": false,
+  "checkpoints_planned_additional_steps": [
+    16777216,
+    33554432
+  ],
+  "evaluation_after_training": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_mode": 384,
+    "modes": [
+      "empty_hand",
+      "mixed",
+      "preinside",
+      "near"
+    ]
+  },
+  "checkpoint_retention": "Confirm final evaluation first; retain final and at most one needed comparison from new phase; preserve all pre-existing sources/releases.",
+  "source_checkpoint_sha256": {
+    "_METADATA": "4b9ae67d13351e348ca88bc00f1365d32e9fa9936563e556d22b418348ebb9d0",
+    "_CHECKPOINT_METADATA": "35f93382e061af9d51c848cb2a6e1b628eaefb5fed7b031bc4a84c4dd53595cd",
+    "ppo_network_config.json": "10dd67820dd7319ffd7510b123086dd2f86debec01af9b3cb9d7931cc0ed40df",
+    "commit_success.txt": "5d614497ef060e7b99c0bdfe4b3dd66a5cb6342a155b0aa075694294db59eb34",
+    "_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+    "manifest.ocdbt": "979d868328320c403c5451e3c6197ce9f790186f322a27eda99bf880ced388cf",
+    "ocdbt.process_0/manifest.ocdbt": "0fd5ec9469071f4123a0084a990a884443e8613644bb10f67ea9bc3848ddf125",
+    "array_metadatas/process_0": "5e257d20367dd4e80bae8d98f784a3aec67be9fa25af16a7f7534731ac363462",
+    "d/ce967693e467c407ee27aba0ad68bec6": "bffff448b3bb2a7edb54cfd96438c97f348f6d0353eb6fa590fab05beb2ec6b4",
+    "ocdbt.process_0/d/7a581d8b817f4b6c1d010d81eabe9843": "06ee619eb8de5a1efeb8e7409d21ff37b9619321f377822968582fe9aebfacf0",
+    "ocdbt.process_0/d/25ed4ab06ea71cfe798051a108d16ba8": "0f931b125241780c7181b984d5a2971abbdb2411d2c80a8d15dfae698f87fd2e",
+    "ocdbt.process_0/d/0bc0c13ac0d1ec0e6540a1f9d34c2ad5": "159ea350796adeabe313443e1cdec51e0f1b939612f9c2f4be984ce7f93d748d",
+    "ocdbt.process_0/d/8945f4b1aee2a5f6eb3e0089c192e0d3": "beed66cfcebb0f3c25cd06979f83cb01b418eaf9de2c5ab49ccd38a6a4617629",
+    "ocdbt.process_0/d/6c7a3473e48b7e4756b6d903f9c84354": "cb49c158d920731d3537b22ceecc07723bf7db6cee43807d75d0ea5b1f9160ab"
+  },
+  "real_robot": false
+}

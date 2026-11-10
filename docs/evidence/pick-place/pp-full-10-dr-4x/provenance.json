@@ -1,0 +1,59 @@
+{
+  "python": "3.11.17",
+  "system": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "gpu_hardware": "NVIDIA GeForce RTX 3090, 580.178.04, 24576 MiB",
+  "packages": {
+    "piper-sim-lab": "0.1.0",
+    "playground": "0.2.0",
+    "mujoco": "3.16.0",
+    "mujoco-mjx": "3.16.0",
+    "mujoco-warp": "3.16.0",
+    "warp-lang": "1.18.0",
+    "jax": "0.10.2",
+    "jaxlib": "0.10.2",
+    "brax": "0.14.2",
+    "flax": "0.12.8",
+    "optax": "0.2.8"
+  },
+  "sources": {
+    "playground": {
+      "url": "https://github.com/google-deepmind/mujoco_playground.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "d59156e099a8785dd58fbce2e25a6ee1f7b5800c",
+        "requested_revision": "d59156e099a8785dd58fbce2e25a6ee1f7b5800c"
+      }
+    },
+    "brax": {
+      "url": "https://github.com/google/brax.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "6d039374b34a266107bd1e952180eea33ac4eab8",
+        "requested_revision": "6d039374b34a266107bd1e952180eea33ac4eab8"
+      }
+    }
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "code_sha256": {
+    "__init__.py": "f220f8df55c88d4aa4c96811cab810aa38847d7ee6f8e028e713e26478d534b2",
+    "assets.py": "f064b88abbee68c442cab18ccfc6cababcc05cea7fe02d1186e5215b6862e24a",
+    "benchmark.py": "bca31a7b4942376664b6788806057f6ded88ff40bedf1538b080ad12574fc105",
+    "checkpoint.py": "70d0c0869eec59de7085120f954cb2a42b41d6b4cfad300132b0d5b1cc254b31",
+    "env.py": "cf99189f6b4d8f43a9078ce654bf36f66e62be730f861a66aabcf9bd771d1a36",
+    "evaluate.py": "dbe94ea445bad2e3e4f8a1b83c2caa531225f3c2abc4dfb494cd74becbc527ff",
+    "pick_place.py": "fce2efea1ce244ad3458452e2ffed069c7f47c45305a20a1b7387ca754f04d6a",
+    "runtime.py": "c68b6bf6a483a6c2a04f75cad87258513bcb7acd3df3fad16a5cb4007277219c",
+    "tasks.py": "a39fd1c83cbec964b8ce6bf19a68db3e4a4f53d8571c69f160c37296b0abcef3",
+    "train.py": "cb9dd718cc24740c5546b5cbf7b1b7a72581acec0eaedb44ae80f559da529521",
+    "wrappers.py": "5ca59ed83251d9ceff6be608d104aeb136eaf083eb77b6232dff2f5f416ae27e"
+  },
+  "assets": {
+    "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+    "revision": "62ab00f2bc44f6f20c1c9b7a13f3fb1dd41a4e35",
+    "license": "MIT",
+    "verified_files": 89
+  },
+  "platform": "gpu"
+}

@@ -1,0 +1,22 @@
+{
+  "docs/smooth-grip/bootstrap.json": {
+    "files_checked": 15,
+    "changed": []
+  },
+  "docs/show103/protocol.json": {
+    "files_checked": 14,
+    "changed": []
+  },
+  "docs/show103/release-v2/protocol.json": {
+    "files_checked": 14,
+    "changed": []
+  },
+  "docs/show103/stable-v3/protocol.json": {
+    "files_checked": 15,
+    "changed": []
+  },
+  "original_source": {
+    "files_checked": 349,
+    "changed": []
+  }
+}

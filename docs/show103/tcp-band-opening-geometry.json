@@ -1,0 +1,1078 @@
+{
+  "reference": "TCP minus bowl inner floor, not cube bottom/centre or tabletop",
+  "scope": "Static closed-grasp reset IK poses opened at fixed TCP; dynamic release/withdrawal still needs testing",
+  "records": [
+    {
+      "pose": 0,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 0,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 0,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 1,
+      "tcp_to_inner_floor_mm": 55.07133163645076,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 1,
+      "tcp_to_inner_floor_mm": 55.07133163645076,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 1,
+      "tcp_to_inner_floor_mm": 55.07133163645076,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 2,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 2,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 2,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 3,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 3,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 3,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 4,
+      "tcp_to_inner_floor_mm": 55.07133163645073,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 4,
+      "tcp_to_inner_floor_mm": 55.07133163645073,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 4,
+      "tcp_to_inner_floor_mm": 55.07133163645073,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 5,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 5,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 5,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 6,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 6,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 6,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 7,
+      "tcp_to_inner_floor_mm": 55.07133163645073,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 7,
+      "tcp_to_inner_floor_mm": 55.07133163645073,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 7,
+      "tcp_to_inner_floor_mm": 55.07133163645073,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 8,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 8,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 8,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 9,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 9,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 9,
+      "tcp_to_inner_floor_mm": 50.07668441952676,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 10,
+      "tcp_to_inner_floor_mm": 55.07133163645078,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 10,
+      "tcp_to_inner_floor_mm": 55.07133163645078,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 10,
+      "tcp_to_inner_floor_mm": 55.07133163645078,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 11,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 11,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 11,
+      "tcp_to_inner_floor_mm": 60.066009966837555,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 12,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 12,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 12,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 13,
+      "tcp_to_inner_floor_mm": 55.0713316364507,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 13,
+      "tcp_to_inner_floor_mm": 55.0713316364507,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 13,
+      "tcp_to_inner_floor_mm": 55.0713316364507,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 14,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 14,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 14,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 15,
+      "tcp_to_inner_floor_mm": 50.0767260396017,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 15,
+      "tcp_to_inner_floor_mm": 50.0767260396017,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 15,
+      "tcp_to_inner_floor_mm": 50.0767260396017,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 16,
+      "tcp_to_inner_floor_mm": 55.07137361574854,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 16,
+      "tcp_to_inner_floor_mm": 55.07137361574854,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 16,
+      "tcp_to_inner_floor_mm": 55.07137361574854,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 17,
+      "tcp_to_inner_floor_mm": 60.06605648899427,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 17,
+      "tcp_to_inner_floor_mm": 60.06605648899427,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 17,
+      "tcp_to_inner_floor_mm": 60.06605648899427,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 18,
+      "tcp_to_inner_floor_mm": 50.076706591456464,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 18,
+      "tcp_to_inner_floor_mm": 50.076706591456464,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 18,
+      "tcp_to_inner_floor_mm": 50.076706591456464,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 19,
+      "tcp_to_inner_floor_mm": 55.07138782688337,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 19,
+      "tcp_to_inner_floor_mm": 55.07138782688337,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 19,
+      "tcp_to_inner_floor_mm": 55.07138782688337,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 20,
+      "tcp_to_inner_floor_mm": 60.06604330897517,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 20,
+      "tcp_to_inner_floor_mm": 60.06604330897517,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 20,
+      "tcp_to_inner_floor_mm": 60.06604330897517,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 21,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 21,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 21,
+      "tcp_to_inner_floor_mm": 50.07668441952673,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 22,
+      "tcp_to_inner_floor_mm": 55.07133163645076,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 22,
+      "tcp_to_inner_floor_mm": 55.07133163645076,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 22,
+      "tcp_to_inner_floor_mm": 55.07133163645076,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 23,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 23,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 23,
+      "tcp_to_inner_floor_mm": 60.06600996683753,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 24,
+      "tcp_to_inner_floor_mm": 50.076684419526565,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 24,
+      "tcp_to_inner_floor_mm": 50.076684419526565,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 24,
+      "tcp_to_inner_floor_mm": 50.076684419526565,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 25,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 25,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 25,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 26,
+      "tcp_to_inner_floor_mm": 60.066009966837505,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 26,
+      "tcp_to_inner_floor_mm": 60.066009966837505,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 26,
+      "tcp_to_inner_floor_mm": 60.066009966837505,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 27,
+      "tcp_to_inner_floor_mm": 50.076747227159714,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 27,
+      "tcp_to_inner_floor_mm": 50.076747227159714,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 27,
+      "tcp_to_inner_floor_mm": 50.076747227159714,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 28,
+      "tcp_to_inner_floor_mm": 55.07141390554135,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 28,
+      "tcp_to_inner_floor_mm": 55.07141390554135,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 28,
+      "tcp_to_inner_floor_mm": 55.07141390554135,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 29,
+      "tcp_to_inner_floor_mm": 60.06607664032509,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 29,
+      "tcp_to_inner_floor_mm": 60.06607664032509,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 29,
+      "tcp_to_inner_floor_mm": 60.06607664032509,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 30,
+      "tcp_to_inner_floor_mm": 50.07670757433536,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 30,
+      "tcp_to_inner_floor_mm": 50.07670757433536,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 30,
+      "tcp_to_inner_floor_mm": 50.07670757433536,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 31,
+      "tcp_to_inner_floor_mm": 55.07138895589711,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 31,
+      "tcp_to_inner_floor_mm": 55.07138895589711,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 31,
+      "tcp_to_inner_floor_mm": 55.07138895589711,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 32,
+      "tcp_to_inner_floor_mm": 60.0660625257137,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 32,
+      "tcp_to_inner_floor_mm": 60.0660625257137,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 32,
+      "tcp_to_inner_floor_mm": 60.0660625257137,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 33,
+      "tcp_to_inner_floor_mm": 50.076710033314455,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 33,
+      "tcp_to_inner_floor_mm": 50.076710033314455,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 33,
+      "tcp_to_inner_floor_mm": 50.076710033314455,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 34,
+      "tcp_to_inner_floor_mm": 55.071353850946885,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 34,
+      "tcp_to_inner_floor_mm": 55.071353850946885,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 34,
+      "tcp_to_inner_floor_mm": 55.071353850946885,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 35,
+      "tcp_to_inner_floor_mm": 60.06606595861841,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 35,
+      "tcp_to_inner_floor_mm": 60.06606595861841,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 35,
+      "tcp_to_inner_floor_mm": 60.06606595861841,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 36,
+      "tcp_to_inner_floor_mm": 50.076684419526536,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 36,
+      "tcp_to_inner_floor_mm": 50.076684419526536,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 36,
+      "tcp_to_inner_floor_mm": 50.076684419526536,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 37,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 37,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 37,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 38,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 38,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 38,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 39,
+      "tcp_to_inner_floor_mm": 50.076684419526565,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 39,
+      "tcp_to_inner_floor_mm": 50.076684419526565,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 39,
+      "tcp_to_inner_floor_mm": 50.076684419526565,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 40,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 40,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 40,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 41,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 41,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 41,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 42,
+      "tcp_to_inner_floor_mm": 50.076684419526536,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 42,
+      "tcp_to_inner_floor_mm": 50.076684419526536,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 42,
+      "tcp_to_inner_floor_mm": 50.076684419526536,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 43,
+      "tcp_to_inner_floor_mm": 55.07133163645081,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 43,
+      "tcp_to_inner_floor_mm": 55.07133163645081,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 43,
+      "tcp_to_inner_floor_mm": 55.07133163645081,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 44,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 44,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 44,
+      "tcp_to_inner_floor_mm": 60.06600996683748,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 45,
+      "tcp_to_inner_floor_mm": 50.07668441952651,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 45,
+      "tcp_to_inner_floor_mm": 50.07668441952651,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 45,
+      "tcp_to_inner_floor_mm": 50.07668441952651,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 46,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 46,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 46,
+      "tcp_to_inner_floor_mm": 55.071331636450836,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 47,
+      "tcp_to_inner_floor_mm": 60.06600996683745,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 47,
+      "tcp_to_inner_floor_mm": 60.06600996683745,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 47,
+      "tcp_to_inner_floor_mm": 60.06600996683745,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 48,
+      "tcp_to_inner_floor_mm": 50.0744696139738,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 48,
+      "tcp_to_inner_floor_mm": 50.0744696139738,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 48,
+      "tcp_to_inner_floor_mm": 50.0744696139738,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 49,
+      "tcp_to_inner_floor_mm": 55.069421063860425,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 49,
+      "tcp_to_inner_floor_mm": 55.069421063860425,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 49,
+      "tcp_to_inner_floor_mm": 55.069421063860425,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 50,
+      "tcp_to_inner_floor_mm": 60.06437219751318,
+      "width_mm": 60.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 50,
+      "tcp_to_inner_floor_mm": 60.06437219751318,
+      "width_mm": 80.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    },
+    {
+      "pose": 50,
+      "tcp_to_inner_floor_mm": 60.06437219751318,
+      "width_mm": 100.0,
+      "robot_bowl_contacts": 0,
+      "max_penetration_mm": 0
+    }
+  ],
+  "real_robot": false
+}

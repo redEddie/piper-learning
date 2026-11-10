@@ -1,0 +1,12 @@
+{
+  "environments": 64,
+  "policy_steps": 8,
+  "control_steps_per_environment": 160,
+  "max_reference_jerk": 99.99999776482582,
+  "max_reference_acceleration": 0.9999999776482582,
+  "controller_failures": 0,
+  "nonfinite": 0.0,
+  "overflow": 0.0,
+  "training": false,
+  "real_robot": false
+}

@@ -1,0 +1,64 @@
+{
+  "source": "agilexrobotics/piper_ros noetic ac41fcbcdda598f01b51cf6175ed9a24d0dacadc",
+  "urdf": "urdf/piper_description_v100.urdf",
+  "license": "MIT (LICENSE.piper_ros)",
+  "urdf_sha256": "f45e318ad58339945e5845f4e7a6db22dd334c1f8d4f1f1004285b6fd3be8529",
+  "files": {
+    "LICENSE.piper_ros": "e32d78fd3761052ab0b2bb42fef8a7a9ad3f298d315d305333c349d2aff1f134",
+    "meshes/base_link.STL": "fd4a3d6d0266205fe3f725f048645be66592c23564db22e08b0807d5569b2c64",
+    "meshes/gripper_base_100.stl": "9d4f64f426e6eb0e730735a5c6adee6e6d00715d18f255f636df6135b0be18de",
+    "meshes/link1.STL": "9ee6e1d67c0241f42a0dbaf5c676d19230375ed078ee1943bb8c4c37ab303d14",
+    "meshes/link2.STL": "0d37675b699b643f2e15348de99aed535fac10dc5f09a79b8e4b0acfaf4e0378",
+    "meshes/link3.STL": "e8ae51f17c0c7f6d67b753922e2cc269f5e8372a65734f859231639a64fe8fad",
+    "meshes/link4.STL": "efa33022976218f246f736a6133494b5d0e5486e8b50b52900c42f285ae85558",
+    "meshes/link5.STL": "a1c69d1c7f6f8c60e2c82331c0f444725200ed4053d3e5ec23aa82cb5db5b29f",
+    "meshes/link7.STL": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+    "meshes/link8.STL": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+    "piper.xml": "828ed79064944d277c595fb08db19c9efa185ec2ca5e3f85347c6f8d214db3ea",
+    "scene.xml": "183a6c3c72fe7d3ca1d86325de2f36005554415027270fcf3056945f2900baa7"
+  },
+  "joint_ranges": {
+    "joint1": [
+      -2.618,
+      2.618
+    ],
+    "joint2": [
+      0.0,
+      3.14
+    ],
+    "joint3": [
+      -2.697,
+      0.0
+    ],
+    "joint4": [
+      -1.745,
+      1.745
+    ],
+    "joint5": [
+      -1.22,
+      1.22
+    ],
+    "joint6": [
+      -2.094,
+      2.094
+    ],
+    "joint7": [
+      0.0,
+      0.05
+    ],
+    "joint8": [
+      -0.05,
+      0.0
+    ]
+  },
+  "home_qpos": [
+    0.0,
+    0.523,
+    -0.45,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nbody": 11,
+  "ngeom": 20
+}

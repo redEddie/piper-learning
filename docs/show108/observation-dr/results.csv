@@ -1,0 +1,6 @@
+stage,start,episodes,parent_local_success,parent_local_success_rate,continued_local_success,continued_local_success_rate,parent_full_A,continued_full_A,continued_controller_failures,continued_high_drop_exceptions
+① 접근,initial_a,384,1,0.0026041666666666665,377,0.9817708333333334,0,21,1,0
+② 파지·들기,pre_grasp,384,1,0.0026041666666666665,379,0.9869791666666666,0,35,0,0
+③ 운반,held,384,32,0.08333333333333333,382,0.9947916666666666,0,39,0,1
+④ 개방·놓기,over_bowl,384,169,0.4401041666666667,383,0.9973958333333334,0,42,0,0
+⑤ 안착·후퇴·A 복귀,post_release,384,1,0.0026041666666666665,39,0.1015625,1,39,0,0

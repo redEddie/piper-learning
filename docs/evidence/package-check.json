@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "installation": "wheel in isolated target ahead of editable source",
+  "all_python_modules_match_source": true,
+  "wheel_sha256": "42713cee6bc1b70be5556fecceb03928c28b7310bbefaf2b39eb12d0041ccf24",
+  "asset_verification": {
+    "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+    "revision": "62ab00f2bc44f6f20c1c9b7a13f3fb1dd41a4e35",
+    "license": "MIT",
+    "verified_files": 89
+  },
+  "nq": 8,
+  "nv": 8,
+  "nu": 7
+}

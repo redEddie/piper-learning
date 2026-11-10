@@ -1,0 +1,60 @@
+{
+  "scope": "scripted trajectories; basic completion floor 1.5 and hold bridge only inside placing",
+  "results": {
+    "wait": {
+      "discounted_return": 162.9829516266255,
+      "undiscounted_return": 236.00333000336957,
+      "progress_total": 0.0,
+      "impact_total": 0.0,
+      "opening_total": 0.0,
+      "final_quality": 0.0,
+      "qualified_release": false,
+      "premature_release": false,
+      "impact_peak": 0.0
+    },
+    "drop": {
+      "discounted_return": 207.9197263764128,
+      "undiscounted_return": 310.90540870152824,
+      "progress_total": 0.0,
+      "impact_total": 13.733999252319336,
+      "opening_total": 0.0,
+      "final_quality": 0.0,
+      "qualified_release": false,
+      "premature_release": true,
+      "impact_peak": 1.3733999729156494
+    },
+    "gentle": {
+      "discounted_return": 334.00376324031856,
+      "undiscounted_return": 512.8346013739213,
+      "progress_total": 2.000007390975952,
+      "impact_total": 0.19999998807907104,
+      "opening_total": 1.0,
+      "final_quality": 0.9615384936332703,
+      "qualified_release": true,
+      "premature_release": false,
+      "impact_peak": 0.019999999552965164
+    },
+    "delayed_gentle": {
+      "discounted_return": 235.62089494055698,
+      "undiscounted_return": 374.1126768324729,
+      "progress_total": 2.000007390975952,
+      "impact_total": 0.19999998807907104,
+      "opening_total": 1.0,
+      "final_quality": 0.9615384936332703,
+      "qualified_release": true,
+      "premature_release": false,
+      "impact_peak": 0.019999999552965164
+    },
+    "closed_on_floor": {
+      "discounted_return": 164.68894699140924,
+      "undiscounted_return": 237.77913734656642,
+      "progress_total": 2.000007390975952,
+      "impact_total": 0.19999998807907104,
+      "opening_total": 0.0,
+      "final_quality": 0.0,
+      "qualified_release": false,
+      "premature_release": false,
+      "impact_peak": 0.019999999552965164
+    }
+  }
+}

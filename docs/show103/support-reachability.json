@@ -1,0 +1,16 @@
+{
+  "status": "reachable_without_arm_contacts",
+  "report": {
+    "accepted": 51,
+    "rejected": {
+      "ik": 0,
+      "collision": 0,
+      "grasp": 0
+    },
+    "requested_height_range_m": [
+      0.0001,
+      0.0001
+    ]
+  },
+  "scope": "Geometric support approach at0.1mm above bowl floor; not used as training reset range"
+}

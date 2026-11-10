@@ -1,0 +1,128 @@
+{
+  "scope": "Controller-only GPU timings, followed by a fixed-action integration probe.\n\nNo PPO/gradient updates or robot I/O. GPU timings include dispatch and device\nsynchronization, exclude compilation, DLS and physics. Existing GPU work is\nrecorded and never interrupted.\n",
+  "gpu_processes_present_before_start": "245555, 114 MiB\n245706, 5662 MiB\n",
+  "timings": [
+    {
+      "batch_size": 1,
+      "jerk_limit": null,
+      "p50_ms": 1.0422129999999998,
+      "p95_ms": 2.796229299999999,
+      "p99_ms": 4.015672550000001,
+      "mean_ms": 1.3513641250000001,
+      "compile_seconds": 1.1516278779599816,
+      "samples": 120
+    },
+    {
+      "batch_size": 1,
+      "jerk_limit": 100.0,
+      "p50_ms": 1.0598095,
+      "p95_ms": 3.044418199999999,
+      "p99_ms": 3.8976176600000008,
+      "mean_ms": 1.3687949666666666,
+      "compile_seconds": 0.5588869879720733,
+      "samples": 120
+    },
+    {
+      "batch_size": 1,
+      "jerk_limit": 300.0,
+      "p50_ms": 1.019193,
+      "p95_ms": 3.011791549999999,
+      "p99_ms": 3.936614140000001,
+      "mean_ms": 1.3730865333333335,
+      "compile_seconds": 0.5363409209530801,
+      "samples": 120
+    },
+    {
+      "batch_size": 1,
+      "jerk_limit": 1000.0,
+      "p50_ms": 1.0663245,
+      "p95_ms": 3.4245909999999995,
+      "p99_ms": 4.26620764,
+      "mean_ms": 1.459958433333333,
+      "compile_seconds": 0.7050178209319711,
+      "samples": 120
+    },
+    {
+      "batch_size": 128,
+      "jerk_limit": null,
+      "p50_ms": 1.527142,
+      "p95_ms": 2.91379265,
+      "p99_ms": 3.2464155700000004,
+      "mean_ms": 1.54415415,
+      "compile_seconds": 0.7857348979450762,
+      "samples": 120
+    },
+    {
+      "batch_size": 128,
+      "jerk_limit": 100.0,
+      "p50_ms": 1.5154895000000002,
+      "p95_ms": 2.9602803499999997,
+      "p99_ms": 4.0461506100000015,
+      "mean_ms": 1.5889774,
+      "compile_seconds": 0.5436358950100839,
+      "samples": 120
+    },
+    {
+      "batch_size": 128,
+      "jerk_limit": 300.0,
+      "p50_ms": 1.5245125,
+      "p95_ms": 3.1552372999999996,
+      "p99_ms": 4.033731360000001,
+      "mean_ms": 1.612218625,
+      "compile_seconds": 0.6159672130597755,
+      "samples": 120
+    },
+    {
+      "batch_size": 128,
+      "jerk_limit": 1000.0,
+      "p50_ms": 1.5328135,
+      "p95_ms": 3.3377796999999982,
+      "p99_ms": 5.445445050000002,
+      "mean_ms": 1.6782782416666668,
+      "compile_seconds": 0.5682556990068406,
+      "samples": 120
+    },
+    {
+      "batch_size": 1024,
+      "jerk_limit": null,
+      "p50_ms": 1.7030695,
+      "p95_ms": 2.12891475,
+      "p99_ms": 2.7138270700000007,
+      "mean_ms": 1.7536825500000002,
+      "compile_seconds": 0.9022541509475559,
+      "samples": 120
+    },
+    {
+      "batch_size": 1024,
+      "jerk_limit": 100.0,
+      "p50_ms": 1.700097,
+      "p95_ms": 2.1143242999999994,
+      "p99_ms": 3.1397737900000005,
+      "mean_ms": 1.7737924416666668,
+      "compile_seconds": 0.676481563015841,
+      "samples": 120
+    },
+    {
+      "batch_size": 1024,
+      "jerk_limit": 300.0,
+      "p50_ms": 1.684704,
+      "p95_ms": 1.9960108499999998,
+      "p99_ms": 2.7403489200000006,
+      "mean_ms": 1.725900025,
+      "compile_seconds": 0.7388874129392207,
+      "samples": 120
+    },
+    {
+      "batch_size": 1024,
+      "jerk_limit": 1000.0,
+      "p50_ms": 1.681505,
+      "p95_ms": 2.30491585,
+      "p99_ms": 3.3608414800000004,
+      "mean_ms": 1.7751668166666665,
+      "compile_seconds": 0.7185142640955746,
+      "samples": 120
+    }
+  ],
+  "training": false,
+  "real_robot": false
+}

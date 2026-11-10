@@ -1,0 +1,14 @@
+{
+  "tcp60-transformer-fresh14-results.json": {
+    "sha256": "4431885fa94a034cdee05b970e2ed626e433b0131ef757cc634f609f4dbbfc84",
+    "original_path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show111-jacobian-posture-qp-20261107/docs/show111/tcp60-fresh14-results.json"
+  },
+  "tcp60-mlp-lstm-protocol.json": {
+    "sha256": "227a9addf49d48c27ad62283229f2e793ea29d8aec15e55d3bed5d4378e20da3",
+    "original_path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/work/show111-jacobian-posture-qp-20261107/docs/show111/mlp-lstm-tcp60-protocol.json"
+  },
+  "tcp60-mlp-lstm-fresh14-results.json": {
+    "sha256": "b4c84d4552bd9dba4ed149acba57caea3afef573d8eca1ac89181a9236ef099a",
+    "original_path": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show111-mlp-lstm-tcp60-critic64-fresh14u-20261107/from-start-comparison.json"
+  }
+}

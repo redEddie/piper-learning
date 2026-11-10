@@ -1,0 +1,243 @@
+--- a/src/piper_sim_lab/pick_place.py
++++ b/src/piper_sim_lab/pick_place.py
+@@ -57,7 +57,8 @@
+         max_constraints_per_env=1024,
+         ccd_pairs_per_env=16,
+         solver_iterations=8,
+-        solver_ls_iterations=4,
++        # SHOW-62: budget 4 can stop Newton before contact forces converge.
++        solver_ls_iterations=20,
+         # Top-down hover: grasp point at (0.30, 0, 0.07) m with the gripper pointing
+         # at the table, 0.22 rad inside the joint5 limit (wrist singularity avoided).
+         nominal_qpos=[0.0, 1.743, -1.087, 0.0, 1.002, 0.0],
+--- a/configs/pick_place.yaml
++++ b/configs/pick_place.yaml
+@@ -7,7 +7,7 @@
+   sim_dt: 0.005
+   impl: warp
+   solver_iterations: 8
+-  solver_ls_iterations: 4
++  solver_ls_iterations: 20
+   jacobian: mjx
+   block_half: 0.025
+   block_mass: 0.08
+--- a/configs/pick_place_block30.yaml
++++ b/configs/pick_place_block30.yaml
+@@ -7,7 +7,7 @@
+   sim_dt: 0.005
+   impl: warp
+   solver_iterations: 8
+-  solver_ls_iterations: 4
++  solver_ls_iterations: 20
+   jacobian: mjx
+   block_half: 0.015
+   block_mass: 0.02
+--- a/configs/pick_place_smoke.yaml
++++ b/configs/pick_place_smoke.yaml
+@@ -6,7 +6,7 @@
+   sim_dt: 0.005
+   impl: warp
+   solver_iterations: 8
+-  solver_ls_iterations: 4
++  solver_ls_iterations: 20
+   jacobian: mjx
+   block_half: 0.025
+   block_mass: 0.08
+--- /dev/null
++++ b/tests/test_contact_solver.py
+@@ -0,0 +1,42 @@
++"""Regression for the held-block ejection caused by a low line-search budget.
++
++Exercise actual C-engine contact dynamics, without a policy or GPU. Both
++block sizes previously ejected under the task's old default budget of 4.
++"""
++import mujoco
++import numpy as np
++import pytest
++
++from piper_sim_lab.pick_place import PiperPickPlace
++
++
++@pytest.mark.parametrize("half,mass", [(0.015, 0.02), (0.025, 0.08)])
++def test_default_solver_holds_block_without_ejection(half, mass):
++    env = PiperPickPlace(config_overrides={
++        "impl": "jax", "block_half": half, "block_mass": mass,
++    })
++    model = env.mj_model
++    data = mujoco.MjData(model)
++    joints = np.asarray(env._reset_table["grasp"])[0]
++    data.qpos[env._qpos_ids] = joints
++    data.qpos[env._finger_qpos_ids] = [half, -half]
++    data.ctrl[env._arm_ctrl_ids] = joints
++    data.ctrl[env._gripper_ctrl_id] = 0.0
++    mujoco.mj_kinematics(model, data)
++    axis = data.site_xmat[env._tcp_id].reshape(3, 3)[:, 1]
++    yaw = np.arctan2(axis[1], axis[0])
++    adr = env._block_qpos_adr
++    data.qpos[adr:adr + 7] = [
++        *data.site_xpos[env._tcp_id], np.cos(yaw / 2), 0, 0, np.sin(yaw / 2),
++    ]
++    peak_speed = 0.0
++    for _ in range(round(1.0 / model.opt.timestep)):
++        mujoco.mj_step(model, data)
++        velocity = data.qvel[env._block_qvel_adr:env._block_qvel_adr + 3]
++        peak_speed = max(peak_speed, float(np.linalg.norm(velocity)))
++    mujoco.mj_kinematics(model, data)
++    block = data.qpos[adr:adr + 3]
++    assert np.isfinite(data.qpos).all() and np.isfinite(data.qvel).all()
++    assert peak_speed < 0.3, "held block acquired an implausible transient speed"
++    assert np.linalg.norm(block - data.site_xpos[env._tcp_id]) < 0.01
++    assert block[2] > 0.05, "block fell from the lifted starting pose"
+--- /dev/null
++++ b/scripts/validate_scripted_grasp.py
+@@ -0,0 +1,85 @@
++"""Scripted approach/close/lift/transport/release using the actual patched task.
++
++C uses the same DLS equations with MuJoCo's analytic Jacobian; JAX/Warp use
++the task's env.step. This is a closed-loop regression, not a policy eval.
++"""
++import argparse,os,sys,json,time
++from pathlib import Path
++p=argparse.ArgumentParser();p.add_argument('--backend',choices=['c','jax','warp'],required=True)
++p.add_argument('--ls',type=int,default=20);p.add_argument('--num-envs',type=int,default=8)
++p.add_argument('--block',type=int,choices=[30,50],default=50)
++p.add_argument('--output-root',type=Path,default=Path(__file__).resolve().parents[1]/'runs/contact-solver-validation')
++a=p.parse_args();out=a.output_root/f'grasp-{a.backend}-block{a.block}-ls{a.ls}'
++out.mkdir(parents=True,exist_ok=True)
++os.environ['JAX_PLATFORMS']='cuda,cpu' if a.backend=='warp' else 'cpu'
++os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false';os.environ['MUJOCO_GL']='egl'
++os.environ['JAX_DEFAULT_MATMUL_PRECISION']='highest'
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
++import jax,jax.numpy as jp,numpy as np,mujoco
++from mujoco import mjx
++from piper_sim_lab.pick_place import PiperPickPlace
++N=a.num_envs
++env=PiperPickPlace(config_overrides={'impl':'warp' if a.backend=='warp' else 'jax','batch_capacity':N,
++ 'solver_ls_iterations':a.ls,'reset_stage_probs':[1.,0.,0.],
++ 'block_half':a.block/2000,'block_mass':.02 if a.block==30 else .08})
++c=env._config;m=env.mj_model
++mujoco.mj_saveModel(m,str(out/'model.mjb'))
++s=jax.jit(jax.vmap(env.reset))(jax.random.split(jax.random.key(3),N));jax.block_until_ready(s)
++if a.backend=='c':
++ ds=mjx.get_data(m,s.data)
++ jacp=np.zeros((3,m.nv));jacr=np.zeros((3,m.nv))
++ def tcp():return np.stack([d.site_xpos[env._tcp_id].copy() for d in ds])
++ def block():return np.stack([d.xpos[env._block_id].copy() for d in ds])
++ def bowl():return np.stack([d.mocap_pos[env._bowl_mocap_id].copy() for d in ds])
++ def poses():return np.stack([d.qpos.copy() for d in ds]),np.stack([d.mocap_pos.copy() for d in ds])
++ def widths():return np.array([d.qpos[env._finger_qpos_ids[0]]-d.qpos[env._finger_qpos_ids[1]] for d in ds])
++ def step(actions):
++  for d,action in zip(ds,actions):
++   mujoco.mj_comPos(m,d);mujoco.mj_jacSite(m,d,jacp,jacr,env._tcp_id)
++   J=np.concatenate((jacp,jacr))[:,env._qvel_ids]
++   twist=np.r_[action[:3]*c.max_lin_vel,action[3:6]*c.max_ang_vel]
++   qv=J.T@np.linalg.solve(J@J.T+c.ik_damping**2*np.eye(6),twist)
++   qv=np.clip(qv,-c.max_joint_vel,c.max_joint_vel)
++   desired=d.ctrl[env._arm_ctrl_ids]+qv*c.ctrl_dt
++   d.ctrl[env._arm_ctrl_ids]=np.clip(np.clip(desired,d.qpos[env._qpos_ids]-c.max_target_lag,d.qpos[env._qpos_ids]+c.max_target_lag),np.asarray(env._lower),np.asarray(env._upper))
++   previous=d.ctrl[env._gripper_ctrl_id]
++   d.ctrl[env._gripper_ctrl_id]=np.clip(c.gripper_max*(action[6]+1)/2,previous-c.gripper_rate,previous+c.gripper_rate)
++   for _ in range(env.n_substeps):mujoco.mj_step(m,d)
++   mujoco.mj_kinematics(m,d)
++else:
++ step_fn=jax.jit(jax.vmap(env.step))
++ def tcp():return np.asarray(s.data.site_xpos[:,env._tcp_id])
++ def block():return np.asarray(s.data.xpos[:,env._block_id])
++ def bowl():return np.asarray(s.data.mocap_pos[:,env._bowl_mocap_id])
++ def poses():return np.asarray(s.data.qpos),np.asarray(s.data.mocap_pos)
++ def widths():return np.asarray(s.data.qpos[:,env._finger_qpos_ids[0]]-s.data.qpos[:,env._finger_qpos_ids[1]])
++ def step(actions):
++  global s
++  s=step_fn(s,jp.array(actions));jax.block_until_ready(s)
++trajectory=[];phase=[]
++def record(label):
++ q,mo=poses();trajectory.append((q.copy(),mo.copy()));phase.append(label)
++def goto(target,count,grip,label):
++ for _ in range(count):
++  velocity=np.clip((target-tcp())/.01,-1,1)
++  step(np.c_[velocity,np.zeros((N,3)),np.full(N,grip)]);record(label)
++def grip(value,count,label):
++ for _ in range(count):step(np.tile([0,0,0,0,0,0,value],(N,1)));record(label)
++start=time.monotonic();initial_block=block().copy();initial_bowl=bowl().copy();record('start')
++goto(initial_block+[0,0,.08],25,1,'approach')
++goto(initial_block+[0,0,.006],20,1,'descend')
++approach_distance=np.linalg.norm(block()-tcp(),axis=1)
++grip(-1,8,'close');grip_width=widths()
++goto(tcp()+[0,0,.10],20,-1,'lift');lift_height=block()[:,2]-c.block_half
++goto(initial_bowl+[0,0,.11],40,-1,'transport');xy=np.linalg.norm((block()-bowl())[:,:2],axis=1)
++grip(1,18,'release')
++b=block();t=tcp();bo=bowl();near=np.linalg.norm(b-t,axis=1)<c.grasp_distance
++inside=(np.linalg.norm((b-bo)[:,:2],axis=1)<c.bowl_r_bottom-c.block_half)&(b[:,2]<bo[:,2]+env._bowl_rim_z)&(b[:,2]>bo[:,2])&~near
++q,mocap=map(np.stack,zip(*trajectory));np.savez_compressed(out/'trajectory.npz',qpos=q,mocap_pos=mocap,phase=np.array(phase))
++result={'backend':a.backend,'ls_iterations':a.ls,'num_envs':N,'block_mm':a.block,'seed':3,
++ 'reset_stage_probs':[1,0,0],'scripted_success':int(inside.sum()),'approach_distance_m':approach_distance.tolist(),
++ 'grip_width_m':grip_width.tolist(),'lift_height_m':lift_height.tolist(),'above_bowl_xy_m':xy.tolist(),
++ 'final_block_position':b.tolist(),'finite':bool(np.isfinite(q).all()),'wall_seconds_including_compilation':time.monotonic()-start,
++ 'scope':'scripted closed-loop grasp, not learned policy; C uses equivalent NumPy DLS controller',
++ 'capacity_overflow':float(jp.max(s.metrics['capacity_overflow'])) if a.backend!='c' else None}
++(out/'result.json').write_text(json.dumps(result,indent=2));print(json.dumps(result),flush=True)
+--- /dev/null
++++ b/scripts/benchmark_line_search.py
+@@ -0,0 +1,62 @@
++"""Steady-state Warp task-step benchmark; compile/warmup excluded.
++
++256 parallel held-block environments, identical initial seeds and commands.
++Both model variants are compiled before alternating timed runs.
++"""
++import os,sys,time,json,hashlib,argparse
++from pathlib import Path
++parser=argparse.ArgumentParser(description=__doc__)
++parser.add_argument('--num-envs',type=int,default=256)
++parser.add_argument('--output',type=Path,default=Path(__file__).resolve().parents[1]/'runs/contact-solver-validation/benchmark.json')
++args=parser.parse_args()
++if args.num_envs<=0:parser.error('--num-envs must be positive')
++args.output.parent.mkdir(parents=True,exist_ok=True)
++os.environ['JAX_PLATFORMS']='cuda,cpu';os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
++os.environ['JAX_DEFAULT_MATMUL_PRECISION']='highest'
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
++import jax,jax.numpy as jp,numpy as np
++from piper_sim_lab.pick_place import PiperPickPlace
++root=args.output.parent;N=args.num_envs;control_steps=16
++variants={};samples={4:[],20:[]};warmup={}
++for limit in [4,20]:
++ env=PiperPickPlace(config_overrides={'impl':'warp','batch_capacity':N,'solver_ls_iterations':limit,
++  'reset_stage_probs':[0.,0.,1.],'block_half':.025,'block_mass':.08})
++ initial=jax.jit(jax.vmap(env.reset))(jax.random.split(jax.random.key(2026),N));jax.block_until_ready(initial)
++ action=jp.tile(jp.array([0.,0.,0.,0.,0.,0.,-1.]),(N,1))
++ def make_rollout(env,action):
++  @jax.jit
++  def rollout(state):
++   def step(state,_):
++    state=jax.vmap(env.step)(state,action)
++    return state,None
++   return jax.lax.scan(step,state,None,length=control_steps)[0]
++  return rollout
++ rollout=make_rollout(env,action)
++ start=time.perf_counter()
++ for _ in range(3):jax.block_until_ready(rollout(initial))
++ warmup[limit]=time.perf_counter()-start
++ variants[limit]=(initial,rollout)
++ print('compiled and warmed',limit,round(warmup[limit],3),flush=True)
++# Alternate order each round to reduce drift/thermal/order bias.
++for repeat in range(9):
++ for limit in ([4,20] if repeat%2==0 else [20,4]):
++  initial,rollout=variants[limit]
++  start=time.perf_counter();final=rollout(initial);jax.block_until_ready(final)
++  elapsed=time.perf_counter()-start;samples[limit].append(elapsed)
++  assert np.isfinite(np.asarray(final.data.qpos)).all()
++  assert float(jp.max(final.metrics['capacity_overflow']))==0
++  print('repeat',repeat,'limit',limit,'seconds',round(elapsed,6),flush=True)
++med={k:float(np.median(v)) for k,v in samples.items()}
++paired=np.array(samples[20])/np.array(samples[4])
++result={'backend':'MJX-Warp','num_envs':N,'control_steps_per_call':control_steps,
++ 'physics_steps_per_control':env.n_substeps,'policy_dt':float(env.dt),'physics_dt':float(env.sim_dt),
++ 'repeats':9,'warmup_calls_per_variant':3,'warmup_seconds_excluded':warmup,
++ 'seconds_per_call':samples,'median_seconds':med,'increase_percent':100*(med[20]/med[4]-1),
++ 'paired_median_increase_percent':float(100*(np.median(paired)-1)),
++ 'mean_seconds':{k:float(np.mean(v)) for k,v in samples.items()},
++ 'mean_increase_percent':float(100*(np.mean(samples[20])/np.mean(samples[4])-1)),
++ 'paired_ratio_q25_q75':np.quantile(paired,[.25,.75]).tolist(),
++ 'env_control_steps_per_second':{k:N*control_steps/val for k,val in med.items()},
++ 'source_sha256':hashlib.sha256((Path(__file__).resolve().parents[1]/'src/piper_sim_lab/pick_place.py').read_bytes()).hexdigest(),
++ 'scope':'task.step including IK, physics and reward; held-block state; no PPO optimization, perception or rendering; actual full training slowdown is not measured'}
++args.output.write_text(json.dumps(result,indent=2));print(json.dumps(result),flush=True)

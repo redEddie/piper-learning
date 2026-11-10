@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "training_source": "d377cae0afdc87a389b09071eae6bcde72465e86",
+  "branch": "codex/show108-obsdr-joint-a-24u",
+  "budget_selection": "Agent selected4u as the next interval after user requested more training",
+  "parent_units": 20,
+  "additional_units": 4,
+  "cumulative_units": 24,
+  "parent_checkpoint": "/home/jeonchanwook/Documents/Codex/2026-10-23/plane-76-2/piper-sim-lab-show103/runs/show108-obsdr-joint-a-16plus4u-20261108/training/checkpoints/000033554432",
+  "parent_learner_sha256": "f3ddd297173295aadce140b1f9c5815e5e05e8acaa666290c519c9fd23679553",
+  "parent_metadata": {
+    "actor": "mlp_lstm",
+    "width": 128,
+    "step": 33554432,
+    "actor_architecture": {
+      "hidden_sizes": [
+        256,
+        64
+      ]
+    },
+    "action_size": 7,
+    "exploration": {
+      "gripper_min_std": 0.5,
+      "arm_min_std": 0.25
+    },
+    "observation_size": {
+      "privileged": [
+        66
+      ],
+      "state": [
+        49
+      ]
+    },
+    "parent_transitions": 134217728,
+    "cumulative_transitions": 167772160,
+    "state": "learner checkpoint; continuation restores learner with fresh simulator episodes"
+  },
+  "configuration_identical_to_parent": true,
+  "reset_fresh_simulator_episodes": true,
+  "full_learner_restored": true,
+  "tests_passed": 38,
+  "legacy_report_regression": "20u JSON equality and CSV byte equality",
+  "real_robot": false,
+  "evaluation_episodes_new_children": 7680,
+  "matched_bank_and_case_ids": true
+}

@@ -1,0 +1,113 @@
+{
+  "scope": "read-only reference from pre-existing stock Brax MLP checkpoint at 16,777,216 steps; not same learner loop",
+  "conditions": [
+    {
+      "condition": "dr",
+      "episodes": 384,
+      "final_success_rate": 0.8619791666666666,
+      "rates_by_seed": [
+        0.875,
+        0.8046875,
+        0.90625
+      ],
+      "environment_and_task_source_match": true
+    },
+    {
+      "condition": "nodr",
+      "episodes": 384,
+      "final_success_rate": 0.9140625,
+      "rates_by_seed": [
+        0.9296875,
+        0.921875,
+        0.890625
+      ],
+      "environment_and_task_source_match": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/runs/pp-full-10-dr-4x/eval-p10-16777216-dr-s2026/evaluation.json",
+      "sha256": "718e7b4824cca304fcc0a9fa02f911ff02cbd4404cb102f71d0f858ee4fd28f9",
+      "condition": "dr",
+      "seed": 2026,
+      "results": {
+        "initial_progress": 0.2559853792190552,
+        "final_progress": 0.039714470505714417,
+        "final_success_rate": 0.875,
+        "ever_success_rate": 0.8828125,
+        "failure_rate": 0.0,
+        "finite": true
+      }
+    },
+    {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/runs/pp-full-10-dr-4x/eval-p10-16777216-dr-s2027/evaluation.json",
+      "sha256": "f917751b2d8e3458638482f745943cc5047acae4cd744201b308bd551d5c1ad6",
+      "condition": "dr",
+      "seed": 2027,
+      "results": {
+        "initial_progress": 0.25499558448791504,
+        "final_progress": 0.05052304267883301,
+        "final_success_rate": 0.8046875,
+        "ever_success_rate": 0.8046875,
+        "failure_rate": 0.0,
+        "finite": true
+      }
+    },
+    {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/runs/pp-full-10-dr-4x/eval-p10-16777216-dr-s2028/evaluation.json",
+      "sha256": "4e5af716f6252417ad960c21e69d435849615e02cbed1f5be820a8541fe57950",
+      "condition": "dr",
+      "seed": 2028,
+      "results": {
+        "initial_progress": 0.2526300549507141,
+        "final_progress": 0.03045656904578209,
+        "final_success_rate": 0.90625,
+        "ever_success_rate": 0.90625,
+        "failure_rate": 0.0,
+        "finite": true
+      }
+    },
+    {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/runs/pp-full-10-dr-4x/eval-p10-16777216-nodr-s2026/evaluation.json",
+      "sha256": "f750e0deb4f79afbd6c7de2da84d13cc877224e95c97c97b46c0ac30878ea27c",
+      "condition": "nodr",
+      "seed": 2026,
+      "results": {
+        "initial_progress": 0.2559853792190552,
+        "final_progress": 0.03086807206273079,
+        "final_success_rate": 0.9296875,
+        "ever_success_rate": 0.9296875,
+        "failure_rate": 0.0,
+        "finite": true
+      }
+    },
+    {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/runs/pp-full-10-dr-4x/eval-p10-16777216-nodr-s2027/evaluation.json",
+      "sha256": "11e532401659f06fc00b2ea8e157b64d7da4de4592771b917dd8f7523b8690c8",
+      "condition": "nodr",
+      "seed": 2027,
+      "results": {
+        "initial_progress": 0.25499558448791504,
+        "final_progress": 0.03254824876785278,
+        "final_success_rate": 0.921875,
+        "ever_success_rate": 0.921875,
+        "failure_rate": 0.0,
+        "finite": true
+      }
+    },
+    {
+      "path": "/home/jeonchanwook/work/piper-sim-lab/runs/pp-full-10-dr-4x/eval-p10-16777216-nodr-s2028/evaluation.json",
+      "sha256": "31f6895ffc23a17a26d0a986682c3d82ff518a805498cc58b1b648bb3c6a96d6",
+      "condition": "nodr",
+      "seed": 2028,
+      "results": {
+        "initial_progress": 0.2526300549507141,
+        "final_progress": 0.03386446088552475,
+        "final_success_rate": 0.890625,
+        "ever_success_rate": 0.90625,
+        "failure_rate": 0.0,
+        "finite": true
+      }
+    }
+  ]
+}

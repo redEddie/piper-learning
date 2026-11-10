@@ -1,0 +1,36 @@
+{
+  "A_reset_error": 0.0,
+  "goal_error": 0.0,
+  "max_reference_acceleration": 8.000003814697266,
+  "nonfinite": 0.0,
+  "observation_error": 0.0,
+  "overflow": 0.0,
+  "raw_action_error": 0.0,
+  "reset_ledger_error": 0.0,
+  "environments": 1024,
+  "transitions": 24576,
+  "reset_events": 3072,
+  "reset_counts": [
+    899,
+    317,
+    308,
+    1548
+  ],
+  "controller_failed_transitions": 0,
+  "min_reference_floor": 0.011522411368787289,
+  "elapsed_seconds": 22.85577945993282,
+  "actor_shape": [
+    1024,
+    49
+  ],
+  "critic_shape": [
+    1024,
+    66
+  ],
+  "initial_reset_counts": [
+    286,
+    90,
+    110,
+    538
+  ]
+}

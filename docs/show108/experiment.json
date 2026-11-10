@@ -1,0 +1,469 @@
+{
+  "issue": "SHOW-108",
+  "status": "completed",
+  "branch": "codex/show108-mlp-lstm",
+  "user_approved_budget": "Fresh16u per actor",
+  "actors": {
+    "mlp_lstm": "actor49 -> SiLU Dense256 -> SiLU Dense64 -> LayerNorm -> LSTM128 -> linear14",
+    "transformer_lstm": "existing role tokens/2 attention blocks/width64/4heads -> LSTM128 -> linear14"
+  },
+  "parameters": {
+    "mlp_lstm_actor": 129998,
+    "transformer_lstm_actor": 188110,
+    "critic_each": 83201
+  },
+  "fresh": true,
+  "training_seed": 7,
+  "training_repetitions": 1,
+  "unit_transitions": 8388608,
+  "transitions_per_actor": 134217728,
+  "total_training_transitions": 268435456,
+  "checkpoint_units": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16
+  ],
+  "worlds": 4096,
+  "reset_probabilities": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "environment_reward_control": "Exactly the finalv5 config; unchanged reward/completion/controller/reset assets",
+  "config_sha256": {
+    "configs/show108/stage-reward-v5-mlp-lstm-4096-2-to16.yaml": "eb04cb7686a1bc94cf4cb12bffcacbc1142114a46caed017b5347247771d4b50",
+    "configs/show108/stage-reward-v5-transformer-lstm-4096-2-to16.yaml": "1aaef0e0c61f855299ac933631b50e051383acf1692f90810c9ba370019bcd62"
+  },
+  "evaluation": {
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_seed": 128,
+    "episodes_per_start": 384,
+    "episode_seconds": 20,
+    "primary_full_completion": "Actual A return, excluding high-drop terminal exception",
+    "metrics": [
+      "stage-local success",
+      "full actual A completion frominitial_a",
+      "post_release final/best max joint error",
+      "high-drop successes",
+      "controller/numerical errors",
+      "GPU time/memory/utilization",
+      "parameter counts"
+    ],
+    "uncertainty": "Paired4000-bootstrap95% intervals over identical reset cases, conditional on one trained policy per actor. Not training-seed uncertainty."
+  },
+  "predeclared_comparison": {
+    "success_noninferiority_margin": 0.05,
+    "A_error_margin_deg": 3.0,
+    "support_requires": "Lower95% bound of MLP minus Transformer success >=-5pp for all five local metrics and full actual A completion; upper95% bound of median A error difference <=3deg; finite evaluations",
+    "historical_practical_target": "Additionally meet published16u point estimates within5pp/3deg. Two equally poor models do not count as reproducing the target.",
+    "historical_training_confound": "Published Transformer16u usedv2/v3/v5; it is not the architecture control. Both new actors start fresh withv5.",
+    "primary_checkpoint": 16,
+    "earlier_checkpoints": "Exploratory learning curve, not independent confirmatory repetitions"
+  },
+  "run": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101",
+  "comparison_entrypoint": "scripts/show108/run_actor_comparison.py",
+  "launch_order": [
+    "mlp_lstm",
+    "transformer_lstm"
+  ],
+  "no_gpu_training_overlap": true,
+  "validation": {
+    "model_and_legacy_tests": "40 passed; outputs/show108-model-tests.txt",
+    "comparison_tests": "10 passed; outputs/show108-comparison-tests.txt",
+    "original_Transformer_checkpoint_inference": "bit-for-bit unchanged on recorded observation sequence",
+    "recorded_evaluation_analysis": "1920 historical cases reproduce original counts; identical-policy paired differences are zero",
+    "smokes": {
+      "mlp_lstm": {
+        "summary": {
+          "actor": "mlp_lstm",
+          "seed": 7,
+          "timesteps": 524288,
+          "elapsed_seconds": 87.73270082706586,
+          "first_iteration_compile_and_execute_seconds": 31.93623811402358,
+          "steady_state_collection_seconds": 52.63169298158027,
+          "steady_state_update_seconds": 2.3899289972614497,
+          "steady_state_sps": 8337.66769319179,
+          "policy_l2_change": 1.9956850345190913,
+          "max_initial_log_prob_error": 1.430511474609375e-06,
+          "parameters": {
+            "actor": 129998,
+            "critic": 83201
+          }
+        },
+        "nonfinite": 0.0,
+        "capacity_overflow": 0.0,
+        "controller_failed_transitions": 16,
+        "main_uses_this_checkpoint": false,
+        "reload_evaluation": {
+          "groups": 5,
+          "episodes": 40,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "scope": "Connection validation only; not main training performance"
+        }
+      },
+      "transformer_lstm": {
+        "summary": {
+          "actor": "transformer_lstm",
+          "seed": 7,
+          "timesteps": 524288,
+          "elapsed_seconds": 205.39867322798818,
+          "first_iteration_compile_and_execute_seconds": 31.566409779014066,
+          "steady_state_collection_seconds": 53.12588801723905,
+          "steady_state_update_seconds": 8.969257954973727,
+          "steady_state_sps": 7387.888261109635,
+          "policy_l2_change": 1.5573887752351823,
+          "max_initial_log_prob_error": 9.5367431640625e-07,
+          "parameters": {
+            "actor": 188110,
+            "critic": 83201
+          }
+        },
+        "nonfinite": 0.0,
+        "capacity_overflow": 0.0,
+        "controller_failed_transitions": 21,
+        "main_uses_this_checkpoint": false,
+        "gpu_wait_log": "Small reload evaluation temporarily occupied the GPU; this smoke timing is not the formal speed comparison",
+        "reload_evaluation": {
+          "groups": 5,
+          "episodes": 40,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "scope": "Connection validation only; not main training performance"
+        }
+      }
+    }
+  },
+  "original_checkpoints_preserved": true,
+  "real_robot": false,
+  "execution_isolation": "Frozen detached worktree at the implementation commit; shared cached dependencies, sequential GPU jobs",
+  "source_commit": "49267d34714545266fbdf85c77540307ca5c2f51",
+  "execution_state_file": "runs/show108-matched-v5-mlp-vs-transformer-16u-20261101/comparison-campaign.json",
+  "main_started_utc": "2026-10-31T18:46:55.604680+00:00",
+  "main_success_rates": "Final16u local: MLP100/100/100/100/96.1%; freshTransformer100/100/100/100/0%; full actual A75.3% vs0%",
+  "completed_utc": "2026-11-01T04:06:58.261248+00:00",
+  "final_result": "docs/show108/matched-comparison.json",
+  "final_reproduction_supported_on_this_evaluation": true,
+  "results": {
+    "final": {
+      "units": 16,
+      "mlp_lstm": {
+        "initial_a": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 289,
+          "failures": 2,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 289,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.7526041666666666,
+          "full_home_complete": 289,
+          "full_home_success_rate": 0.7526041666666666,
+          "final_max_A_error_deg_median": 11.593034744262695,
+          "best_max_A_error_deg_median": 0.1697845757007599
+        },
+        "pre_grasp": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 235,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 235,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.6119791666666666,
+          "full_home_complete": 235,
+          "full_home_success_rate": 0.6119791666666666,
+          "final_max_A_error_deg_median": 12.770072937011719,
+          "best_max_A_error_deg_median": 9.722919464111328
+        },
+        "held": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 239,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 239,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.6223958333333334,
+          "full_home_complete": 239,
+          "full_home_success_rate": 0.6223958333333334,
+          "final_max_A_error_deg_median": 12.349143981933594,
+          "best_max_A_error_deg_median": 9.353437423706055
+        },
+        "over_bowl": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 361,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 361,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.9401041666666666,
+          "full_home_complete": 361,
+          "full_home_success_rate": 0.9401041666666666,
+          "final_max_A_error_deg_median": 14.354890823364258,
+          "best_max_A_error_deg_median": 8.645162582397461
+        },
+        "post_release": {
+          "episodes": 384,
+          "local_success": 369,
+          "final_complete": 369,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 369,
+          "high_drop_success": 0,
+          "local_success_rate": 0.9609375,
+          "full_success_rate": 0.9609375,
+          "full_home_complete": 369,
+          "full_home_success_rate": 0.9609375,
+          "final_max_A_error_deg_median": 12.179038047790527,
+          "best_max_A_error_deg_median": 7.796209335327148
+        }
+      },
+      "transformer_lstm": {
+        "initial_a": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 2,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 0,
+          "high_drop_success": 2,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.005208333333333333,
+          "full_home_complete": 0,
+          "full_home_success_rate": 0.0,
+          "final_max_A_error_deg_median": 25.78309440612793,
+          "best_max_A_error_deg_median": 0.18354099988937378
+        },
+        "pre_grasp": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 0,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 0,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.0,
+          "full_home_complete": 0,
+          "full_home_success_rate": 0.0,
+          "final_max_A_error_deg_median": 25.783098220825195,
+          "best_max_A_error_deg_median": 22.60243797302246
+        },
+        "held": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 0,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 0,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.0,
+          "full_home_complete": 0,
+          "full_home_success_rate": 0.0,
+          "final_max_A_error_deg_median": 25.78309440612793,
+          "best_max_A_error_deg_median": 22.348163604736328
+        },
+        "over_bowl": {
+          "episodes": 384,
+          "local_success": 384,
+          "final_complete": 0,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 0,
+          "high_drop_success": 0,
+          "local_success_rate": 1.0,
+          "full_success_rate": 0.0,
+          "full_home_complete": 0,
+          "full_home_success_rate": 0.0,
+          "final_max_A_error_deg_median": 25.783100128173828,
+          "best_max_A_error_deg_median": 22.82866668701172
+        },
+        "post_release": {
+          "episodes": 384,
+          "local_success": 0,
+          "final_complete": 0,
+          "failures": 0,
+          "nonfinite": 0,
+          "overflow": 0,
+          "controller_failures": 0,
+          "home_complete": 0,
+          "high_drop_success": 0,
+          "local_success_rate": 0.0,
+          "full_success_rate": 0.0,
+          "full_home_complete": 0,
+          "full_home_success_rate": 0.0,
+          "final_max_A_error_deg_median": 25.783098220825195,
+          "best_max_A_error_deg_median": 21.469472885131836
+        }
+      },
+      "local_success_differences": {
+        "initial_a": {
+          "difference_mlp_minus_transformer": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "paired_cases": 384,
+          "bootstrap_draws": 4000,
+          "noninferiority_supported": true
+        },
+        "pre_grasp": {
+          "difference_mlp_minus_transformer": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "paired_cases": 384,
+          "bootstrap_draws": 4000,
+          "noninferiority_supported": true
+        },
+        "held": {
+          "difference_mlp_minus_transformer": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "paired_cases": 384,
+          "bootstrap_draws": 4000,
+          "noninferiority_supported": true
+        },
+        "over_bowl": {
+          "difference_mlp_minus_transformer": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "paired_cases": 384,
+          "bootstrap_draws": 4000,
+          "noninferiority_supported": true
+        },
+        "post_release": {
+          "difference_mlp_minus_transformer": 0.9609375,
+          "ci95": [
+            0.9401041666666666,
+            0.9791666666666666
+          ],
+          "paired_cases": 384,
+          "bootstrap_draws": 4000,
+          "noninferiority_supported": true
+        }
+      },
+      "full_home_success_difference": {
+        "difference_mlp_minus_transformer": 0.7526041666666666,
+        "ci95": [
+          0.7083333333333334,
+          0.796875
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      },
+      "A_error_difference_deg": {
+        "difference_mlp_minus_transformer": -13.604060173034668,
+        "ci95": [
+          -13.782846927642822,
+          -13.411438941955566
+        ],
+        "paired_cases": 384,
+        "bootstrap_draws": 4000,
+        "noninferiority_supported": true
+      },
+      "finite_evaluations": true,
+      "noninferiority_to_fresh_control_supported": true,
+      "historical_practical_target_point_estimates_reached": true,
+      "reproduction_supported_on_this_evaluation": true
+    },
+    "resources": {
+      "mlp_lstm": {
+        "training": {
+          "actor": "mlp_lstm",
+          "seed": 7,
+          "timesteps": 134217728,
+          "elapsed_seconds": 12163.31190569792,
+          "first_iteration_compile_and_execute_seconds": 22.479751521954313,
+          "steady_state_collection_seconds": 10693.143751443364,
+          "steady_state_update_seconds": 1375.5128094803076,
+          "steady_state_sps": 11115.75189191834,
+          "policy_l2_change": 39.92515825480303,
+          "max_initial_log_prob_error": 9.5367431640625e-07,
+          "parameters": {
+            "actor": 129998,
+            "critic": 83201
+          }
+        },
+        "peak_board_memory_mib": 9510,
+        "mean_gpu_utilization_percent": 96.31054426172904,
+        "gpu_scope": "whole board, sampled, includes other processes"
+      },
+      "transformer_lstm": {
+        "training": {
+          "actor": "transformer_lstm",
+          "seed": 7,
+          "timesteps": 134217728,
+          "elapsed_seconds": 15728.581945349928,
+          "first_iteration_compile_and_execute_seconds": 25.162322078831494,
+          "steady_state_collection_seconds": 10930.80316440761,
+          "steady_state_update_seconds": 4689.45079115103,
+          "steady_state_sps": 8588.348971897505,
+          "policy_l2_change": 45.128439161874496,
+          "max_initial_log_prob_error": 9.5367431640625e-07,
+          "parameters": {
+            "actor": 188110,
+            "critic": 83201
+          }
+        },
+        "peak_board_memory_mib": 9535,
+        "mean_gpu_utilization_percent": 96.80238262088297,
+        "gpu_scope": "whole board, sampled, includes other processes"
+      }
+    },
+    "generalization_limit": "One training seed7 per architecture. Paired evaluation intervals are conditional on these policies; not architecture-wide superiority."
+  },
+  "selected_model": {
+    "actor": "mlp_lstm",
+    "units": 16,
+    "transitions": 134217728,
+    "release_tag": "show108-mlp-lstm-16u-20261101",
+    "manifest": "docs/show108/selected-model.json",
+    "selected_by": "user",
+    "selection_date": "2026-11-01"
+  }
+}

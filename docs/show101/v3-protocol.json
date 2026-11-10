@@ -1,0 +1,47 @@
+{
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/mlp-fresh-50m/checkpoints/000050331648",
+  "source_lineage_steps": 50331648,
+  "additional_steps": 8388608,
+  "target_lineage_steps": 58720256,
+  "config": "configs/show101/refine-v3-episode-8m.yaml",
+  "configuration_delta": {
+    "environment": {
+      "place_episode_tracking": true,
+      "place_carry_clearance": 0.005
+    }
+  },
+  "intent": "Track carry/release/support/impact for whole episode; early unsupported release or unheld floor entry disqualifies quality/progress/opening/recontact hold credit until reset. Basic task completion credit remains.",
+  "carry_witness": "Actual finger contact while orientation-aware cube bottom is more than 5mm above tabletop; ignores table-level approach brushes. Once bowl floor has been seen, incidental contact cannot establish carry witness.",
+  "reset_mixture": [
+    0.3,
+    0.1,
+    0.1,
+    0.5
+  ],
+  "num_envs": 1024,
+  "original_task_guards": false,
+  "face_alignment_reward": false,
+  "checkpoints": [
+    2097152,
+    4194304,
+    6291456,
+    8388608
+  ],
+  "evaluation": "seed2026 128 per mode at intermediate checkpoints; baseline and final seeds2026/2027/2028 384 per mode",
+  "validation": {
+    "cpu_tests": 14,
+    "gpu_transitions": 24576,
+    "gpu_resets": 3072,
+    "saved_false_labels_rejected": 15,
+    "saved_trace_resolution_ms": 100
+  },
+  "checkpoint_semantics": "policy/value/normalizer restored; optimizer and RNG restart",
+  "real_robot": false,
+  "user_continuation_policy": {
+    "primary_metric": "A empty-hand full completion over same384 episodes, seeds2026/2027/2028",
+    "reference_initial_successes": 351,
+    "continue": "additional8388608 transitions per round if final completion count >= previous accepted round",
+    "stop": "if final count decreases, preserve previous higher-performing checkpoint and stop",
+    "diagonal_grasp": "no further reward/action changes"
+  }
+}

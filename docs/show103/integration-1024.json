@@ -1,0 +1,37 @@
+{
+  "environments": 1024,
+  "policy_transitions": 40960,
+  "reset_events": 0,
+  "max_reference_jerk": 300.0000305175781,
+  "max_reference_speed": 0.038527775555849075,
+  "max_reference_acceleration": 3.0,
+  "max_reference_speed_during_grip": 0.0,
+  "controller_failed_transitions": 0,
+  "failure_codes": [
+    0.0
+  ],
+  "operations_completed": 2984.0,
+  "rejected_proposals": 0.0,
+  "nonfinite": 0.0,
+  "overflow": 0.0,
+  "reset_backup_error": 0.0,
+  "elapsed_seconds": 26.401576058007777,
+  "training": false,
+  "real_robot": false,
+  "failed_events": [],
+  "near_reset_policy_steps": 2480,
+  "near_table": {
+    "accepted": 51,
+    "rejected": {
+      "ik": 0,
+      "collision": 0,
+      "grasp": 0
+    },
+    "requested_height_range_m": [
+      0.005,
+      0.02
+    ]
+  },
+  "near_reset_slots": 62,
+  "placement_bad_initial_credit": 0.0
+}

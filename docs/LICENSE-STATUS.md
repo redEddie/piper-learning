@@ -1,0 +1,1 @@
+Project code license has not been chosen by the owner. This reorganization does not apply a new license or grant rights to third-party code/model weights. Preserve bundled third-party notices; the repositories are publicly viewable as of 2026-11-10, but this is not a licensed open-source release. See [PUBLICATION.md](PUBLICATION.md).

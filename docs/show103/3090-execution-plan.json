@@ -1,0 +1,30 @@
+{
+  "issue": "SHOW-103",
+  "github_branch": "show-103",
+  "status": "formula_complete_simulator_integration_pending",
+  "training_machine": "RTX 3090",
+  "training_machine_available_or_tested": false,
+  "inference_machine": "Thor",
+  "current_reward_commit": "051a00d",
+  "planned_num_envs": 4096,
+  "reset_probabilities": [
+    0.4,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "five_reward_sections": true,
+  "episode_seconds": 20,
+  "fresh_training": true,
+  "proposed_ppo": {
+    "batch_size": 256,
+    "num_minibatches": 16,
+    "unroll_length": 16,
+    "num_updates_per_batch": 4
+  },
+  "next_step": "Connect measured MJX features and fixed valid resets; validate before training",
+  "thor_throttle": "User-reported message during learning; source and hardware cause not diagnosed",
+  "deployment_evidence": "User reports simulation-like motion through web app/action scripts conditional on correct cube/bowl perception; new reward policy has not been trained or tested",
+  "training_started_by_this_handoff": false,
+  "real_robot_operated_by_agent": false
+}

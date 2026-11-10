@@ -1,0 +1,81 @@
+{
+  "experiment": "gripper-only-exploration-zero-drop-cost",
+  "status": "validated_to_queue",
+  "config": "configs/show103/stage-reward-v2-transformer-lstm-no-drop-cost-gripper-explore-plus2.yaml",
+  "exploration": {
+    "gripper_min_std": 0.4
+  },
+  "distribution": {
+    "type": "upstream Brax NormalTanhDistribution",
+    "arm_scale": "softplus(raw_scale)+0.001, unchanged",
+    "gripper_scale": "softplus(raw_scale)+0.4",
+    "units": "pre-tanh Gaussian",
+    "shared_by": [
+      "sampling",
+      "PPO log_prob",
+      "entropy",
+      "KL",
+      "checkpoint reload"
+    ],
+    "deterministic_mode": "unchanged for the same model weights and observations"
+  },
+  "example": {
+    "assumption": "raw mean0, Gaussian scale0.4; illustration, not a measured rollout rate",
+    "open_command_threshold": 0.5,
+    "open_probability": 0.08483493348710486,
+    "close_probability": 0.08483493348710486
+  },
+  "comparison": {
+    "parent": "runs/show103-transformer-lstm-4096-s7-2-4-6-8u-20261030/training/checkpoints/000067108864",
+    "baseline": "runs/show103-transformer-lstm-no-drop-cost-from8u-plus2u-20261030",
+    "treatment": "runs/show103-transformer-lstm-no-drop-cost-gripper-explore-from8u-plus2u-20261030",
+    "training_seed": 7,
+    "additional_units_each": 2,
+    "additional_transitions_each": 16777216,
+    "difference": "Only the gripper distribution scale minimum. All model/critic/normalizer/optimizer/RNG states restored from the same parent; fresh identical-seeded simulator starts.",
+    "starts": [
+      "initial_a",
+      "pre_grasp",
+      "held",
+      "over_bowl",
+      "post_release"
+    ],
+    "reset_probabilities": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "envs": 4096,
+    "drop_cost": 0,
+    "invalid_drop": "immediate terminal/reset",
+    "home_completion": "A unchanged",
+    "validation_seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_start": 384,
+    "compare_metrics": [
+      "stage-local success across all five starts",
+      "OPEN command episodes",
+      "invalid releases",
+      "qualified releases",
+      "full completion",
+      "controller/numerical failures"
+    ]
+  },
+  "scheduling": "Keep running comparison to completion, then launch treatment exclusively on GPU; do not overwrite prior checkpoints",
+  "validation": {
+    "actor_regression_suite": "26 passed in outputs/show103-gripper-exploration-tests.txt",
+    "focused_suite": "outputs/show103-gripper-exploration-final-tests.txt",
+    "queue_dependency_checks": "completed dependency executes exactly once; failed dependency never executes",
+    "gpu_training": "pending queued run; ratio guards at updates1,2,8 and finite-physics checks remain enabled"
+  },
+  "limits": [
+    "Fixed exploration floor can increase accidental releases; compare grasp/lift and carry rates as well as release",
+    "Single training seed; checkpoint evaluation seeds vary episodes, not training repetitions",
+    "No joint A progress reward changes in this experiment"
+  ]
+}

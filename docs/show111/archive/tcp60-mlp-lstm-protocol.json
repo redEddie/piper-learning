@@ -1,0 +1,55 @@
+{
+  "issue": "SHOW-111",
+  "question": "Current reward and complete task performance with MLP+lastLSTM actor",
+  "fresh": true,
+  "training_seed": 7,
+  "training_repetitions": 1,
+  "transitions": 117440512,
+  "units": 14,
+  "budget_decision": "Agent matched the preceding fresh14u Transformer budget for the requested comparison.",
+  "actor": "actor49 -> SiLU Dense256 -> SiLU Dense64 -> LayerNorm -> LSTM128 -> linear14",
+  "critic": "Same temporal Transformer critic86,2layers,width64,4heads,FF128,KV64",
+  "intentional_config_changes": [
+    "actor",
+    "actor_architecture"
+  ],
+  "baseline_run": "runs/show111-tcp60-linear-hold-fresh14u-20261106",
+  "run": "runs/show111-mlp-lstm-tcp60-critic64-fresh14u-20261107",
+  "config": "configs/show111/mlp-lstm-tcp-home-60mm-critic64-4096-fresh14.yaml",
+  "config_sha256": "f8f6dd999bee72ba187c300e8baf1a84b7b967d9fc272185ef8f5434d80b12d9",
+  "baseline_config_sha256": "c232bd8723781fd739ae6717c33d81969b8b33d09c3f4434c300fe0531d8e08e",
+  "checkpoints": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14
+  ],
+  "evaluation": {
+    "primary": "Completion from each initialization through final TCP home, especiallyinitial_a",
+    "secondary": [
+      "Stage-local success",
+      "OPEN goal after transport",
+      "Stage4/5 entry times",
+      "TCP and original joint-A errors",
+      "200ms hold",
+      "Controller/numerical errors",
+      "Speed and memory"
+    ],
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "episodes_per_start": 384,
+    "episode_seconds": 20,
+    "primary_checkpoint": 14,
+    "videos": "Same seed2026,scene0 first case for all5starts"
+  },
+  "physics_and_reward": "TCP60mm/10deg, linear hold0..0.2, signed approach0.4/0.4,4096env,20% each start,currentDR/spawn,PPO64",
+  "controller": "Existing DLS/QP",
+  "future_controller_question": "A joint-posture preference in QP can be compared after architecture control; original QP tracks DLS joint requests without A preference.",
+  "real_robot": false
+}

@@ -1,0 +1,171 @@
+# SHOW-103 — RTX 3090에서 이어갈 지침
+
+2026-10-30 후속 구현: 새 MJX task·고정 초기화 4개·128/1,024/4,096환경 물리 검증과
+131,072전이 PPO 연결 검증을 완료했다. [최신 구현·검증 및 학습 명령](mjx-3090/README.md)을 먼저 읽는다.
+아래 인계 상태는 이 브랜치를 3090으로 가져오기 전 기록이다. 본학습·난이도 승급은 아직 수행하지 않았다.
+
+## 인계 상태
+
+- 저장소: `https://github.com/redEddie/piper-sim-lab`, 브랜치 **`show-103`**.
+- Plane: SHOW-103 젠틀하게 내려놓기.
+- SHOW-100 성공 코드 기준 `f0c1161`, 단계 보상 수식 commit `051a00d`를 보존했다.
+- **완료:** 순수 보상식·5ms 이력·28개 검사·합성 경로 12개/보상 비교 18개·4,096배치 CPU 수식 검사.
+- **미완료:** 새 MJX task, 실측 Features 연결, 고정 초기화, 4,096환경 GPU 물리 검증, 새 학습·평가·영상.
+- 이 인계에서는 학습을 시작하지 않았다. 아래 구현·학습 절차는 3090에서 이어갈 작업이다.
+- 기존 main·show-76·show-100과 원본 release·선택 체크포인트를 수정하지 않는다.
+
+사용자는 Thor에서 throttle 메시지를 보고했으며 학습을 3090으로 옮기기로 했다.
+메시지의 발생 계층과 열·전력·드라이버 등 원인은 진단하지 않았다. GPU 간 속도 동등성도 실측 결론이 아니다.
+사용자는 올바른 큐브·그릇 위치를 입력했을 때 웹앱·액션 스크립트에서 시뮬레이션과 유사한 동작을 확인했다.
+이는 새로운 보상으로 학습할 정책의 실기 성공률이나 모든 배치의 sim-to-real 보장을 뜻하지 않는다.
+새 정책은 시뮬레이션에서 완성·평가한 뒤 선정 산출물만 Thor로 전달한다.
+
+## 1. 코드·의존성 준비
+
+기존 checkout을 덮어쓰지 않는 새 경로에서 시작한다. 새 학습은 warm-start가 아니므로
+SHOW-100의 대용량 Release를 먼저 다운로드할 필요는 없다. 모델 자산은 코드 저장소에 있다.
+
+```bash
+git clone --branch show-103 https://github.com/redEddie/piper-sim-lab.git piper-sim-lab-show103
+cd piper-sim-lab-show103
+git status --short
+git log -1 --oneline
+nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv
+
+uv sync --locked --extra gpu --extra test --extra control --python 3.12
+export PYTHONPATH="$PWD/src:$PWD/runtime/src"
+.venv/bin/piper-assets
+```
+
+Python은 이 머신에 새로 설치한다. Thor의 `.venv`, 캐시, aarch64 wheel을 복사하지 않는다.
+GPU extra는 저장소에서 고정한 JAX CUDA12 설치 경로다. 임의로 JAX·Brax·MuJoCo를 업그레이드하지 않는다.
+이 인계에서 `control` 의존성 누락을 uv.lock에 반영했으며 `uv lock --check --offline`을 확인했다.
+3090에서의 설치·드라이버·GPU 물리는 아직 검증하지 않았으므로 아래 프로브를 직접 확인한다.
+
+여러 GPU가 있으면 nvidia-smi에서 3090의 번호를 확인하고 선택한다. 아래 0은 해당 번호로 수정한다.
+
+```bash
+export CUDA_VISIBLE_DEVICES=0
+scripts/run.sh .venv/bin/python -c 'from piper_sim_lab.runtime import configure; configure("gpu"); import jax; print(jax.devices()); assert jax.default_backend()=="gpu"'
+JAX_PLATFORMS=cpu .venv/bin/python -m pytest -q tests/test_stage_reward.py tests/test_export_show100_layout.py
+JAX_PLATFORMS=cpu .venv/bin/python scripts/show103/audit_stage_reward.py --output runs/show103-formula-audit.json
+```
+
+합성 감사의 기준은 정상 완료 278.3 > 8초 지연 완료 251.4 > 놓기 직전 대기 243.0이다.
+같은 20초·γ=0.99의 합성 이력 결과이며 학습 성공률이나 가능한 물리 경로의 증명이 아니다.
+
+## 2. 현재 계약 — 구현하면서 바꾸지 않을 것
+
+정확한 식은 [stage-reward-v1.md](stage-reward-v1.md), 계수는 `stage_reward.RewardSettings`가 기준이다.
+
+| 항목 | 설정 |
+| --- | --- |
+| 학습 | 새 MLP256×256, seed7, 4,096환경, actor49/critic66/action7 |
+| 초기화 | 빈손 A / 열린 파지 직전 / 들고 있음 / 기존 그릇 위 = 40/20/20/20% |
+| 초기 난이도 | 각 초기화의 대표 유효 배치·자세 고정. 동역학 DR만. 가까운 놓기·자세 다양화·관측 DR 보류 |
+| 보상 | 5개 실제 진행 구간의 기본값 0→1→2→3→4→5. 옛 +5/+2는 대체하며 중복 지급하지 않음 |
+| 보조·비용 | 면 정렬≤+0.5, XY≤17mm에서 +0.5/스텝, 저속 100ms +0.5·최대 두 번, 약한 밀림, 재접촉 −0.5/스텝, 행동0.001·행동 변화0.01 |
+| 놓기 | TCP–그릇 내부 바닥50~60mm, XY≤17mm에서 첫 해제. 접촉 상실20ms. 속도는 기록만 하며 열기를 막지 않음 |
+| 안착·복귀 | 내부 바닥 접촉·상대 속도≤20mm/s 100ms. 여유80mm, A 관절별 오차≤3°·최대 관절 속도≤0.05rad/s 200ms |
+| A | [0,0.523,-0.450,0,0,0]rad. 완료에 그리퍼 폭 조건 없음 |
+| 제어 | 현재 DLS+QP 속도1rad/s·가속도5rad/s²·jerk100rad/s³. TCP 배율0.1m/s·0.5rad/s |
+| 그리퍼 | SHOW-100의 3상태 최종 목표와 기존 개폐 속도 제한. 개폐 중 팔 정지·별도 순차 조정기 없음 |
+| 좌표·형상 | 탁자 z=0, 베이스 z=15mm, TCP link6 z=138.5mm, 기존 손가락 충돌 보완·50mm 큐브·자유 그릇 |
+| 시간 | 정책0.1초/물리0.005초, 에피소드200스텝. 완료 즉시 종료하지 않음 |
+
+## 3. 먼저 새 MJX 환경을 연결한다
+
+1. 별도 task(예: `stage_reward_pick_place`)를 만들어 `tasks.py`에 등록한다.
+   SHOW-100의 관측·모델·3상태 그리퍼를 재사용하고, 최신 팔의 `checked_plan` 경로를 연결한다.
+   참고 파일은 `ternary_control.py`, `direct_gripper.py:advance_arm`, `control_lab/smooth_plan.py`다.
+   `direct_gripper_release`는 최종 목표를 즉시 보내는 옛 비교 실험이므로 그리퍼 동작까지 그대로 복사하지 않는다.
+   `smooth_grip`의 MOVE/BRAKE/GRIP나 과거 quadratic 보상을 상속해 새 보상에 섞지 않는다.
+2. 각 world의 실제 접촉·좌표·속도에서 `stage_reward.Features`를 구성한다.
+   큐브 아랫면은 자세를 반영한 실제 형상 최저점, TCP 높이/속도와 큐브 XY/속도는 그릇 좌표계,
+   A 오차·속도는 실제 관절에서 계산한다. 실제 접촉과 목표 폭·실제 폭·개폐 진행 reference를 구분한다.
+   Warp의 공유 contact buffer 전체를 각 world의 접촉으로 읽지 않는다. per-world 센서 또는 검증된 분리를 사용한다.
+3. 한 정책 주기 시작 시 `old=memory`, `memory=start_interval(memory)`를 저장한다.
+   5ms마다 `advance_memory(before,after)`를 정확히20회 적용한 뒤 `reward_terms(old,memory,...)`를 한 번 계산한다.
+   구현의 실제 함수 인수 순서는 `advance_memory(memory,before,after,settings)`다.
+   해제·접촉·저속·A 타이머는 autoreset 전에 수집하고 모든 메모리를 reset한다.
+   Features/접촉 이력을 actor 관측에 추가하지 않는다.
+4. 대표 유효 reset 4개를 만든다. 물체·관절을 독립적으로 무작위 설정하지 않는다.
+   파지 초기화는 실제 접촉과 짧은 안정화로 검증하고, 운반/안착 이력을 가짜 시간으로 채우지 않는다.
+   대표 좌표·자세·IK 해·접촉·형상 여유를 JSON으로 저장해 다음 머신에서도 재현한다.
+5. 새 학습 설정 `configs/show103/stage-reward-v1-4096.yaml`을 만든다.
+   이 파일은 인계 시 아직 존재하지 않는다. `stage-reward-v1/plan.json`은 실행 가능한 학습 config가 아니다.
+   원래 config의 계수·DR 범위를 명시적으로 복사하되 위 설계의 고정 기하/동역학 DR로 맞춘다.
+
+PPO는 batch_size256 × num_minibatches16 = 4,096으로 맞추는 초기안을 사용한다.
+unroll16, updates4, lr0.0003, γ0.99, GAE0.95, entropy0.001, clip0.2,
+reward_scaling1, max_grad_norm1, 관측 정규화를 유지한다. 원래 256×4를 그대로 쓰면
+4,096환경의 `load_config` 정수 배수 조건을 만족하지 않는다.
+
+## 4. 물리 검증 후 학습
+
+- 실제 MJX에서 128 → 1,024 → 4,096환경으로 reset·고정 행동·짧은 rollout을 확인한다.
+  최신 보상, 5ms 해제/재접촉, 최종 목표/관측, A 복귀, reset 이후 메모리, QP 제약·참조 간격을 검증한다.
+- 3090의 GPU 메모리를 실제로 측정한다. Thor에서 4,096배치 수식 검사가 됐다는 사실을
+  24GB GPU의 4,096물리환경 검증으로 바꾸어 기록하지 않는다. OOM이면 먼저 할당·접촉 용량·임시 배열을
+  조사한다. 동의 없이 실제 학습환경 수나 물리·보상·제어 제한을 낮추지 않는다.
+- 비유한 값·contact/constraint 용량 초과·제어 오류를 성공 집계에서 숨기지 않는다.
+- 검증한 코드/설정을 commit한 뒤 새 run 경로에서 warm-start 없이 시작한다.
+  첫 약839만 전이에서 동작·진척을 진단하고 수치/물리 오류가 없으면 기존 규모인 약5,033만 전이까지
+  확인하는 실행 계획을 기록한다. 이는 이 인계에서 실제 학습을 시작했다는 뜻이 아니다.
+  SHOW-100은2,517만까지 전체 완료0이었으므로 초기0%만으로 학습 실패를 단정하지 않는다.
+- 체크포인트마다 같은 평가 seed2026/2027/2028, 각128회로 빈손 A와 초기화별 전체 완료를 평가한다.
+  일반 inside / 낮은 해제·안착 / 철수 / A 복귀 전체 완료를 구분한다.
+  첫 에피소드만 집계하고 terminal labels를 autoreset 전에 보존한다.
+- raw action7, 최종 개폐 목표·실제 폭, TCP/큐브/그릇 좌표, 모든 보상 항, 현재 보상 구간,
+  최초 해제 높이·속도, 착지 속도, 재접촉, 실패 지점·타임아웃을 저장한다.
+  그리퍼가 안 열리면 raw 요청/threshold/목표/실제 폭을 구분해 설명한다.
+- 빈손 A와 잡은 상태의 첫 사례를 1배속으로 녹화한다. 성공 장면 선택 시 선택 기준을 명시한다.
+  최종·최고 성능·비교용 체크포인트를 보존하고 정리가 확인된 해당 run의 중간 파일만 정리한다.
+
+새 task/config를 구현·검증한 뒤의 학습 명령 예시:
+
+```bash
+scripts/run.sh .venv/bin/python -m piper_sim_lab.train --config configs/show103/stage-reward-v1-4096.yaml --output runs/show103/stage-v1-4096-s7 --platform gpu
+```
+
+## 5. 난이도를 올릴 때의 기록
+
+첫 수준이 충분히 성공한 뒤 위치 범위 → 큐브/그리퍼 상대 방향·파지 깊이 → 파지한 관절 자세를
+한 종류씩 확대한다. 승급 전 초기화별 전체 완료율을 확인하고 실제 범위와 승급 근거를 기록한다.
+각 수준의 run에는 git commit·uv.lock 해시·seed·누적 전이·reset 명세·동역학/관측 DR·
+수식 버전·체크포인트·평가 seed/분모/성공 수·실패 지점·영상이 있어야 한다.
+
+이어 학습의 `--warm-start`는 현재 Brax 형식에서 정책·가치망·normalizer를 복원하고 optimizer/RNG는
+재시작한다. 정확한 중단점 재개로 표기하지 않는다. 원래 조건 평가를 유지하며 확대 조건도 따로 평가한다.
+보상·QP 제약까지 동시에 바꾸어 자세 다양화 효과로 해석하지 않는다.
+
+## 6. 최종 선택본을 Thor로 전달
+
+학습의 큰 runs/캐시 대신 **선택한 원본 checkpoint·normalizer·resolved config·형상/코드 해시·
+NumPy export·golden 검증·최종 평가 요약**을 하나의 버전 묶음으로 전달한다.
+checkpoint에는 actor/critic/normalizer가 들어 있다. 숫자 디렉터리나 weights.npz 하나만 보내지 않는다.
+
+선택 경로가 확정된 뒤 export하는 예시(체크포인트 숫자는 실제 선택본으로 수정):
+
+```bash
+export PIPER_RUN=runs/show103/stage-v1-4096-s7
+export PIPER_CKPT="$PIPER_RUN/checkpoints/000050331648"
+scripts/run.sh .venv/bin/python scripts/deployment/export_policy.py --run "$PIPER_RUN" --checkpoint "$PIPER_CKPT" --output artifacts/show103-selected-policy
+PYTHONPATH=runtime/src .venv/bin/python -m piper_policy_runtime.check --policy artifacts/show103-selected-policy
+```
+
+이 브랜치에서 export의 그리퍼 최종 목표 관측(41번)·직전 행동(42:49)·TCP138.5mm 메타데이터를 보완했다.
+export의 합성 parity와 실제 평가 성공은 별개다. 학습 코드와 같은 관측/제어 설정인지 함께 검사한다.
+선택 checkpoint만 복사한 training artifact 디렉터리를 준비하고 기존 `build_release.py`와
+`verify_release.py`로 SHA-256 manifest를 포함한 묶음을 만든다. 이미 보존한 SHOW-100 Release가 형식의 예다.
+Thor에서는 같은 branch/revision의 런타임으로 체크섬·NumPy 출력 일치를 먼저 확인한다.
+이 인계는 실제 SDK/CAN/로봇 동작을 실행하지 않는다.
+
+## 다음 에이전트에게 전달할 작업
+
+> show-103 브랜치의 AGENTS.md와 docs/show103/3090-handoff.md, 보상 명세를 읽고 이어서 진행한다.
+> 우선 실제 머신이 RTX3090인지 확인하고 수식 검사를 재현한다. 수식은 이미 구현됐고 새 MJX 연결은 아직이다.
+> SHOW-100 관측·형상·3상태 그리퍼와 현재 DLS+QP를 보존하며 새 stage_reward task와 고정 초기화4개를 구현한다.
+> 4,096환경 물리 검증을 통과한 뒤 처음부터 학습하고 초기화별 전체 완료율·동작별 실패·영상을 기록한다.
+> 이 인계의 옛 configs를 최신 수식의 학습 config로 실행하지 않는다. 원본 정책은 보존하고 실제 로봇은 구동하지 않는다.
+> 중요한 설계 변경은 사용자와 논의하고, 검증된 현재 구현·결과로 SHOW-103 본문과 인계 상태를 갱신한다.

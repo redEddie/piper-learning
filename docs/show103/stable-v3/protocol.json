@@ -1,0 +1,167 @@
+{
+  "issue": "SHOW-103",
+  "variant": "stable-v3",
+  "source_checkpoint": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/gentle-placement/runs/show103/release-v2-8m/checkpoints/000008388608",
+  "parent_lineage_transitions": 75497472,
+  "additional_transitions": 4194304,
+  "configuration": {
+    "seed": 7,
+    "environment": {
+      "task": "controlled_release",
+      "ctrl_dt": 0.1,
+      "sim_dt": 0.005,
+      "impl": "warp",
+      "solver_iterations": 8,
+      "solver_ls_iterations": 20,
+      "jacobian": "mjx",
+      "robot_model": "piper_v100",
+      "base_height": 0.015,
+      "nominal_qpos": [
+        0.0,
+        0.523,
+        -0.45,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gripper_max": 0.05,
+      "table_priority": 2,
+      "reset_ik_flip": true,
+      "stage_obs": false,
+      "bowl_arm_collision": true,
+      "size_obs": true,
+      "obs_randomization": true,
+      "physics_randomization": true,
+      "block_half": 0.025,
+      "block_mass": 0.07,
+      "block_mass_range": [
+        0.056,
+        0.084
+      ],
+      "block_rgba": [
+        0.1,
+        0.8,
+        0.2,
+        1.0
+      ],
+      "bowl_r_bottom": 0.042,
+      "bowl_r_rim": 0.075,
+      "bowl_height": 0.067,
+      "bowl_wall": 0.003,
+      "bowl_floor": 0.003,
+      "bowl_free": true,
+      "bowl_mass": 0.11,
+      "block_x": [
+        0.25,
+        0.4
+      ],
+      "block_y": [
+        -0.3,
+        0.3
+      ],
+      "bowl_x": [
+        0.25,
+        0.35
+      ],
+      "bowl_y": [
+        -0.3,
+        0.3
+      ],
+      "spawn_min_distance": 0.14,
+      "spawn_max_radius": 0.4,
+      "spawn_candidates": 16,
+      "reset_stage_probs": [
+        0.4,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "batch_capacity": 1024,
+      "gripper_threshold": 0.5,
+      "gripper_goal_obs": true,
+      "finger_bridge": true,
+      "tcp_local_z": 0.1385,
+      "control_mode": "qp",
+      "control_acceleration": 4.0,
+      "control_floor": 0.0,
+      "max_joint_vel": 0.75,
+      "control_jerk": 300.0,
+      "max_lin_vel": 0.05,
+      "max_ang_vel": 0.5,
+      "gentle_near_fraction": 0.25,
+      "release_tcp_min": 0.05,
+      "release_tcp_max": 0.06,
+      "gentle_near_min": 0.03,
+      "gentle_near_max": 0.05,
+      "release_width_margin": 0.01,
+      "release_impact_limit": 1.0,
+      "release_require_stable_target": true,
+      "release_target_hold_speed": 0.01,
+      "release_require_landing_for_retreat": true
+    },
+    "training": {
+      "num_timesteps": 4194304,
+      "num_envs": 1024,
+      "episode_length": 200,
+      "unroll_length": 16,
+      "batch_size": 256,
+      "num_minibatches": 4,
+      "num_updates_per_batch": 4,
+      "num_evals": 3,
+      "num_eval_envs": 64,
+      "learning_rate": 0.0003,
+      "discounting": 0.99,
+      "gae_lambda": 0.95,
+      "entropy_cost": 0.001,
+      "clipping_epsilon": 0.2,
+      "reward_scaling": 1.0,
+      "normalize_observations": true,
+      "max_grad_norm": 1.0,
+      "action_repeat": 1,
+      "bootstrap_on_timeout": false,
+      "deterministic_eval": true
+    },
+    "network": {
+      "policy_hidden_layer_sizes": [
+        256,
+        256
+      ],
+      "value_hidden_layer_sizes": [
+        256,
+        256
+      ],
+      "policy_obs_key": "state",
+      "value_obs_key": "privileged"
+    }
+  },
+  "changes": [
+    "Target-height dwell credit requires actual relative TCP speed<=10mm/s continuously100ms, instead of crediting a moving band crossing",
+    "Withdrawal bonus additionally requires actual stable bowl-floor landing"
+  ],
+  "unchanged": [
+    "TCP release50-60mm above bowl inner floor",
+    "40/20/20/20 reset mixture with5% near resets",
+    "100mm opening and postseparation arm unlock",
+    "Controller bounds and all observations",
+    "Release qualification and strict physical completion predicates"
+  ],
+  "motivation": "All406 eligible near-evaluation states at final8m requested positive vertical action; only3 modes requested opening. Dwell credit lacked a velocity gate.",
+  "source_checkpoint_sha256": {
+    "_METADATA": "4b9ae67d13351e348ca88bc00f1365d32e9fa9936563e556d22b418348ebb9d0",
+    "_CHECKPOINT_METADATA": "867d160d7b241e5edd6ce447de0af8ebeb45ef2b39490464b0e8c872dfbf321f",
+    "ppo_network_config.json": "10dd67820dd7319ffd7510b123086dd2f86debec01af9b3cb9d7931cc0ed40df",
+    "commit_success.txt": "761a860aea5414111f1c1f819c0156a947962bea8236d756fee06e6763b3adeb",
+    "_sharding": "6711f5f2d3d1b3e82cb282494ccc78f4e2fcf7a8f4041d92ed9cfb52b421644e",
+    "manifest.ocdbt": "2279926fc08239552a9235f9be0c314218a6ddf91f758b347407c17fa570390e",
+    "ocdbt.process_0/manifest.ocdbt": "9ab734c676f85fa02570a23a7e4a49f23916c53053c269c2019ebbe259c02a8f",
+    "array_metadatas/process_0": "5e257d20367dd4e80bae8d98f784a3aec67be9fa25af16a7f7534731ac363462",
+    "d/a41b3e4471b2703acce6fad51cc19806": "7cdda77a13968c5cece19a2fff82c5628b3db1b6b2a5c8263232c79133cb1fd2",
+    "ocdbt.process_0/d/4ba84b35baa5b0b35f9bcceef75e1d7b": "5fc0c1621508d14af8171405ee19e6514ce3bbe4e6c0300443ae911d49c90b10",
+    "ocdbt.process_0/d/36bbda27563fff4bfb624fc17298ed84": "0f931b125241780c7181b984d5a2971abbdb2411d2c80a8d15dfae698f87fd2e",
+    "ocdbt.process_0/d/f69a4e3182ed63b9626b569037e48f52": "ea53628eeb450f0ce5e11303c4827854c1b8067d877f8b0037934ad15ba523b1",
+    "ocdbt.process_0/d/809ed260325aadc34b4adc2c7fb5a2c5": "c0b999e911734de0c32a049f0c0193291b00348c58f6d2d2b1124a4176b93277",
+    "ocdbt.process_0/d/7c905c4e76df4d558e91b50865434d6e": "beed66cfcebb0f3c25cd06979f83cb01b418eaf9de2c5ab49ccd38a6a4617629",
+    "ocdbt.process_0/d/f850bdec880487b4996db61088e00adc": "bb662e0e201318808e2019c0e2b774754b218bd8acd785e5783e82fc9995b364"
+  },
+  "real_robot": false
+}

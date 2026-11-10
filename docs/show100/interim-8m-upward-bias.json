@@ -1,0 +1,13 @@
+{
+  "checkpoint_steps": 8388608,
+  "scope": "seed 2026, mixed reset evaluation, preinside subset",
+  "episodes": 16,
+  "upward_request_fraction": 1.0,
+  "normalized_z_mean": 0.989909291267395,
+  "tcp_z_first_recorded_mean_mm": 123.57799530029297,
+  "tcp_z_final_mean_mm": 700.8811645507812,
+  "final_held": 16,
+  "ever_placed": 0,
+  "ever_open_goal": 0,
+  "note": "The policy explicitly requests upward velocity; not evidence of QP blocking a requested descent. Lift reward is boolean above 20mm, not proportional to height. No reward/reset edits made."
+}
